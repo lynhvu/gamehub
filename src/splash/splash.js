@@ -1,11 +1,17 @@
 import {useState, useEffect} from 'react'
-import "./style.css";
-import logo from "./logo2.png"
+import "../StyleAndImg/style.css";
+import logo from "../StyleAndImg/logo2.png"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 const Splash = (props) => {
 
     return (
-        <div>         
+        <div className="page">         
             <link rel="stylesheet" href="style.css" type="text/css" />
             <br />
             <img
@@ -28,39 +34,38 @@ const Splash = (props) => {
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <a href="#" className="animated-button1">
+            <div className="animated-button1">
                 <span />
                 <span />
                 <span />
                 <span />
                 Explore Games
-            </a>
-            <a href="#" className="animated-button1">
+            </div>
+            <div className="animated-button1">
                 <span />
                 <span />
                 <span />
                 <span />
                 Explore Game Companies
-            </a>
-            <a href="#" className="animated-button1">
+            </div>
+            <div className="animated-button1">
                 <span />
                 <span />
                 <span />
                 <span />
                 Explore Game Genres
-            </a>
+            </div>
             <br />
             <br />
-            <a href="about.html" className="animated-button">
-                <span />
-                <span />
-                <span />
-                <span />
-                About Us
-            </a>
-            
+            <Link to="/about">
+                <div className="animated-button">
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    About Us
+                </div>
+            </Link>
         </div>
     )
 }
