@@ -17,6 +17,7 @@ function App() {
 /*import React from "react";*/
 import Splash from "./Splash/Splash";
 import About from "./About/About";
+import GameList from "./GamePages/GameList";
 import {
   BrowserRouter as Router,
   Route,
@@ -40,6 +41,7 @@ export default function AppPages() {
         <Routes>
           <Route path='/' element={<Splash/>} />
           <Route path='/about' element={<About/>} />
+          <Route path='/games' element={<GameList/>} />
         </Routes>
       </div>
     </Router>

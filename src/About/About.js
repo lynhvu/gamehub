@@ -10,7 +10,7 @@ import {
 const About = (props) => {
 
     return (
-        <div className='page'>         
+        <div className='page'>
             <link rel="stylesheet" href="style.css" type="text/css" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

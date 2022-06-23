@@ -34,13 +34,16 @@ const Splash = (props) => {
             <br />
             <br />
             <br />
-            <div className="animated-button1">
-                <span />
-                <span />
-                <span />
-                <span />
-                Explore Games
-            </div>
+            <Link to="/games">
+                <div className="animated-button1">
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    Explore Games
+                </div>
+            </Link>
+            
             <div className="animated-button1">
                 <span />
                 <span />
