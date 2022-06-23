@@ -2,11 +2,10 @@ import {useState, useEffect} from 'react'
 import "./style.css";
 import logo from "./logo2.png"
 
-const splash = (props) => {
+const Splash = (props) => {
 
     return (
-        <div>
-                        
+        <div>         
             <link rel="stylesheet" href="style.css" type="text/css" />
             <br />
             <img
@@ -19,7 +18,7 @@ const splash = (props) => {
                 boxShadow: "0 0 20px rgba(81, 203, 238, 1)"
                 }}
             />
-            {/*<br />
+            <br />
             <br />
             <br />
             <br />
@@ -60,10 +59,10 @@ const splash = (props) => {
                 <span />
                 <span />
                 About Us
-            </a>*/}
+            </a>
             
         </div>
     )
 }
 
-export default splash
+export default Splash
