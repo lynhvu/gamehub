@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import "../StyleAndImg/style.css";
 import logo from "../StyleAndImg/logosmall.png"
+import NavBar from "../components/NavBar";
 import {
     BrowserRouter as Router,
     Switch,
@@ -20,7 +21,7 @@ const GameList = (props) => {
                 rel="stylesheet"
             />
 
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            {/* <nav class="navbar navbar-expand-lg navbar-dark">
                 <img src={logo} alt="logo" style={{ width: 70, marginLeft: 10 }} />
                 <a class="navbar-brand" href="#">GameHub</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +46,8 @@ const GameList = (props) => {
                         </Link>
                     </div>
                 </div>
-            </nav>
+            </nav> */}
+            <NavBar></NavBar>
             <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 Genres
             </div>
