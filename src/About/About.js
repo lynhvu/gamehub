@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import "../StyleAndImg/style.css";
+import NavBar from "../components/NavBar";
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,6 +19,7 @@ const About = (props) => {
                 href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
                 rel="stylesheet"
             />
+            <NavBar></NavBar>
             <br />
             <div className="title" style={{ animation: "fadeIn 0.5s" }}>
                 About Us

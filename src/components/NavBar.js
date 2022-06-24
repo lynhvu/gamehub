@@ -1,11 +1,12 @@
 import "../StyleAndImg/style.css";
 import logo from "../StyleAndImg/logosmall.png"
-import sega from "../StyleAndImg/sega.svg"
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useMatch,
+    useResolvedPath
   } from "react-router-dom";
 
 const NavBar = () => {
@@ -19,25 +20,26 @@ const NavBar = () => {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <Link to="/">
-                        <a class="nav-item nav-link">Home</a>
+                    <Link to="/" className="nav-item nav-link">
+                        Home
                     </Link>
-                    <Link to="/games">
-                        <a class="nav-item nav-link active">Games</a>
+                    <Link to="/games" className="nav-item nav-link">
+                        Games
                     </Link>
-                    <Link to="/companies">
-                        <a class="nav-item nav-link">Companies</a>
+                    <Link to="/companies" className="nav-item nav-link">
+                        Companies
                     </Link>
-                    <Link to="/genres">
-                        <a class="nav-item nav-link">Genres</a>
+                    <Link to="/genres" className="nav-item nav-link">
+                        Genres
                     </Link>
-                    <Link to="/about">
-                        <a class="nav-item nav-link">About Us</a>
+                    <Link to="/about" className="nav-item nav-link">
+                        About Us
                     </Link>
                 </div>
             </div>
         </nav>
     )
 }
+
 
 export default NavBar
