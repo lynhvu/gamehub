@@ -19,6 +19,7 @@ import Splash from "./Splash/Splash";
 import About from "./About/About";
 import GameList from "./GamePages/GameList";
 import CompanyList from "./CompanyPages/CompanyList";
+import Genres from "./Genres/Genres"
 import {
   BrowserRouter as Router,
   Route,
@@ -46,6 +47,7 @@ export default function AppPages() {
           <Route path='/games' element={<GameList />} />
           <Route path='/companies' element={<CompanyList />} />
           <Route path='/comp1' element={<IndividualCompany />} />
+          <Route path='/genres' element={<Genres />} />
         </Routes>
       </div>
     </Router>
