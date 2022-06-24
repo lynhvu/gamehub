@@ -21,24 +21,26 @@ const IndividualCompany = (props) => {
             />
 
             <NavBar></NavBar>
-
-            <div className="row"> 
-                <div className="col">
-                    <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
-                    Nintendo
+            <div className="container">
+                <div className="row"> 
+                    <div className="col">
+                        <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
+                        Nintendo
+                        </div>
+                        <p id="comp-descr">The company develops hardware and software for handheld and home console video game systems, with support from various companies and organizations.</p>
+                        <p id="comp-descr">Founded in 1889</p>
+                        <p id="comp-descr">Single Player Experience</p>
+                        <p id="comp-descr">Based in Japan</p>
                     </div>
-                    <p id="comp-descr">The company develops hardware and software for handheld and home console video game systems, with support from various companies and organizations.</p>
-                    <p id="comp-descr">Founded in 1889</p>
-                    <p id="comp-descr">Single Player Experience</p>
-                    <p id="comp-descr">Based in Japan</p>
-                </div>
 
-                <div className="col">
-                    <p id="comp-game">Popular Titles</p>
-                    <PopularTitles></PopularTitles>
-                </div>
+                    <div className="col">
+                        <p id="comp-game">Popular Titles</p>
+                        <PopularTitles></PopularTitles>
+                    </div>
 
+                </div>
             </div>
+            
             
             <Link to="/">
                 <div className="animated-button">

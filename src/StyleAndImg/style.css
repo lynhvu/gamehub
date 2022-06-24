@@ -472,3 +472,58 @@ body {
 .grid-item:hover {
   opacity: 0.7;
 }
+
+/* Styles for game pages */
+.game-metascore {
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+  text-align: center;
+  /*border-style: solid;*/
+  width:fit-content;
+  margin:auto;
+  color: white;
+  padding: 2px;
+  background-image: linear-gradient( 135deg, #104f68 10%, #15a68e 100%);
+  margin-bottom: 20px;
+}
+
+.game-descr {
+  color: #d4e0f7;
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 15px;
+  border-width: 1px;
+  border-color:white;
+  border-style:solid;
+  padding: 5px;
+}
+
+.game-video {
+  box-shadow:0 0 20px blue;
+  width: auto;
+  height: 320px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  animation: fadeIn 0.5s
+}
+
+.game-photo-box {
+  box-shadow:0 0 20px blue;
+  height: auto;
+  width: auto;
+  margin: auto;
+  margin-top:10px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  animation: fadeIn 0.5s
+}
+
+.game-photo {
+  margin:2px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}

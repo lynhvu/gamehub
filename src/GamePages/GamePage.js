@@ -20,25 +20,35 @@ const GamePage = (props) => {
             />
 
             <NavBar></NavBar>
-
-            <div className="row"> 
-                <div className="col">
-                    <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
-                    Portal
+            <div className="container">
+                <div className="row"> 
+                    <div className="col">
+                        <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
+                        Portal
+                        </div>
+                        <p className="game-metascore" >Metascore: 90</p>
+                        <p className="game-descr">Portal is a first-person puzzle game where players undergo a series of tests within the Aperture Science Enrichment Center, controlled by the malevolent AI GLaDOS. Mechanics include manipulating objects and using a portal gun.</p>
+                        <p className="game-descr">Genre: Adventure, Puzzle</p>
+                        <p className="game-descr">Released October 9, 2007</p>
+                        <p className="game-descr">Developed by Valve</p>
+                        <p className="game-descr">Platforms: PC, macOS, Linux, Xbox 360, PlayStation 3, Android</p>
                     </div>
-                    <p id="comp-descr">Portal is a first-person puzzle game where players undergo a series of tests within the Aperture Science Enrichment Center, controlled by the malevolent AI GLaDOS. Mechanics include manipulating objects and using a portal gun.</p>
-                    <p id="comp-descr">Released October 10, 2007</p>
-                    <p id="comp-descr">Developed by Valve</p>
-                    <p id="comp-descr">Based in Japan</p>
+                    <div className="col">
+                        <video className="game-video" controls>
+                            <source src="https://media.rawg.io/media/stories/8a1/8a17d3fc984d01379a83338b2d753c37.mp4" type="video/mp4"/>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div className="game-photo-box">
+                            <img src="https://media.rawg.io/media/resize/200/-/screenshots/99e/99e94bd55eb75fa6e75c3dcbb1a570b2.jpg" alt="Image not found" className="game-photo"/>
+                            <img src="https://media.rawg.io/media/resize/200/-/screenshots/2f0/2f0297a46934d9fa914c626902b1ce20.jpg" alt="Image not found" className="game-photo"/>
+                            <img src="https://media.rawg.io/media/resize/200/-/screenshots/3b3/3b3713fbca6194dfc4d6e8a8d006d354.jpg" alt="Image not found" className="game-photo"/>
+
+                        </div>
+                    </div>
+                    
                 </div>
-
-                <video height="350" width="700" controls>
-                    <source src="https://media.rawg.io/media/stories/8a1/8a17d3fc984d01379a83338b2d753c37.mp4" type="video/mp4"/>
-                    Your browser does not support the video tag.
-                </video>
-                
-
             </div>
+            
             
             <Link to="/">
                 <div className="animated-button">
