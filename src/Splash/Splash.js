@@ -13,7 +13,7 @@ const Splash = (props) => {
     return (
         <div className="page">         
             <link rel="stylesheet" href="style.css" type="text/css" />
-            <br />
+            <div className='splash-logo'>
             <img
                 src={logo}
                 alt="logo"
@@ -24,16 +24,7 @@ const Splash = (props) => {
                 boxShadow: "0 0 20px rgba(81, 203, 238, 1)"
                 }}
             />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            </div>
             <Link to="/games">
                 <div className="animated-button1">
                     <span />

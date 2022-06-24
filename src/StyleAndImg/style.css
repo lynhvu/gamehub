@@ -6,14 +6,16 @@ html {
     
 
 body {
-  min-height: 100%;
   position: relative;
   padding-bottom: 3rem;
   margin: 0;
   padding: 0;
   text-align: center;
-  width: 100%;
   background-image: url("back.png");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -24,8 +26,6 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  width: 100%;
-  background-image: url("back.png");
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
   
@@ -374,6 +374,11 @@ body {
 .nav-item {
   font-size: 20px !important; 
   margin: 15px;
+}
+
+.splash-logo {
+  margin-top: 8%;
+  margin-bottom: 3%;
 }
 
 .listTitleText {
