@@ -1,12 +1,12 @@
 import "../StyleAndImg/style.css";
 import logo from "../StyleAndImg/logosmall.png"
-import sega from "../StyleAndImg/sega.svg"
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
   } from "react-router-dom";
+import PopularTitle from "./PopularTitles";
 
 const IndividualCompany = (props) => {
 
@@ -47,72 +47,22 @@ const IndividualCompany = (props) => {
                 </div>
             </nav>
 
-            <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
-                Companies
-            </div>
-            <div class="container">
-                <div className="row">
-                    <div className="col">
-                        <div class="card">
-                            <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                        </div>
+            <div className="row"> 
+                <div className="col">
+                    <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
+                    Nintendo
                     </div>
-                    <div className="col">
-                        <div class="card">
-                        <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div class="card">
-                        <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                        </div>
-                    </div>
+                    <p id="comp-descr">The company develops hardware and software for handheld and home console video game systems, with support from various companies and organizations.</p>
+                    <p id="comp-descr">Founded in 1889</p>
+                    <p id="comp-descr">Single Player Experience</p>
+                    <p id="comp-descr">Based in Japan</p>
                 </div>
+
+                <div className="col">
+                    <p id="comp-game">Popular Titles</p>
+                    <PopularTitle></PopularTitle>
+                </div>
+
             </div>
             
             <Link to="/">

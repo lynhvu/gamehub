@@ -54,6 +54,8 @@ const CompanyList = (props) => {
             <div class="container">
                 <div className="row">
                     <div className="col">
+                        <Link to="/comp1" className='link-style'>
+                            
                         <div class="card">
                             <img class="companyLogo" src={sega} alt="company logo"></img>
                             <div class="">
@@ -72,6 +74,7 @@ const CompanyList = (props) => {
                             One of five attributes
                             </div>
                         </div>
+                        </Link>
                     </div>
                     <div className="col">
                         <div class="card">
