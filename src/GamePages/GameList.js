@@ -62,7 +62,7 @@ const GameList = (props) => {
                     Genre
                     </div>
                 </div>
-                <div class="row">
+                <div class="row row2">
                     <div class="col-sm">
                     One of three columns
                     </div>
@@ -73,7 +73,7 @@ const GameList = (props) => {
                     One of three columns
                     </div>
                 </div>
-                <div class="row">
+                <div class="row row2">
                     <div class="col-sm">
                     One of three columns
                     </div>
@@ -84,7 +84,7 @@ const GameList = (props) => {
                     One of three columns
                     </div>
                 </div>
-                <div class="row">
+                <div class="row row2">
                     <div class="col-sm">
                     One of three columns
                     </div>
