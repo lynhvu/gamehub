@@ -37,17 +37,20 @@ const GameList = (props) => {
                     Genre
                     </div>
                 </div>
-                <div class="row row2">
-                    <div class="col-sm">
-                    One of three columns
+                <Link to="/games/gamepage">
+                    <div class="row row2">
+                        <div class="col-sm">
+                        Portal
+                        </div>
+                        <div class="col-sm">
+                        Valve
+                        </div>
+                        <div class="col-sm">
+                        Puzzle-platform
+                        </div>
                     </div>
-                    <div class="col-sm">
-                    One of three columns
-                    </div>
-                    <div class="col-sm">
-                    One of three columns
-                    </div>
-                </div>
+                </Link>
+                
                 <div class="row row2">
                     <div class="col-sm">
                     One of three columns

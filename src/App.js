@@ -18,6 +18,7 @@ function App() {
 import Splash from "./Splash/Splash";
 import About from "./About/About";
 import GameList from "./GamePages/GameList";
+import GamePage from "./GamePages/GamePage";
 import CompanyList from "./CompanyPages/CompanyList";
 import Genres from "./Genres/Genres"
 import {
@@ -45,6 +46,7 @@ export default function AppPages() {
           <Route path='/' element={<Splash />} />
           <Route path='/about' element={<About />} />
           <Route path='/games' element={<GameList />} />
+          <Route path='/games/gamepage' element={<GamePage />} />
           <Route path='/companies' element={<CompanyList />} />
           <Route path='/comp1' element={<IndividualCompany />} />
           <Route path='/genres' element={<Genres />} />
