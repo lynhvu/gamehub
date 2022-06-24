@@ -10,6 +10,19 @@ import {
 
 const About = (props) => {
 
+    const [data, setData] = useState([{}])
+
+    useEffect(() => {
+        fetch("/profile/").then(
+            res => res.json()
+        ).then(
+            data => {
+                setData(data)
+                console.log(data)
+            }
+        )
+    }, [])
+
     return (
         <div className='page'>
             <link rel="stylesheet" href="style.css" type="text/css" />
