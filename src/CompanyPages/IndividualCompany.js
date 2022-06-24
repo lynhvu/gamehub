@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react'
 import "../StyleAndImg/style.css";
+import PopularTitles from "./PopularTitles";
 import NavBar from "../components/NavBar";
 import {
     BrowserRouter as Router,
@@ -8,7 +8,7 @@ import {
     Link
   } from "react-router-dom";
 
-const About = (props) => {
+const IndividualCompany = (props) => {
 
     return (
         <div className='page'>
@@ -19,20 +19,27 @@ const About = (props) => {
                 href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
                 rel="stylesheet"
             />
+
             <NavBar></NavBar>
-            <br />
-            <div className="title" style={{ animation: "fadeIn 0.5s" }}>
-                About Us
+
+            <div className="row"> 
+                <div className="col">
+                    <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
+                    Nintendo
+                    </div>
+                    <p id="comp-descr">The company develops hardware and software for handheld and home console video game systems, with support from various companies and organizations.</p>
+                    <p id="comp-descr">Founded in 1889</p>
+                    <p id="comp-descr">Single Player Experience</p>
+                    <p id="comp-descr">Based in Japan</p>
+                </div>
+
+                <div className="col">
+                    <p id="comp-game">Popular Titles</p>
+                    <PopularTitles></PopularTitles>
+                </div>
+
             </div>
-            <div className="textbox" style={{ animation: "fadeIn 1.5s" }}>
-                We are [adsfsadf], a group of CS students at UT Austin.
-            </div>
-            <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
-                Meet our members:
-            </div>
-            <br />
-            <br />
-            <br />
+            
             <Link to="/">
                 <div className="animated-button">
                     <span />
@@ -46,4 +53,4 @@ const About = (props) => {
     )
 }
 
-export default About
+export default IndividualCompany
