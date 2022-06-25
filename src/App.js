@@ -21,6 +21,7 @@ import GameList from "./GamePages/GameList";
 import GamePage from "./GamePages/GamePage";
 import CompanyList from "./CompanyPages/CompanyList";
 import Genres from "./Genres/Genres"
+import GenrePage from "./Genres/GenrePage"
 import {
   BrowserRouter as Router,
   Route,
@@ -50,6 +51,7 @@ export default function AppPages() {
           <Route path='/companies' element={<CompanyList />} />
           <Route path='/comp1' element={<IndividualCompany />} />
           <Route path='/genres' element={<Genres />} />
+          <Route path='/genrepage' element={<GenrePage />} />
         </Routes>
       </div>
     </Router>

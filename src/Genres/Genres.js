@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react'
 import "../StyleAndImg/style.css";
 import logo from "../StyleAndImg/logosmall.png"
 import NavBar from "../components/NavBar";
+
+import actionIcon from "../StyleAndImg/GenreIcons/Action Game Icon.png"
+import adventureIcon from "../StyleAndImg/GenreIcons/Adventure Game Icon.png"
+import shooterIcon from "../StyleAndImg/GenreIcons/Shooter Game Icon.png"
+import rpgIcon from "../StyleAndImg/GenreIcons/Role Playing Game Icon.png"
+import puzzleIcon from "../StyleAndImg/GenreIcons/Puzzle Game Icon.png"
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,7 +15,7 @@ import {
     Link
 } from "react-router-dom";
 
-const GameList = (props) => {
+const Genres = (props) => {
 
     return (
         <div className='page'>
@@ -20,38 +26,57 @@ const GameList = (props) => {
                 href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
                 rel="stylesheet"
             />
-
-            {/* <nav class="navbar navbar-expand-lg navbar-dark">
-                <img src={logo} alt="logo" style={{ width: 70, marginLeft: 10 }} />
-                <a class="navbar-brand" href="#">GameHub</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <Link to="/">
-                            <a class="nav-item nav-link">Home</a>
-                        </Link>
-                        <Link to="/games">
-                            <a class="nav-item nav-link">Games</a>
-                        </Link>
-                        <Link to="/companies">
-                            <a class="nav-item nav-link">Companies</a>
-                        </Link>
-                        <Link to="/genres">
-                            <a class="nav-item nav-link active">Genres</a>
-                        </Link>
-                        <Link to="/about">
-                            <a class="nav-item nav-link">About Us</a>
-                        </Link>
-                    </div>
-                </div>
-            </nav> */}
             <NavBar></NavBar>
             <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 Genres
             </div>
 
+            <div class="container">
+                <div className="row">
+                    <div className="col">
+                        <Link to="/genrepage" className='link-style'>
+                        <div class="card">
+                            <img class="companyLogo" src={actionIcon} alt="company logo"></img>
+                            <div class="">
+                            Action
+                            </div>
+                        </div>
+                        </Link>
+                    </div>
+                    <div className="col">
+                        <div class="card">
+                        <img class="companyLogo" src={adventureIcon} alt="company logo"></img>
+                            <div class="">
+                            Adventure
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div class="card">
+                        <img class="companyLogo" src={shooterIcon} alt="company logo"></img>
+                            <div class="">
+                            Puzzle
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div class="card">
+                        <img class="companyLogo" src={rpgIcon} alt="company logo"></img>
+                            <div class="">
+                            RPG
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div class="card">
+                        <img class="companyLogo" src={puzzleIcon} alt="company logo"></img>
+                            <div class="">
+                            Shooter
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <Link to="/">
                 <div className="animated-button">
@@ -66,4 +91,4 @@ const GameList = (props) => {
     )
 }
 
-export default GameList
+export default Genres
