@@ -421,8 +421,19 @@ body {
 .companyLogo {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
   width: 250px;
-  height: 250px;
+}
+
+.compName {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.topThree {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px
 }
 
 .link-style {
@@ -430,12 +441,16 @@ body {
   color: #08142b;
 }
 
-#comp-descr {
+.comp-descr {
   color: #d4e0f7;
   font-family: 'Space Mono', monospace;
   font-size: 25px;
   text-align: left;
   margin-left: 15%;
+}
+
+#comp-descr {
+  font-size: 15px;
 }
 
 #comp-game {
@@ -445,6 +460,10 @@ body {
   font-size: 30px;
   text-align: left;
   margin-left: 10%;
+}
+
+#grid-text {
+  font-size: 20px;
 }
 
 .grid-container {
@@ -460,7 +479,6 @@ body {
   padding: 15px;
   border-radius: 25px;
   font-family: 'Space Mono', monospace;
-  font-size: 25px;
   margin:8px;
   transition:0.6s;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -471,6 +489,13 @@ body {
 
 .grid-item:hover {
   opacity: 0.7;
+}
+
+/* Styles for game list */
+.gamelist-select-table {
+  color:white;
+  display: inline-block;
+  margin:5px;
 }
 
 /* Styles for game pages */

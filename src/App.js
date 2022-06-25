@@ -20,6 +20,7 @@ import About from "./About/About";
 import GameList from "./GamePages/GameList";
 import GamePage from "./GamePages/GamePage";
 import CompanyList from "./CompanyPages/CompanyList";
+import IndividualCompany from "./CompanyPages/IndividualCompany";
 import Genres from "./Genres/Genres"
 import GenrePage from "./Genres/GenrePage"
 import {
@@ -28,7 +29,6 @@ import {
   Routes,
   Link
 } from "react-router-dom";
-import IndividualCompany from "./CompanyPages/IndividualCompany";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -49,7 +49,7 @@ export default function AppPages() {
           <Route path='/games' element={<GameList />} />
           <Route path='/games/gamepage' element={<GamePage />} />
           <Route path='/companies' element={<CompanyList />} />
-          <Route path='/comp1' element={<IndividualCompany />} />
+          <Route path='/companies/comp' element={<IndividualCompany />} />
           <Route path='/genres' element={<Genres />} />
           <Route path='/genrepage' element={<GenrePage />} />
         </Routes>

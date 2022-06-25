@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 import "../StyleAndImg/style.css";
-import sega from "../StyleAndImg/sega.svg"
 import NavBar from "../components/NavBar";
 import {
     BrowserRouter as Router,
@@ -10,6 +9,8 @@ import {
   } from "react-router-dom";
 
 const CompanyList = (props) => {
+
+    var compData = require('./companydata.json');
 
     return (
         <div className='page'>
@@ -27,68 +28,41 @@ const CompanyList = (props) => {
             </div>
             <div class="container">
                 <div className="row">
-                    <div className="col">
-                        <Link to="/comp1" className='link-style'>
-                        <div class="card">
-                            <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
+                    
+                        {compData.map(item => (
+                        <div className="col-4">
+                            <Link to="/companies/comp" className="link-style" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(item))}} style={{ textDecoration: 'none' }}>
+                                <div class="card">
+                                    <img class="companyLogo" src={item.img} alt="company logo"></img>
+                                    
+                                    <div class="compName">
+                                        {item.name}
+                                    </div>
+                                    <div class="">
+                                        {item.year}
+                                    </div>
+                                    <div class="">
+                                        {item.location}
+                                        <br/><br/>
+                                    </div>
+                                    <div class="topThree">
+                                        <b>Top 3 Games:</b>
+                                        <ol>
+                                            <li>
+                                                {item.games[0]}
+                                            </li>
+                                            <li>
+                                                {item.games[1]}
+                                            </li>
+                                            <li>
+                                                {item.games[2]}
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
-                        </Link>
-                    </div>
-                    <div className="col">
-                        <div class="card">
-                        <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div class="card">
-                        <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                        </div>
-                    </div>
+                        ))}
                 </div>
             </div>
             

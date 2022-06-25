@@ -1,5 +1,6 @@
 import "../StyleAndImg/style.css";
 import NavBar from "../components/NavBar";
+import {useState, useEffect} from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -8,8 +9,57 @@ import {
 } from "react-router-dom";
 
 const GameList = (props) => {
-
     var gameData = require('./gamedata.json');
+
+    const options = [
+        {value: 'name', text: 'Title'},
+        {value: 'developer', text: 'Company'},
+        {value: 'genre', text: 'Genre'},
+      ];
+    
+    const [selected, setSelected] = useState(options[0].value);
+
+    const orders = [
+    {value: 1, text: 'Ascending'},
+    {value: '-1', text: 'Descending'},
+    ];
+    
+    const [order, setOrder] = useState(orders[0].value);
+    
+    const handleSelectChange = event => {
+        console.log(event.target.value);
+        setSelected(event.target.value);
+    };
+
+    const handleOrderChange = event => {
+        console.log(event.target.value);
+        setOrder(event.target.value);
+    };
+    
+    function sortByProperty(){
+        var objArray = gameData;
+        var prop = "attributes." + selected;
+        var direct= order;
+        // if (arguments.length<2) throw new Error("ARRAY, AND OBJECT PROPERTY MINIMUM ARGUMENTS, OPTIONAL DIRECTION");
+        if (!Array.isArray(objArray)) throw new Error("FIRST ARGUMENT NOT AN ARRAY");
+        const clone = objArray.slice(0);
+        const propPath = (prop.constructor===Array) ? prop : prop.split(".");
+        clone.sort(function(a,b){
+            for (let p in propPath){
+                    if (a[propPath[p]] && b[propPath[p]]){
+                        a = a[propPath[p]];
+                        b = b[propPath[p]];
+                    }
+            }
+            // convert numeric strings to integers
+            a = a.match(/^\d+$/) ? +a : a;
+            b = b.match(/^\d+$/) ? +b : b;
+            return ( (a < b) ? -1*direct : ((a > b) ? 1*direct : 0) );
+        });
+        gameData = clone;
+    }
+
+    sortByProperty();
 
     return (
         <div className='page'>
@@ -26,6 +76,25 @@ const GameList = (props) => {
             <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 Games
             </div>
+            
+            <div>
+                <div className="gamelist-select-table">Sort By:</div>
+                <select value={selected} onChange={handleSelectChange}>
+                    {options.map(option => (
+                    <option key={option.value} value={option.value}>
+                        {option.text}
+                    </option>
+                    ))}
+                </select>
+                <select value={order} onChange={handleOrderChange}>
+                    {orders.map(option => (
+                    <option key={option.value} value={option.value}>
+                        {option.text}
+                    </option>
+                    ))}
+                </select>
+            </div>
+            
             <div class="container">
                 <div class="row bg-dark text-light" style={{ opacity: 0.9, borderRadius: 1 }}>
                     <div class="col-sm">

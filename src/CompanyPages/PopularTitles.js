@@ -1,17 +1,11 @@
 import "../StyleAndImg/style.css";
 
-const PopularTitle = () => {
+const PopularTitle = (props) => {
     return (
         <div className="grid-container">
-            <div className="grid-item">Game Name</div>
-            <div className="grid-item">Game Name</div>
-            <div className="grid-item">Game Name</div>
-            <div className="grid-item">Game Name</div>
-            <div className="grid-item">Game Name</div>
-            <div className="grid-item">Game Name</div>
-            <div className="grid-item">Game Name</div>
-            <div className="grid-item">Game Name</div>
-            <div className="grid-item">Game Name</div>
+            {props.titles.map(item => (
+                <div id ="grid-text" className="grid-item"> {item} </div>
+            ))}
         </div> 
     )
 }
