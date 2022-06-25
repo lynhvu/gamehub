@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Portal",
+        "score": 80,
+        "genre": "Adventure, Puzzle",
+        "release date": "Oct 9, 2007",
+        "developer": "Valve",
+        "platforms": "PC, macOS, Linux, Xbox 360, PlayStation 3, Android"
+    },
+    {
+        "name": "The Last of Us",
+        "score": 95,
+        "genre": "Action, Adventure",
+        "release date": "Jun 14, 2013",
+        "developer": "Naughty Dog",
+        "platforms": "Playstation 3, Playstation 4"
+    },
+    {
+        "name": "Fallout: New Vegas",
+        "score": 84,
+        "genre": "Action, Shooter, Adventure, RPG",
+        "release date": "Oct 19, 2010",
+        "developer": "Obsidian Entertainment",
+        "platforms": "Xbox One, Playstation 4, Playstation 3, PC, Xbox 360"
+    }
+]

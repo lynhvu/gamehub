@@ -1,4 +1,3 @@
-import {useState, useEffect} from 'react'
 import "../StyleAndImg/style.css";
 import NavBar from "../components/NavBar";
 import {
@@ -6,9 +5,11 @@ import {
     Switch,
     Route,
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
 
 const GameList = (props) => {
+
+    var gameData = require('./gamedata.json');
 
     return (
         <div className='page'>
@@ -26,55 +27,35 @@ const GameList = (props) => {
                 Games
             </div>
             <div class="container">
-                <div class="row bg-dark text-light" style={{opacity:0.9, borderRadius:1}}>
+                <div class="row bg-dark text-light" style={{ opacity: 0.9, borderRadius: 1 }}>
                     <div class="col-sm">
-                    Game Title
+                        Game Title
                     </div>
                     <div class="col-sm">
-                    Company
+                        Company
                     </div>
                     <div class="col-sm">
-                    Genre
+                        Genre
                     </div>
                 </div>
-                <Link to="/games/gamepage">
+                
+                {gameData.map(item => (
+                    <Link to="/games/gamepage" style={{ textDecoration: "none" }}>
                     <div class="row row2">
                         <div class="col-sm">
-                        Portal
+                            {item.name}
                         </div>
                         <div class="col-sm">
-                        Valve
+                            {item.developer}
                         </div>
                         <div class="col-sm">
-                        Puzzle-platform
+                            {item.genre}
                         </div>
                     </div>
-                </Link>
-                
-                <div class="row row2">
-                    <div class="col-sm">
-                    One of three columns
-                    </div>
-                    <div class="col-sm">
-                    One of three columns
-                    </div>
-                    <div class="col-sm">
-                    One of three columns
-                    </div>
-                </div>
-                <div class="row row2">
-                    <div class="col-sm">
-                    One of three columns
-                    </div>
-                    <div class="col-sm">
-                    One of three columns
-                    </div>
-                    <div class="col-sm">
-                    One of three columns
-                    </div>
-                </div>
+                    </Link>
+                ))}
             </div>
-            
+
             <Link to="/">
                 <div className="animated-button">
                     <span />
