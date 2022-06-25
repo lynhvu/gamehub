@@ -552,3 +552,9 @@ body {
   border-color: black;
   border-width: 1px;
 }
+
+#sort {
+  color:white;
+  font-family: 'Space Mono', monospace;
+  margin:2.5px;
+}
