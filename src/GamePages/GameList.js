@@ -40,7 +40,7 @@ const GameList = (props) => {
                 </div>
                 
                 {gameData.map(item => (
-                    <Link to="/games/gamepage" style={{ textDecoration: "none" }}>
+                    <Link to={{pathname: "/games/gamepage"}} onClick={() => {localStorage.setItem("GAME", JSON.stringify(item))}} style={{ textDecoration: "none" }}>
                     <div class="row row2">
                         <div class="col-sm">
                             {item.name}
