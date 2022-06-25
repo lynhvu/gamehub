@@ -10,6 +10,13 @@ import {
 const GamePage = (props) => {
 
     var gameData = JSON.parse(localStorage.getItem("GAME"));
+    var companyData = require('../CompanyPages/companydata.json');
+    companyData.map(item => {
+        if (item.name == gameData.developer) {
+            localStorage.setItem("COMPANY", JSON.stringify(item))
+            return;   
+        }       
+    });
 
     return (
         <div className='page'>
@@ -30,9 +37,9 @@ const GamePage = (props) => {
                         </div>
                         <p className="game-metascore">Metascore: {gameData.score}</p>
                         <p className="game-descr">{gameData.description}</p>
-                        <p className="game-descr">Genre: {gameData.genre}e</p>
+                        <p className="game-descr">Genre: {gameData.genre}</p>
                         <p className="game-descr">Released: {gameData.releaseDate}</p>
-                        <p className="game-descr">Developed by <a href="/comp1" style={{color: "white"}}>{gameData.developer}</a></p>
+                        <p className="game-descr">Developed by <a href="/companies/comp" style={{color: "white"}}>{gameData.developer}</a></p>
                         <p className="game-descr">Platforms: {gameData.platforms}</p>
                     </div>
                     <div className="col">
