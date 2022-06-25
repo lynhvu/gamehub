@@ -47,20 +47,60 @@ companyData = [{ "name": "Naughty Dog",
                            "Counter Strike"],
                  "img": "https://images.igdb.com/igdb/image/upload/t_logo_med/cl2he.png"}]
 
+membersData = [{ "name": "Linh Vu",
+    "year": "Junior",
+    "major": "Computer Science & Math",
+    "skills": "Project management, Full stack web development",
+    "picture": "../StyleAndImg/logo2.png"
+},
+{
+    "name": "1",
+    "year": "1",
+    "major": "1",
+    "skills": "1",
+    "picture": "../StyleAndImg/logo2.png"
+},
+{
+    "name": "2",
+    "year": "2",
+    "major": "2",
+    "skills": "2",
+    "picture": "../StyleAndImg/logo2.png"
+},
+{
+    "name": "3",
+    "year": "3",
+    "major": "3",
+    "skills": "3",
+    "picture": "../StyleAndImg/logo2.png"
+},
+{
+    "name": "4",
+    "year": "4",
+    "major": "4",
+    "skills": "4",
+    "picture": "../StyleAndImg/logo2.png"
+},
+{
+    "name": "5",
+    "year": "5",
+    "major": "5",
+    "skills": "5",
+    "picture": "../StyleAndImg/logo2.png"
+}
+]
+
 api = Flask(__name__)
 
-@api.route('/profile/')
-def my_profile():
-    response_body = {
-        "name": "Nagato"
-    }
-
-    return response_body
+@api.route('/profiles/')
+def profiles():
+    data = json.dump(membersData)
+    return Response(data)
 
 @api.route('/compdata/')
 def companies():
     data = json.dumps(companyData)
-    return Response(data)
+    return Response(data)   
 
 if __name__ == "__main__":
 	api.run(host = "127.0.0.1", port = 5000)

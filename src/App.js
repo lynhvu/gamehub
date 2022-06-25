@@ -23,6 +23,7 @@ import CompanyList from "./CompanyPages/CompanyList";
 import IndividualCompany from "./CompanyPages/IndividualCompany";
 import Genres from "./Genres/Genres"
 import GenrePage from "./Genres/GenrePage"
+import MembersProfiles from "./About/MembersProfiles";
 import {
   BrowserRouter as Router,
   Route,
@@ -49,7 +50,7 @@ export default function AppPages() {
           <Route path='/games' element={<GameList />} />
           <Route path='/games/gamepage' element={<GamePage />} />
           <Route path='/companies' element={<CompanyList />} />
-          <Route path='/companies/comp' element={<IndividualCompany />} />
+          <Route path='/companies/comp' element={<IndividualCompany/>} />
           <Route path='/genres' element={<Genres />} />
           <Route path='/genrepage' element={<GenrePage />} />
         </Routes>
