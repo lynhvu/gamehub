@@ -9,7 +9,20 @@ import {
 } from "react-router-dom";
 
 const GameList = (props) => {
-    var gameData = require('./gamedata.json');
+    //var gameData = require('./gamedata.json');
+
+    var [gameData, setGameData] = useState([])
+
+    useEffect(() => {
+        fetch("/gamedata/").then(
+            res => res.json()
+        ).then(
+            data => {
+                setGameData(data)
+                console.log(data)
+            }
+        )
+    }, [])
 
     const options = [
         {value: 'name', text: 'Title'},
