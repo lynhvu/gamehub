@@ -12,6 +12,19 @@ const CompanyList = (props) => {
 
     var compData = require('./companydata.json');
 
+    var [data, setData] = useState([])
+
+    useEffect(() => {
+        fetch("/compdata/").then(
+            res => res.json()
+        ).then(
+            data => {
+                setData(data)
+                console.log(data)
+            }
+        )
+    }, [])
+
     return (
         <div className='page'>
             <link rel="stylesheet" href="style.css" type="text/css" />
@@ -29,7 +42,7 @@ const CompanyList = (props) => {
             <div class="container">
                 <div className="row">
                     
-                        {compData.map(item => (
+                        {data.map(item => (
                         <div className="col-4">
                             <Link to="/companies/comp" className="link-style" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(item))}} style={{ textDecoration: 'none' }}>
                                 <div class="card">
