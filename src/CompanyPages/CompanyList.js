@@ -10,8 +10,6 @@ import {
 
 const CompanyList = (props) => {
 
-    var compData = require('./companydata.json');
-
     var [data, setData] = useState([])
 
     useEffect(() => {
@@ -24,6 +22,22 @@ const CompanyList = (props) => {
             }
         )
     }, [])
+
+    const options = [{value: 'name', text: 'Name'}];
+    const [selected, setSelected] = useState(options[0].value);
+    const orders = [{value: 1, text: 'Name A-Z'},
+                    {value: '-1', text: 'Name Z-A'}];
+    const [order, setOrder] = useState(orders[0].value);
+
+    const handleSelectChg = event => {
+        setSelected(event.target.value);
+    };
+
+    const handleOrderChg = event => {
+        setOrder(event.target.value);
+    };
+
+    sortByProperty();
 
     return (
         <div className='page'>
@@ -39,9 +53,18 @@ const CompanyList = (props) => {
             <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 Companies
             </div>
+            <div id="sort">
+                Sort By:
+            </div>
+            <select value={order} onChange={handleOrderChg}>
+                {orders.map(option => (
+                    <option key ={option.value} value ={option.value}>
+                        {option.text}
+                    </option>
+                ))}
+            </select>
             <div class="container">
                 <div className="row">
-                    
                         {data.map(item => (
                         <div className="col-4">
                             <Link to="/companies/comp" className="link-style" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(item))}} style={{ textDecoration: 'none' }}>
@@ -90,6 +113,33 @@ const CompanyList = (props) => {
             </Link>
         </div>
     )
+
+    function sortByProperty() {
+        var objArr = data;
+        var prop = "attributes." + selected;
+        var dir = order;
+
+        if (!Array.isArray(objArr)) throw new Error("FIRST ARGUMENT NOT AN ARRAY");
+
+        const clone = objArr.slice(0);
+        const propPath = (prop.constructor === Array) ? prop : prop.split(".");
+
+        clone.sort(function(a,b) {
+            for (let p in propPath) {
+                if (a[propPath[p]] && b[propPath[p]]) {
+                    a = a[propPath[p]];
+                    b = b[propPath[p]];
+                }
+            }
+            // convert numeric str's to ints
+            a = a.match(/^\d+$/) ? +a : a;
+            b = b.match(/^\d+$/) ? +b : b;
+            return ((a < b) ? -1*dir : ((a > b) ? 1*dir : 0));
+        });
+        // update the data
+        data = clone;
+    }
+
 }
 
 export default CompanyList

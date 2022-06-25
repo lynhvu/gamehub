@@ -559,3 +559,8 @@ body {
   font-family: 'Space Mono', monospace;
   font-size: large;
 }
+#sort {
+  color:white;
+  font-family: 'Space Mono', monospace;
+  margin:2.5px;
+}
