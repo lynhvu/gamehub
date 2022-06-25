@@ -43,8 +43,7 @@ const IndividualCompany = (props) => {
                 </div>
             </div>
             
-            
-            <Link to="/companies">
+            <Link to="" onClick={ () => (window.history.back())}>
                 <div className="animated-button">
                     <span />
                     <span />

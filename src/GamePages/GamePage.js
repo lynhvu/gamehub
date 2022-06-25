@@ -32,7 +32,7 @@ const GamePage = (props) => {
                         <p className="game-descr">{gameData.description}</p>
                         <p className="game-descr">Genre: {gameData.genre}e</p>
                         <p className="game-descr">Released: {gameData.releaseDate}</p>
-                        <p className="game-descr">Developed by {gameData.developer}</p>
+                        <p className="game-descr">Developed by <a href="/comp1" style={{color: "white"}}>{gameData.developer}</a></p>
                         <p className="game-descr">Platforms: {gameData.platforms}</p>
                     </div>
                     <div className="col">
@@ -48,12 +48,11 @@ const GamePage = (props) => {
                             ))}
                         </div>
                     </div>
-
                 </div>
             </div>
 
 
-            <Link to="/">
+            <Link to="" onClick={ () => (window.history.back())}>
                 <div className="animated-button">
                     <span />
                     <span />
