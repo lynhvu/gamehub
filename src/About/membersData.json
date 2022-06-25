@@ -1,0 +1,43 @@
+[
+{
+    "name": "Daniel Gonzalez",
+    "year": "1",
+    "major": "1",
+    "skills": "1",
+    "picture": "https://www.kindpng.com/imgv/hbJiwTm_transparent-spirited-away-png-spirited-away-no-face/"
+},
+{
+    "name": "Janssen Bozon",
+    "year": "2",
+    "major": "2",
+    "skills": "2",
+    "picture": "https://www.kindpng.com/imgv/hbJiwTm_transparent-spirited-away-png-spirited-away-no-face/"
+},
+{
+    "name": "Lauren Blummer",
+    "year": "3",
+    "major": "3",
+    "skills": "3",
+    "picture": "https://www.kindpng.com/imgv/hbJiwTm_transparent-spirited-away-png-spirited-away-no-face/"
+},
+{ "name": "Linh Vu",
+    "year": "Junior",
+    "major": "Computer Science & Math",
+    "skills": "Project management, Full stack web development",
+    "picture": "https://github.com/lynhvu/personal-website.github.io/blob/main/img/profile.JPG?raw=true"
+},
+{
+    "name": "Luke Lu",
+    "year": "5",
+    "major": "5",
+    "skills": "5",
+    "picture": "https://www.kindpng.com/imgv/hbJiwTm_transparent-spirited-away-png-spirited-away-no-face/"
+},
+{
+    "name": "Michael Chan",
+    "year": "4",
+    "major": "4",
+    "skills": "4",
+    "picture": "https://www.kindpng.com/imgv/hbJiwTm_transparent-spirited-away-png-spirited-away-no-face/"
+}
+]

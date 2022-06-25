@@ -553,6 +553,12 @@ body {
   border-width: 1px;
 }
 
+.text {
+  margin-top: 5%;
+  color:white;
+  font-family: 'Space Mono', monospace;
+  font-size: large;
+}
 #sort {
   color:white;
   font-family: 'Space Mono', monospace;
