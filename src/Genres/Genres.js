@@ -35,43 +35,43 @@ const Genres = (props) => {
                 <div className="row">
                     <div className="col">
                         <Link to="/genrepage" className='link-style'>
-                        <div class="card">
-                            <img class="companyLogo" src={actionIcon} alt="company logo"></img>
-                            <div class="">
-                            Action
+                            <div class="card">
+                                <img class="companyLogo" src={actionIcon} alt="company logo"></img>
+                                <div class="">
+                                    Action
+                                </div>
                             </div>
-                        </div>
                         </Link>
                     </div>
                     <div className="col">
                         <div class="card">
-                        <img class="companyLogo" src={adventureIcon} alt="company logo"></img>
+                            <img class="companyLogo" src={adventureIcon} alt="company logo"></img>
                             <div class="">
-                            Adventure
+                                Adventure
                             </div>
                         </div>
                     </div>
                     <div className="col">
                         <div class="card">
-                        <img class="companyLogo" src={shooterIcon} alt="company logo"></img>
+                            <img class="companyLogo" src={puzzleIcon} alt="company logo"></img>
                             <div class="">
-                            Puzzle
+                                Puzzle
                             </div>
                         </div>
                     </div>
                     <div className="col">
                         <div class="card">
-                        <img class="companyLogo" src={rpgIcon} alt="company logo"></img>
+                            <img class="companyLogo" src={rpgIcon} alt="company logo"></img>
                             <div class="">
-                            RPG
+                                RPG
                             </div>
                         </div>
                     </div>
                     <div className="col">
                         <div class="card">
-                        <img class="companyLogo" src={puzzleIcon} alt="company logo"></img>
+                            <img class="companyLogo" src={shooterIcon} alt="company logo"></img>
                             <div class="">
-                            Shooter
+                                Shooter
                             </div>
                         </div>
                     </div>

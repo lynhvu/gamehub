@@ -2,12 +2,6 @@ import { useState, useEffect } from 'react'
 import "../StyleAndImg/style.css";
 import logo from "../StyleAndImg/logosmall.png"
 import NavBar from "../components/NavBar";
-
-import actionIcon from "../StyleAndImg/GenreIcons/Action Game Icon.png"
-import adventureIcon from "../StyleAndImg/GenreIcons/Adventure Game Icon.png"
-import shooterIcon from "../StyleAndImg/GenreIcons/Shooter Game Icon.png"
-import rpgIcon from "../StyleAndImg/GenreIcons/Role Playing Game Icon.png"
-import puzzleIcon from "../StyleAndImg/GenreIcons/Puzzle Game Icon.png"
 import {
     BrowserRouter as Router,
     Switch,
@@ -67,10 +61,10 @@ const GenrePage = (props) => {
                         Action, Shooter, Adventure, RPG
                     </div>
                 </div>
-                
+
             </div>
 
-            <Link to="" onClick={ () => (window.history.back())}>
+            <Link to="" onClick={() => (window.history.back())}>
                 <div className="animated-button">
                     <span />
                     <span />
