@@ -10,6 +10,8 @@ import {
 
 const IndividualCompany = (props) => {
 
+    var compData = JSON.parse(localStorage.getItem("COMPANY"));
+    
     return (
         <div className='page'>
             <link rel="stylesheet" href="style.css" type="text/css" />
@@ -25,17 +27,17 @@ const IndividualCompany = (props) => {
                 <div className="row"> 
                     <div className="col">
                         <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
-                        Nintendo
+                            {compData.name}
                         </div>
-                        <p id="comp-descr">The company develops hardware and software for handheld and home console video game systems, with support from various companies and organizations.</p>
-                        <p id="comp-descr">Founded in 1889</p>
-                        <p id="comp-descr">Single Player Experience</p>
-                        <p id="comp-descr">Based in Japan</p>
+                        <p class="comp-descr"><u>Description:</u> <p id ="comp-descr">{compData.description}</p></p>
+                        <p class="comp-descr"><u>Founded in:</u> {compData.year}</p>
+                        <p class="comp-descr"><u>Based in:</u> {compData.location}</p>
+                        <p class="comp-descr"><u>Main Genre:</u> {compData.genre}</p>
                     </div>
 
                     <div className="col">
                         <p id="comp-game">Popular Titles</p>
-                        <PopularTitles></PopularTitles>
+                        <PopularTitles titles = {compData.games}></PopularTitles>
                     </div>
 
                 </div>

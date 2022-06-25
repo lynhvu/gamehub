@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 import "../StyleAndImg/style.css";
-import sega from "../StyleAndImg/sega.svg"
 import NavBar from "../components/NavBar";
 import {
     BrowserRouter as Router,
@@ -32,34 +31,36 @@ const CompanyList = (props) => {
                     
                         {compData.map(item => (
                         <div className="col-4">
-                            <div class="card">
-                                <img class="companyLogo" src={item.img} alt="company logo"></img>
-                                
-                                <div class="compName">
-                                    {item.name}
+                            <Link to="/companies/comp" className="link-style" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(item))}} style={{ textDecoration: 'none' }}>
+                                <div class="card">
+                                    <img class="companyLogo" src={item.img} alt="company logo"></img>
+                                    
+                                    <div class="compName">
+                                        {item.name}
+                                    </div>
+                                    <div class="">
+                                        {item.year}
+                                    </div>
+                                    <div class="">
+                                        {item.location}
+                                        <br/><br/>
+                                    </div>
+                                    <div class="topThree">
+                                        <b>Top 3 Games:</b>
+                                        <ol>
+                                            <li>
+                                                {item.games[0]}
+                                            </li>
+                                            <li>
+                                                {item.games[1]}
+                                            </li>
+                                            <li>
+                                                {item.games[2]}
+                                            </li>
+                                        </ol>
+                                    </div>
                                 </div>
-                                <div class="">
-                                    {item.year}
-                                </div>
-                                <div class="">
-                                    {item.location}
-                                    <br/><br/>
-                                </div>
-                                <div class="topThree">
-                                    <b>Top 3 Games:</b>
-                                    <ol>
-                                        <li>
-                                            {item.games[0]}
-                                        </li>
-                                        <li>
-                                            {item.games[1]}
-                                        </li>
-                                        <li>
-                                            {item.games[2]}
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                         ))}
                 </div>
