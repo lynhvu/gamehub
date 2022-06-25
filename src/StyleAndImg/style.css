@@ -421,8 +421,19 @@ body {
 .companyLogo {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
   width: 250px;
-  height: 250px;
+}
+
+.compName {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.topThree {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px
 }
 
 .link-style {

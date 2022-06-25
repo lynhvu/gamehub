@@ -11,6 +11,8 @@ import {
 
 const CompanyList = (props) => {
 
+    var compData = require('./companydata.json');
+
     return (
         <div className='page'>
             <link rel="stylesheet" href="style.css" type="text/css" />
@@ -27,68 +29,39 @@ const CompanyList = (props) => {
             </div>
             <div class="container">
                 <div className="row">
-                    <div className="col">
-                        <Link to="/comp1" className='link-style'>
-                        <div class="card">
-                            <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                        </div>
-                        </Link>
-                    </div>
-                    <div className="col">
-                        <div class="card">
-                        <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
+                    
+                        {compData.map(item => (
+                        <div className="col-4">
+                            <div class="card">
+                                <img class="companyLogo" src={item.img} alt="company logo"></img>
+                                
+                                <div class="compName">
+                                    {item.name}
+                                </div>
+                                <div class="">
+                                    {item.year}
+                                </div>
+                                <div class="">
+                                    {item.location}
+                                    <br/><br/>
+                                </div>
+                                <div class="topThree">
+                                    <b>Top 3 Games:</b>
+                                    <ol>
+                                        <li>
+                                            {item.games[0]}
+                                        </li>
+                                        <li>
+                                            {item.games[1]}
+                                        </li>
+                                        <li>
+                                            {item.games[2]}
+                                        </li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="col">
-                        <div class="card">
-                        <img class="companyLogo" src={sega} alt="company logo"></img>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                            <div class="">
-                            One of five attributes
-                            </div>
-                        </div>
-                    </div>
+                        ))}
                 </div>
             </div>
             
