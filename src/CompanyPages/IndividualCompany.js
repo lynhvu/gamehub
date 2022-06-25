@@ -42,7 +42,7 @@ const IndividualCompany = (props) => {
             </div>
             
             
-            <Link to="/">
+            <Link to="/companies">
                 <div className="animated-button">
                     <span />
                     <span />
