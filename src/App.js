@@ -9,7 +9,6 @@ import GamePage from "./GamePages/GamePage";
 import CompanyList from "./CompanyPages/CompanyList";
 import IndividualCompany from "./CompanyPages/IndividualCompany";
 import Genres from "./Genres/Genres"
-import GenrePage from "./Genres/GenrePage"
 import AboutUs from "./AboutUs/AboutUs";
 import MembersProfiles from "./About/MembersProfiles";
 import GenresPage from "./Genres/GenresPage"
