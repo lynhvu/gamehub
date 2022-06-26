@@ -23,7 +23,7 @@ import CompanyList from "./CompanyPages/CompanyList";
 import IndividualCompany from "./CompanyPages/IndividualCompany";
 import Genres from "./Genres/Genres"
 import GenrePage from "./Genres/GenrePage"
-import MembersProfiles from "./About/MembersProfiles";
+import AboutUs from "./AboutUs/AboutUs";
 import GenresPage from "./Genres/GenresPage"
 import {
   BrowserRouter as Router,
@@ -47,7 +47,7 @@ export default function AppPages() {
       <div>
         <Routes>
           <Route path='/' element={<Splash />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/about' element={<AboutUs />} />
           <Route path='/games' element={<GameList />} />
           <Route path='/games/gamepage' element={<GamePage />} />
           <Route path='/companies' element={<CompanyList />} />
