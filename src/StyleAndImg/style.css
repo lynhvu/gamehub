@@ -399,6 +399,8 @@ body {
   color: white;
   text-shadow:1px 1px 1px #fff, 1px 1px 10px #ccc;
   text-align: left;
+  line-height: 110px;
+  padding-bottom: 30px;
 }
 
 .row2 {
@@ -536,7 +538,7 @@ body {
   justify-content: left;
   margin-left: 15px;
   border-width: 1px;
-  border-color:white;
+  border-color:grey;
   border-style:solid;
   padding: 5px;
 }
@@ -546,7 +548,7 @@ body {
   width: auto;
   height: 320px;
   border-style: solid;
-  border-color: white;
+  border-color: grey;
   border-width: 1px;
   animation: fadeIn 0.5s
 }
