@@ -13,8 +13,9 @@ import {
 const IndividualCompany = (props) => {
 
     var compData = JSON.parse(localStorage.getItem("COMPANY"));
-    var genreData = require('../Genres/genresdata.json');
-    
+    //var genreData = require('../Genres/genresdata.json');
+    var [genreData, setGenreData] = useState([])
+
     var [gameData, setGameData] = useState([])
 
     useEffect(() => {
@@ -23,6 +24,17 @@ const IndividualCompany = (props) => {
         ).then(
             data => {
                 setGameData(data)
+                console.log(data)
+            }
+        )
+    }, [])
+
+    useEffect(() => {
+        fetch("/genresdata/").then(
+            res => res.json()
+        ).then(
+            data => {
+                setGenreData(data)
                 console.log(data)
             }
         )
