@@ -3,7 +3,7 @@ import "../StyleAndImg/style.css";
 const TotalStats = (props) => {
     var stats = require('./totalStats.json');
     return (   
-        <div className="row card-solid" id="total-stats">    
+        <div className="row card-solid" id="total-stats" style={{margin: "2%"}}>    
             <div className='col'>
                 <div className='card-inside'>
                     <p className='text-black-head'>Group Stats</p>
@@ -17,7 +17,6 @@ const TotalStats = (props) => {
 
                             )}
                     </div>
-                    
                 </div>
             </div>
             <div className='col center'>

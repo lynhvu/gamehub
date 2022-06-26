@@ -9,6 +9,7 @@ import {
     Link
   } from "react-router-dom";
 import MembersProfiles from './MembersProfiles';
+import MembersInfo from './MembersInfo';
 import TotalStats from './TotalStats';
 import BackBtn from '../BackBtn';
 
@@ -26,6 +27,7 @@ const About = (props) => {
             }
         )
     }, []);
+
     return (
         <div className='page'>
             <link rel="stylesheet" href="style.css" type="text/css" />
@@ -46,13 +48,16 @@ const About = (props) => {
             <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
                 Meet our members:
             </div>
-                <MembersProfiles></MembersProfiles>
-            <div className='row' style={{margin: "5%"}}>
-                <TotalStats></TotalStats>
-            </div>
+            <MembersProfiles></MembersProfiles>
+            
+            <MembersInfo></MembersInfo>
+            
+            <TotalStats></TotalStats>
+            
             <BackBtn></BackBtn>
         </div>
     )
+    
 }
 
 export default About

@@ -1,12 +1,6 @@
 import "../StyleAndImg/style.css";
 import PopularTitles from "./PopularTitles";
 import NavBar from "../components/NavBar";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
 import BackBtn from "../BackBtn";
 
 const IndividualCompany = (props) => {
