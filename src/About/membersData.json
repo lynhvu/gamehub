@@ -57,10 +57,10 @@
 {
     "id": "6",
     "name": "Michael Chan",
-    "year": "4",
-    "major": "4",
-    "skills": "4",
-    "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/logo2.png",
+    "year": "Junior",
+    "major": "Computer Science",
+    "skills": "Java, C, C++",
+    "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/michael.jpg",
     "commits": "#",
     "issues": "#",
     "tests": "#"
