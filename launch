@@ -1,0 +1,19 @@
+
+ARCHD=$(uname)
+ARCHW=$(uname -p)
+
+# Check 
+if [ $ARCHD = 'Darwin' ] ; 
+then 
+    PYTHON=python3
+elif [ $ARCHW = 'unknown' ]
+then
+    PYTHON=python
+else
+    PYTHON=python3
+fi
+
+cd backend
+source env/bin/activate
+$PYTHON base.py
+$SHELL
