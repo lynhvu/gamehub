@@ -1,0 +1,13 @@
+[{
+    "number": "#",
+    "type": "Commits Made"
+},
+{
+    "number": "#",
+    "type": "Issues Resolved"
+},
+{
+    "number": "#",
+    "type": "Unit Tests Run"
+}
+]
