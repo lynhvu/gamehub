@@ -133,7 +133,7 @@ api = Flask(__name__)
 
 @api.route('/profiles/')
 def profiles():
-    data = json.dump(membersData)
+    data = json.dumps(membersData)
     return Response(data)
 
 @api.route('/compdata/')
