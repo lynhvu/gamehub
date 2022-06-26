@@ -9,19 +9,34 @@ import {
 } from "react-router-dom";
 
 const GameList = (props) => {
-    var gameData = require('./gamedata.json');
+    //var gameData = require('./gamedata.json');
+
+    var [gameData, setGameData] = useState([])
+
+    useEffect(() => {
+        fetch("/gamedata/").then(
+            res => res.json()
+        ).then(
+            data => {
+                setGameData(data)
+                console.log(data)
+            }
+        )
+    }, [])
 
     const options = [
         {value: 'name', text: 'Title'},
         {value: 'developer', text: 'Company'},
         {value: 'genre', text: 'Genre'},
+        {value: 'score', text: 'Metascore'},
+        {value: 'platforms', text: 'Platforms'},
       ];
     
     const [selected, setSelected] = useState(options[0].value);
 
     const orders = [
     {value: 1, text: 'Ascending'},
-    {value: '-1', text: 'Descending'},
+    {value: -1, text: 'Descending'},
     ];
     
     const [order, setOrder] = useState(orders[0].value);
@@ -52,8 +67,8 @@ const GameList = (props) => {
                     }
             }
             // convert numeric strings to integers
-            a = a.match(/^\d+$/) ? +a : a;
-            b = b.match(/^\d+$/) ? +b : b;
+            /*a = a.match(/^\d+$/) ? +a : a;
+            b = b.match(/^\d+$/) ? +b : b;*/
             return ( (a < b) ? -1*direct : ((a > b) ? 1*direct : 0) );
         });
         gameData = clone;
@@ -106,6 +121,12 @@ const GameList = (props) => {
                     <div class="col-sm">
                         Genre
                     </div>
+                    <div class="col-sm">
+                        Metascore
+                    </div>
+                    <div class="col-sm">
+                        Platforms
+                    </div>
                 </div>
                 
                 {gameData.map(item => (
@@ -119,6 +140,12 @@ const GameList = (props) => {
                         </div>
                         <div class="col-sm">
                             {item.genre}
+                        </div>
+                        <div class="col-sm">
+                            {item.score}
+                        </div>
+                        <div class="col-sm" style={{fontSize:20}}>
+                            {item.platforms}
                         </div>
                     </div>
                     </Link>

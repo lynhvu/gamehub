@@ -3,13 +3,13 @@
         "id": 0,
         "name": "Portal",
         "score": 90,
-        "description": "Portal is a first-person puzzle game where players undergo a series of tests within the Aperture Science Enrichment Center, controlled by the malevolent AI GLaDOS. Mechanics include manipulating objects and using a portal gun.",
+        "description": "Silent template for your adventures, Chell, wakes up in a testing facility. She's a subject of experiments on instant travel device, supervised by snarky and hostile GLaDOS. Players will have to complete the tests, room by room, expecting either reward, freedom or more tests. By using the gun, that shoots portals (Portal-Gun™), players will move blocks, travel great distance quickly and learn about your current situation, which is unraveled through environmental storytelling.",
         "genre": "Adventure, Puzzle",
         "releaseDate": "Oct 9, 2007",
         "developer": "Valve Corporation",
         "platforms": "PC, macOS, Linux, Xbox 360, PlayStation 3, Android",
         "videos": ["https://media.rawg.io/media/stories/8a1/8a17d3fc984d01379a83338b2d753c37.mp4"],
-        "pictures": ["https://media.rawg.io/media/resize/200/-/screenshots/99e/99e94bd55eb75fa6e75c3dcbb1a570b2.jpg", "https://media.rawg.io/media/resize/200/-/screenshots/2f0/2f0297a46934d9fa914c626902b1ce20.jpg", "https://media.rawg.io/media/resize/200/-/screenshots/3b3/3b3713fbca6194dfc4d6e8a8d006d354.jpg"]
+        "pictures": ["https://media.rawg.io/media/resize/420/-/screenshots/99e/99e94bd55eb75fa6e75c3dcbb1a570b2.jpg", "https://media.rawg.io/media/resize/420/-/screenshots/2f0/2f0297a46934d9fa914c626902b1ce20.jpg", "https://media.rawg.io/media/resize/420/-/screenshots/3b3/3b3713fbca6194dfc4d6e8a8d006d354.jpg"]
     },
     {
         "id": 1,
