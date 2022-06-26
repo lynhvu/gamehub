@@ -26,7 +26,7 @@ companyData = [
         "description": "Obsidian Entertainment is an American video game developer based in Irvine, California. Former employees of Black Isle Studios founded it. The studio is well-known for their critically acclaimed RPGs such as Pillars of Eternity series, Star Wars Knights of the Old Republic II: The Sith Lords and Fallout New Vegas. Obsidian’s projects often use well-established franchises as a setting. The first two projects developed by the studio were sequels to Star Wars: Knights of the Old Republic and Neverwinter Nights. In 2014 Ubisoft released South Park: The Stick of Truth developed by Obsidian. The game was an RPG based on South Park franchise. It was a commercial success with more than 5 million copies sold worldwide in two years and was well received by critics, players, and fans of the show alike. The developer also created several games using their original IPs: Alpha Protocol, Pillars of Eternity series and Tyranny all of which were either RPGs or included role-playing elements in gameplay.",
         "location": "United States",
         "year": "2003",
-        "genre": "Role-Playing (RPG)",
+        "genre": "Role Playing",
         "games": [
             "Fallout: New Vegas - Ultimate Edition",
             "Star Wars: Knights of the Old Republic II - The Sith Lords",
@@ -45,7 +45,7 @@ companyData = [
         "description": "Valve's debut title, Half-Life, was released in 1998. It won more than 50 game of the year awards, and PC Gamer even called it the Best PC Game Ever. Since then, we've released dozens of titles that changed the world. Today, millions of people play our games every day.",
         "location": "United States",
         "year": "1996",
-        "genre": "Adventure",
+        "genre": "Puzzle",
         "games": [
             "Half-Life: Alyx",
             "Portal 2",
