@@ -9,6 +9,7 @@ import {
     Link
   } from "react-router-dom";
 import MembersProfiles from './MembersProfiles';
+import TotalStats from './TotalStats';
 
 const About = (props) => {
 
@@ -45,15 +46,12 @@ const About = (props) => {
             <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
                 Meet our members:
             </div>
-            <div className='row' style={{margin: "5%"}}>
                 <MembersProfiles></MembersProfiles>
-            </div>
             <div className='row' style={{margin: "5%"}}>
-                
+                <TotalStats></TotalStats>
             </div>
-            <div className='row'>
-                
-            </div>
+        
+            
 
             <Link to="/">
                 <div className="animated-button">

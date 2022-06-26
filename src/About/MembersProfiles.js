@@ -1,26 +1,28 @@
-import logo from "../StyleAndImg/logo2.png";
-import linh from "../StyleAndImg/profile-pics/linh.JPG";
+import "../StyleAndImg/style.css";
 
 const MembersProfiles = (props) => {
 
     var membersData = require('./membersData.json');
     return (
-        <div className="row">
-            {membersData.map(item => 
-                <div className='col'>
-                    <img
-                    src={item.picture}
-                    alt="logo"
-                    style={{
-                        width: 150,
-                        borderRadius: "5%",
-                        animation: "glowIn 0.5s",
-                        boxShadow: "0 0 20px rgba(81, 203, 238, 1)"
-                    }}
-                    />
-                    <p className='text'>{item.name}</p>
-                </div>
-            )}
+        <div className="containter">
+            <div className="row" style={{margin: "5% 2%"}}>
+                {membersData.map(item =>                
+                    <div className='col profile-card'>
+                        <img
+                        src={item.picture}
+                        alt="Profile Picture"
+                        style={{
+                            width: 150,
+                            borderRadius: "5%",
+                            animation: "glowIn 0.5s",
+                            boxShadow: "0 0 20px rgba(81, 203, 238, 1)"
+                        }}
+                        />
+                        <p className='text'>{item.name}</p>
+                    </div>
+                    
+                )}
+            </div>
         </div>
     )
 }

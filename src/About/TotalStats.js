@@ -5,7 +5,7 @@ const TotalStats = (props) => {
     return (   
         <div className="row">
         <div className='card-solid'>
-            <div className='col-6'>
+            <div className='col'>
                 <div className='card-inside'>
                     <p className='text-black-head'>Group Stats</p>
                     <div className='row' style={{margin: "3%"}}>
@@ -21,7 +21,7 @@ const TotalStats = (props) => {
                     
                 </div>
             </div>
-            <div className='col-6 test'>  
+            <div className='col'>  
                     <a href="#" className="link-style">Postman API</a><br></br>
                     <a href="https://gitlab.com/lynhvu138/cs373-idb/-/issues" className="link-style">GitLab Issue Tracker</a><br></br>
                     <a href="https://gitlab.com/lynhvu138/cs373-idb" className="link-style">GitLab Repo</a><br></br>
