@@ -29,20 +29,20 @@ const GamePage = (props) => {
             />
 
             <NavBar></NavBar>
-            <div className="container">
+            <div className="container" style={{}}>
                 <div className="row">
-                    <div className="col">
-                        <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
+                    <div className="col" style={{}}>
+                        <div className="pageTitleText" style={{ animation: "fadeIn 0.5s" }}>
                             {gameData.name}
                         </div>
                         <p className="game-metascore">Metascore: {gameData.score}</p>
                         <p className="game-descr">{gameData.description}</p>
-                        <p className="game-descr">Genre: {gameData.genre}</p>
-                        <p className="game-descr">Released: {gameData.releaseDate}</p>
                         <p className="game-descr">Developed by <a href="/companies/comp" style={{color: "white"}}>{gameData.developer}</a></p>
-                        <p className="game-descr">Platforms: {gameData.platforms}</p>
+                        <p className="game-descr"><b>Released:</b> {gameData.releaseDate}</p>
+                        <p className="game-descr"><b>Genre:</b> {gameData.genre}</p>
+                        <p className="game-descr"><b>Platforms:</b> {gameData.platforms}</p>
                     </div>
-                    <div className="col">
+                    <div className="col" style={{}}>
                         <video className="game-video" controls>
                             {gameData.videos.map(vid => (
                                 <source src={vid} alt="Your browser does not support the video tag."/>
@@ -50,10 +50,15 @@ const GamePage = (props) => {
                         </video>
 
                         <div className="game-photo-box">
-                            {gameData.pictures.map(pic => (
-                                <img src={pic} alt="Image not found" className="game-photo" />
-                            ))}
+                            <div class="row">
+                                {gameData.pictures.map(pic => (
+                                <div class="col-md-4">
+                                    <img src={pic} alt="Image not found" className="game-photo" />
+                                </div>
+                                ))}
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
