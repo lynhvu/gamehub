@@ -15,19 +15,6 @@ import BackBtn from '../BackBtn';
 
 const About = (props) => {
 
-    const [data, setData] = useState([{}])
-    var members = JSON.parse(localStorage.getItem("COMPANY"));
-    useEffect(() => {
-        fetch("/profile/").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
-                console.log(data)
-            }
-        )
-    }, []);
-
     return (
         <div className='page'>
             <link rel="stylesheet" href="style.css" type="text/css" />

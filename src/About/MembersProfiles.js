@@ -3,19 +3,7 @@ import MembersInfo from "./MembersInfo";
 import {useState, useEffect} from 'react'
 
 const MembersProfiles = (props) => {
-    
-    var [data, setData] = useState([])
 
-    useEffect(() => {
-        fetch("/memberdata/").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
-                console.log(data)
-            }
-        )
-    }, [])
     var membersData = require('./membersData.json');
     return (
         <div className="containter">

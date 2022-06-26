@@ -3,7 +3,7 @@ import "../StyleAndImg/style.css";
 const MembersInfo = (props) => {
     // var stats = require('./membersData.json');
     var stats = require('./totalStats.json');
-    var memberInfo = JSON.parse(localStorage.getItem("MEMBER"));
+    var memberInfo = require('./membersData.json')
     return (   
         <div className="row card-solid" id="member-stats" style={{display: "none", margin: "2%"}}>    
             <div className='col'>
