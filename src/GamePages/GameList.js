@@ -112,20 +112,20 @@ const GameList = (props) => {
             </div>
             
             <div class="container">
-                <div class="row bg-dark text-light" style={{ opacity: 0.9, borderRadius: 1 }}>
-                    <div class="col-sm">
+                <div class="row bg-dark text-light" style={{ opacity: 0.9, borderRadius: 1, textAlign:"center"}}>
+                    <div class="col-lg col-12">
                         Game Title
                     </div>
-                    <div class="col-sm">
+                    <div class="col-lg col-12">
                         Company
                     </div>
-                    <div class="col-sm">
+                    <div class="col-lg col-12">
                         Genre
                     </div>
-                    <div class="col-sm">
+                    <div class="col-lg col-12">
                         Metascore
                     </div>
-                    <div class="col-sm">
+                    <div class="col-lg col-12">
                         Platforms
                     </div>
                 </div>
@@ -133,19 +133,19 @@ const GameList = (props) => {
                 {gameData.map(item => (
                     <Link to={{pathname: "/games/gamepage"}} onClick={() => {localStorage.setItem("GAME", JSON.stringify(item))}} style={{ textDecoration: "none" }}>
                     <div class="row row2">
-                        <div class="col-sm">
+                        <div class="col-lg col-12">
                             {item.name}
                         </div>
-                        <div class="col-sm">
+                        <div class="col-lg col-12">
                             {item.developer}
                         </div>
-                        <div class="col-sm">
+                        <div class="col-lg col-12">
                             {item.genre}
                         </div>
-                        <div class="col-sm">
+                        <div class="col-lg col-12">
                             {item.score}
                         </div>
-                        <div class="col-sm" style={{fontSize:20}}>
+                        <div class="col-lg col-12" style={{fontSize:20}}>
                             {item.platforms}
                         </div>
                     </div>

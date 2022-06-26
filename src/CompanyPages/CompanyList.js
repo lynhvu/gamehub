@@ -67,7 +67,7 @@ const CompanyList = (props) => {
             <div class="container">
                 <div className="row">
                         {data.map(item => (
-                        <div className="col-4">
+                        <div className="col-lg col-12">
                             <Link to="/companies/comp" className="link-style" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(item))}} style={{ textDecoration: 'none' }}>
                                 <div class="card">
                                     <img class="companyLogo" src={item.img} alt="company logo"></img>

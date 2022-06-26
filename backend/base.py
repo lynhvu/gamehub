@@ -54,11 +54,11 @@ membersData = [{ "name": "Linh Vu",
     "picture": "../StyleAndImg/logo2.png"
 },
 {
-    "name": "1",
-    "year": "1",
-    "major": "1",
-    "skills": "1",
-    "picture": "../StyleAndImg/logo2.png"
+    "name": "Michael Chan",
+    "year": "Junior",
+    "major": "Computer Science",
+    "skills": "Java, C, C++",
+    "picture": "../StyleAndImg/michael.jpg"
 },
 {
     "name": "2",
