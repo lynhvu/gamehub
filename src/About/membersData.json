@@ -46,9 +46,9 @@
 {
     "id": "5",
     "name": "Luke Lu",
-    "year": "5",
-    "major": "5",
-    "skills": "5",
+    "year": "Sophomore",
+    "major": "BS in Computer Science & Mathematics",
+    "skills": "Full Stack Development",
     "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/logo2.png",
     "commits": "#",
     "issues": "#",
