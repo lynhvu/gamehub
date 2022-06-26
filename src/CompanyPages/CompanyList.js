@@ -80,6 +80,9 @@ const CompanyList = (props) => {
                                     </div>
                                     <div class="">
                                         {item.location}
+                                    </div>
+                                    <div>
+                                        Overall Rating: {item.rating}%
                                         <br/><br/>
                                     </div>
                                     <div class="topThree">
