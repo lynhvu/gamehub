@@ -7,6 +7,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+  import BackBtn from '../BackBtn';
 
 const CompanyList = (props) => {
 
@@ -101,16 +102,7 @@ const CompanyList = (props) => {
                         ))}
                 </div>
             </div>
-            
-            <Link to="/">
-                <div className="animated-button">
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    Back
-                </div>
-            </Link>
+            <BackBtn></BackBtn>
         </div>
     )
 

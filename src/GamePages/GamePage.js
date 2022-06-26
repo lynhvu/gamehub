@@ -6,6 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import BackBtn from "../BackBtn";
 
 const GamePage = (props) => {
 
@@ -63,16 +64,7 @@ const GamePage = (props) => {
                 </div>
             </div>
 
-
-            <Link to="" onClick={ () => (window.history.back())}>
-                <div className="animated-button">
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    Back
-                </div>
-            </Link>
+            <BackBtn></BackBtn>
         </div>
     )
 }

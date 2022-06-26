@@ -7,6 +7,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import BackBtn from "../BackBtn";
 
 const GameList = (props) => {
     //var gameData = require('./gamedata.json');
@@ -151,16 +152,7 @@ const GameList = (props) => {
                     </Link>
                 ))}
             </div>
-
-            <Link to="/">
-                <div className="animated-button">
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    Back
-                </div>
-            </Link>
+            <BackBtn></BackBtn>
         </div>
     )
 }

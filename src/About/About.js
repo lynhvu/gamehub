@@ -10,6 +10,7 @@ import {
   } from "react-router-dom";
 import MembersProfiles from './MembersProfiles';
 import TotalStats from './TotalStats';
+import BackBtn from '../BackBtn';
 
 const About = (props) => {
 
@@ -24,8 +25,7 @@ const About = (props) => {
                 console.log(data)
             }
         )
-    }, [])
-
+    }, []);
     return (
         <div className='page'>
             <link rel="stylesheet" href="style.css" type="text/css" />
@@ -50,18 +50,7 @@ const About = (props) => {
             <div className='row' style={{margin: "5%"}}>
                 <TotalStats></TotalStats>
             </div>
-        
-            
-
-            <Link to="/">
-                <div className="animated-button">
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    Back
-                </div>
-            </Link>
+            <BackBtn></BackBtn>
         </div>
     )
 }

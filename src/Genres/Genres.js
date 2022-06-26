@@ -9,6 +9,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import BackBtn from '../BackBtn';
 
 const Genres = (props) => {
     var genresData = require('./genresdata.json');
@@ -46,15 +47,7 @@ const Genres = (props) => {
                 </div>
             </div>
 
-            <Link to="/">
-                <div className="animated-button">
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    Back
-                </div>
-            </Link>
+            <BackBtn></BackBtn>
         </div >
     )
 }

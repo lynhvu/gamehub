@@ -14,6 +14,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import BackBtn from '../BackBtn';
 
 const GenrePage = (props) => {
 
@@ -70,15 +71,7 @@ const GenrePage = (props) => {
                 
             </div>
 
-            <Link to="/">
-                <div className="animated-button">
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    Back
-                </div>
-            </Link>
+            <BackBtn></BackBtn>
         </div>
     )
 }
