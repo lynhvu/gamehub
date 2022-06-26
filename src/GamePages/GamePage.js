@@ -51,13 +51,9 @@ const GamePage = (props) => {
                         </video>
 
                         <div className="game-photo-box">
-                            <div class="row">
-                                {gameData.pictures.map(pic => (
-                                <div class="col-md-4">
-                                    <img src={pic} alt="Image not found" className="game-photo" />
-                                </div>
-                                ))}
-                            </div>
+                            {gameData.pictures.map(pic => (
+                                <img src={pic} alt="Image not found" className="game-photo" />
+                            ))}
                         </div>
 
                     </div>
