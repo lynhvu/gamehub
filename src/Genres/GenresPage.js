@@ -31,7 +31,7 @@ const GenresPage = (props) => {
                         <p className="game-descr">Games: {genresData.games}</p>
                         <p className="game-descr">Companies: {genresData.companies}</p>
                         <p className="game-descr">Genre Description: {genresData.description}e</p>
-                        <p className="game-descr">Themes: {genresData.themes}</p>
+                        <p className="game-descr">Topics: {genresData.themes}</p>
                     </div>
                     <div className="col">
                         <div className="game-photo-box">
