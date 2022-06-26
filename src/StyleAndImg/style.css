@@ -437,7 +437,7 @@ body {
   opacity: 0.8;
   background-color: gray;
   padding:10px;
-  border-radius: 25px;
+  border-radius: 0px;
   font-family: 'Space Mono', monospace;
   font-size: 25px;
   margin:8px;
@@ -448,7 +448,7 @@ body {
   opacity: 0.8;
   background-color: rgba(236, 236, 236, 0.623);
   padding: 10px 0px;
-  border-radius: 25px;
+  border-radius: 0px;
   font-family: 'Space Mono', monospace;
   font-size: 25px;
   margin: 8px;
@@ -631,7 +631,7 @@ p {
 .text-light-head {
   color:white;
   font-family: 'Space Mono', monospace;
-  font-size: 50px;
+  font-size: 25px;
   margin-bottom: 0px;
 }
 
@@ -647,12 +647,14 @@ p {
   color:black;
   font-family: 'Space Mono', monospace;
   font-size: 40px;
+  
 
 }
 .text-black {
   color:black;
   font-family: 'Space Mono', monospace;
   font-size: large;
+  text-align: left;
 }
 
 #sort {
@@ -679,4 +681,8 @@ p {
 
 .center {
   padding-top: 1%;
+}
+
+.left {
+  text-align: left;
 }
