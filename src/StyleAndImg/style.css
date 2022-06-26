@@ -478,6 +478,11 @@ body {
   color: #08142b;
 }
 
+.link-style-light {
+  text-decoration: none;
+  color: white;
+}
+
 .comp-descr {
   color: #d4e0f7;
   font-family: 'Space Mono', monospace;
@@ -596,6 +601,9 @@ body {
   max-height: 50%;
 }
 
+p {
+ 
+}
 .text {
   margin-top: 5%;
   color:white;
@@ -606,14 +614,15 @@ body {
   color:white;
   font-family: 'Space Mono', monospace;
   font-size: large;
+  margin: 0%;
   
 }
 
 .text-light-head {
-  margin: 0;
   color:white;
   font-family: 'Space Mono', monospace;
-  font-size: 100px;
+  font-size: 50px;
+  margin-bottom: 0px;
 }
 
 .text-light {
@@ -627,7 +636,8 @@ body {
 .text-black-head {
   color:black;
   font-family: 'Space Mono', monospace;
-  font-size: 30px;
+  font-size: 40px;
+
 }
 .text-black {
   color:black;
@@ -655,4 +665,8 @@ body {
 
 .profile-card:hover {
   transform: scale(1.2);
+}
+
+.center {
+  padding-top: 1%;
 }

@@ -7,7 +7,7 @@ const MembersProfiles = (props) => {
         <div className="containter">
             <div className="row" style={{margin: "5% 2%"}}>
                 {membersData.map(item =>                
-                    <div className='col profile-card'>
+                    <div className='col profile-card' id="request-info" onClick={() => showInfo()}>
                         <img
                         src={item.picture}
                         alt="Profile Picture"
@@ -23,8 +23,17 @@ const MembersProfiles = (props) => {
                     
                 )}
             </div>
-        </div>
+            
+                
+       
+            </div>
+        
     )
 }
 
+function showInfo(id) {
+    <div className="row" id="total-stats">
+        
+        </div>
+}
 export default MembersProfiles

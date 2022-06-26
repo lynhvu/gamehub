@@ -1,13 +1,13 @@
 [{
-    "number": "#",
+    "number": "100",
     "type": "Commits Made"
 },
 {
-    "number": "#",
+    "number": "100",
     "type": "Issues Resolved"
 },
 {
-    "number": "#",
+    "number": "100",
     "type": "Unit Tests Run"
 }
 ]
