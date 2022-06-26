@@ -27,10 +27,14 @@ const Genres = (props) => {
         )
     }, [])
 
-    const options = [{ value: 'name', text: 'Name' }];
+    const options = [{value: 'name', text: 'Name'},
+                    {value: 'games', text: 'Games'},
+                    {value: 'companies', text: 'Companies'},
+                    {value: 'themes', text: 'Themes'},
+                    ];
     const [selected, setSelected] = useState(options[0].value);
-    const orders = [{ value: 1, text: 'Name A-Z' },
-    { value: '-1', text: 'Name Z-A' }];
+    const orders = [{value: 1, text: 'Ascending (A-Z)'},
+                    {value: -1, text: 'Descending (Z-A)'}];
     const [order, setOrder] = useState(orders[0].value);
 
     const handleSelectChg = event => {
@@ -59,12 +63,19 @@ const Genres = (props) => {
             <div id="sort">
                 Sort By:
             </div>
-            <select value={order} onChange={handleOrderChg}>
-                {orders.map(option => (
+            <select value={selected} onChange={handleSelectChg}>
+                {options.map(option => (
                     <option key={option.value} value={option.value}>
                         {option.text}
                     </option>
                 ))}
+            </select>
+            <select value={order} onChange={handleOrderChg}>
+                    {orders.map(option => (
+                    <option key={option.value} value={option.value}>
+                        {option.text}
+                    </option>
+                    ))}
             </select>
             <div class="container">
                 <div className="row">
@@ -114,9 +125,6 @@ const Genres = (props) => {
                     b = b[propPath[p]];
                 }
             }
-            // convert numeric str's to ints
-            a = a.match(/^\d+$/) ? +a : a;
-            b = b.match(/^\d+$/) ? +b : b;
             return ((a < b) ? -1 * dir : ((a > b) ? 1 * dir : 0));
         });
         // update the data

@@ -21,7 +21,7 @@ const Splash = (props) => {
             <div className='row justify-content-md-center'>
                 <div className='col align-self-end'>
                     <div className="homePageSideText" style={{ animation: "fadeIn 0.5s" }}>
-                        Discover, Share, and Review Games from Various Studios
+                        Discover, Share, and Explore Games from Various Studios
                     </div>
                 </div>
                 <div className='col'>
