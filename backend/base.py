@@ -3,7 +3,7 @@ import json
 
 companyData = [
     {
-        "id": "0",
+        "id": 0,
         "name": "Naughty Dog",
         "description": "Established in 1984, Naughty Dog is one of the most successful and prolific game development studios in the world and a flagship first-party studio within PlayStation Studios. From creating the iconic Crash Bandicoot and Jak and Daxter series to modern franchises like Uncharted and The Last of Us, Naughty Dog is responsible for some of the most critically acclaimed and commercially successful games on Sony’s PlayStation platforms. Through its use of cutting-edge technology and evocative, character-driven storytelling, Naughty Dog has received hundreds of industry and media awards, while developing a passionate fan base of millions of players around the globe.",
         "location": "United States",
@@ -23,7 +23,7 @@ companyData = [
         "img": "https://images.igdb.com/igdb/image/upload/t_logo_med/bcpeptiqicy9g0gn4nur.png",
     },
     {
-        "id": "1",
+        "id": 1,
         "name": "Obsidian Entertainment",
         "description": "Obsidian Entertainment is an American video game developer based in Irvine, California. Former employees of Black Isle Studios founded it. The studio is well-known for their critically acclaimed RPGs such as Pillars of Eternity series, Star Wars Knights of the Old Republic II: The Sith Lords and Fallout New Vegas. Obsidian’s projects often use well-established franchises as a setting. The first two projects developed by the studio were sequels to Star Wars: Knights of the Old Republic and Neverwinter Nights. In 2014 Ubisoft released South Park: The Stick of Truth developed by Obsidian. The game was an RPG based on South Park franchise. It was a commercial success with more than 5 million copies sold worldwide in two years and was well received by critics, players, and fans of the show alike. The developer also created several games using their original IPs: Alpha Protocol, Pillars of Eternity series and Tyranny all of which were either RPGs or included role-playing elements in gameplay.",
         "location": "United States",
@@ -43,7 +43,7 @@ companyData = [
         "img": "https://images.igdb.com/igdb/image/upload/t_logo_med/cl1my.png",
     },
     {
-        "id": "2",
+        "id": 2,
         "name": "Valve Corporation",
         "description": "Valve's debut title, Half-Life, was released in 1998. It won more than 50 game of the year awards, and PC Gamer even called it the Best PC Game Ever. Since then, we've released dozens of titles that changed the world. Today, millions of people play our games every day.",
         "location": "United States",
@@ -169,8 +169,14 @@ genresData = [
     {
         "id": 0,
         "name": "Action",
-        "games": "Elden Ring, Monster Hunter: World, Super Smash Bros., For Honor, Sekiro: Shadows Die Twice",
-        "companies": "Capcom, Nintendo, Ubisoft, Bandai Namco",
+        "games": [
+            "Elden Ring",
+            "Monster Hunter: World",
+            "Super Smash Bros.",
+            "For Honor",
+            "Sekiro: Shadows Die Twice",
+        ],
+        "companies": ["Capcom", "Nintendo", "Ubisoft", "Bandai Namco"],
         "description": "An action game is a video game genre that emphasizes physical challenges, including hand–eye coordination and reaction-time. The genre includes a large variety of sub-genres, such as fighting games, beat 'em ups, shooter games, and platform games. Multiplayer online battle arena and some real-time strategy games are also considered action games.",
         "themes": "physical combats, quick reflexes, abilities and specials, obstables and enemies",
         "icon": "http://www.hectick.net/uploads/1/3/0/5/13050649/1895758_orig.png",
@@ -183,8 +189,18 @@ genresData = [
     {
         "id": 1,
         "name": "Adventure",
-        "games": "Red Dead Redemption 2, Grand Theft Auto V The Last of Us, Assassin's Creed: Valhalla, The Legend of Zelda: Breath of the Wild",
-        "companies": "Rockstar Games, Sony Interactive Entertainment, Naughty Dog",
+        "games": [
+            "Red Dead Redemption 2",
+            "Grand Theft Auto V",
+            "The Last of Us",
+            "Assassin's Creed: Valhalla",
+            "The Legend of Zelda: Breath of the Wild",
+        ],
+        "companies": [
+            "Rockstar Games",
+            "Sony Interactive Entertainment",
+            "Naughty Dog",
+        ],
         "description": "An adventure game is a video game in which the player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving. The genre's focus on story allows it to draw heavily from other narrative-based media, literature and film, encompassing a wide variety of literary genres.",
         "themes": "exploration, gathering and looting, stories and settings",
         "icon": "http://www.hectick.net/uploads/1/3/0/5/13050649/1638940_orig.png",
@@ -197,8 +213,14 @@ genresData = [
     {
         "id": 2,
         "name": "Puzzle",
-        "games": "Portal, Angry Birds, Inside, Little Nightmare, Human Resource Machine",
-        "companies": "Valve, Playdead, Tomorrow Corporation",
+        "games": [
+            "Portal",
+            "Angry Birds",
+            "Inside",
+            "Little Nightmare",
+            "Human Resource Machine",
+        ],
+        "companies": ["Valve Corporation", "Playdead", "Tomorrow Corporation"],
         "description": "Puzzle video games make up a broad genre of video games that emphasize puzzle solving. The types of puzzles can test problem-solving skills, including logic, pattern recognition, sequence solving, spatial recognition, and word completion.",
         "themes": "problem solving, physics, riddles, hidden objects",
         "icon": "http://www.hectick.net/uploads/1/3/0/5/13050649/8037402_orig.png",
@@ -211,8 +233,14 @@ genresData = [
     {
         "id": 3,
         "name": "Role Playing",
-        "games": "Cyperpunk 2077, The Witcher 3: Wild Hunt, The Elder Scrolls V: Skyrim, Final Fantasy XV",
-        "companies": "CD Projekt, Bethesda Game Studios, Sqaure Enix",
+        "games": [
+            "Cyperpunk 2077",
+            "The Witcher 3: Wild Hunt",
+            "The Elder Scrolls V: Skyrim",
+            "Final Fantasy XV",
+            "Fallout: New Vegas",
+        ],
+        "companies": ["CD Projekt", "Bethesda Game Studios", "Sqaure Enix", "Obsidian Entertainment"],
         "description": "A role-playing game is a game in which players assume the roles of characters in a fictional setting. Players take responsibility for acting out these roles within a narrative, either through literal acting or through a process of structured decision-making regarding character development.",
         "themes": "fiction, narration, decision-making, character development",
         "icon": "http://www.hectick.net/uploads/1/3/0/5/13050649/2096188_orig.png",
@@ -225,8 +253,20 @@ genresData = [
     {
         "id": 4,
         "name": "Shooter",
-        "games": "Counter-Strike: Global Offensive, Apex Legends, Tom Clancy's Rainbow Six Siege, Overwatch 2, Call of Duty",
-        "companies": "Valve, Respawn Entertainment, Ubisoft, Blizzard Entertainment, Activision",
+        "games": [
+            "Counter-Strike: Global Offensive",
+            "Apex Legends",
+            "Tom Clancy's Rainbow Six Siege",
+            "Overwatch 2",
+            "Call of Duty",
+            "Back 4 Blood",
+        ],
+        "companies": [
+            "Respawn Entertainment",
+            "Ubisoft",
+            "Blizzard Entertainment",
+            "Activision",
+        ],
         "description": "Shooter video games or shooters are a subgenre of action video games where the focus is almost entirely on the defeat of the character's enemies using the weapons given to the player. Usually these weapons are firearms or some other long-range weapons, and can be used in combination with other tools such as grenades for indirect offense, armor for additional defense, or accessories such as telescopic sights to modify the behavior of the weapons. A common resource found in many shooter games is ammunition, armor or health, or upgrades which augment the player character's weapons.",
         "themes": "guns, grenades, spatial awareness, reflexes, teamwork",
         "icon": "http://www.hectick.net/uploads/1/3/0/5/13050649/5191714_orig.png",

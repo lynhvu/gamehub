@@ -78,10 +78,10 @@ const Genres = (props) => {
                                             {item.name}
                                         </div>
                                         <div class="">
-                                            {item.games}
+                                            {item.games[0]}, {item.games[1]}, {item.games[2]}
                                         </div>
                                         <div class="">
-                                            {item.companies}
+                                            {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
                                         </div>
                                         <div class="">
                                             {item.themes}
