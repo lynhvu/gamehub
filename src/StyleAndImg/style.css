@@ -429,7 +429,7 @@ body {
   transition:0.6s;
 }
 
-.card:hover, .card-inside-eff:hover {
+.card:hover {
   opacity: 0.7;
 }
  
@@ -452,7 +452,7 @@ body {
   border-radius: 0px;
   font-family: 'Space Mono', monospace;
   font-size: 25px;
-  margin: 8px;
+  margin: 0px;
   transition: 0.6s;
 }
 
@@ -728,4 +728,14 @@ body {
 .justify-items-center {
   display: flex; 
   justify-content: center; /*Aligns horizontally center */
+}
+
+.stretched-link::after {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
 }

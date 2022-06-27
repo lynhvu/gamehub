@@ -14,7 +14,7 @@ const MemberInfo = () => {
                                 boxShadow: "0 0 20px rgba(81, 203, 238, 1)"}}/>
                         </div>
                         <div className='col-5 text-black card-inside '>
-                            <p className='text-light-head'>{item.name}</p>
+                            <p className='text-light-head'><b>{item.name}</b></p>
                             <p><b>Responsibility:</b> {item.resp}</p>
                             <p><b>Major:</b> {item.major}</p>
                             <p><b>Year:</b> {item.year}</p>

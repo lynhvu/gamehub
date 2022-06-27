@@ -1,15 +1,10 @@
 import "../StyleAndImg/style.css";
 import NavBar from "../components/NavBar";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
 import BackBtn from '../BackBtn';
 import MemberInfo from "./MemberInfo";
 import GroupStats from "./GroupStats";
 import Apis from "./Apis";
+import Tools from "./Tools";
 
 const AboutUs = (props) => {
     
@@ -45,9 +40,11 @@ const AboutUs = (props) => {
                 APIs
             </div>
             <Apis></Apis>
+            
             <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
                 Tools
             </div>
+            <Tools></Tools>
             <br></br>
            <BackBtn></BackBtn>
         </div>
