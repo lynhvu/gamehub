@@ -27,14 +27,14 @@ const Genres = (props) => {
         )
     }, [])
 
-    const options = [{value: 'name', text: 'Name'},
-                    {value: 'games', text: 'Games'},
-                    {value: 'companies', text: 'Companies'},
-                    {value: 'num', text: 'Number of Popular Games'},
-                    {value: 'themes', text: 'Themes'},];
+    const options = [{ value: 'name', text: 'Name' },
+    { value: 'games', text: 'Games' },
+    { value: 'companies', text: 'Companies' },
+    { value: 'num', text: 'Number of Popular Games' },
+    { value: 'themes', text: 'Themes' },];
     const [selected, setSelected] = useState(options[0].value);
-    const orders = [{value: 1, text: 'Ascending (A-Z or numerical)'},
-                    {value: '-1', text: 'Descending (Z-A or numerical)'}];
+    const orders = [{ value: 1, text: 'Ascending (A-Z or numerical)' },
+    { value: '-1', text: 'Descending (Z-A or numerical)' }];
     const [order, setOrder] = useState(orders[0].value);
 
     const handleSelectChg = event => {
@@ -71,11 +71,11 @@ const Genres = (props) => {
                 ))}
             </select>
             <select value={order} onChange={handleOrderChg}>
-                    {orders.map(option => (
+                {orders.map(option => (
                     <option key={option.value} value={option.value}>
                         {option.text}
                     </option>
-                    ))}
+                ))}
             </select>
             <div class="container">
                 <div className="row">
@@ -89,16 +89,16 @@ const Genres = (props) => {
                                             {item.name}
                                         </div>
                                         <div class="">
-                                            {item.games[0]}, {item.games[1]}, {item.games[2]}
+                                            Games: {item.games[0]}, {item.games[1]}, {item.games[2]}
                                         </div>
                                         <div class="">
-                                            {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
+                                            Companies: {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
                                         </div>
                                         <div class="">
                                             # Popular Games: {item.num}
                                         </div>
                                         <div class="">
-                                            {item.themes}
+                                            Topics: {item.themes}
                                         </div>
                                     </div>
                                 </Link>
