@@ -10,8 +10,6 @@ import {
 import BackBtn from "../BackBtn";
 
 const GameList = (props) => {
-    //var gameData = require('./gamedata.json');
-
     var [gameData, setGameData] = useState([])
 
     useEffect(() => {
@@ -52,11 +50,11 @@ const GameList = (props) => {
         setOrder(event.target.value);
     };
     
+    // Sort the table by attributes in the selection menu
     function sortByProperty(){
         var objArray = gameData;
         var prop = "attributes." + selected;
         var direct= order;
-        // if (arguments.length<2) throw new Error("ARRAY, AND OBJECT PROPERTY MINIMUM ARGUMENTS, OPTIONAL DIRECTION");
         if (!Array.isArray(objArray)) throw new Error("FIRST ARGUMENT NOT AN ARRAY");
         const clone = objArray.slice(0);
         const propPath = (prop.constructor===Array) ? prop : prop.split(".");
@@ -67,9 +65,6 @@ const GameList = (props) => {
                         b = b[propPath[p]];
                     }
             }
-            // convert numeric strings to integers
-            /*a = a.match(/^\d+$/) ? +a : a;
-            b = b.match(/^\d+$/) ? +b : b;*/
             return ( (a < b) ? -1*direct : ((a > b) ? 1*direct : 0) );
         });
         gameData = clone;
