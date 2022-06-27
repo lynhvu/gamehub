@@ -9,6 +9,7 @@ import {
 import BackBtn from '../BackBtn';
 import MemberInfo from "./MemberInfo";
 import GroupStats from "./GroupStats";
+import Apis from "./Apis";
 
 const AboutUs = (props) => {
     
@@ -43,6 +44,7 @@ const AboutUs = (props) => {
             <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
                 APIs
             </div>
+            <Apis></Apis>
             <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
                 Tools
             </div>

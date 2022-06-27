@@ -3,7 +3,7 @@ import "../StyleAndImg/style.css";
 const GroupStats = (props) => {
     var stats = require('./totalStats.json');
     return (   
-        <div className="container-fluid">
+        <div className="container">
             <div className="row card-solid" id="total-stats" style={{margin: "5%"}}>
                 <h1>Group Stats</h1>    
                     {stats.map(item =>

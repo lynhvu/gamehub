@@ -51,10 +51,10 @@
         "id": "5",
         "name": "Luke Lu",
         "year": "Sophomore",
-        "major": "BS in Computer Science & Mathematics",
+        "major": "BS in Computer Science & Math",
         "resp": "Full Stack Development",
         "about": "",
-        "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/logo2.png",
+        "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/luke.jpg",
         "commits": "#",
         "issues": "#",
         "tests": "#"
