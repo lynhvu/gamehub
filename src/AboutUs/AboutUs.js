@@ -28,7 +28,7 @@ const AboutUs = (props) => {
             <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
                 Meet our members
             </div>
-            <br></br>
+      
             <MemberInfo></MemberInfo>
 
             <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
@@ -40,7 +40,7 @@ const AboutUs = (props) => {
                 APIs
             </div>
             <Apis></Apis>
-            
+
             <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
                 Tools
             </div>
