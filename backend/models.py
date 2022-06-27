@@ -300,8 +300,11 @@ genresData = [
 ]
 
 
-api = Flask(__name__)
+api = Flask(__name__, static_folder="../build", static_url_path='/')
 
+@api.route('/')
+def index():
+    return api.send_static_file('index.html')
 
 @api.route("/profiles/")
 def profiles():
