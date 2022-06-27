@@ -138,7 +138,7 @@ gamesData = [
         "description": "The population of the Earth almost disappeared as a result of a pandemic caused by a mutated fungus. The disease causes irreversible changes in the human body, a person loses his mind and behaves aggressively, like a zombie. Civilization no longer exists, few survivors live in isolation under the protection of the military. Cities outside the zones are dangerous ruins inhabited by infected people and people who have almost lost humanity.",
         "genre": ["Action", "Adventure"],
         "releaseDate": "Jun 14, 2013",
-        "developer": "Naughty Dog",
+        "developer":"Naughty Dog",
         "platforms": "Playstation 3, Playstation 4",
         "videos": [
             "https://media.rawg.io/media/stories/511/5112442e0722abb31eda4ea97594f4f6.mp4"
@@ -304,7 +304,7 @@ api = Flask(__name__, static_folder="../build", static_url_path='/')
 
 @api.route('/')
 def index():
-    return api.send_static_file('index.html')
+    return "hellooooooo"
 
 @api.route("/profiles/")
 def profiles():
