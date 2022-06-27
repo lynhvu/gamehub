@@ -2,6 +2,7 @@
     {
         "id": 0,
         "name": "Action",
+        "num": 153616,
         "games": [
             "Elden Ring",
             "Monster Hunter: World",
@@ -27,6 +28,7 @@
     {
         "id": 1,
         "name": "Adventure",
+        "num": "116447",
         "games": [
             "Red Dead Redemption 2",
             "Grand Theft Auto V",
@@ -51,6 +53,7 @@
     {
         "id": 2,
         "name": "Puzzle",
+        "num": 86556,
         "games": [
             "Portal",
             "Angry Birds",
@@ -75,6 +78,7 @@
     {
         "id": 3,
         "name": "Role Playing",
+        "num": 47013,
         "games": [
             "Cyperpunk 2077",
             "The Witcher 3: Wild Hunt",
@@ -99,6 +103,7 @@
     {
         "id": 4,
         "name": "Shooter",
+        "num": "53203",
         "games": [
             "Counter-Strike: Global Offensive",
             "Apex Legends",

@@ -27,14 +27,10 @@ const Genres = (props) => {
         )
     }, [])
 
-    const options = [{value: 'name', text: 'Name'},
-                    {value: 'games', text: 'Games'},
-                    {value: 'companies', text: 'Companies'},
-                    {value: 'themes', text: 'Themes'},
-                    ];
+    const options = [{ value: 'name', text: 'Name' }];
     const [selected, setSelected] = useState(options[0].value);
-    const orders = [{value: 1, text: 'Ascending (A-Z)'},
-                    {value: -1, text: 'Descending (Z-A)'}];
+    const orders = [{ value: 1, text: 'Name A-Z' },
+    { value: '-1', text: 'Name Z-A' }];
     const [order, setOrder] = useState(orders[0].value);
 
     const handleSelectChg = event => {
@@ -63,19 +59,12 @@ const Genres = (props) => {
             <div id="sort">
                 Sort By:
             </div>
-            <select value={selected} onChange={handleSelectChg}>
-                {options.map(option => (
+            <select value={order} onChange={handleOrderChg}>
+                {orders.map(option => (
                     <option key={option.value} value={option.value}>
                         {option.text}
                     </option>
                 ))}
-            </select>
-            <select value={order} onChange={handleOrderChg}>
-                    {orders.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.text}
-                    </option>
-                    ))}
             </select>
             <div class="container">
                 <div className="row">
@@ -93,6 +82,9 @@ const Genres = (props) => {
                                         </div>
                                         <div class="">
                                             {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
+                                        </div>
+                                        <div class="">
+                                            # Popular Games: {item.num}
                                         </div>
                                         <div class="">
                                             {item.themes}
@@ -125,6 +117,9 @@ const Genres = (props) => {
                     b = b[propPath[p]];
                 }
             }
+            // convert numeric str's to ints
+            a = a.match(/^\d+$/) ? +a : a;
+            b = b.match(/^\d+$/) ? +b : b;
             return ((a < b) ? -1 * dir : ((a > b) ? 1 * dir : 0));
         });
         // update the data
