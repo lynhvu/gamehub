@@ -15,5 +15,5 @@ fi
 
 cd backend
 source env/bin/activate
-$PYTHON base.py
+$PYTHON models.py
 $SHELL
