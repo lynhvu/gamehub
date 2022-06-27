@@ -22,9 +22,9 @@ const MemberInfo = () => {
 
                         </div>
                         <div className='col-3 col-sm-3 text-black card-solid'>
-                            <p>Commits made: {item.commits}</p>
-                            <p>Issues resolved: {item.issues}</p>
-                            <p>Unit tests run: {item.tests}</p>
+                            <p style={{marginTop: "15%"}}><b>Commits made:</b> {item.commits}</p>
+                            <p><b>Issues resolved:</b> {item.issues}</p>
+                            <p><b>Unit tests run:</b> {item.tests}</p>
                         </div>      
                     </div>
                 )}

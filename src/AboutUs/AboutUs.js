@@ -2,7 +2,7 @@ import "../StyleAndImg/style.css";
 import NavBar from "../components/NavBar";
 import BackBtn from '../BackBtn';
 import MemberInfo from "./MemberInfo";
-import GroupStats from "./GroupStats";
+import GroupStats from "./ProjInfo";
 import Apis from "./Apis";
 import Tools from "./Tools";
 

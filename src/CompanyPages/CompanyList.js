@@ -76,41 +76,41 @@ const CompanyList = (props) => {
                     ))}
             </select>
             <div class="container">
-                <div className="row">
+                <div className="row" style={{marginTop: "3%"}}>
                         {data.map(item => (
-                        <div className="col-lg col-12">
+                        <div className="col-lg col-12 card">
                             <Link to="/companies/comp" className="link-style" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(item))}} style={{ textDecoration: 'none' }}>
-                                <div class="card">
-                                    <img class="companyLogo" src={item.img} alt="company logo"></img>
-                                    
-                                    <div class="compName">
-                                        {item.name}
-                                    </div>
-                                    <div class="">
-                                        {item.year}
-                                    </div>
-                                    <div class="">
-                                        {item.location}
-                                    </div>
-                                    <div>
-                                        Overall Rating: {item.rating}%
-                                        <br/><br/>
-                                    </div>
-                                    <div class="topThree">
-                                        <b>Top 3 Games:</b>
-                                        <ol>
-                                            <li>
-                                                {item.games[0]}
-                                            </li>
-                                            <li>
-                                                {item.games[1]}
-                                            </li>
-                                            <li>
-                                                {item.games[2]}
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </div>
+                                
+                            <img class="companyLogo" src={item.img} alt="company logo"></img>
+                            
+                            <div class="compName">
+                                {item.name}
+                            </div>
+                            <div class="">
+                                {item.year}
+                            </div>
+                            <div class="">
+                                {item.location}
+                            </div>
+                            <div>
+                                Overall Rating: {item.rating}%
+                                <br/><br/>
+                            </div>
+                            <div class="topThree">
+                                <b>Top 3 Games:</b>
+                                <ol>
+                                    <li>
+                                        {item.games[0]}
+                                    </li>
+                                    <li>
+                                        {item.games[1]}
+                                    </li>
+                                    <li>
+                                        {item.games[2]}
+                                    </li>
+                                </ol>
+                            </div>
+                              
                             </Link>
                         </div>
                         ))}

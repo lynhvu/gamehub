@@ -679,7 +679,8 @@ body {
 .card-eff:hover {
   border-color: #08142b;
   border-style: solid;
-  border-width: 5px;
+  border-width: 2px;
+  opacity: 1;
 }
 
 .center {
