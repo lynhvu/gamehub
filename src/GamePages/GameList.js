@@ -140,9 +140,7 @@ const GameList = (props) => {
                             {item.developer}
                         </div>
                         <div class="col-lg col-12">
-                            {item.genre.map(item => (
-                                <div>{item}&nbsp;</div>
-                            ))}
+                            {item.genre.map(genre => (genre)).join(', ')}
                         </div>
                         <div class="col-lg col-12">
                             {item.score}
