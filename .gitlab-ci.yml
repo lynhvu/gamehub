@@ -1,0 +1,11 @@
+image: node:latest
+
+stages:
+  - build
+
+build_front_end:
+  stage: build
+  script:
+    - npm install
+    - CI=false npm run-script build
+
