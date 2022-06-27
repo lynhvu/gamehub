@@ -24,10 +24,14 @@ const CompanyList = (props) => {
         )
     }, [])
 
-    const options = [{value: 'name', text: 'Name'}];
+    const options = [{value: 'name', text: 'Name'},
+                    {value: 'year', text: 'Year'},
+                    {value: 'location', text: 'Location'},
+                    {value: 'rating', text: 'Overall Rating'},
+                    {value: 'games', text: 'Top 3 Games'},];
     const [selected, setSelected] = useState(options[0].value);
-    const orders = [{value: 1, text: 'Name A-Z'},
-                    {value: '-1', text: 'Name Z-A'}];
+    const orders = [{value: 1, text: 'Ascending (A-Z or numerical)'},
+                    {value: '-1', text: 'Descending (Z-A or numerical)'}];
     const [order, setOrder] = useState(orders[0].value);
 
     const handleSelectChg = event => {
@@ -57,12 +61,19 @@ const CompanyList = (props) => {
             <div id="sort">
                 Sort By:
             </div>
-            <select value={order} onChange={handleOrderChg}>
-                {orders.map(option => (
+            <select value={selected} onChange={handleSelectChg}>
+                {options.map(option => (
                     <option key ={option.value} value ={option.value}>
                         {option.text}
                     </option>
                 ))}
+            </select>
+            <select value={order} onChange={handleOrderChg}>
+                    {orders.map(option => (
+                    <option key={option.value} value={option.value}>
+                        {option.text}
+                    </option>
+                    ))}
             </select>
             <div class="container">
                 <div className="row">
@@ -80,6 +91,9 @@ const CompanyList = (props) => {
                                     </div>
                                     <div class="">
                                         {item.location}
+                                    </div>
+                                    <div>
+                                        Overall Rating: {item.rating}%
                                         <br/><br/>
                                     </div>
                                     <div class="topThree">
@@ -124,8 +138,8 @@ const CompanyList = (props) => {
                 }
             }
             // convert numeric str's to ints
-            a = a.match(/^\d+$/) ? +a : a;
-            b = b.match(/^\d+$/) ? +b : b;
+            /*a = a.match(/^\d+$/) ? +a : a;
+            b = b.match(/^\d+$/) ? +b : b;*/
             return ((a < b) ? -1*dir : ((a > b) ? 1*dir : 0));
         });
         // update the data

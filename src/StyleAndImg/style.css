@@ -690,3 +690,42 @@ body {
 .left {
   text-align: left;
 }
+
+.homePageSideText {
+  font-family: 'Space Mono', monospace;
+  font-weight: bolder;
+  margin: 15%;
+  font-size: 60px;
+  color: white;
+  text-shadow:1px 1px 1px #fff, 1px 1px 10px #ccc;
+  text-align: left;
+}
+
+.homePageSideBox {
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  background-color: rgba(140, 140, 140, 0.5);
+  border-radius: 69px;
+  width: 400px;
+  height: 400px;
+  margin: 10%;
+}
+
+.homePageSideBox:hover {
+  background-color: rgba(255, 255, 254, 0.5);
+  border-radius: 69px;
+  margin: 10%;
+}
+
+.align-items-center {
+  display: flex; 
+  align-items: center;  /*Aligns vertically center */
+  justify-content: center; /*Aligns horizontally center */
+}
+
+.justify-items-center {
+  display: flex; 
+  justify-content: center; /*Aligns horizontally center */
+}
