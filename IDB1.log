@@ -1,3 +1,21 @@
+commit 984b236a92316529dd73e254fd94dc7278498cf7
+Author: Lauren <lblummer@utexas.edu>
+Date:   Mon Jun 27 21:45:36 2022 -0500
+
+    from gcp with pranav
+
+commit fcb1c8991be7d3c6d08951ab7b15f5e1d343e40a
+Author: Lauren <lblummer@utexas.edu>
+Date:   Mon Jun 27 19:46:02 2022 -0500
+
+    updated models.html
+
+commit 5c16ea76f34a935593c39f70ddc36bc66b34dbc7
+Author: Lauren <lblummer@utexas.edu>
+Date:   Mon Jun 27 19:37:04 2022 -0500
+
+    pydoc for models.py and git log... makefiles too
+
 commit 8993408665947f9a562d443f384190a793e6d28d
 Author: janssenbozon <janssenbozon@gmail.com>
 Date:   Mon Jun 27 17:07:09 2022 -0500
