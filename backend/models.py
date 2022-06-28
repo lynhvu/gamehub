@@ -1,6 +1,8 @@
 from flask import Flask, Response
 import json
 
+"""Company Data"""
+
 companyData = [
     {
         "id": 0,
@@ -67,50 +69,8 @@ companyData = [
     },
 ]
 
-membersData = [
-    {
-        "name": "Linh Vu",
-        "year": "Junior",
-        "major": "Computer Science & Math",
-        "skills": "Project management, Full stack web development",
-        "picture": "../StyleAndImg/logo2.png",
-    },
-    {
-        "name": "Michael Chan",
-        "year": "Junior",
-        "major": "Computer Science",
-        "skills": "Java, C, C++",
-        "picture": "../StyleAndImg/michael.jpg",
-    },
-    {
-        "name": "2",
-        "year": "2",
-        "major": "2",
-        "skills": "2",
-        "picture": "../StyleAndImg/logo2.png",
-    },
-    {
-        "name": "3",
-        "year": "3",
-        "major": "3",
-        "skills": "3",
-        "picture": "../StyleAndImg/logo2.png",
-    },
-    {
-        "name": "4",
-        "year": "4",
-        "major": "4",
-        "skills": "4",
-        "picture": "../StyleAndImg/logo2.png",
-    },
-    {
-        "name": "5",
-        "year": "5",
-        "major": "5",
-        "skills": "5",
-        "picture": "../StyleAndImg/logo2.png",
-    },
-]
+"""Game Data"""
+
 
 gamesData = [
     {
@@ -168,6 +128,9 @@ gamesData = [
         ],
     },
 ]
+
+"""Genre Data"""
+
 genresData = [
     {
         "id": 0,
@@ -299,19 +262,13 @@ genresData = [
     }
 ]
 
-
+# creating our Flask
 api = Flask(__name__, static_folder="../build", static_url_path='/')
 
 @api.route('/')
 def index():
     """Index function for home page."""
     return "hellooooooo"
-
-@api.route("/profiles/")
-def profiles():
-    """Profiles function for transferring member data"""
-    data = json.dumps(membersData)
-    return Response(data)
 
 
 @api.route("/compdata/")
