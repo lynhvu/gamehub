@@ -1,4 +1,5 @@
 from flask import Flask, Response
+from flask_cors import CORS
 import json
 
 """Company Data"""
@@ -264,6 +265,7 @@ genresData = [
 
 # creating our Flask
 api = Flask(__name__, static_folder="../build", static_url_path='/')
+CORS(api)
 
 @api.route('/')
 def index():

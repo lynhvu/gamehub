@@ -58,6 +58,9 @@ const GenresPage = (props) => {
     });
 
     function compName(item) {
+        if (JSON.parse(localStorage.getItem("COMPANY")) == null) {
+            return null;
+        }
         if (item == JSON.parse(localStorage.getItem("COMPANY")).name) {
             return (<Link to="/companies/comp">{item}</Link>);
         } else {
@@ -66,6 +69,9 @@ const GenresPage = (props) => {
     }
 
     function gameName(item) {
+        if (JSON.parse(localStorage.getItem("GAME")) == null) {
+            return null;
+        }
         if (item == JSON.parse(localStorage.getItem("GAME")).name) {
             return (<Link to="/games/gamepage">{item}</Link>);
         } else {
