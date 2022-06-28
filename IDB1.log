@@ -1,0 +1,772 @@
+commit 8993408665947f9a562d443f384190a793e6d28d
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Mon Jun 27 17:07:09 2022 -0500
+
+    added major
+
+commit 24098aa6de89e88c308d169d3bf20ea568965dfa
+Merge: ff4431d ce1d819
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Mon Jun 27 16:56:02 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+    added profile pic
+
+commit ff4431d184b3111d48d77c860aa716d2f9a11841
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Mon Jun 27 16:55:56 2022 -0500
+
+    added profile pic for janssen
+
+commit ce1d819b9b9324c73d57bc041dfc7353538bd8a3
+Author: Lukeluds <luyuan925@163.com>
+Date:   Mon Jun 27 16:55:56 2022 -0500
+
+    adding topic names for genres page
+
+commit e462c2e5ec766e315c878aeb36a93f9d206a81b8
+Merge: 8062939 e54d4f7
+Author: Michael Chan <michan@utexas.edu>
+Date:   Mon Jun 27 16:44:48 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit 8062939cd660fad9851a238d0e36ee329856faf0
+Author: Michael Chan <michan@utexas.edu>
+Date:   Mon Jun 27 16:44:19 2022 -0500
+
+    added template tests file
+
+commit e54d4f70c10e9362a5e573af721f5d5752ee4208
+Merge: 2269661 c940cab
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 16:56:30 2022 -0400
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit 22696613716eb77f2a961cae35201c681f11540b
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 16:56:18 2022 -0400
+
+    GCP - testing
+
+commit c940cab4e9d0a924a713aa7da6a9ba87f9b27865
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Mon Jun 27 14:27:14 2022 -0500
+
+    added comma seperator to genres in game list
+
+commit eb05a4f2f0b438b87ed53ef6726714a5f2beeb46
+Author: Michael Chan <michan@utexas.edu>
+Date:   Mon Jun 27 12:57:52 2022 -0500
+
+    added links for game pages
+
+commit 5453bd079ca5dfb89cd7a38aad343fa1389ae3d3
+Author: Lauren <lblummer@utexas.edu>
+Date:   Mon Jun 27 09:02:41 2022 -0500
+
+    modify models.py
+
+commit e8526835b2d958323866d953684612e379438459
+Merge: f2d6f19 10a7d34
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 04:41:43 2022 -0400
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit f2d6f19dc60b5eb7eb3a3dc482877331c9b6965d
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 04:41:30 2022 -0400
+
+    GCP - edited app.yaml
+
+commit 10a7d34d93a0912c7aff17ca79578977a728db50
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 08:25:08 2022 +0000
+
+    Delete python
+
+commit ae889d7ba69f6d5ee0a91dbc73ec7a3136d16935
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 08:14:10 2022 +0000
+
+    GPC - upload testing files
+
+commit 44203e839060c32fb0e56d87278e00308638b6f5
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 03:23:42 2022 -0400
+
+    splash page - removed the horizontal slide bar and fixed font size
+
+commit eb85321436942c058d2f1d0e028daf3321222fdb
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 03:07:47 2022 -0400
+
+    about page - formated profile section, comp page - filled in bg for cards
+
+commit 9fbb14652101a8e4ba4cb3400c4489521c0aebe2
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 02:34:38 2022 -0400
+
+    about page - fixed columns bootstrap and formated profile section
+
+commit 04cf3e5ea8df8f8f5fa3ba8213aef13d0a40a82a
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 02:17:41 2022 -0400
+
+    about page - tools added + hover effect + linkable
+
+commit f075fd1828507d5fe8a16e040757137afa630fcf
+Author: Lauren <lblummer@utexas.edu>
+Date:   Mon Jun 27 00:19:13 2022 -0500
+
+    modified models.py
+
+commit 4af79fecec7224428d20f11b52486a4342aa57f1
+Merge: e0dc69e 50e7c8a
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 01:00:37 2022 -0400
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit e0dc69e03640eb885a2c6368de2b736d530d20da
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 01:00:15 2022 -0400
+
+    about page - list of APIs + descriptions + hover effect
+
+commit 50e7c8a96b5d0e8359683e631a9c8e1d85f5fa1a
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Mon Jun 27 03:51:52 2022 +0000
+
+    Replace luke.jpg
+
+commit d453fc46520682f234d6ca0e74e7bb3e3d61dd0d
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 22:35:54 2022 -0500
+
+    adding app.yaml and requirements.txt to backend
+
+commit 02445d89f9b3860e45e5af988084854c8443673d
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 20:55:33 2022 -0500
+
+    renamed base.py to models.py and updated launch file
+
+commit 4e9232e1662366a7798cd9a8cc45add8e21edafe
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 20:41:26 2022 -0500
+
+    created app.yaml file
+
+commit bdfd9d822d56f735bf12d2d6170ce79f9cdf5c26
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jun 26 20:26:18 2022 -0500
+
+    extra attribute for sorting genres
+
+commit c2009b4c8a941415c2995fb5757a3bc765671268
+Author: Lauren Blummer <lblummer@utexas.edu>
+Date:   Mon Jun 27 00:41:17 2022 +0000
+
+    Create .gitlab-ci.yml file
+
+commit 685291782cd39c3be56cdbacaed2481fa6e29bf1
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sun Jun 26 19:03:36 2022 -0500
+
+    adding attribute for genres
+
+commit 076e8593f31ddcaae55b4a721b07ec14413c5f5b
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jun 26 18:38:49 2022 -0500
+
+    added sorting by all columns for companies and genres, changed background
+
+commit 2ece76710f2e2e7e0fd2f3c17e2d0d0c81108ff4
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 17:55:57 2022 -0500
+
+    adding in rating for companies
+
+commit 08ffa4a64879c9bb9ea4d84f46b2ccf6001f826b
+Merge: 66bcb80 80b0c06
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sun Jun 26 17:14:34 2022 -0500
+
+    Merge branch 'dev' of gitlab.com:lynhvu138/cs373-idb into dev
+
+commit 66bcb807a0fa2ff4c3e99581c88e1c36a80e73cf
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sun Jun 26 17:14:28 2022 -0500
+
+    adding luke's pic
+
+commit 80b0c06d61d9a8a6d553877d005e1f9a36400748
+Merge: 09f16b9 fffa324
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Sun Jun 26 17:13:26 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+    Added new stuff to splash page to match figma
+
+commit 09f16b967e823e5e2c3f7191ee79b93f2a94b808
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Sun Jun 26 17:13:21 2022 -0500
+
+    Added stuff to splash page to match figma
+
+commit fffa324ef7e900be78aa985fcacc3691ebb3bca3
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 16:18:50 2022 -0500
+
+    updated companies page linking for genre now that flask is implemented for genres.
+
+commit 7e4a4ad8653f8f4d67235f7f0913be73010c13d7
+Merge: 7f4b257 0f54070
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sun Jun 26 15:19:08 2022 -0500
+
+    Merge branch 'dev' of gitlab.com:lynhvu138/cs373-idb into dev
+
+commit 7f4b2578b86005b077f355113f9c1c0eb4edc4ab
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sun Jun 26 15:18:50 2022 -0500
+
+    Genres finalized hopefully
+
+commit 0f540707b06c84d45ba79977c47c6dc487f439ee
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sun Jun 26 15:41:24 2022 -0400
+
+    about page - added group stats + links
+
+commit 150ea1e767da6093b9308820eed9dc792c36919d
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sun Jun 26 14:33:52 2022 -0500
+
+    makefile added
+
+commit 53f39de19cc218149985cbbfb40ce9de37e09153
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sun Jun 26 14:19:03 2022 -0500
+
+    created script to run backend
+
+commit 61826c777fc12e6cec98f665b6f2dc3ebb234157
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 14:13:34 2022 -0500
+
+    added id numbers to company data in base.py
+
+commit bfa2633e1891cc9fca586aad517b2cfcceb25123
+Merge: fc5cce7 601da7a
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jun 26 13:37:49 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit fc5cce7ef6063220bad8861826e73b7b3446beda
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jun 26 13:37:37 2022 -0500
+
+    fixed picture sizing on game pages
+
+commit 601da7a322c8d9edf02ac3bf0f900f3f80c9a839
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 13:28:07 2022 -0500
+
+    removed import in app.js that no longer is needed
+
+commit 0f7056ae95166d9c04d253a14fa34c35b1eff4a0
+Merge: a5e97cd 9201f63
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sun Jun 26 14:23:58 2022 -0400
+
+    about page - rebuilt layout
+
+commit a5e97cdc44347d67d81a873261d5f09658343db6
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sun Jun 26 14:19:36 2022 -0400
+
+    about page - rebuilt layout
+
+commit 9201f63b751ea216e7b477c5ce8ee30f6d7ea2bc
+Merge: 37c2cc5 8b052b0
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sun Jun 26 13:17:36 2022 -0500
+
+    Merge branch 'dev' of gitlab.com:lynhvu138/cs373-idb into dev
+    done
+
+commit 37c2cc525e8c2ce03d7e045beae822d544e37a78
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sun Jun 26 12:56:26 2022 -0500
+
+    genres done?
+
+commit 8b052b0929c8c0491c991abf64e7ced665d9bbc9
+Merge: 7fc6a68 fae9510
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jun 26 12:43:16 2022 -0500
+
+    adding profile info
+
+commit 7fc6a6894811e76f48c2352dd766e3203f49cb70
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jun 26 12:38:03 2022 -0500
+
+    added profile info
+
+commit fae9510444fb08324f6b4819beedaeed0a75b026
+Merge: 1c0ec82 21efc84
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 12:30:30 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit 1c0ec82e9082cc92ca66469f5ccd1da6c6b41834
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 12:30:07 2022 -0500
+
+    links from company page to games and genres implemented.
+
+commit 21efc8452f6d7740010206b423bcb52834090242
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sun Jun 26 12:15:57 2022 -0500
+
+    adding about info
+
+commit e8031a12205d94c874d7146a71a7f57344aeaecc
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sun Jun 26 12:23:29 2022 -0400
+
+    re-push about page
+
+commit 0382970444fcca0cd4d496ef43336d3557cb0246
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jun 26 10:45:37 2022 -0500
+
+    added profile info and fixed the screen resizing formatting for list pages, closes #24
+
+commit 37556aab2e09299f51a40a3fc9e0a179525e607a
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sun Jun 26 09:14:20 2022 -0500
+
+    updated info in membersData.json - lauren - and fixed small error in base.py
+
+commit e206bf287de920ef9a01cf495daeb184930e2fe0
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sun Jun 26 03:11:34 2022 -0400
+
+    about page - onClick member selection worked, data didn't map correctly
+
+commit 9f11ab62153e8619e64929af4b760c6ba71c408a
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sun Jun 26 00:46:11 2022 -0400
+
+    clean up - moved 'back button' into new file and fixed previous path
+
+commit e28338bd54f519c13d06ee123c6485aa1b9b18f6
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sun Jun 26 00:36:35 2022 -0400
+
+    about page - fixed group stat columns, edited member data
+
+commit 70af0665fffb6e73c901a0de60026dbaea2ced3a
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sat Jun 25 23:11:03 2022 -0400
+
+    about page - formated and added hover effect to member profiles
+
+commit 07c66d16f2c8bc0e8b6773c68a1820414dca8374
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 20:31:23 2022 -0500
+
+    updates to member data - daniel
+
+commit 61552c930486a3f8d9de0130ea5a9237969d5a0d
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 20:25:26 2022 -0500
+
+    input lauren member data
+
+commit 752ce6d076a5de3a79c9212d1c61e3c11b895614
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 20:04:14 2022 -0500
+
+    added pfp
+
+commit cdf889d5018a9d5b1d89a1f1da7e895163d35c72
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sat Jun 25 20:59:06 2022 -0400
+
+    about page with total stats
+
+commit e217123c6ea18c2cba88a7d378860c456b435fef
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 19:31:37 2022 -0500
+
+    cosmetic changes
+
+commit f0ce72c822053d84e3358c4c9192033319c4e4e5
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 19:21:00 2022 -0500
+
+    comestic changes
+
+commit 5fd0dde4a198fa2fb89e8729a183a8eb5c994522
+Merge: 938f5ac 9963ee0
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sat Jun 25 19:09:20 2022 -0500
+
+    Merge branch 'dev' of gitlab.com:lynhvu138/cs373-idb into dev
+
+commit 938f5acfc48ef4e78e008da3caf0ead303d3c8e5
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sat Jun 25 19:09:01 2022 -0500
+
+    finished genres
+
+commit 9963ee0859479f2fcc38b672dcc40bc62b52e2e3
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sat Jun 25 18:53:49 2022 -0500
+
+    added flask for game list and game pages
+
+commit 0a699d4716f30a5849f3391ee9ab6a4246776fc6
+Merge: dfa50b9 339f33c
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sat Jun 25 18:37:19 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit dfa50b9639eafca0e0fb34602d4d9b47d35be472
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sat Jun 25 18:37:02 2022 -0500
+
+    added more attributes to game list
+
+commit 339f33c9e553874e8f3fa1b3244e5da4ff836a7f
+Merge: 125ed4f 9b51adc
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sat Jun 25 19:34:01 2022 -0400
+
+    about page with pics and names + data json
+
+commit 125ed4f7e26adc857075c75e58b1b485f6964cfd
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Sat Jun 25 19:14:13 2022 -0400
+
+    about page with profile pics and names
+
+commit 9b51adc86a293500c6e8e5a8d214bd390bf00c7f
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sat Jun 25 18:10:48 2022 -0500
+
+    updating App.js for genres page
+
+commit b6c895fc5447aec3c0323f63662bc23fa0becba8
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sat Jun 25 18:08:15 2022 -0500
+
+    action genre complete, need adding more info for other genres
+
+commit a730538e5818c38602b285dc1f0304324025dd21
+Merge: 7f0b967 e49ed4e
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 17:40:33 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit 7f0b967c151f2e9af74c6490a0c13a4ffbe1a72c
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 17:40:29 2022 -0500
+
+    companies page sorting implemented.
+
+commit e49ed4e0fdc65485d70c4d494e0bbae47b3167d5
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 14:58:42 2022 -0500
+
+    company hyperlinks on gamepage work now
+
+commit 8bbf83378474e7051aafbb630304dd0510c8bf61
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 14:54:53 2022 -0500
+
+    companies page receiving data from backend.
+
+commit 42f1bec6781b451d84af251fe854ad9e2968c9fe
+Author: Lukeluds <luyuan925@163.com>
+Date:   Sat Jun 25 14:28:02 2022 -0500
+
+    fixing buttons and removing unnecessary imports for Genres
+
+commit 632fe6ae255d96b257b5acc927b408d9068ffb71
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 14:08:15 2022 -0500
+
+    expanded proper back button functionality to new pages
+
+commit 753a9b8ac5106be80f4ae829ddc5de72c4a319f3
+Merge: ba2a74a b60df4e
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Sat Jun 25 13:57:35 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+    
+    Added genre and genres page
+
+commit ba2a74a971a16f1542fda4572f897ce46e3503d8
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Sat Jun 25 13:57:29 2022 -0500
+
+    Made genres page and genre page
+
+commit b60df4ece2f13382cbac5039726164d1fa1ce0d7
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 13:48:37 2022 -0500
+
+    partial back button fix, hyperlinked company pages to game pages
+
+commit 6f0bdd8d8f1f3f1d7d9bec6c42f2132659e1d041
+Merge: 1d6defc f1f8b59
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 13:34:14 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit 1d6defcb65a7c61337af9b76f69f85b18d53cc30
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 13:34:06 2022 -0500
+
+    company list and single read hard-coded data and display it
+
+commit f1f8b597232db6375e53584b65b3a905e59ff19a
+Merge: e33f69c 26dd513
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sat Jun 25 13:13:28 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit e33f69cc0f144219dacf84efae33ed554523116a
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sat Jun 25 13:13:15 2022 -0500
+
+    added selections for order ascending/descending, closes #19
+
+commit 26dd513230428dba55c02e20bfe92ed0c70a89eb
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 12:33:18 2022 -0500
+
+    simple data read and populate for company list page. no flask yet
+
+commit 7cd304c70ea6e0e429ed2f1d458c4b62e5b1fe3b
+Merge: bd5bfaa addba7b
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 10:25:53 2022 -0500
+
+    game page dynamically changes based on game data
+
+commit bd5bfaa8c99293283b05ce09de2f5ccde1ee004a
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Sat Jun 25 10:24:12 2022 -0500
+
+    dynamically loads game pages now
+
+commit addba7b489bc0debdc26925e57bf5eb5c453d7a3
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 09:51:19 2022 -0500
+
+    Added link to navbar image to bring back to splash when clicked.
+
+commit 13a54867c2636d5f7c46d92dc19c7fbdec02e5e1
+Author: Lauren <lblummer@utexas.edu>
+Date:   Sat Jun 25 09:43:30 2022 -0500
+
+    fixed navbar active status #17
+
+commit 26f0a5e8dd59b4e79c2b047e585c465776e87f9f
+Author: Daniel Gonzalez <gonzalezdanny753@gmail.com>
+Date:   Fri Jun 24 21:11:50 2022 -0500
+
+    env added to gitignore, updates to gamelist page
+
+commit fb4c3acff230389544c8cb5c60c662407414fed6
+Author: Michael Chan <michan@utexas.edu>
+Date:   Fri Jun 24 18:37:28 2022 -0500
+
+    improved game page
+
+commit 6837ee4569ebad671372cd89d010cafc351efbe4
+Author: Lauren <lblummer@utexas.edu>
+Date:   Fri Jun 24 17:30:45 2022 -0500
+
+    adding in main for the base.py file
+
+commit 42bd439cafd69243b5b14a4d7acb9236ea76700b
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Fri Jun 24 17:09:05 2022 -0500
+
+    added code to pull data from flask in about.js
+
+commit ad4d1fba9200d938f67a0a99e49a50a66291d687
+Merge: 9c2882f b11b8ba
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Fri Jun 24 17:05:27 2022 -0500
+
+    flask!!!! woooo
+
+commit 9c2882f5b8de97d6bc7b531b02a2ff7553748fc5
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Fri Jun 24 17:05:12 2022 -0500
+
+    connected front-end to back-end
+
+commit b11b8ba1452edc8baa3e008db539a05f6d5ef25b
+Merge: cf4628f 18b12d1
+Author: Michael Chan <michan@utexas.edu>
+Date:   Fri Jun 24 16:59:47 2022 -0500
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit cf4628f65489791e829270c02606f51774eb42b6
+Author: Michael Chan <michan@utexas.edu>
+Date:   Fri Jun 24 16:59:22 2022 -0500
+
+    adding basic game page
+
+commit 18b12d1f4b69bc1305cff3344c75a9fa3e1b8388
+Author: Lukeluds <luyuan925@163.com>
+Date:   Fri Jun 24 16:45:40 2022 -0500
+
+    fixing navbar for Genres
+
+commit fe2ece59555277322a662c52fa1e97fa850cfdb3
+Author: Lukeluds <luyuan925@163.com>
+Date:   Fri Jun 24 11:19:04 2022 -0500
+
+    adding Genres page basic layout
+
+commit e0a0b04e6dd6775b8c3d1090f9ef66504f4d065b
+Merge: 20c0f68 10997da
+Author: Lukeluds <luyuan925@163.com>
+Date:   Fri Jun 24 11:17:38 2022 -0500
+
+    Merge branch 'dev' of gitlab.com:lynhvu138/cs373-idb into dev
+
+commit 20c0f68d64f86fc0151d640a007b6af1d1e4f256
+Author: Lukeluds <luyuan925@163.com>
+Date:   Fri Jun 24 11:14:38 2022 -0500
+
+    adding Genres page layout
+
+commit 10997da2d21533cec9e46e8438fcd892a200b2dc
+Author: Lauren <lblummer@utexas.edu>
+Date:   Fri Jun 24 10:03:01 2022 -0500
+
+    Implemented NavBar component. No active status though.
+
+commit 3d3c6471b5577733223f24ad998ad1fa5efca977
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Fri Jun 24 04:04:11 2022 -0400
+
+    finished layout for individual company page
+
+commit 456eb02230e1defa4685d02ccdb7fca6589ae47a
+Merge: 7345088 34870ec
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Fri Jun 24 03:09:32 2022 -0400
+
+    Merge branch 'dev' of https://gitlab.com/lynhvu138/cs373-idb into dev
+
+commit 7345088e7493520280c16c71d6d4b28e71679dcc
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Fri Jun 24 03:09:12 2022 -0400
+
+    formatted splash page
+
+commit 34870ec053af116c78025d8c6f4d61132c259d35
+Author: Lukeluds <luyuan925@163.com>
+Date:   Fri Jun 24 01:58:14 2022 -0500
+
+    adding genre button
+
+commit d4c29f7556849d41cbd0fcb7f5b5b3ff5ece41c3
+Author: Lauren Blummer <lblummer@utexas.edu>
+Date:   Fri Jun 24 05:23:42 2022 +0000
+
+    attempting to capitalize S
+
+commit 83c40a5ad6fa46045dca09a73b1cc738dc949158
+Author: Lauren <lblummer@utexas.edu>
+Date:   Fri Jun 24 00:20:53 2022 -0500
+
+    companies page template made and added and linked
+
+commit fdc115612e70685eb0a8d143fab632b35baad79a
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jun 23 18:59:02 2022 -0500
+
+    added page for list of games, smaller logo, and nav bar, closes #14
+
+commit 871eb2991abca6f9f71cdbe7ca0709daa5e659fa
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jun 23 16:26:53 2022 -0500
+
+    added about page, implemented links between pages, fixes #13
+
+commit 58d62dae13c1ce35a5e10898c5927d2580ee4a1a
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jun 23 15:06:17 2022 -0500
+
+    fixed bug with images not appearing in splash page in react, fixes #12
+
+commit 9592ee38831cc427011985371824dac685f68f21
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jun 23 14:55:05 2022 -0500
+
+    working on splash page in React
+
+commit 1a571880289a2ac3c4e96586edce94faa1da157e
+Merge: 1050900 40d6fb1
+Author: Janssen Bozon <janssenbozon@gmail.com>
+Date:   Thu Jun 23 18:53:33 2022 +0000
+
+    Merge branch 'add-react' into 'dev'
+    
+    Created react project
+    
+    See merge request lynhvu138/cs373-idb!1
+
+commit 40d6fb10c4971936d93081a0e77fc3d8c0293be0
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Thu Jun 23 13:51:41 2022 -0500
+
+    Created react project
+
+commit 1050900c67e59b702c95d3916f361ea4df0ead9d
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Tue Jun 21 15:37:25 2022 -0400
+
+    moved pictures to new folder, updated bg picture size and centered logo
+
+commit 0fa00b93e49929144f6d2c542f151a472d2a1260
+Author: Lukeluds <luyuan925@163.com>
+Date:   Tue Jun 21 14:21:12 2022 -0500
+
+    testing discord webhook
+
+commit 722e14304e9db2273025514c824351b9ac68c419
+Author: Michael Chan <michan@utexas.edu>
+Date:   Tue Jun 21 13:01:09 2022 -0500
+
+    adding basic image files, HTML, and CSS for website splash and about pages, closes #3
+
+commit 11510e17885a8225b2ab09960c0fa63ee3303318
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Tue Jun 21 03:48:28 2022 +0000
+
+    Initial commit

@@ -304,28 +304,33 @@ api = Flask(__name__, static_folder="../build", static_url_path='/')
 
 @api.route('/')
 def index():
+    """Index function for home page."""
     return "hellooooooo"
 
 @api.route("/profiles/")
 def profiles():
+    """Profiles function for transferring member data"""
     data = json.dumps(membersData)
     return Response(data)
 
 
 @api.route("/compdata/")
 def companies():
+    """Companies function for transferring company data"""
     data = json.dumps(companyData)
     return Response(data)
 
 
 @api.route("/gamedata/")
 def games():
+    """Games function for transferring game data"""
     data = json.dumps(gamesData)
     return Response(data)
 
 
 @api.route("/genresdata/")
 def genres():
+    """Genres function for transferring genre data"""
     data = json.dumps(genresData)
     return Response(data)
 
