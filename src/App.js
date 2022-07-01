@@ -1,16 +1,14 @@
 
 /*export default App;*/
 
-/*import React from "react";*/
+import React from "react";
 import Splash from "./Splash/Splash";
-import About from "./About/About";
 import GameList from "./GamePages/GameList";
 import GamePage from "./GamePages/GamePage";
 import CompanyList from "./CompanyPages/CompanyList";
 import IndividualCompany from "./CompanyPages/IndividualCompany";
 import Genres from "./Genres/Genres"
 import AboutUs from "./AboutUs/AboutUs";
-import MembersProfiles from "./About/MembersProfiles";
 import GenresPage from "./Genres/GenresPage"
 import {
   BrowserRouter as Router,

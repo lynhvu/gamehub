@@ -7,9 +7,9 @@
         "resp": "Full Stack Development",
         "about": "",
         "picture": "https://media-exp1.licdn.com/dms/image/C5603AQFYvgLLYtObEQ/profile-displayphoto-shrink_400_400/0/1656205313134?e=1661990400&v=beta&t=7NsmWwFqW2s91VJuubBkzC3Q3e5IcrAxw5L6e7IQPt8",
-        "commits": "#",
-        "issues": "#",
-        "tests": "#"
+        "commits": "12",
+        "issues": "1",
+        "tests": "0"
     },
     {
         "id": "2",
@@ -19,9 +19,9 @@
         "resp": "Full Stack Development, iOS Development",
         "about": "",
         "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/janssen.JPG",
-        "commits": "#",
-        "issues": "#",
-        "tests": "#"
+        "commits": "7",
+        "issues": "0",
+        "tests": "0"
     },
     {
         "id": "3",
@@ -31,9 +31,9 @@
         "resp": "Full Stack Development",
         "about": "",
         "picture": "https://www.cs.utexas.edu/users/lblummer/lauren.JPG",
-        "commits": "#",
-        "issues": "#",
-        "tests": "#"
+        "commits": "27",
+        "issues": "5",
+        "tests": "0"
     },
     {
         "id": "4",
@@ -43,9 +43,9 @@
         "resp": "Project Management, Front End Development",
         "about": "",
         "picture": "https://github.com/lynhvu/personal-website.github.io/blob/main/img/profile.JPG?raw=true",
-        "commits": "#",
-        "issues": "#",
-        "tests": "#"
+        "commits": "23",
+        "issues": "5",
+        "tests": "0"
     },
     {
         "id": "5",
@@ -55,9 +55,9 @@
         "resp": "Full Stack Development",
         "about": "",
         "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/luke.jpg",
-        "commits": "#",
-        "issues": "#",
-        "tests": "#"
+        "commits": "15",
+        "issues": "0",
+        "tests": "0"
     },
     {
         "id": "6",
@@ -67,8 +67,8 @@
         "resp": "Full Stack Development",
         "about": "",
         "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/michael.jpg",
-        "commits": "#",
-        "issues": "#",
-        "tests": "#"
+        "commits": "17",
+        "issues": "5",
+        "tests": "0"
     }
 ]

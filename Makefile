@@ -26,8 +26,8 @@ else                                   # UTCS
     DOC := docker run -it -v $$(PWD):/usr/cs373 -w /usr/cs373 fareszf/python
 endif
 
-run:
-	npm start & source launch
-
 IDB1.log:
 	git log > IDB1.log
+
+models.html:
+	cd backend && $(PYDOC) -w models
