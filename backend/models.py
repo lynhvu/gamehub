@@ -1,6 +1,8 @@
 from flask import Flask, Response
 from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
 import json
+import os
 
 """Company Data"""
 
@@ -266,6 +268,55 @@ genresData = [
 # creating our Flask
 api = Flask(__name__, static_folder="../build", static_url_path='/')
 CORS(api)
+
+api.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
+# this needs to be fixed still, just put in temp data vv
+api.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost:5432/gamehubdb'
+
+db = SQLAlchemy(api)
+
+# association table for companies and genres
+comp_genre = db.Table('comp_genre',
+    db.Column('company_id', db.Integer, db.ForeignKey('company.id')),
+    db.Column('genre_id', db.Integer, db.ForeignKey('genre.id')))
+
+# Company Model
+class Company(db.Model):
+    __tablename__ = 'company'
+
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(50), nullable = False)
+    description = db.Column(db.String(250))
+    location = db.Column(db.String(50))
+    year = db.Column(db.Integer)
+    rating = db.Column(db.Integer)
+    games = db.relationship('Game', backref='company')
+
+# Game Model
+class Game(db.Model):
+    __tablename__ = 'game'
+    
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(50), nullable = False)
+    description = db.Column(db.String(250))
+    score = db.Column(db.Integer)
+    genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
+    released = db.Column(db.String(50))
+    company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
+    #platform?
+    #trailer?
+
+# Genre Model
+class Genre(db.Model):
+    __tablename__ = 'genre'
+
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(50), nullable = False)
+    description = db.Column(db.String(250))
+    num_games = db.Column(db.Integer)
+    games = db.relationship('Game', backref='genre')
+    #themes?
 
 @api.route('/')
 def index():
