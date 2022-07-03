@@ -313,6 +313,7 @@ class Game(db.Model):
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
     released = db.Column(db.String(50))
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
+    pictures = db.Column(db.PickleType(mutable=True))
     #platform?
     #trailer?
 
