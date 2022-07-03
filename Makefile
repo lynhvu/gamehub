@@ -31,3 +31,6 @@ IDB1.log:
 
 models.html:
 	cd backend && $(PYDOC) -w models
+
+run:
+	npm start & source launch

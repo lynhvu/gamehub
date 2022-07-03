@@ -87,7 +87,7 @@ const CompanyList = (props) => {
                                 {item.name}
                             </div>
                             <div class="">
-                                {item.year}
+                                Est. {item.year}
                             </div>
                             <div class="">
                                 {item.location}

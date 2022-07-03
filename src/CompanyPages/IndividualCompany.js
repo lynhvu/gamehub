@@ -73,11 +73,11 @@ const IndividualCompany = (props) => {
                         <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                             {compData.name}
                         </div>
-                        <p class="comp-descr"><u>Description:</u> <p id ="comp-descr">{compData.description}</p></p>
-                        <p class="comp-descr"><u>Founded in:</u> {compData.year}</p>
-                        <p class="comp-descr"><u>Based in:</u> {compData.location}</p>
-                        <p class="comp-descr"><u>Overall Rating:</u> {compData.rating}%</p>
-                        <p class="comp-descr"><u>Main Genre:</u> <Link to="/genrespage">{compData.genre}</Link></p>
+                        <p class="game-descr"><u>Description:</u> {compData.description}</p>
+                        <p class="game-descr"><u>Founded in:</u> {compData.year}</p>
+                        <p class="game-descr"><u>Based in:</u> {compData.location}</p>
+                        <p class="game-descr"><u>Overall Rating:</u> {compData.rating}%</p>
+                        <p class="game-descr"><u>Main Genre:</u> <Link to="/genrespage">{compData.genre}</Link></p>
                     </div>
 
                     <div className="col">

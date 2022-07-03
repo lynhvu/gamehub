@@ -19,14 +19,11 @@ const AboutUs = (props) => {
             />
             <NavBar></NavBar>
             <br />
-            <div className="title" style={{ animation: "fadeIn 0.5s" }}>
+            <div className="pageTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 About Us
             </div>
             <div className="textbox" style={{ animation: "fadeIn 1.5s" }}>
-                We are GameHub developers, a group of CS students at UT Austin.
-            </div>
-            <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
-                Meet our members
+                We are GameHub developers, a group of CS students at UT Austin. Come meet our members!
             </div>
       
             <MemberInfo></MemberInfo>

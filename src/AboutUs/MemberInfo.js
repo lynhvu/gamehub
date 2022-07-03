@@ -1,3 +1,5 @@
+import { hover } from '@testing-library/user-event/dist/hover';
+
 const MemberInfo = () => {
     var membersData = require('./membersData.json');
     return (
@@ -9,7 +11,7 @@ const MemberInfo = () => {
                             <img src={item.picture} alt="Profile Picture"
                                 style={{
                                 width: "100%",
-                                borderRadius: "0%",
+                                borderRadius: "10px",
                                 animation: "glowIn 0.5s",
                                 boxShadow: "0 0 20px rgba(81, 203, 238, 1)"}}/>
                         </div>
