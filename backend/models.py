@@ -269,8 +269,17 @@ genresData = [
 api = Flask(__name__, static_folder="../build", static_url_path='/')
 CORS(api)
 
+# Not sure about this, but it was in the example
+USER ="postgres"
+PASSWORD ="abc"
+PUBLIC_IP_ADDRESS ="localhost:5432"
+DBNAME ="gamehubdb"
+
+
 api.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
+# needs to be fixed
+os.environ.get("DB_STRING",f'postgresql://{postgres}:{password}@{localhost:5432}/{gamehubdb}')
 # this needs to be fixed still, just put in temp data vv
 api.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost:5432/gamehubdb'
 
@@ -318,32 +327,4 @@ class Genre(db.Model):
     games = db.relationship('Game', backref='genre')
     #themes?
 
-@api.route('/')
-def index():
-    """Index function for home page."""
-    return "hellooooooo"
-
-
-@api.route("/compdata/")
-def companies():
-    """Companies function for transferring company data"""
-    data = json.dumps(companyData)
-    return Response(data)
-
-
-@api.route("/gamedata/")
-def games():
-    """Games function for transferring game data"""
-    data = json.dumps(gamesData)
-    return Response(data)
-
-
-@api.route("/genresdata/")
-def genres():
-    """Genres function for transferring genre data"""
-    data = json.dumps(genresData)
-    return Response(data)
-
-
-if __name__ == "__main__":
-    api.run()
+db.create_all()
