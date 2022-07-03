@@ -88,17 +88,18 @@ const Genres = (props) => {
                                         <div class="compName">
                                             {item.name}
                                         </div>
+                                        <hr class="genre-line"></hr>
                                         <div class="">
-                                            Games: {item.games[0]}, {item.games[1]}, {item.games[2]}
+                                            <text class="bold-text">Popular {item.name} Games:</text> <br/> {item.games[0]}, {item.games[1]}, {item.games[2]}
                                         </div>
                                         <div class="">
-                                            Companies: {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
+                                            <text class="bold-text">Companies That Produce {item.name} Games:</text> <br/> {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
                                         </div>
                                         <div class="">
-                                            # Popular Games: {item.num}
+                                            <text class="bold-text">Number of {item.name} Games:</text> <br/> {item.num}
                                         </div>
                                         <div class="">
-                                            Topics: {item.themes}
+                                            <text class="bold-text">Topics in {item.name} Games:</text> <br/> {item.themes}
                                         </div>
                                     </div>
                                 </Link>
