@@ -69,7 +69,7 @@ def create_games():
             pictures.append(i['image'])
         
         # trailer is hard to get, maybe just use more pictures?
-        newGame = Game(id = id, name = name, description = description, location = location, year = year, rating = rating, games = games, pictures = pictures)
+        newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, company_id = company_id, pictures = pictures)
         
         db.session.add(newGame)
         db.session.commit()
@@ -85,21 +85,23 @@ def create_genres():
     populate genre table
     """
     genre = requests.get("https://api.rawg.io/api/genres?key=1266974d1b554edc9e9236367db40ea8").json()
+    i = 0
 
     for oneGenre in genre['results']:
-        id = genre['results']['id']
-        name = genre['results']['name']
-        description = genre['results'][]
-        num_games = genre['results']['games_count']
-        games = genre['results'][]
+        oneGenre = requests.get("https://api.rawg.io/api/genres/" + str(oneGenre['id']) + "?key=1266974d1b554edc9e9236367db40ea8").json()
+        id = i
+        name = oneGenre['name']
+        description = oneGenre['description']
+        num_games = oneGenre['games_count']
+        games = oneGenre[]
 		
         newGenre = Genre(id = id, name = name, description = description, num_games = num_games, games = games)
         
         db.session.add(newGenre)
         db.session.commit()
-        
+        i += 1
 
 
 
 create_companies()
-
+create_genres()
