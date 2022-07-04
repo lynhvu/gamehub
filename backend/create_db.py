@@ -76,5 +76,30 @@ def create_games():
 #db.drop_all()
 #db.create_all()
 
+
+# ------------
+# create_genres
+# ------------
+def create_genres():
+    """
+    populate genre table
+    """
+    genre = requests.get("https://api.rawg.io/api/genres?key=1266974d1b554edc9e9236367db40ea8").json()
+
+    for oneGenre in genre['results']:
+        id = genre['results']['id']
+        name = genre['results']['name']
+        description = genre['results'][]
+        num_games = genre['results']['games_count']
+        games = genre['results'][]
+		
+        newGenre = Genre(id = id, name = name, description = description, num_games = num_games, games = games)
+        
+        db.session.add(newGenre)
+        db.session.commit()
+        
+
+
+
 create_companies()
 
