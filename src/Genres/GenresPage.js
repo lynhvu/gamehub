@@ -12,6 +12,7 @@ import BackBtn from "../BackBtn";
 const GenresPage = (props) => {
 
     var genresData = JSON.parse(localStorage.getItem("GENRES"));
+    console.log(genresData)
 
     var [gameData, setGameData] = useState([])
 

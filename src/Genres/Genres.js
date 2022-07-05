@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import "../StyleAndImg/style.css";
 import logo from "../StyleAndImg/logosmall.png"
 import NavBar from "../components/NavBar";
-
+import ReactPaginate from 'react-paginate';
+import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,9 +13,9 @@ import {
 import BackBtn from '../BackBtn';
 
 const Genres = (props) => {
-    // var genresData = require('./genresdata.json');
+    var data = require('./genresdata.json');
 
-    var [data, setData] = useState([])
+/*    var [data, setData] = useState([])
 
     useEffect(() => {
         fetch("/genresdata/").then(
@@ -25,7 +26,52 @@ const Genres = (props) => {
                 console.log(data)
             }
         )
-    }, [])
+    }, []) */
+
+    const [genres, setGenres] = useState(data);
+    const [pageNumber, setPageNumber] = useState(0);
+  
+    const genresPerPage = 9;
+    const pagesVisited = pageNumber * genresPerPage;
+  
+    const displayGenres = data
+      .slice(pagesVisited, pagesVisited + genresPerPage)
+      .map((item) => {
+        return (
+          <Col sm={4} style={{marginBottom: '10px'}}>
+              <Link to="/genrespage" className='link-style' onClick={() => { localStorage.setItem("GENRES", JSON.stringify(item)) }} style={{ textDecoration: "none" }}>
+                  <Card style={{height: '100%', width: '100%'}}>
+                      <Card.Img variant="top" src={item.icon} style={{objectFit: 'cover'}}/>
+                      <Card.Body>
+                          <Card.Title><h1>{item.name}</h1></Card.Title>
+                      </Card.Body>
+                      <ListGroup className="list-group-flush">
+                          <ListGroupItem>
+                            <b>Games: </b> {item.games[0]}, {item.games[1]}, {item.games[2]}
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            <b>Companies: </b> {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            <b># Popular Games: </b> {item.num}
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            <b>Topics: </b> {item.themes}
+                          </ListGroupItem>
+                      </ListGroup>
+                  </Card>
+              </Link>
+          </Col>
+        );
+      });
+  
+    const pageCount = Math.ceil(genres.length / genresPerPage);
+  
+    const changePage = ({ selected }) => {
+      setPageNumber(selected);
+    };
+
+
 
     const options = [{ value: 'name', text: 'Name' },
     { value: 'games', text: 'Games' },
@@ -79,33 +125,19 @@ const Genres = (props) => {
             </select>
             <div class="container">
                 <div className="row">
-                    {data.map(item => (
-                        <div className="col-lg-12">
-                            <Link to="/genres/genrespage" className='link-style' onClick={() => { localStorage.setItem("GENRES", JSON.stringify(item)) }} style={{ textDecoration: "none" }}>
-                                <Link to="/genrespage" className='link-style'>
-                                    <div class="card">
-                                        <img class="companyLogo" src={item.icon} alt="company logo"></img>
-                                        <div class="compName">
-                                            {item.name}
-                                        </div>
-                                        <div class="">
-                                            Games: {item.games[0]}, {item.games[1]}, {item.games[2]}
-                                        </div>
-                                        <div class="">
-                                            Companies: {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
-                                        </div>
-                                        <div class="">
-                                            # Popular Games: {item.num}
-                                        </div>
-                                        <div class="">
-                                            Topics: {item.themes}
-                                        </div>
-                                    </div>
-                                </Link>
-                            </Link>
-                        </div>
-                    ))}
+                    {displayGenres}
                 </div>
+                <ReactPaginate
+                previousLabel={"Prev"}
+                nextLabel={"Next"}
+                pageCount={pageCount}
+                onPageChange={changePage}
+                containerClassName={"paginationBttns"}
+                previousLinkClassName={"previousBttn"}
+                nextLinkClassName={"nextBttn"}
+                disabledClassName={"paginationDisabled"}
+                activeClassName={"paginationActive"}
+                />
             </div>
 
             <BackBtn></BackBtn>
