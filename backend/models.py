@@ -270,25 +270,27 @@ api = Flask(__name__, static_folder="../build", static_url_path='/')
 CORS(api)
 
 # Not sure about this, but it was in the example
-USER ="postgres"
-PASSWORD ="abc"
-PUBLIC_IP_ADDRESS ="localhost:5432"
-DBNAME ="gamehubdb"
+USER = "postgres"
+PASSWORD = "abc"
+PUBLIC_IP_ADDRESS = "localhost:5432"
+DBNAME = "gamehubdb"
 
 
 api.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 # needs to be fixed
-os.environ.get("DB_STRING",f'postgresql://{USER}:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}')
-# this needs to be fixed still, just put in temp data vv
+os.environ.get(
+    "DB_STRING", f'postgresql://{USER}:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}')
+# this needs to be fixed still, just put in temp data
 api.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost:5432/gamehubdb'
 
 db = SQLAlchemy(api)
 
 # association table for companies and genres
 comp_genre = db.Table('comp_genre',
-    db.Column('company_id', db.Integer, db.ForeignKey('company.id')),
-    db.Column('genre_id', db.Integer, db.ForeignKey('genre.id')))
+                      db.Column('company_id', db.Integer,
+                                db.ForeignKey('company.id')),
+                      db.Column('genre_id', db.Integer, db.ForeignKey('genre.id')))
 
 # company-games: one to many
 # company-genre: many to many
@@ -299,21 +301,24 @@ comp_genre = db.Table('comp_genre',
 class Company(db.Model):
     __tablename__ = 'company'
 
-    id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(50), nullable = False)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250))
     location = db.Column(db.String(50))
-    year = db.Column(db.String(50))  # changed this to string because igdb returns timestamps funny
-    num_games = db.Column(db.Integer) # replacement for rating
+    # changed this to string because igdb returns timestamps funny
+    year = db.Column(db.String(50))
+    num_games = db.Column(db.Integer)  # replacement for rating
     games = db.relationship('Game', backref='company')
     img = db.Column(db.String(250))
 
 # Game Model
+
+
 class Game(db.Model):
     __tablename__ = 'game'
-    
-    id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(50), nullable = False)
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250))
     score = db.Column(db.Integer)
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
@@ -321,19 +326,22 @@ class Game(db.Model):
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
     pictures = db.Column(db.PickleType(mutable=True))
     platforms = db.Column(db.PickleType(mutable=True))
-    #trailer?
+    # trailer?
 
 # Genre Model
+
+
 class Genre(db.Model):
     __tablename__ = 'genre'
 
-    id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(50), nullable = False)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250))
     num_games = db.Column(db.Integer)
     games = db.relationship('Game', backref='genre')
-    picture = db.Column(db.String(200), nullable = False)
+    picture = db.Column(db.String(200), nullable=False)
     themes = db.Column(db.String(250))
     companies = db.Column(db.PickleType(mutable=True))
+
 
 db.create_all()
