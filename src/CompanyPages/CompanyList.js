@@ -28,6 +28,30 @@ const CompanyList = (props) => {
   const compsPerPage = 9;
   const pagesVisited = pageNumber * compsPerPage;
 
+  const options = [
+    { value: "name", text: "Name" },
+    { value: "year", text: "Year" },
+    { value: "location", text: "Location" },
+    { value: "rating", text: "Overall Rating" },
+    { value: "games", text: "Top 3 Games" },
+  ];
+  const [selected, setSelected] = useState(options[0].value);
+  const orders = [
+    { value: 1, text: "Ascending (A-Z or numerical)" },
+    { value: "-1", text: "Descending (Z-A or numerical)" },
+  ];
+  const [order, setOrder] = useState(orders[0].value);
+
+  const handleSelectChg = (event) => {
+    setSelected(event.target.value);
+  };
+
+  const handleOrderChg = (event) => {
+    setOrder(event.target.value);
+  };
+
+  sortByProperty();
+
   const displayComps = data
     .slice(pagesVisited, pagesVisited + compsPerPage)
     .map((item) => {
@@ -75,30 +99,6 @@ const CompanyList = (props) => {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-
-  const options = [
-    { value: "name", text: "Name" },
-    { value: "year", text: "Year" },
-    { value: "location", text: "Location" },
-    { value: "rating", text: "Overall Rating" },
-    { value: "games", text: "Top 3 Games" },
-  ];
-  const [selected, setSelected] = useState(options[0].value);
-  const orders = [
-    { value: 1, text: "Ascending (A-Z or numerical)" },
-    { value: "-1", text: "Descending (Z-A or numerical)" },
-  ];
-  const [order, setOrder] = useState(orders[0].value);
-
-  const handleSelectChg = (event) => {
-    setSelected(event.target.value);
-  };
-
-  const handleOrderChg = (event) => {
-    setOrder(event.target.value);
-  };
-
-  sortByProperty();
 
   return (
     <div className="page">
