@@ -10,6 +10,7 @@ import IndividualCompany from "./CompanyPages/IndividualCompany";
 import Genres from "./Genres/Genres"
 import AboutUs from "./AboutUs/AboutUs";
 import GenresPage from "./Genres/GenresPage"
+import Paginate from "./Paginate/Paginate"
 import {
   BrowserRouter as Router,
   Route,
@@ -39,6 +40,7 @@ export default function AppPages() {
           <Route path='/companies/comp' element={<IndividualCompany />} />
           <Route path='/genres' element={<Genres />} />
           <Route path='/genrespage' element={<GenresPage />} />
+          <Route path='/paginate' element={<Paginate />} />
         </Routes>
       </div>
     </Router>
