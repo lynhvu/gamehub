@@ -34,6 +34,27 @@ const Genres = (props) => {
     const genresPerPage = 9;
     const pagesVisited = pageNumber * genresPerPage;
   
+
+    const options = [{ value: 'name', text: 'Name' },
+    { value: 'games', text: 'Games' },
+    { value: 'companies', text: 'Companies' },
+    { value: 'num', text: 'Number of Popular Games' },
+    { value: 'themes', text: 'Themes' },];
+    const [selected, setSelected] = useState(options[0].value);
+    const orders = [{ value: 1, text: 'Ascending (A-Z or numerical)' },
+    { value: '-1', text: 'Descending (Z-A or numerical)' }];
+    const [order, setOrder] = useState(orders[0].value);
+
+    const handleSelectChg = event => {
+        setSelected(event.target.value);
+    };
+
+    const handleOrderChg = event => {
+        setOrder(event.target.value);
+    };
+
+    sortByProperty();
+
     const displayGenres = data
       .slice(pagesVisited, pagesVisited + genresPerPage)
       .map((item) => {
@@ -71,27 +92,6 @@ const Genres = (props) => {
       setPageNumber(selected);
     };
 
-
-
-    const options = [{ value: 'name', text: 'Name' },
-    { value: 'games', text: 'Games' },
-    { value: 'companies', text: 'Companies' },
-    { value: 'num', text: 'Number of Popular Games' },
-    { value: 'themes', text: 'Themes' },];
-    const [selected, setSelected] = useState(options[0].value);
-    const orders = [{ value: 1, text: 'Ascending (A-Z or numerical)' },
-    { value: '-1', text: 'Descending (Z-A or numerical)' }];
-    const [order, setOrder] = useState(orders[0].value);
-
-    const handleSelectChg = event => {
-        setSelected(event.target.value);
-    };
-
-    const handleOrderChg = event => {
-        setOrder(event.target.value);
-    };
-
-    sortByProperty();
 
     return (
         <div className='page'>
