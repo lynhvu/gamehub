@@ -740,3 +740,38 @@ body {
   z-index: 1;
   content: "";
 }
+
+/*Pagination CSS*/
+.paginationBttns a:hover {
+  background-color: #21043a;
+  color: white;
+}
+
+.paginationBttns {
+  width: 80%;
+  height: 50px;
+  /*opacity: 0.5;*/
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: #ffffff;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.paginationDisabled a {
+  border: none;
+  color: transparent;
+}
+
+.paginationActive a {
+  background-color: #21043a;
+}
