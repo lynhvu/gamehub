@@ -304,7 +304,6 @@ class Company(db.Model):
     description = db.Column(db.String(250))
     location = db.Column(db.String(50))
     year = db.Column(db.String(50))  # changed this to string because igdb returns timestamps funny
-    rating = db.Column(db.Integer)  # replace, not available in any api
     num_games = db.Column(db.Integer) # replacement for rating
     games = db.relationship('Game', backref='company')
     img = db.Column(db.String(250))
@@ -333,6 +332,8 @@ class Genre(db.Model):
     description = db.Column(db.String(250))
     num_games = db.Column(db.Integer)
     games = db.relationship('Game', backref='genre')
-    #themes?
+    picture = db.Column(db.String(200), nullable = False)
+    themes = db.Column(db.String(250))
+    companies = db.Column(db.PickleType(mutable=True))
 
 db.create_all()
