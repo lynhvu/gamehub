@@ -27,38 +27,6 @@ const GameList = (props) => {
   const gamesPerPage = 10;
   const pagesVisited = pageNumber * gamesPerPage;
 
-  const displayGames = gameData
-    .slice(pagesVisited, pagesVisited + gamesPerPage)
-    .map((item) => {
-      return (
-        <Link
-          to={{ pathname: "/games/gamepage" }}
-          onClick={() => {
-            localStorage.setItem("GAME", JSON.stringify(item));
-          }}
-          style={{ textDecoration: "none" }}
-        >
-          <div class="row row2">
-            <div class="col-lg col-12">{item.name}</div>
-            <div class="col-lg col-12">{item.developer}</div>
-            <div class="col-lg col-12">
-              {item.genre.map((genre) => genre).join(", ")}
-            </div>
-            <div class="col-lg col-12">{item.score}</div>
-            <div class="col-lg col-12" style={{ fontSize: 20 }}>
-              {item.platforms}
-            </div>
-          </div>
-        </Link>
-      );
-    });
-
-  const pageCount = Math.ceil(games.length / gamesPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
-
   const options = [
     { value: "name", text: "Title" },
     { value: "developer", text: "Company" },
@@ -108,6 +76,38 @@ const GameList = (props) => {
   }
 
   sortByProperty();
+
+  const displayGames = gameData
+    .slice(pagesVisited, pagesVisited + gamesPerPage)
+    .map((item) => {
+      return (
+        <Link
+          to={{ pathname: "/games/gamepage" }}
+          onClick={() => {
+            localStorage.setItem("GAME", JSON.stringify(item));
+          }}
+          style={{ textDecoration: "none" }}
+        >
+          <div class="row row2">
+            <div class="col-lg col-12">{item.name}</div>
+            <div class="col-lg col-12">{item.developer}</div>
+            <div class="col-lg col-12">
+              {item.genre.map((genre) => genre).join(", ")}
+            </div>
+            <div class="col-lg col-12">{item.score}</div>
+            <div class="col-lg col-12" style={{ fontSize: 20 }}>
+              {item.platforms}
+            </div>
+          </div>
+        </Link>
+      );
+    });
+
+  const pageCount = Math.ceil(games.length / gamesPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <div className="page">
