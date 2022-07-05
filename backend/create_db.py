@@ -2,6 +2,7 @@ import json
 from models import api, db, Company, Game, Genre
 import requests
 from datetime import datetime
+import country_converter as coco
 
 
 # NOTE: this is literally just copied an pasted from the example, edits are needed
@@ -28,27 +29,48 @@ def create_companies():
     """
     populate company table
     """
+
+    # loop through RAWG
     company = requests.get("https://api.rawg.io/api/developers?key=1266974d1b554edc9e9236367db40ea8").json()
     idCount = 0
     for oneCompany in company['results']:
+        oneCompany = requests.get("https://api.rawg.io/api/developers/" + str(oneCompany['id']) + "?key=1266974d1b554edc9e9236367db40ea8").json()
         id = idCount
         name = oneCompany['name']
         description = oneCompany['description']
         location = "Not Available" # igdb
         year = "Not Available" # igdb
-        rating = oneCompany[]
+        rating = oneCompany[]  # replace, not available in any api
+        num_games = oneCompany['games_count']  # replacement for rating
         img = oneCompany['image_background']  # note that this gets a sample image rather than the logo (the logo is harder to obtain)
         # games are already added in create_games()
         # main genre
-        
-        # loop through igdb
-        year = datetime.utcfromtimestamp(oneCompany['start_date']).strftime('%Y-%m-%d %H:%M:%S')[:4]  # note: sometimes there is no start date, add if statement to account for this
-		
         newCompany = Company(id = id, name = name, description = description, location = location, year = year, rating = rating, games = games)
-        
         db.session.add(newCompany)
         db.session.commit()
         idCount += 1
+
+    # loop through igdb, looking for matches and filling in the extra info
+    cc = coco.CountryConverter()
+    company = requests.post("https://api.igdb.com/v4/companies?fields=*&limit=500", headers={"Client-ID":"3pcjj9vwob1xykuyvdt2q10vezorwh", "Authorization": "Bearer wdekgrbhajef4dvskjfjiyjwa4l0sp"})
+    for oneCompany in company['results']:
+        matchingCompany = Session.query(Company).filter_by(name=oneCompany['name']).one()
+        if matchingCompany is not None:
+            try:
+                matchingCompany.location = cc.convert(names=oneCompany['country'], to = 'name_short')
+            except KeyError:
+                pass
+            try:
+                matchingCompany.year = datetime.utcfromtimestamp(oneCompany['start_date']).strftime('%Y-%m-%d %H:%M:%S')[:4]
+            except KeyError:
+                pass
+        
+
+        
+        
+		
+
+    
         
 
 # ------------

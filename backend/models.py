@@ -304,7 +304,8 @@ class Company(db.Model):
     description = db.Column(db.String(250))
     location = db.Column(db.String(50))
     year = db.Column(db.String(50))  # changed this to string because igdb returns timestamps funny
-    rating = db.Column(db.Integer)
+    rating = db.Column(db.Integer)  # replace, not available in any api
+    num_games = db.Column(db.Integer) # replacement for rating
     games = db.relationship('Game', backref='company')
     img = db.Column(db.String(250))
 
