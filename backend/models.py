@@ -279,7 +279,7 @@ DBNAME ="gamehubdb"
 api.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 # needs to be fixed
-os.environ.get("DB_STRING",f'postgresql://{postgres}:{password}@{localhost:5432}/{gamehubdb}')
+os.environ.get("DB_STRING",f'postgresql://{USER}:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}')
 # this needs to be fixed still, just put in temp data vv
 api.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost:5432/gamehubdb'
 
@@ -290,6 +290,11 @@ comp_genre = db.Table('comp_genre',
     db.Column('company_id', db.Integer, db.ForeignKey('company.id')),
     db.Column('genre_id', db.Integer, db.ForeignKey('genre.id')))
 
+# company-games: one to many
+# company-genre: many to many
+# genre-games: one to many
+
+
 # Company Model
 class Company(db.Model):
     __tablename__ = 'company'
@@ -298,9 +303,10 @@ class Company(db.Model):
     name = db.Column(db.String(50), nullable = False)
     description = db.Column(db.String(250))
     location = db.Column(db.String(50))
-    year = db.Column(db.Integer)
+    year = db.Column(db.String(50))  # changed this to string because igdb returns timestamps funny
     rating = db.Column(db.Integer)
     games = db.relationship('Game', backref='company')
+    img = db.Column(db.String(250))
 
 # Game Model
 class Game(db.Model):
@@ -314,7 +320,7 @@ class Game(db.Model):
     released = db.Column(db.String(50))
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
     pictures = db.Column(db.PickleType(mutable=True))
-    #platform?
+    platforms = db.Column(db.PickleType(mutable=True))
     #trailer?
 
 # Genre Model
