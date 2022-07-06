@@ -106,7 +106,7 @@ def create_genres():
             if g['name'] == name:
                 companiesWithThisGenre = g['companies']
                 for c in companiesWithThisGenre:
-                    matchingCompany = Company.query.filter_by(name=name).first()
+                    matchingCompany = Company.query.filter_by(name=c).first()
                     if matchingCompany is not None:
                         newGenre.companies.append(matchingCompany)
                 newGenre.themes = g['themes']
@@ -182,9 +182,9 @@ def create_games():
 #db.drop_all()
 #db.create_all()
 
-try:
-    create_companies()
-    create_genres()
-    create_games()
-except:
-    pass
+#try:
+create_companies()
+create_genres()
+create_games()
+#except:
+#    pass
