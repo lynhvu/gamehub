@@ -182,7 +182,9 @@ def create_games():
 #db.drop_all()
 #db.create_all()
 
-
-create_companies()
-create_genres()
-create_games()
+try:
+    create_companies()
+    create_genres()
+    create_games()
+except:
+    pass
