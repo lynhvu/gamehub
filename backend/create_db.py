@@ -179,12 +179,13 @@ def create_games():
         db.session.add(newGame)
         db.session.commit()
         idCount += 1
+
 #db.drop_all()
 #db.create_all()
 
-#try:
-create_companies()
-create_genres()
-create_games()
-#except:
-#    pass
+try:
+    create_companies()
+    create_genres()
+    create_games()
+except:
+    pass

@@ -11,7 +11,6 @@
             "Sekiro: Shadows Die Twice"
         ],
         "companies": [
-            "Capcom",
             "Nintendo",
             "Ubisoft",
             "Bandai Namco"
@@ -77,7 +76,7 @@
     },
     {
         "id": 3,
-        "name": "Role Playing",
+        "name": "RPG",
         "num": 47013,
         "games": [
             "Cyperpunk 2077",
@@ -89,7 +88,7 @@
         "companies": [
             "CD Projekt",
             "Bethesda Game Studios",
-            "Sqaure Enix"
+            "Square Enix"
         ],
         "description": "A role-playing game is a game in which players assume the roles of characters in a fictional setting. Players take responsibility for acting out these roles within a narrative, either through literal acting or through a process of structured decision-making regarding character development.",
         "themes": "Fiction, Narration, Decision-making, Character Development",
@@ -126,5 +125,131 @@
             "https://www.denofgeek.com/wp-content/uploads/2022/04/Overwatch-2-2.jpg?resize=768%2C432",
             "https://store-images.s-microsoft.com/image/apps.27881.14284165171924425.328fdc67-fafc-4929-b10f-b1bc44a36c07.c0b3f5d8-f2b7-41db-9b1b-0c1ddb375729?q=90&w=480&h=270"
         ]
+    },
+    {
+        "name": "Indie",
+        "companies": [
+            "The Behemoth",
+            "Engine Software",
+            "Psyonix",
+            "Double Eleven"
+        ],
+        "themes": "Multiplayer, Atmospheric, 2-Dimensional, and Story Rich"
+    },
+    {
+        "name": "Strategy",
+        "companies": [
+            "Feral Interactive",
+            "Aspyr Media",
+            "Haemimont Games",
+            "Amplitude Studios"
+        ],
+        "themes": "Decision-making, High Situational Awareness, Autonomous"
+    },
+    {
+        "name": "Casual",
+        "companies": [
+            "Coffee Stain Studios",
+            "Warner Bros. Interactive",
+            "Kongregate"
+        ],
+        "themes": "Simplistic, Easy to follow, low-grade challenges"
+    },
+    {
+        "name": "Simulation",
+        "companies": [
+            "ConcernedApe",
+            "Relic Entertainment",
+            "IO Interactive"
+        ],
+        "themes": "No strict goals, occupational, freeing, imitation"
+    },
+    {
+        "name": "Arcade",
+        "companies": [
+            "Annapurna Interactive",
+            "Coldwood Interactive",
+            "SCE Japan Studio",
+            "High Voltage Software"
+        ],
+        "themes": "Traditional and old-school feel, structured gameplay, puzzle-less, skill-independent"
+    },
+    {
+        "name": "Platformer",
+        "companies": [
+            "BANDAI NAMCO Entertainment",
+            "NVIDIA Lightspeed Studios",
+            "Studio MDHR"
+        ],
+        "themes": "Jumping, climbing, protagonistic, enemy-destroying"
+    },
+    {
+        "name": "Massively Multiplayer",
+        "companies": [
+            "Respawn Entertainment",
+            "Vicarious Visions",
+            "Grinding Gear Games"
+        ],
+        "themes": "Exploration, collection, community"
+    },
+    {
+        "name": "Sports",
+        "companies": [
+            "Electronic Arts"
+        ],
+        "themes": "Realistic, teamwork, competitive nature"
+    },
+    {
+        "name": "Racing",
+        "companies": [
+            "tinyBuild",
+            "FlippFly",
+            "Criterion Games"
+        ],
+        "themes": "Competition, speed play, intense, mechanical"
+    },
+    {
+        "name": "Fighting",
+        "companies": [
+            "Armature Studio",
+            "Capcom"
+        ],
+        "themes": "Death, bloody, combos, timed, technique"
+    },
+    {
+        "name": "Family",
+        "companies": [
+            "Amanita Design",
+            "2D BOY",
+            "Traveller's Tales"
+        ],
+        "themes": "Casual, story inclined, gentle, fantasy"
+    },
+    {
+        "name": "Board Games",
+        "companies": [
+            "Asmodee Digital",
+            "Days of Wonder",
+            "Robot Entertainment"
+        ],
+        "themes": "Strict rules, thoughtful, friendly competition"
+    },
+    {
+        "name": "Educational",
+        "companies": [
+            "Bossa Studios",
+            "Dukope1",
+            "3909"
+        ],
+        "themes": "Learning, practicing, informative"
+    },
+    {
+        "name": "Card",
+        "companies": [
+            "Abrakam",
+            "Charlie Oscar Lima Tango Interactive Entertainment",
+            "Konami Digital Entertainment"
+        ],
+        "themes": "Traditional, indefinite mechanics, gambling"
     }
 ]
