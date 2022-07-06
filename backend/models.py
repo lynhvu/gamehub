@@ -271,10 +271,10 @@ api = Flask(__name__, static_folder="../build", static_url_path='/')
 CORS(api)
 
 # Not sure about this, but it was in the example
-USER ="postgres"
-PASSWORD ="abc"
-PUBLIC_IP_ADDRESS ="localhost:5432"
-DBNAME ="gamehubdb"
+USER = "postgres"
+PASSWORD = "abc"
+PUBLIC_IP_ADDRESS = "localhost:5432"
+DBNAME = "gamehubdb"
 
 
 api.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -313,6 +313,8 @@ class Company(db.Model):
     img = db.Column(db.String(500))
 
 # Game Model
+
+
 class Game(db.Model):
     __tablename__ = 'game'
     
@@ -328,6 +330,8 @@ class Game(db.Model):
     #trailer?
 
 # Genre Model
+
+
 class Genre(db.Model):
     __tablename__ = 'genre'
 
@@ -339,5 +343,6 @@ class Genre(db.Model):
     picture = db.Column(db.String(200), nullable = False)
     themes = db.Column(db.String(700))
     companies = db.relationship('Company', backref='genre')
+
 
 db.create_all()
