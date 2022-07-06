@@ -166,19 +166,11 @@ const CompanyList = (props) => {
           b = b[propPath[p]];
         }
       }
-      // convert numeric str's to ints
-      /*a = a.match(/^\d+$/) ? +a : a;
-            b = b.match(/^\d+$/) ? +b : b;*/
+
       return a < b ? -1 * dir : a > b ? 1 * dir : 0;
     });
     // update the data
     data = clone;
-  }
-
-  function layCards() {
-    for(let i = 1; i < {displayComps}.length(); i++) {
-        return;
-    }
   }
 };
 
