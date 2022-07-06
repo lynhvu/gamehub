@@ -21,6 +21,7 @@ body {
 
 .page {
   min-height: 100%;
+  width: 100%;
   position: relative;
   padding-bottom: 3rem;
   margin: 0;

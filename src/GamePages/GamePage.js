@@ -8,6 +8,7 @@ import {
     Link
 } from "react-router-dom";
 import BackBtn from "../BackBtn";
+import { Carousel } from "react-bootstrap";
 
 const GamePage = (props) => {
 
@@ -78,15 +79,23 @@ const GamePage = (props) => {
                 href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
                 rel="stylesheet"
             />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
             <NavBar></NavBar>
             <div className="container" style={{}}>
-                <div className="row">
+                <div className="row justify-content-around">
                     <div className="col" style={{}}>
                         <div className="pageTitleText" style={{ animation: "fadeIn 0.5s" }}>
                             {gameData.name}
                         </div>
-                        <p className="game-metascore">Metascore: {gameData.score}</p>
+                        <Carousel>
+                                {gameData.pictures.map(pic => (
+                                    <Carousel.Item>
+                                        <img className="d-block w-100" src={pic} alt="First slide" />
+                                    </Carousel.Item>
+                                ))}
+                        </Carousel>
+                        <p className="game-metascore" style={{marginTop:'15px'}}>Metascore: {gameData.score}</p>
                         <p className="game-descr">{gameData.description}</p>
                         <p className="game-descr">Developed by <a href="/companies/comp" style={{color: "white"}}>{gameData.developer}</a></p>
                         <p className="game-descr"><b>Released:</b> {gameData.releaseDate}</p>
@@ -94,20 +103,6 @@ const GamePage = (props) => {
                              <div style={{float:"left"}}> {genreName(item)}&nbsp;</div>
                         ))} </p>
                         <p className="game-descr"><b>Platforms:</b> {gameData.platforms}</p>
-                    </div>
-                    <div className="col" style={{}}>
-                        <video className="game-video" controls>
-                            {gameData.videos.map(vid => (
-                                <source src={vid} alt="Your browser does not support the video tag."/>
-                            ))}
-                        </video>
-
-                        <div className="game-photo-box">
-                            {gameData.pictures.map(pic => (
-                                <img src={pic} alt="Image not found" className="game-photo" />
-                            ))}
-                        </div>
-
                     </div>
                 </div>
             </div>
