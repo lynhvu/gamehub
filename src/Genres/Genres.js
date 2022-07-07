@@ -95,10 +95,10 @@ const Genres = (props) => {
                       </Card.Body>
                       <ListGroup className="list-group-flush">
                           <ListGroupItem>
-                            <b>Games: </b>
+                            <b>Games: </b> {listAllGames(item.id) }
                           </ListGroupItem>
                           <ListGroupItem>
-                            <b>Companies: </b>
+                            <b>Companies: </b> {listAllCompanies(item.id)}
                           </ListGroupItem>
                           <ListGroupItem>
                             <b># Popular Games: </b> {item.num_games}
@@ -113,20 +113,24 @@ const Genres = (props) => {
         );
       });
   
-    function compIDtoCompName(givenId){
-        for(var i = 0; i < comps.length; i++) {
-            if(comps[i].id == givenId){
-                return comps[i].name;
+    function listAllGames(givenId){
+        let result = "";
+        for(var i = 0; i < games.length && result.length < 70; i++){
+            if(games[i].genre_id == givenId){
+                result += games[i].name + " ";
             }
         }
+        return result;
     }
 
-    function gameIDtoGameName(givenId){
-        for(var i = 0; i < games.length; i++) {
-            if(games[i].id == givenId){
-                return games[i].name;
+    function listAllCompanies(givenId){
+        let result = "";
+        for(var i = 0; i < comps.length && result.length < 70; i++){
+            if(comps[i].genre_id == givenId){
+                result += comps[i].name + " ";
             }
         }
+        return result;
     }
 
     const pageCount = Math.ceil(genres.length / genresPerPage);
