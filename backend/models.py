@@ -45,20 +45,10 @@ class Company(db.Model):
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))  # single main genre for that company
     img = db.Column(db.String(500))
 
-    def __init__(self, id, name, description, location, year, num_games, games, genre_id, img):
-        self.id = id
-        self.name = name
-        self.description = description
-        self.location = location
-        self.year = year
-        self.num_games = num_games
-        self.games = games
-        self.genre_id = genre_id
-        self.img = img
-
-    
     def as_dict(self):
        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+    
+
 
 # Game Model
 
@@ -76,20 +66,10 @@ class Game(db.Model):
     pictures = db.Column(ARRAY(db.String()))
     platforms = db.Column(ARRAY(db.String()))
 
-    def __init__(self, id, name, description, score, genre_id, released, company_id, pictures, platforms):
-        self.id = id
-        self.name = name
-        self.description = description
-        self.score = score
-        self.genre_id = genre_id
-        self.released = released
-        self. company_id = company_id
-        self.pictures = pictures
-        self.platforms = platforms
-
-
     def as_dict(self):
        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
+
 
 # Genre Model
 
@@ -106,19 +86,10 @@ class Genre(db.Model):
     themes = db.Column(db.String(700))
     companies = db.relationship('Company', backref='genre')
 
-    def __init__(self, id, name, description, num_games, games, picture, themes, companies):
-        self.id = id
-        self.name = name
-        self.description = description
-        self.num_games = num_games
-        self.games = games
-        self.picture = picture
-        self.themes = themes
-        self.companies = companies
-
-
     def as_dict(self):
        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
+
 
 
 db.create_all()
