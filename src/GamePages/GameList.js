@@ -6,22 +6,24 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import BackBtn from "../BackBtn";
 
 const GameList = (props) => {
-  /*    var [gameData, setGameData] = useState([])
+  var [gameData, setData] = useState([])
+  const [games, setGames] = useState([])
 
-    useEffect(() => {
-        fetch("/gamedata/").then(
-            res => res.json()
-        ).then(
-            data => {
-                setGameData(data)
-                console.log(data)
-            }
-        )
-    }, []) */
+  useEffect(() => {
+      fetch("https://gamehubapi.me/games/").then(
+          res => res.json()
+      ).then(
+          data => {
+              setData(data)
+              setGames(data)
+              console.log(data)
+              console.log(data.length)
+          }
+      ).catch(err => console.log(err))
+  }, [])
 
-  var gameData = require("./gamedata.json");
+  /*var gameData = require("./gamedata.json");*/
 
-  const [games, setGames] = useState(gameData);
   const [pageNumber, setPageNumber] = useState(0);
 
   const gamesPerPage = 10;
@@ -90,9 +92,9 @@ const GameList = (props) => {
         >
           <div class="row row2">
             <div class="col-lg col-12">{item.name}</div>
-            <div class="col-lg col-12">{item.developer}</div>
+            <div class="col-lg col-12">{item.company_id}</div>
             <div class="col-lg col-12">
-              {item.genre.map((genre) => genre).join(", ")}
+              TEMP
             </div>
             <div class="col-lg col-12">{item.score}</div>
             <div class="col-lg col-12" style={{ fontSize: 20 }}>

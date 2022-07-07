@@ -13,22 +13,24 @@ import {
 import BackBtn from '../BackBtn';
 
 const Genres = (props) => {
-    var data = require('./genresdata.json');
+    /*var data = require('./genresdata.json');*/
+    const [genres, setGenres] = useState([]);
+    var [data, setData] = useState([])
 
-/*    var [data, setData] = useState([])
+  useEffect(() => {
+      fetch("https://gamehubapi.me/genres/").then(
+          res => res.json()
+      ).then(
+          data => {
+              setData(data)
+              setGenres(data)
+              console.log(data)
+              console.log(data.length)
+          }
+      ).catch(err => console.log(err))
+  }, [])
 
-    useEffect(() => {
-        fetch("/genresdata/").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
-                console.log(data)
-            }
-        )
-    }, []) */
 
-    const [genres, setGenres] = useState(data);
     const [pageNumber, setPageNumber] = useState(0);
   
     const genresPerPage = 9;
@@ -62,19 +64,19 @@ const Genres = (props) => {
           <Col sm={4} style={{marginBottom: '10px'}}>
               <Link to="/genrespage" className='link-style' onClick={() => { localStorage.setItem("GENRES", JSON.stringify(item)) }} style={{ textDecoration: "none" }}>
                   <Card style={{height: '100%', width: '100%'}}>
-                      <Card.Img variant="top" src={item.icon} style={{objectFit: 'cover'}}/>
+                      <Card.Img variant="top" src={item.picture} style={{objectFit: 'cover'}}/>
                       <Card.Body>
                           <Card.Title><h1>{item.name}</h1></Card.Title>
                       </Card.Body>
                       <ListGroup className="list-group-flush">
                           <ListGroupItem>
-                            <b>Games: </b> {item.games[0]}, {item.games[1]}, {item.games[2]}
+                            <b>Games: </b>
                           </ListGroupItem>
                           <ListGroupItem>
-                            <b>Companies: </b> {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
+                            <b>Companies: </b>
                           </ListGroupItem>
                           <ListGroupItem>
-                            <b># Popular Games: </b> {item.num}
+                            <b># Popular Games: </b> {item.num_games}
                           </ListGroupItem>
                           <ListGroupItem>
                             <b>Topics: </b> {item.themes}

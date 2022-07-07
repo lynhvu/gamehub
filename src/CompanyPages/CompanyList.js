@@ -7,22 +7,24 @@ import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
 
 const CompanyList = (props) => {
-  /*    var [data, setData] = useState([])
+    var [data, setData] = useState([])
+    const [comps, setComps] = useState([]);
 
     useEffect(() => {
-        fetch("/compdata/").then(
+        fetch("https://gamehubapi.me/companies/").then(
             res => res.json()
         ).then(
             data => {
                 setData(data)
+                setComps(data)
                 console.log(data)
+                console.log(data.length)
             }
-        )
-    }, []) */
+        ).catch(err => console.log(err))
+    }, [])
 
-  var data = require("./companydata.json");
+ /* var data = require("./companydata.json");*/
 
-  const [comps, setComps] = useState(data);
   const [pageNumber, setPageNumber] = useState(0);
 
   const compsPerPage = 9;
@@ -74,18 +76,7 @@ const CompanyList = (props) => {
                             Overall Rating {item.rating} %
                         </ListGroupItem>
                         <ListGroupItem>
-                            <b>Top 3 Games:</b>
-                            <ol>
-                                <li>
-                                    {item.games[0]}
-                                </li>
-                                <li>
-                                    {item.games[1]}
-                                </li>
-                                <li>
-                                    {item.games[2]}
-                                </li>
-                            </ol>
+                            <b>Total Number of Games:</b> {item.num_games}
                         </ListGroupItem>
                     </ListGroup>
                 </Card>
