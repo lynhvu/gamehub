@@ -10,70 +10,69 @@ def index():
     return "hellooooooo"
 
 
-@api.route("/companies/")
+@api.route("/companies/", methods=["GET"])
 def companies():
     """Companies function for transferring company data"""
     comp = Company.query.all()
-    ser = []
+    data = []
     for c in comp:
-        ser.append(c.serialize())
-        
-    return render_template('company.html', comp = ser)
+        data.append(c.as_dict())
+
+    return jsonify(data)
 
 
-@api.route("/companies/id:<int:id>/")
+@api.route("/companies/id:<int:id>/", methods=["GET"])
 def company(id):
     """Company function for transferring single company data"""
     comp = Company.query.filter_by(id=id)
-    ser = []
+    data = []
     for c in comp:
-        ser.append(c.serialize())
+        data.append(c.as_dict())
 
-    return render_template('company.html', comp = ser)
+    return jsonify(data)
 
 
-@api.route("/games/")
+@api.route("/games/", methods=["GET"])
 def games():
     """Games function for transferring game data"""
     game = Game.query.all()
-    ser = []
+    data = []
     for g in game:
-        ser.append(g.serialize())
+        data.append(g.as_dict())
         
-    return render_template('game.html', game = ser)
+    return jsonify(data)
 
 
-@api.route("/games/id:<int:id>/")
+@api.route("/games/id:<int:id>/", methods=["GET"])
 def game(id):
     """Game function for transferring single game data"""
     game = Game.query.filter_by(id=id)
-    ser = []
+    data = []
     for g in game:
-        ser.append(g.serialize())
+        data.append(g.as_dict())
 
-    return render_template('game.html', game = ser)
+    return jsonify(data)
 
 
-@api.route("/genres/")
+@api.route("/genres/", methods=["GET"])
 def genres():
     genre = Genre.query.all()
-    ser = []
+    data = []
     for g in genre:
-        ser.append(g.serialize())
+        data.append(g.as_dict())
         
-    return render_template('genre.html', genre = ser)
+    return jsonify(data)
 
 
-@api.route("/genres/id:<int:id>/")
+@api.route("/genres/id:<int:id>/", methods=["GET"])
 def genre(id):
     """Genre function for transferring single genre data"""
     genre = Genre.query.filter_by(id=id)
-    ser = []
+    data = []
     for g in genre:
-        ser.append(g.serialize())
+        data.append(g.as_dict())
 
-    return render_template('genre.html', genre = ser)
-
+    return jsonify(data)
 
 if __name__ == "__main__":
     api.run()

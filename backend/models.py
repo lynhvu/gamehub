@@ -2,7 +2,6 @@ from flask import Flask, Response
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects.postgresql import ARRAY
-import json
 import os
 
 # creating our Flask
@@ -46,24 +45,20 @@ class Company(db.Model):
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))  # single main genre for that company
     img = db.Column(db.String(500))
 
-    # ------------
-    # serialize
-    # ------------
-    def serialize(self):
-       """
-       returns a dictionary
-       """
-       return {
-          'id': self.id, 
-          'name': self.name,
-          'description': self.description,
-          'location': self.location,
-          'year': self.year,
-          'num_games': self.num_games,
-          'games': self.games,
-          'genre_id': self.genre_id,
-          'img': self.img
-        }
+    def __init__(self, id, name, description, location, year, num_games, games, genre_id, img):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.location = location
+        self.year = year
+        self.num_games = num_games
+        self.games = games
+        self.genre_id = genre_id
+        self.img = img
+
+    
+    def as_dict(self):
+       return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 # Game Model
 
@@ -80,25 +75,21 @@ class Game(db.Model):
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
     pictures = db.Column(ARRAY(db.String()))
     platforms = db.Column(ARRAY(db.String()))
-    
-    # ------------
-    # serialize
-    # ------------
-    def serialize(self):
-       """
-       returns a dictionary
-       """
-       return {
-          'id': self.id, 
-          'name': self.name,
-          'description': self.description,
-          'score': self.score,
-          'genre_id': self.genre_id,
-          'released': self.released,
-          'company_id': self.company_id,
-          'pictures': self.pictures,
-          'platforms': self.platforms
-        }
+
+    def __init__(self, id, name, description, score, genre_id, released, company_id, pictures, platforms):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.score = score
+        self.genre_id = genre_id
+        self.released = released
+        self. company_id = company_id
+        self.pictures = pictures
+        self.platforms = platforms
+
+
+    def as_dict(self):
+       return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 # Genre Model
 
@@ -115,23 +106,19 @@ class Genre(db.Model):
     themes = db.Column(db.String(700))
     companies = db.relationship('Company', backref='genre')
 
-    # ------------
-    # serialize
-    # ------------
-    def serialize(self):
-       """
-       returns a dictionary
-       """
-       return {
-          'id': self.id, 
-          'name': self.name,
-          'description': self.description,
-          'num_games': self.num_games,
-          'games': self.games,
-          'picture': self.picture,
-          'themes': self.themes,
-          'companies': self.companies
-        }
+    def __init__(self, id, name, description, num_games, games, picture, themes, companies):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.num_games = num_games
+        self.games = games
+        self.picture = picture
+        self.themes = themes
+        self.companies = companies
+
+
+    def as_dict(self):
+       return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
 db.create_all()
