@@ -5,9 +5,10 @@
 from io import StringIO
 from unittest import main, TestCase
 from models import db, Company, Game, Genre
+import requests
 
 
-class TestModels(TestCase):
+class TestModels (TestCase):
     # ----
     # read
     # ----
@@ -15,7 +16,7 @@ class TestModels(TestCase):
     # def test_index(self):
     #     self.assertEqual()
 
-    # def test_profiles(self):
+    # def test_profiles(elf):
     #     self.assertEqual()
 
     def test_companies(self):
@@ -64,11 +65,19 @@ class TestModels(TestCase):
         )
         # TODO: not sure how to check for relationship
 
-
-# ----
-# main
-# ----
-
+    # these three tests are to make sure our apis running
+    def test_comp_api(self):
+        endpoint = "http://gamehubapi.me/companies/"
+        r = requests.get(endpoint)
+        self.assertEqual(200, r.status_code)
+    def test_genres_api(self):
+        endpoint = "http://gamehubapi.me/genres/"
+        r = requests.get(endpoint)
+        self.assertEqual(200, r.status_code)
+    def test_games_api(self):
+        endpoint = "http://gamehubapi.me/games/"
+        r = requests.get(endpoint)
+        self.assertEqual(200, r.status_code)
 
 if __name__ == "__main__":
     main()
