@@ -34,3 +34,6 @@ models.html:
 
 run:
 	npm start & source launch
+
+postman-tests:
+	newman run GameHub_postman_test_run.json

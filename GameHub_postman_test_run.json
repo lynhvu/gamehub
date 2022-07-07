@@ -1,0 +1,330 @@
+{
+	"id": "78dd80d7-28b7-46a6-a3e3-b9a1b9f4a50a",
+	"name": "GameHub",
+	"timestamp": "2022-07-07T04:11:30.614Z",
+	"collection_id": "21597654-8f01fbb7-cbd6-46b0-81f1-a0862497bf25",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 27,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "daa44201-932e-4e1a-92e0-05cd8ae048af",
+			"name": "Get All Info For Game",
+			"url": "http://gamehubapi.me/games",
+			"time": 77,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"URL status is 200": true,
+				"URL status is OK": true,
+				"Response is a json": true,
+				"Should have 27 games": true
+			},
+			"testPassFailCounts": {
+				"URL status is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"URL status is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is a json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should have 27 games": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				77
+			],
+			"allTests": [
+				{
+					"URL status is 200": true,
+					"URL status is OK": true,
+					"Response is a json": true,
+					"Should have 27 games": true
+				}
+			]
+		},
+		{
+			"id": "e1e4910d-1f0b-46f9-979d-a006c726c60d",
+			"name": "Get Single Game Info",
+			"url": "http://gamehubapi.me/games/id:5",
+			"time": 53,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Statuse is OK": true,
+				"Response time is less than 200ms": true,
+				"id should be 5": true,
+				"Should have 1 game": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Statuse is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"id should be 5": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should have 1 game": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				53
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Statuse is OK": true,
+					"Response time is less than 200ms": true,
+					"id should be 5": true,
+					"Should have 1 game": true
+				}
+			]
+		},
+		{
+			"id": "b8168fe8-0bcd-4c88-bb1f-8bb7b64e4f24",
+			"name": "Get All Info For Genre",
+			"url": "http://gamehubapi.me/genres",
+			"time": 71,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"URL status is 200": true,
+				"URL status is OK": true,
+				"Response is a json": true,
+				"Should have 19 genres": true
+			},
+			"testPassFailCounts": {
+				"URL status is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"URL status is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is a json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should have 19 genres": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				71
+			],
+			"allTests": [
+				{
+					"URL status is 200": true,
+					"URL status is OK": true,
+					"Response is a json": true,
+					"Should have 19 genres": true
+				}
+			]
+		},
+		{
+			"id": "d53d68ee-51b7-4d1f-b91d-af575978e28a",
+			"name": "Get Single Genre Info",
+			"url": "http://gamehubapi.me/genres/id:5",
+			"time": 83,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Statuse is OK": true,
+				"Response time is less than 200ms": true,
+				"id should be 5": true,
+				"Should have 1 genre": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Statuse is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"id should be 5": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should have 1 genre": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				83
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Statuse is OK": true,
+					"Response time is less than 200ms": true,
+					"id should be 5": true,
+					"Should have 1 genre": true
+				}
+			]
+		},
+		{
+			"id": "4a578a82-c55f-4375-9fa4-a503f0b61508",
+			"name": "Get All Info For Company",
+			"url": "http://gamehubapi.me/companies",
+			"time": 85,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"URL status is 200": true,
+				"URL status is OK": true,
+				"Response is a json": true,
+				"Should have 38 companies": true
+			},
+			"testPassFailCounts": {
+				"URL status is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"URL status is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is a json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should have 38 companies": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				85
+			],
+			"allTests": [
+				{
+					"URL status is 200": true,
+					"URL status is OK": true,
+					"Response is a json": true,
+					"Should have 38 companies": true
+				}
+			]
+		},
+		{
+			"id": "dcf41acc-fe4a-4510-874f-10571efd4ecc",
+			"name": "Get Single Company Info",
+			"url": "http://gamehubapi.me/companies/id:5",
+			"time": 55,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Statuse is OK": true,
+				"Response time is less than 200ms": true,
+				"id should be 5": true,
+				"Should have 1 company": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Statuse is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"id should be 5": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should have 1 company": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				55
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Statuse is OK": true,
+					"Response time is less than 200ms": true,
+					"id should be 5": true,
+					"Should have 1 company": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 424,
+	"collection": {
+		"requests": [
+			{
+				"id": "daa44201-932e-4e1a-92e0-05cd8ae048af",
+				"method": "GET"
+			},
+			{
+				"id": "e1e4910d-1f0b-46f9-979d-a006c726c60d",
+				"method": "GET"
+			},
+			{
+				"id": "b8168fe8-0bcd-4c88-bb1f-8bb7b64e4f24",
+				"method": "GET"
+			},
+			{
+				"id": "d53d68ee-51b7-4d1f-b91d-af575978e28a",
+				"method": "GET"
+			},
+			{
+				"id": "4a578a82-c55f-4375-9fa4-a503f0b61508",
+				"method": "GET"
+			},
+			{
+				"id": "dcf41acc-fe4a-4510-874f-10571efd4ecc",
+				"method": "GET"
+			}
+		]
+	}
+}
