@@ -8,6 +8,7 @@ import {
     Link
 } from "react-router-dom";
 import BackBtn from "../BackBtn";
+import { Carousel } from 'react-bootstrap';
 
 const GenresPage = (props) => {
 
@@ -89,6 +90,7 @@ const GenresPage = (props) => {
                 href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
                 rel="stylesheet"
             />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
             <NavBar></NavBar>
             <div className="container">
@@ -97,20 +99,33 @@ const GenresPage = (props) => {
                         <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                             {genresData.name}
                         </div>
-                        <p className="game-descr">Games: {genresData.games.map(item => (
-                            <div> {gameName(item)} </div>
-                        ))} </p>
-                        <p className="game-descr">Companies: {genresData.companies.map(item => (
-                            <div> {compName(item)} </div>
-                        ))}</p>
+                        <Carousel style={{marginBottom: '15px'}}>
+                                {genresData.pictures.map(pic => (
+                                    <Carousel.Item>
+                                        <img className="d-block w-100" src={pic} alt="First slide" />
+                                    </Carousel.Item>
+                                ))}
+                        </Carousel>
                         <p className="game-descr">Genre Description: {genresData.description}</p>
-                        <p className="game-descr">Topics: {genresData.themes}</p>
-                    </div>
-                    <div className="col">
-                        <div className="game-photo-box">
-                            {genresData.pictures.map(pic => (
-                                <img src={pic} alt="Image not found" className="game-photo" />
-                            ))}
+                        <div className='row'>
+                            <div className='col'>
+                                <p className="game-descr">Games: 
+                                    {genresData.games.map(item => (
+                                        <div> {gameName(item)} </div>
+                                    ))} 
+                                </p>
+                            </div>
+                            <div className='col'>
+                                <p className="game-descr">Companies: 
+                                    {genresData.companies.map(item => (
+                                        <div> {compName(item)} </div>
+                                    ))}
+                                </p>
+                            </div>
+                            <div className='col'> 
+                                <p className="game-descr">Topics: {genresData.themes}</p> 
+                            </div>
+
                         </div>
                     </div>
                 </div>
