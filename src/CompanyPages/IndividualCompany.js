@@ -90,19 +90,6 @@ const IndividualCompany = (props) => {
         return result;
     }
 
-    function aaa(){
-        const result = getAllGames(compData.id).map(item => (gameName(item)));
-        return result;
-    }
-
-    
-
-    // function gameName(g){
-    //     window.alert(g.name);
-    //     return <Link to="/games/gamepage" onClick={() => {localStorage.setItem("GAME", localStorage.getItem(JSON.stringify(g)))}}>{g.name}</Link>
-        
-    // }
-
 
     
     return (
