@@ -1,3 +1,108 @@
+commit 0203d65ef8696082533309cf0329fb4798f6b11b
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Wed Jul 6 22:05:07 2022 -0500
+
+    Changed ganres page to have gallery
+
+commit 7cab60aec2033723ea9579927cbb4cb6addfe94f
+Merge: 39002c4 9890c38
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Wed Jul 6 00:05:35 2022 -0500
+
+    Merge branch 'paginate' of https://gitlab.com/lynhvu138/cs373-idb into paginate
+    Implemented gallery in games page
+
+commit 39002c4ff3ef5e927dc173ae59cbc34bed126309
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Wed Jul 6 00:05:25 2022 -0500
+
+    Implemented gallery in games page
+
+commit 9890c38f7954bc28ffe0499de2aeb7977bbac581
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 21:06:38 2022 -0500
+
+    fixed minor oopsies
+
+commit bfea1996f395a46aa6d79f01bd556371cd64a9a7
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 21:03:03 2022 -0500
+
+    minor cleaning
+
+commit 03e8e00afe6b82165dd95d02296e846e7921a018
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 13:52:57 2022 -0500
+
+    fixed sorting for the genres list page.
+
+commit c6a3a2a25521c80c36dc5b95156c453ec021a3d9
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 13:48:58 2022 -0500
+
+    sorting fixed for the companies list page
+
+commit d501efc839c7e2560f2d34907b8c304c62f1c57f
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 13:45:01 2022 -0500
+
+    sorting fixed for games page
+
+commit 3b1c63ddeb6e1ecbd13b531de3fb51d97f87a8de
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 12:20:48 2022 -0500
+
+    genres pagination with sample json data implemented.
+
+commit fca87f13ee50302e2a00e3fc654ced0ef05c65e7
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 11:57:16 2022 -0500
+
+    companies pagination with sample json data implemented.
+
+commit 75fe7417bf3fc2768b09a063a6603289452c5f2a
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 10:53:11 2022 -0500
+
+    Games pagination with sample json data implemented.
+
+commit 3bb2bffca3d17b56169dbe95820208f7f3728dd4
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 10:35:01 2022 -0500
+
+    some trial pagination code written
+
+commit c927865c90e52e8986d93b58726e3cd48a61f4a0
+Author: Lauren <lblummer@utexas.edu>
+Date:   Fri Jul 1 12:45:28 2022 -0500
+
+    links for mobile navigation working
+
+commit fe93bf910039c6e69b2db085fd7e213a532a093e
+Author: Lauren <lblummer@utexas.edu>
+Date:   Fri Jul 1 12:20:53 2022 -0500
+
+    minor updates
+
+commit 1278fb83a65d17db750869b7a5ae6b288a866450
+Merge: 11510e1 effe08b
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Tue Jun 28 02:50:19 2022 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    Closes #3, #12, #13, #14, #19, and #24
+    
+    See merge request lynhvu138/cs373-idb!2
+
+commit effe08b4f0524bf972b7e3817e051e7bf2ea7603
+Author: Lauren <lblummer@utexas.edu>
+Date:   Mon Jun 27 21:47:19 2022 -0500
+
+    adding updated log
+
 commit 984b236a92316529dd73e254fd94dc7278498cf7
 Author: Lauren <lblummer@utexas.edu>
 Date:   Mon Jun 27 21:45:36 2022 -0500

@@ -17,6 +17,9 @@ const Genres = (props) => {
     const [genres, setGenres] = useState([]);
     var [data, setData] = useState([])
 
+    const [comps, setComps] = useState([])
+    const [games, setGames] = useState([])
+
   useEffect(() => {
       fetch("https://gamehubapi.me/genres/").then(
           res => res.json()
@@ -24,6 +27,28 @@ const Genres = (props) => {
           data => {
               setData(data)
               setGenres(data)
+              console.log(data)
+              console.log(data.length)
+          }
+      ).catch(err => console.log(err))
+
+      // get the companies (to reference for company_id)
+      fetch("https://gamehubapi.me/companies/").then(
+          res => res.json()
+      ).then(
+          data => {
+              setComps(data)
+              console.log(data)
+              console.log(data.length)
+          }
+      ).catch(err => console.log(err))
+
+      // get the games (to reference for game_id)
+      fetch("https://gamehubapi.me/games/").then(
+          res => res.json()
+      ).then(
+          data => {
+              setGames(data)
               console.log(data)
               console.log(data.length)
           }
@@ -88,6 +113,22 @@ const Genres = (props) => {
         );
       });
   
+    function compIDtoCompName(givenId){
+        for(var i = 0; i < comps.length; i++) {
+            if(comps[i].id == givenId){
+                return comps[i].name;
+            }
+        }
+    }
+
+    function gameIDtoGameName(givenId){
+        for(var i = 0; i < games.length; i++) {
+            if(games[i].id == givenId){
+                return games[i].name;
+            }
+        }
+    }
+
     const pageCount = Math.ceil(genres.length / genresPerPage);
   
     const changePage = ({ selected }) => {
