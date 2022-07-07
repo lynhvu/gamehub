@@ -5,6 +5,7 @@ import MemberInfo from "./MemberInfo";
 import GroupStats from "./ProjInfo";
 import Apis from "./Apis";
 import Tools from "./Tools";
+import {Link} from "react-router-dom";
 
 const AboutUs = (props) => {
     
@@ -42,6 +43,10 @@ const AboutUs = (props) => {
                 Tools
             </div>
             <Tools></Tools>
+            <Link to="" onClick={ () => ("")}>
+            <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
+                Run Unit Tests
+            </div></Link>
             <br></br>
            <BackBtn></BackBtn>
         </div>
