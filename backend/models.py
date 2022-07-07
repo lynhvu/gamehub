@@ -15,14 +15,14 @@ PUBLIC_IP_ADDRESS = "localhost:5432"
 DBNAME = "gamehubdb"
 
 
-api.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
 
 # needs to be fixed
-#api.config['SQLALCHEMY_DATABASE_URI'] = \
+api.config['SQLALCHEMY_DATABASE_URI'] = \
 os.environ.get("DB_STRING",f'postgresql://{USER}:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}')
 # this needs to be fixed still, just put in temp data vv
-
-api.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:abc@localhost:5432/gamehubdb'
+api.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+#api.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:abc@localhost:5432/gamehubdb'
 
 db = SQLAlchemy(api)
 
