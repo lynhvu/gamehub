@@ -13,10 +13,12 @@ def index():
 @api.route("/companies/", methods=["GET"])
 def companies():
     """Companies function for transferring company data"""
+    print("getting companies")
     comp = Company.query.all()
     data = []
     for c in comp:
         data.append(c.as_dict())
+        print(c)
 
     return jsonify(data)
 

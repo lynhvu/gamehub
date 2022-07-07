@@ -5,6 +5,7 @@
 from io import StringIO
 from unittest import main, TestCase
 from models import db, Company, Game, Genre
+import requests
 
 
 class TestModels(TestCase):
@@ -18,7 +19,7 @@ class TestModels(TestCase):
     # def test_profiles(self):
     #     self.assertEqual()
 
-    def test_companies(self):
+    def test_company1(self):
         temp = db.session.query(Company).filter_by(id=2).one()
         self.assertEqual(temp.id, 2)
         self.assertEqual(str(temp.name), "Valve Corporation")
@@ -34,8 +35,25 @@ class TestModels(TestCase):
             str(temp.img),
             "https://images.igdb.com/igdb/image/upload/t_logo_med/cl2he.png",
         )
+    
+    def test_company2(self):
+        temp = db.session.query(Company).filter_by(id=0).one()
+        self.assertEqual(temp.id, 0)
+        self.assertEqual(str(temp.name), "Naughty Dog")
+        self.assertEqual(
+            str(temp.description),
+            "Established in 1984, Naughty Dog is one of the most successful and prolific game development studios in the world and a flagship first-party studio within PlayStation Studios. From creating the iconic Crash Bandicoot and Jak and Daxter series to modern franchises like Uncharted and The Last of Us, Naughty Dog is responsible for some of the most critically acclaimed and commercially successful games on Sony’s PlayStation platforms. Through its use of cutting-edge technology and evocative, character-driven storytelling, Naughty Dog has received hundreds of industry and media awards, while developing a passionate fan base of millions of players around the globe.",
+        )
+        self.assertEqual(str(temp.location), "United States")
+        self.assertEqual(str(temp.year), "1984")
+        # self.assertEqual(temp.num_games, 0)      # Could not find this info from models.py
+        # TODO: not sure how to check for relationship
+        self.assertEqual(
+            str(temp.img),
+            "https://images.igdb.com/igdb/image/upload/t_logo_med/bcpeptiqicy9g0gn4nur.png",
+        )
 
-    def test_games(self):
+    def test_game1(self):
         temp = db.session.query(Game).filter_by(id=1).one()
         self.assertEqual(temp.id, 1)
         self.assertEqual(str(temp.name), "The Last of Us")
@@ -49,7 +67,18 @@ class TestModels(TestCase):
         # self.assertEqual(temp.company_id, )
         # TODO: not sure how to check for genre_id, comp_id, pictures and platforms
 
-    def test_genres(self):
+    def test_game2(self):
+        temp = db.session.query(Game).filter_by(id=0).one()
+        self.assertEqual(temp.id, 0)
+        self.assertEqual(str(temp.name), "Portal")
+        self.assertEqual(
+            str(temp.description),
+            "Silent template for your adventures, Chell, wakes up in a testing facility. She's a subject of experiments on instant travel device, supervised by snarky and hostile GLaDOS. Players will have to complete the tests, room by room, expecting either reward, freedom or more tests. By using the gun, that shoots portals (Portal-Gun™), players will move blocks, travel great distance quickly and learn about your current situation, which is unraveled through environmental storytelling.",
+        )
+        self.assertEqual(temp.score, 90)
+        self.assertEqual(str(temp.released), "Oct 9, 2007")
+
+    def test_genre1(self):
         temp = db.session.query(Genre).filter_by(id=0).one()
         self.assertEqual(temp.id, 0)
         self.assertEqual(str(temp.name), "Action")
@@ -63,6 +92,20 @@ class TestModels(TestCase):
             "physical combats, quick reflexes, abilities and specials, obstables and enemies",
         )
         # TODO: not sure how to check for relationship
+
+    def test_genre2(self):
+        temp = db.session.query(Genre).filter_by(id=1).one()
+        self.assertEqual(temp.id, 1)
+        self.assertEqual(str(temp.name), "Adventire")
+        self.assertEqual(
+            str(temp.description),
+            "An adventure game is a video game in which the player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving. The genre's focus on story allows it to draw heavily from other narrative-based media, literature and film, encompassing a wide variety of literary genres.",
+        )
+        self.assertEqual(temp.num_games, 116447)
+        self.assertEqual(
+            str(temp.themes),
+            "exploration, gathering and looting, stories and settings",
+        )
 
 
 # ----
