@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import "../StyleAndImg/style.css";
 import logo from "../StyleAndImg/logosmall.png"
 import NavBar from "../components/NavBar";
-
+import ReactPaginate from 'react-paginate';
+import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,20 +13,54 @@ import {
 import BackBtn from '../BackBtn';
 
 const Genres = (props) => {
-    // var genresData = require('./genresdata.json');
-
+    /*var data = require('./genresdata.json');*/
+    const [genres, setGenres] = useState([]);
     var [data, setData] = useState([])
 
-    useEffect(() => {
-        fetch("/genresdata/").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
-                console.log(data)
-            }
-        )
-    }, [])
+    const [comps, setComps] = useState([])
+    const [games, setGames] = useState([])
+
+  useEffect(() => {
+      fetch("https://gamehubapi.me/genres/").then(
+          res => res.json()
+      ).then(
+          data => {
+              setData(data)
+              setGenres(data)
+              console.log(data)
+              console.log(data.length)
+          }
+      ).catch(err => console.log(err))
+
+      // get the companies (to reference for company_id)
+      fetch("https://gamehubapi.me/companies/").then(
+          res => res.json()
+      ).then(
+          data => {
+              setComps(data)
+              console.log(data)
+              console.log(data.length)
+          }
+      ).catch(err => console.log(err))
+
+      // get the games (to reference for game_id)
+      fetch("https://gamehubapi.me/games/").then(
+          res => res.json()
+      ).then(
+          data => {
+              setGames(data)
+              console.log(data)
+              console.log(data.length)
+          }
+      ).catch(err => console.log(err))
+  }, [])
+
+
+    const [pageNumber, setPageNumber] = useState(0);
+  
+    const genresPerPage = 9;
+    const pagesVisited = pageNumber * genresPerPage;
+  
 
     const options = [{ value: 'name', text: 'Name' },
     { value: 'games', text: 'Games' },
@@ -46,6 +81,64 @@ const Genres = (props) => {
     };
 
     sortByProperty();
+
+    const displayGenres = data
+      .slice(pagesVisited, pagesVisited + genresPerPage)
+      .map((item) => {
+        return (
+          <Col sm={4} style={{marginBottom: '10px'}}>
+              <Link to="/genrespage" className='link-style' onClick={() => { localStorage.setItem("GENRES", JSON.stringify(item)) }} style={{ textDecoration: "none" }}>
+                  <Card style={{height: '100%', width: '100%'}}>
+                      <Card.Img variant="top" src={item.picture} style={{objectFit: 'cover'}}/>
+                      <Card.Body>
+                          <Card.Title><h1>{item.name}</h1></Card.Title>
+                      </Card.Body>
+                      <ListGroup className="list-group-flush">
+                          <ListGroupItem>
+                            <b>Games: </b> {listAllGames(item.id) }
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            <b>Companies: </b> {listAllCompanies(item.id)}
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            <b># Popular Games: </b> {item.num_games}
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            <b>Topics: </b> {item.themes}
+                          </ListGroupItem>
+                      </ListGroup>
+                  </Card>
+              </Link>
+          </Col>
+        );
+      });
+  
+    function listAllGames(givenId){
+        let result = "";
+        for(var i = 0; i < games.length && result.length < 70; i++){
+            if(games[i].genre_id == givenId){
+                result += games[i].name + " ";
+            }
+        }
+        return result;
+    }
+
+    function listAllCompanies(givenId){
+        let result = "";
+        for(var i = 0; i < comps.length && result.length < 70; i++){
+            if(comps[i].genre_id == givenId){
+                result += comps[i].name + " ";
+            }
+        }
+        return result;
+    }
+
+    const pageCount = Math.ceil(genres.length / genresPerPage);
+  
+    const changePage = ({ selected }) => {
+      setPageNumber(selected);
+    };
+
 
     return (
         <div className='page'>
@@ -79,34 +172,19 @@ const Genres = (props) => {
             </select>
             <div class="container">
                 <div className="row">
-                    {data.map(item => (
-                        <div className="col-lg-12">
-                            <Link to="/genres/genrespage" className='link-style' onClick={() => { localStorage.setItem("GENRES", JSON.stringify(item)) }} style={{ textDecoration: "none" }}>
-                                <Link to="/genrespage" className='link-style'>
-                                    <div class="card">
-                                        <img class="companyLogo" src={item.icon} alt="company logo"></img>
-                                        <div class="compName">
-                                            {item.name}
-                                        </div>
-                                        <hr class="genre-line"></hr>
-                                        <div class="">
-                                            <text class="bold-text">Popular {item.name} Games:</text> <br/> {item.games[0]}, {item.games[1]}, {item.games[2]}
-                                        </div>
-                                        <div class="">
-                                            <text class="bold-text">Companies That Produce {item.name} Games:</text> <br/> {item.companies[0]}, {item.companies[1]}, {item.companies[2]}
-                                        </div>
-                                        <div class="">
-                                            <text class="bold-text">Number of {item.name} Games:</text> <br/> {item.num}
-                                        </div>
-                                        <div class="">
-                                            <text class="bold-text">Topics in {item.name} Games:</text> <br/> {item.themes}
-                                        </div>
-                                    </div>
-                                </Link>
-                            </Link>
-                        </div>
-                    ))}
+                    {displayGenres}
                 </div>
+                <ReactPaginate
+                previousLabel={"Prev"}
+                nextLabel={"Next"}
+                pageCount={pageCount}
+                onPageChange={changePage}
+                containerClassName={"paginationBttns"}
+                previousLinkClassName={"previousBttn"}
+                nextLinkClassName={"nextBttn"}
+                disabledClassName={"paginationDisabled"}
+                activeClassName={"paginationActive"}
+                />
             </div>
 
             <BackBtn></BackBtn>

@@ -21,6 +21,7 @@ body {
 
 .page {
   min-height: 100%;
+  width: 100%;
   position: relative;
   padding-bottom: 3rem;
   margin: 0;
@@ -567,8 +568,7 @@ body {
   font-size: 23px;
   text-align: left;
   justify-content: left;
-  margin-left: 15px;
-  border-width: 0px;
+  border-width: 1px;
   border-color:grey;
   background-color: rgba(140, 140, 140, 0.5);
   backdrop-filter: 24px;
@@ -753,12 +753,37 @@ body {
   content: "";
 }
 
-.bold-text {
-  font-weight: 900;
+/*Pagination CSS*/
+.paginationBttns a:hover {
+  background-color: #21043a;
+  color: white;
 }
 
-.genre-line {
-  border: 2px solid black;
-  border-radius: 10px;
-  opacity: 100%;
+.paginationBttns {
+  width: 80%;
+  height: 50px;
+  /*opacity: 0.5;*/
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: #ffffff;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.paginationDisabled a {
+  border: none;
+  color: transparent;
+}
+
+.paginationActive a {
+  background-color: #21043a;
 }
