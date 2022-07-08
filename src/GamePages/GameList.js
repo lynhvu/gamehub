@@ -11,6 +11,8 @@ const GameList = (props) => {
 
   const [comps, setComps] = useState([])
 
+  const [gens, setGens] = useState([])
+
   useEffect(() => {
       fetch("https://gamehubapi.me/games/").then(
           res => res.json()
@@ -29,6 +31,16 @@ const GameList = (props) => {
       ).then(
           data => {
               setComps(data)
+              console.log(data)
+              console.log(data.length)
+          }
+      ).catch(err => console.log(err))
+
+      fetch("https://gamehubapi.me/genres/").then(
+          res => res.json()
+      ).then(
+          data => {
+              setGens(data)
               console.log(data)
               console.log(data.length)
           }
@@ -107,11 +119,11 @@ const GameList = (props) => {
             <div class="col-lg col-12">{item.name}</div>
             <div class="col-lg col-12">{compIDtoCompName(item.company_id)}</div>
             <div class="col-lg col-12">
-              TEMP
+              {genName(item.genre_id)}
             </div>
             <div class="col-lg col-12">{item.score}</div>
             <div class="col-lg col-12" style={{ fontSize: 20 }}>
-              {item.platforms}
+              {item.platforms.toString()}
             </div>
           </div>
         </Link>
@@ -124,6 +136,15 @@ const GameList = (props) => {
             return comps[i].name;
           }
       }
+  }
+
+  // get genre name from id
+  function genName(id){
+    for(var i = 0; i < gens.length; i++){
+      if(gens[i].id == id){
+        return gens[i].name;
+      }
+    }
   }
 
   const pageCount = Math.ceil(games.length / gamesPerPage);

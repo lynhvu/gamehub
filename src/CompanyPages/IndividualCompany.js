@@ -67,16 +67,14 @@ const IndividualCompany = (props) => {
 
     function genreName(id){
         for(var i = 0; i < genreData.length; i++){
-            if (genreData[i].id == id && localStorage.getItem(JSON.stringify(genreData[i])) != null){
-                return (<Link to="/genrespage" onClick={() => {localStorage.setItem("GENRES", localStorage.getItem(JSON.stringify(genreData[i])))}}>{genreData[i].name}</Link>);
-            } else {
-                return genreData[i].name;
+            if (genreData[i].id == id){
+                return (<Link to="/genrespage" onClick={() => {localStorage.setItem("GENRES", JSON.stringify(genreData[i]))}}>{genreData[i].name}</Link>);
             }
         }
     }
 
     function gameName(item){
-        return (<Link to="/games/gamepage" onClick={() => {localStorage.setItem("GAME", localStorage.getItem(JSON.stringify(item)))}}>{item.name}</Link>);
+        return (<Link to="/games/gamepage" onClick={() => {localStorage.setItem("GAME", JSON.stringify(item))}}>{item.name}</Link>);
     }
 
     // returns the matching games for this company
@@ -112,7 +110,7 @@ const IndividualCompany = (props) => {
                         <p class="comp-descr"><u>Description:</u> <p id ="comp-descr">{compData.description}</p></p>
                         <p class="comp-descr"><u>Founded in:</u> {compData.year}</p>
                         <p class="comp-descr"><u>Based in:</u> {compData.location}</p>
-                        <p class="comp-descr"><u>Number of Games:</u> {compData.num_games}%</p>
+                        <p class="comp-descr"><u>Number of Games:</u> {compData.num_games}</p>
                         <p class="comp-descr"><p style={{float:"left"}}><b>Main Genre:&nbsp;</b></p> 
                             {<div style={{float:"left"}}> {genreName(compData.genre_id)}&nbsp;</div>}</p>
                     </div>

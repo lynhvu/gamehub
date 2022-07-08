@@ -9,6 +9,7 @@ import BackBtn from "../BackBtn";
 const CompanyList = (props) => {
     var [data, setData] = useState([])
     const [comps, setComps] = useState([]);
+    const [genreData, setGens] = useState([]);
 
     useEffect(() => {
         fetch("https://gamehubapi.me/companies/").then(
@@ -17,6 +18,15 @@ const CompanyList = (props) => {
             data => {
                 setData(data)
                 setComps(data)
+                console.log(data)
+                console.log(data.length)
+            }
+        ).catch(err => console.log(err))
+        fetch("https://gamehubapi.me/genres/").then(
+            res => res.json()
+        ).then(
+            data => {
+                setGens(data)
                 console.log(data)
                 console.log(data.length)
             }
@@ -52,6 +62,14 @@ const CompanyList = (props) => {
     setOrder(event.target.value);
   };
 
+  function genreName(id){
+    for(var i = 0; i < genreData.length; i++){
+        if (genreData[i].id == id){
+            return genreData[i].name;
+        }
+    }
+}
+
   sortByProperty();
 
   const displayComps = data
@@ -67,13 +85,13 @@ const CompanyList = (props) => {
                     </Card.Body>
                     <ListGroup className="list-group-flush">
                         <ListGroupItem>
-                            {item.year}
+                            Year: {item.year}
                         </ListGroupItem>
                         <ListGroupItem>
-                            {item.location}
+                            Location: {item.location}
                         </ListGroupItem>
                         <ListGroupItem>
-                            Overall Rating {item.rating} %
+                            Main Genre: {genreName(item.genre_id)}
                         </ListGroupItem>
                         <ListGroupItem>
                             <b>Total Number of Games:</b> {item.num_games}
