@@ -29,8 +29,14 @@ endif
 IDB1.log:
 	git log > IDB1.log
 
+IDB2.log:
+	git log > IDB2.log
+
 models.html:
 	cd backend && $(PYDOC) -w models
+
+main.html:
+	cd backend && $(PYDOC) -w main
 
 run:
 	npm start & source launch
