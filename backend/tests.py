@@ -83,6 +83,19 @@ class TestModels(TestCase):
             "Guns, Grenades, Spatial Awareness, Reflexes, Teamwork",
         )
 
+    def test_genre3(self):
+        temp = db.session.query(Genre).filter_by(id=6).one()
+        self.assertEqual(temp.name, "Casual")
+    
+    def test_c3(self):
+        temp = db.session.query(Game).filter_by(id=6).one()
+        self.assertEqual(temp.name, "Left 4 Dead 2")
+    
+
+    def test_g3(self):
+        temp = db.session.query(Company).filter_by(id=6).one()
+        self.assertEqual(temp.name, "Square Enix")
+
     # ----
     # main
     # ----
