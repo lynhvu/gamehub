@@ -1,8 +1,89 @@
+commit e073b1a5a4b700f542cf117dba3cd48ed5e1544b
+Merge: ae6f8d1 df75ba6
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Thu Jul 7 20:49:28 2022 -0500
+
+    Fixed unit tests
+
+commit ae6f8d11c49ffd68bc25599a020f4a3ab43b40d9
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Thu Jul 7 20:48:36 2022 -0500
+
+    Fixed unit tests
+
+commit df75ba6b9ed8da80bd23b7648bd757646a29598e
+Author: Lukeluds <luyuan925@163.com>
+Date:   Thu Jul 7 20:45:50 2022 -0500
+
+    removing unnecessary comments and codes
+
+commit 284f585da021d0ee602217e00ed6ab206b004f30
+Author: Lukeluds <luyuan925@163.com>
+Date:   Thu Jul 7 20:43:30 2022 -0500
+
+    fixing tests bugs hopefully
+
+commit a778cf8f370f0b9b488d2305a259c4e95a44613c
+Merge: 75dd157 1f564b3
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 20:13:49 2022 -0500
+
+    merging
+
+commit 1f564b31892e627d0537c0d8b15b74b2de46116c
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 20:04:40 2022 -0500
+
+    more polishing
+
+commit 75dd15783466619381d98553a778992069be9913
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 19:59:46 2022 -0500
+
+    add tests for singular data api calls
+
+commit 3d1d553a58f6df4578dfacb1aabd4a318b9c56eb
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 19:57:54 2022 -0500
+
+    polishing up format, fixing links
+
+commit 69bbbab4b05ebe25eaa2e5ab7c17b25559b34c37
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 19:50:07 2022 -0500
+
+    edit makefile, add main.html, add IDB2.log
+
 commit 51ad942ab0cb1af26929db8903eb76993d858f27
 Author: Lauren <lblummer@utexas.edu>
 Date:   Thu Jul 7 19:43:07 2022 -0500
 
     updated models.html
+
+commit 1c420075a925d59a75a9b49c06b5867f3d3f3932
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 18:01:42 2022 -0500
+
+    small edits
+
+commit 97f88ef2cf43cd4c6f8bc7a35773c28b6fd9be53
+Merge: db8d5ee e0d8e2a
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 17:30:38 2022 -0500
+
+    Merge branch 'paginate' of https://gitlab.com/lynhvu138/cs373-idb into paginate
+
+commit db8d5ee9546c89c9fea3d1ff2d60ad796f7423b6
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 17:30:25 2022 -0500
+
+    added company pages and links
+
+commit e0d8e2af0fd4dbbeaa6854466e5d3239465fae75
+Author: Lauren Blummer <lblummer@utexas.edu>
+Date:   Thu Jul 7 21:59:41 2022 +0000
+
+    Splash Page image for technical report
 
 commit 5fda32412ac3d7b0fc8d67ae4fbecd0da09fce27
 Merge: c36d7be 7f338d9
@@ -29,11 +110,54 @@ Date:   Thu Jul 7 16:18:05 2022 -0400
 
     unit tests - apis
 
+commit e6d635fdce65c72c6ffac6740100893b805a0ba0
+Author: Lauren Blummer <lblummer@utexas.edu>
+Date:   Thu Jul 7 19:25:04 2022 +0000
+
+    UML.png for technical report purposes
+
+commit b26aeefbf376b3b5bca9dcbdb659eaf7b1b0d308
+Merge: 0f21726 592b6e6
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 14:12:17 2022 -0500
+
+    Merge branch 'paginate' of https://gitlab.com/lynhvu138/cs373-idb into paginate
+
+commit 0f21726c4712a18cffd60e313a480767164ba75d
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 14:11:47 2022 -0500
+
+    polishing conversion of ids to names
+
+commit 592b6e6610d4076a03e2fc0e380e1e8d2b6eb23c
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Thu Jul 7 14:49:32 2022 -0400
+
+    add YUML pdf
+
+commit 6089eea81634314563689c8cff10b369f2edfdc7
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 13:24:02 2022 -0500
+
+    converting ids to names in the game and genre lists
+
+commit 9315bd4a3ec42731c099b1e1d99587fd0f2fb673
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 11:32:39 2022 -0500
+
+    baseline for fetching from deployed back end for lists ok. no connection to individual pages
+
 commit e38d6ed3a4bbe748b7da61c19246fc0a3cfb201d
 Author: Lauren <lblummer@utexas.edu>
 Date:   Wed Jul 6 23:46:39 2022 -0500
 
     added postman tests file and updated pipeline file
+
+commit 0203d65ef8696082533309cf0329fb4798f6b11b
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Wed Jul 6 22:05:07 2022 -0500
+
+    Changed ganres page to have gallery
 
 commit 50f239088e7e893904474e4b5b6091fa6dac5032
 Author: Lauren <lblummer@utexas.edu>
@@ -103,6 +227,32 @@ Date:   Wed Jul 6 11:54:31 2022 -0500
 
     updated main.py routes to pull appropriate information from backend and align with api calls. Also added serialization to each model
 
+commit 7cab60aec2033723ea9579927cbb4cb6addfe94f
+Merge: 39002c4 9890c38
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Wed Jul 6 00:05:35 2022 -0500
+
+    Merge branch 'paginate' of https://gitlab.com/lynhvu138/cs373-idb into paginate
+    Implemented gallery in games page
+
+commit 39002c4ff3ef5e927dc173ae59cbc34bed126309
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Wed Jul 6 00:05:25 2022 -0500
+
+    Implemented gallery in games page
+
+commit 9890c38f7954bc28ffe0499de2aeb7977bbac581
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 21:06:38 2022 -0500
+
+    fixed minor oopsies
+
+commit bfea1996f395a46aa6d79f01bd556371cd64a9a7
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 21:03:03 2022 -0500
+
+    minor cleaning
+
 commit c0ab70375d3b6770554d1348f7643e5eca3f6af4
 Merge: 05d61be 99e78cc
 Author: Michael Chan <michan@utexas.edu>
@@ -128,11 +278,53 @@ Date:   Tue Jul 5 16:11:20 2022 -0500
 
     push before making changes that might break
 
+commit 03e8e00afe6b82165dd95d02296e846e7921a018
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 13:52:57 2022 -0500
+
+    fixed sorting for the genres list page.
+
+commit c6a3a2a25521c80c36dc5b95156c453ec021a3d9
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 13:48:58 2022 -0500
+
+    sorting fixed for the companies list page
+
+commit d501efc839c7e2560f2d34907b8c304c62f1c57f
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 13:45:01 2022 -0500
+
+    sorting fixed for games page
+
 commit 025a429d3397828bf3725f7cbb8a22eb6fce7281
 Author: Michael Chan <michan@utexas.edu>
 Date:   Tue Jul 5 13:41:23 2022 -0500
 
     finished create_db api requests
+
+commit 3b1c63ddeb6e1ecbd13b531de3fb51d97f87a8de
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 12:20:48 2022 -0500
+
+    genres pagination with sample json data implemented.
+
+commit fca87f13ee50302e2a00e3fc654ced0ef05c65e7
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 11:57:16 2022 -0500
+
+    companies pagination with sample json data implemented.
+
+commit 75fe7417bf3fc2768b09a063a6603289452c5f2a
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 10:53:11 2022 -0500
+
+    Games pagination with sample json data implemented.
+
+commit 3bb2bffca3d17b56169dbe95820208f7f3728dd4
+Author: Lauren <lblummer@utexas.edu>
+Date:   Tue Jul 5 10:35:01 2022 -0500
+
+    some trial pagination code written
 
 commit cc0beb3d30f5e99e8498d0ebec7da178b28ce60a
 Author: Michael Chan <michan@utexas.edu>
