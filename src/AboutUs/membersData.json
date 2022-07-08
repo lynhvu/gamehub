@@ -31,7 +31,7 @@
         "resp": "Full Stack Development",
         "about": "",
         "picture": "https://www.cs.utexas.edu/users/lblummer/lauren.JPG",
-        "commits": "57",
+        "commits": "58",
         "issues": "9",
         "tests": "3"
     },
@@ -67,8 +67,8 @@
         "resp": "Full Stack Development",
         "about": "",
         "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/michael.jpg",
-        "commits": "29",
+        "commits": "30",
         "issues": "7",
-        "tests": "0"
+        "tests": "1"
     }
 ]

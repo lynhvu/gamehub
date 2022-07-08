@@ -1,3 +1,34 @@
+commit ab9af1e4c62e93be7e7a4de5a091efcbffd14ffe
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 21:33:51 2022 -0500
+
+    unit tests
+
+commit a235e08e7176a5b733b6ddd16e4b9d8230c74515
+Merge: 7c45f07 845cfc3
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 21:30:54 2022 -0500
+
+    Merge branch 'proj3' of https://gitlab.com/lynhvu138/cs373-idb into proj3
+
+commit 7c45f07ad1849a1314da5fde0f78db616c804e49
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 21:30:42 2022 -0500
+
+    update log and models.html
+
+commit 845cfc319f8deac10c53d8535911d4c2b6b36259
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Thu Jul 7 22:27:42 2022 -0400
+
+    updated stats in about page
+
+commit 876958489df595d3d05af0ccb4356683c51c1ac3
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Thu Jul 7 22:20:15 2022 -0400
+
+    working unit test button
+
 commit e073b1a5a4b700f542cf117dba3cd48ed5e1544b
 Merge: ae6f8d1 df75ba6
 Author: janssenbozon <janssenbozon@gmail.com>
