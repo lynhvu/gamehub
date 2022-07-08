@@ -5,6 +5,8 @@ import MemberInfo from "./MemberInfo";
 import GroupStats from "./ProjInfo";
 import Apis from "./Apis";
 import Tools from "./Tools";
+import {Link} from "react-router-dom";
+import test from "../StyleAndImg/unit-tests.png"
 
 const AboutUs = (props) => {
     
@@ -19,14 +21,11 @@ const AboutUs = (props) => {
             />
             <NavBar></NavBar>
             <br />
-            <div className="title" style={{ animation: "fadeIn 0.5s" }}>
+            <div className="pageTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 About Us
             </div>
             <div className="textbox" style={{ animation: "fadeIn 1.5s" }}>
-                We are GameHub developers, a group of CS students at UT Austin.
-            </div>
-            <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
-                Meet our members
+                We are GameHub developers, a group of CS students at UT Austin. Come meet our members!
             </div>
       
             <MemberInfo></MemberInfo>
@@ -45,11 +44,21 @@ const AboutUs = (props) => {
                 Tools
             </div>
             <Tools></Tools>
+            <button className="textbox" style={{ animation: "fadeIn 2.5s" }} onClick={showImg}>
+            Unit Tests
+                <div id="show" style={{display: "none"}}>
+                    <img src={test}/>
+                </div>
+            </button>
             <br></br>
            <BackBtn></BackBtn>
         </div>
     )
     
+}
+
+const showImg = () => {
+    document.getElementById("show").style.display ='block';
 }
 
 export default AboutUs

@@ -21,6 +21,7 @@ body {
 
 .page {
   min-height: 100%;
+  width: 100%;
   position: relative;
   padding-bottom: 3rem;
   margin: 0;
@@ -360,6 +361,7 @@ body {
   width: fit-content;
   font-size: x-large;
   color:white;
+  border-radius: 10px;
   font-family: 'Space Mono', monospace;
 }
 
@@ -398,7 +400,7 @@ body {
   font-size: 90px;
   color: white;
   text-shadow:1px 1px 1px #fff, 1px 1px 10px #ccc;
-  text-align: left;
+  text-align: center;
   line-height: 110px;
   padding-bottom: 30px;
 }
@@ -426,7 +428,7 @@ body {
   font-family: 'Space Mono', monospace;
   font-size: 25px;
   margin:8px;
-  transition:0.6s;
+  transition: fade 1s;
 }
 
 .card:hover {
@@ -438,7 +440,7 @@ body {
   opacity: 0.8;
   background-color: gray;
   padding:10px;
-  border-radius: 0px;
+  border-radius: 10px;
   font-family: 'Space Mono', monospace;
   font-size: 25px;
   margin-left: 8px;
@@ -448,8 +450,8 @@ body {
 .card-inside {
   opacity: 0.8;
   background-color: rgba(236, 236, 236, 0.623);
-  padding: 10px 0px;
-  border-radius: 0px;
+  padding: 10px;
+  border-radius: 10px;
   font-family: 'Space Mono', monospace;
   font-size: 25px;
   margin: 0px;
@@ -461,18 +463,19 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+  opacity: 100%;
   width: 250px;
 }
 
 .compName {
-  font-weight: bold;
+  font-weight: 900;
   font-size: 28px;
 }
 
 .topThree {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 20px
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 20px;
 }
 
 .link-style {
@@ -521,7 +524,7 @@ body {
   opacity: 0.5;
   background-color: white;
   padding: 15px;
-  border-radius: 25px;
+  border-radius: 10px;
   font-family: 'Space Mono', monospace;
   margin:8px;
   transition:0.6s;
@@ -565,11 +568,14 @@ body {
   font-size: 23px;
   text-align: left;
   justify-content: left;
-  margin-left: 15px;
   border-width: 1px;
   border-color:grey;
+  background-color: rgba(140, 140, 140, 0.5);
+  backdrop-filter: 24px;
+  border-radius: 10px;
   border-style:solid;
   padding: 5px;
+  box-shadow:0 0 6px white;
 }
 
 .game-video {
@@ -579,6 +585,7 @@ body {
   border-style: solid;
   border-color: grey;
   border-width: 1px;
+  border-radius: 10px;
   animation: fadeIn 0.5s
 }
 
@@ -672,6 +679,10 @@ body {
   margin: 0% 2%;
 }
 
+.profile-card {
+  transition: transform .2s;
+}
+
 .profile-card:hover {
   transform: scale(1.1);
 }
@@ -681,6 +692,7 @@ body {
   border-style: solid;
   border-width: 2px;
   opacity: 1;
+  scale: .95;
 }
 
 .center {
@@ -739,4 +751,39 @@ body {
   left: 0;
   z-index: 1;
   content: "";
+}
+
+/*Pagination CSS*/
+.paginationBttns a:hover {
+  background-color: #21043a;
+  color: white;
+}
+
+.paginationBttns {
+  width: 80%;
+  height: 50px;
+  /*opacity: 0.5;*/
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: #ffffff;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.paginationDisabled a {
+  border: none;
+  color: transparent;
+}
+
+.paginationActive a {
+  background-color: #21043a;
 }

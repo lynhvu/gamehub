@@ -17,27 +17,298 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
 </td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#eeaa77">
+<tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
     
-<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-companies"><strong>companies</strong></a>()</dt><dd><tt>Companies&nbsp;function&nbsp;for&nbsp;transferring&nbsp;company&nbsp;data</tt></dd></dl>
- <dl><dt><a name="-games"><strong>games</strong></a>()</dt><dd><tt>Games&nbsp;function&nbsp;for&nbsp;transferring&nbsp;game&nbsp;data</tt></dd></dl>
- <dl><dt><a name="-genres"><strong>genres</strong></a>()</dt><dd><tt>Genres&nbsp;function&nbsp;for&nbsp;transferring&nbsp;genre&nbsp;data</tt></dd></dl>
- <dl><dt><a name="-index"><strong>index</strong></a>()</dt><dd><tt>Index&nbsp;function&nbsp;for&nbsp;home&nbsp;page.</tt></dd></dl>
-</td></tr></table><p>
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">sqlalchemy.orm.decl_api.Model(<a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Company">Company</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Game">Game</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Genre">Genre</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Company">class <strong>Company</strong></a>(sqlalchemy.orm.decl_api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Base&nbsp;class&nbsp;for&nbsp;SQLAlchemy&nbsp;declarative&nbsp;base&nbsp;model.<br>
+&nbsp;<br>
+To&nbsp;define&nbsp;models,&nbsp;subclass&nbsp;:attr:`db.Model&nbsp;&lt;SQLAlchemy.Model&gt;`,&nbsp;not&nbsp;this<br>
+class.&nbsp;To&nbsp;customize&nbsp;``db.Model``,&nbsp;subclass&nbsp;this&nbsp;and&nbsp;pass&nbsp;it&nbsp;as<br>
+``model_class``&nbsp;to&nbsp;:class:`SQLAlchemy`.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Company">Company</a></dd>
+<dd>sqlalchemy.orm.decl_api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Company-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Company-as_dict"><strong>as_dict</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>games</strong></dt>
+</dl>
+<dl><dt><strong>genre_id</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>img</strong></dt>
+</dl>
+<dl><dt><strong>location</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>num_games</strong></dt>
+</dl>
+<dl><dt><strong>year</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1e5bfdd0588; Company&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('company', MetaData(), Column('id', Intege...tring(length=500), table=&lt;company&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'company'</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>__abstract__</strong> = True</dl>
+
+<dl><dt><strong>metadata</strong> = MetaData()</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<dl><dt><strong>registry</strong> = &lt;sqlalchemy.orm.decl_api.registry object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><a name="Company-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Game">class <strong>Game</strong></a>(sqlalchemy.orm.decl_api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Base&nbsp;class&nbsp;for&nbsp;SQLAlchemy&nbsp;declarative&nbsp;base&nbsp;model.<br>
+&nbsp;<br>
+To&nbsp;define&nbsp;models,&nbsp;subclass&nbsp;:attr:`db.Model&nbsp;&lt;SQLAlchemy.Model&gt;`,&nbsp;not&nbsp;this<br>
+class.&nbsp;To&nbsp;customize&nbsp;``db.Model``,&nbsp;subclass&nbsp;this&nbsp;and&nbsp;pass&nbsp;it&nbsp;as<br>
+``model_class``&nbsp;to&nbsp;:class:`SQLAlchemy`.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Game">Game</a></dd>
+<dd>sqlalchemy.orm.decl_api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Game-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Game-as_dict"><strong>as_dict</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>company</strong></dt>
+</dl>
+<dl><dt><strong>company_id</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>genre</strong></dt>
+</dl>
+<dl><dt><strong>genre_id</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>pictures</strong></dt>
+</dl>
+<dl><dt><strong>platforms</strong></dt>
+</dl>
+<dl><dt><strong>released</strong></dt>
+</dl>
+<dl><dt><strong>score</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1e5bfdd0c88; Game&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('game', MetaData(), Column('id', Integer()...ms', ARRAY(String()), table=&lt;game&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'game'</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>__abstract__</strong> = True</dl>
+
+<dl><dt><strong>metadata</strong> = MetaData()</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<dl><dt><strong>registry</strong> = &lt;sqlalchemy.orm.decl_api.registry object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><a name="Game-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Genre">class <strong>Genre</strong></a>(sqlalchemy.orm.decl_api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Base&nbsp;class&nbsp;for&nbsp;SQLAlchemy&nbsp;declarative&nbsp;base&nbsp;model.<br>
+&nbsp;<br>
+To&nbsp;define&nbsp;models,&nbsp;subclass&nbsp;:attr:`db.Model&nbsp;&lt;SQLAlchemy.Model&gt;`,&nbsp;not&nbsp;this<br>
+class.&nbsp;To&nbsp;customize&nbsp;``db.Model``,&nbsp;subclass&nbsp;this&nbsp;and&nbsp;pass&nbsp;it&nbsp;as<br>
+``model_class``&nbsp;to&nbsp;:class:`SQLAlchemy`.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Genre">Genre</a></dd>
+<dd>sqlalchemy.orm.decl_api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Genre-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Genre-as_dict"><strong>as_dict</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>companies</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>games</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>num_games</strong></dt>
+</dl>
+<dl><dt><strong>picture</strong></dt>
+</dl>
+<dl><dt><strong>themes</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1e5bfe13208; Genre&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('genre', MetaData(), Column('id', Integer(... String(length=700), table=&lt;genre&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'genre'</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>__abstract__</strong> = True</dl>
+
+<dl><dt><strong>metadata</strong> = MetaData()</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<dl><dt><strong>registry</strong> = &lt;sqlalchemy.orm.decl_api.registry object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><a name="Genre-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>api</strong> = &lt;Flask 'models'&gt;<br>
-<strong>companyData</strong> = [{'description': 'Established in 1984, Naughty Dog is one of the m...fan base of millions of players around the globe.', 'games': ["Uncharted 2: Among Thieves - Limited Edition Collector's Box", 'The Last of Us Remastered', 'The Last of Us', 'The Last of Us Part II', "Uncharted 4: A Thief's End", 'Uncharted: Legacy of Thieves Collection', 'Uncharted: The Nathan Drake Collection - Special Edition', "Uncharted 3 Drake's Deception - Game of the Year Edition", 'Uncharted 2: Among Thieves'], 'genre': 'Adventure', 'id': 0, 'img': 'https://images.igdb.com/igdb/image/upload/t_logo_med/bcpeptiqicy9g0gn4nur.png', 'location': 'United States', 'name': 'Naughty Dog', 'rating': 85, 'year': '1984'}, {'description': 'Obsidian Entertainment is an American video game...Gs or included role-playing elements in gameplay.', 'games': ['Fallout: New Vegas - Ultimate Edition', 'Star Wars: Knights of the Old Republic II - The Sith Lords', 'Fallout: New Vegas', 'Neverwinter Nights 2: Mask of the Betrayer', 'Neverwinter Nights 2: Platinum', 'South Park: The Stick of Truth', 'Tyranny', 'Neverwinter Nights 2', 'Fallout: New Vegas - Old World Blues'], 'genre': 'Role Playing', 'id': 1, 'img': 'https://images.igdb.com/igdb/image/upload/t_logo_med/cl1my.png', 'location': 'United States', 'name': 'Obsidian Entertainment', 'rating': 79, 'year': '2003'}, {'description': "Valve's debut title, Half-Life, was released in ...day, millions of people play our games every day.", 'games': ['Half-Life: Alyx', 'Portal 2', 'Half-Life 2', 'The Orange Box', 'Half-Life', 'Half-Life 2: Episode Two', 'Portal', 'Portal: Still Alive', 'Counter Strike'], 'genre': 'Puzzle', 'id': 2, 'img': 'https://images.igdb.com/igdb/image/upload/t_logo_med/cl2he.png', 'location': 'United States', 'name': 'Valve Corporation', 'rating': 77, 'year': '1996'}]<br>
-<strong>gamesData</strong> = [{'description': 'Silent template for your adventures, Chell, wake... is unraveled through environmental storytelling.', 'developer': 'Valve Corporation', 'genre': ['Adventure', 'Puzzle'], 'id': 0, 'name': 'Portal', 'pictures': ['https://media.rawg.io/media/resize/420/-/screenshots/99e/99e94bd55eb75fa6e75c3dcbb1a570b2.jpg', 'https://media.rawg.io/media/resize/420/-/screenshots/2f0/2f0297a46934d9fa914c626902b1ce20.jpg', 'https://media.rawg.io/media/resize/420/-/screenshots/3b3/3b3713fbca6194dfc4d6e8a8d006d354.jpg'], 'platforms': 'PC, macOS, Linux, Xbox 360, PlayStation 3, Android', 'releaseDate': 'Oct 9, 2007', 'score': 90, 'videos': ['https://media.rawg.io/media/stories/8a1/8a17d3fc984d01379a83338b2d753c37.mp4']}, {'description': 'The population of the Earth almost disappeared a... people and people who have almost lost humanity.', 'developer': 'Naughty Dog', 'genre': ['Action', 'Adventure'], 'id': 1, 'name': 'The Last of Us', 'pictures': ['https://media.rawg.io/media/resize/420/-/screenshots/e58/e5851e0c9b08172369dc1a1814b1c275.jpg', 'https://media.rawg.io/media/resize/420/-/screenshots/4a8/4a8bc73ffc37e6794fd962736d0a5436.jpg', 'https://media.rawg.io/media/resize/420/-/screenshots/fd5/fd5e75708c5d123519f5329344d0a376.jpg'], 'platforms': 'Playstation 3, Playstation 4', 'releaseDate': 'Jun 14, 2013', 'score': 95, 'videos': ['https://media.rawg.io/media/stories/511/5112442e0722abb31eda4ea97594f4f6.mp4']}, {'description': "Fallout: New Vegas follows the Courier as he's a...barking on his journey to retrieve Platinum Chip.", 'developer': 'Obsidian Entertainment', 'genre': ['Action', 'Shooter', 'Adventure', 'RPG'], 'id': 2, 'name': 'Fallout: New Vegas', 'pictures': ['https://media.rawg.io/media/resize/420/-/screenshots/5b3/5b39206a3b241688fbd69467d75151b8.jpg', 'https://media.rawg.io/media/resize/420/-/screenshots/7c5/7c5083ee282a2ea3d6248361592cf8af.jpg', 'https://media.rawg.io/media/resize/420/-/screenshots/286/2861a20b67d61263b5b790cb1ab5e330.jpg'], 'platforms': 'Xbox One, Playstation 4, Playstation 3, PC, Xbox 360', 'releaseDate': 'Oct 19, 2010', 'score': 84, 'videos': ['https://media.rawg.io/media/stories/46d/46da17d05563581bfe2387bbb4d32ee6.mp4']}]<br>
-<strong>genresData</strong> = [{'companies': ['Capcom', 'Nintendo', 'Ubisoft', 'Bandai Namco'], 'description': 'An action game is a video game genre that emphas... strategy games are also considered action games.', 'games': ['Elden Ring', 'Monster Hunter: World', 'Super Smash Bros.', 'For Honor', 'Sekiro: Shadows Die Twice'], 'icon': 'http://www.hectick.net/uploads/1/3/0/5/13050649/1895758_orig.png', 'id': 0, 'name': 'Action', 'num': 153616, 'pictures': ['https://cdn.mos.cms.futurecdn.net/fNyjvMw8evGHzbri3GWGRj-480-80.jpg', 'https://assets.nintendo.com/image/upload/ar_16:9...s-ultimate-switch/screenshot-gallery/screenshot01', 'https://www.gannett-cdn.com/presto/2019/07/31/PR...dth=660&amp;height=372&amp;fit=crop&amp;format=pjpg&amp;auto=webp'], 'themes': 'physical combats, quick reflexes, abilities and specials, obstables and enemies'}, {'companies': ['Rockstar Games', 'Sony Interactive Entertainment', 'Naughty Dog'], 'description': 'An adventure game is a video game in which the p..., encompassing a wide variety of literary genres.', 'games': ['Red Dead Redemption 2', 'Grand Theft Auto V', 'The Last of Us', "Assassin's Creed: Valhalla", 'The Legend of Zelda: Breath of the Wild'], 'icon': 'http://www.hectick.net/uploads/1/3/0/5/13050649/1638940_orig.png', 'id': 1, 'name': 'Adventure', 'num': '116447', 'pictures': ['https://www.nme.com/wp-content/uploads/2021/01/R...ion-Credit-Rockstar-Games-2@2000x1270-696x442.jpg', 'https://s1.gaming-cdn.com/images/products/2616/6...game-nintendo-eshop-europe-cover.jpg?v=1649856929', 'https://www.playstationlifestyle.net/assets/uplo...-of-Us-Part-1-filesize-and-DualSense-features.png'], 'themes': 'exploration, gathering and looting, stories and settings'}, {'companies': ['Valve Corporation', 'Playdead', 'Tomorrow Corporation'], 'description': 'Puzzle video games make up a broad genre of vide...olving, spatial recognition, and word completion.', 'games': ['Portal', 'Angry Birds', 'Inside', 'Little Nightmare', 'Human Resource Machine'], 'icon': 'http://www.hectick.net/uploads/1/3/0/5/13050649/8037402_orig.png', 'id': 2, 'name': 'Puzzle', 'num': 86556, 'pictures': ['https://i.guim.co.uk/img/static/sys-images/Techn...&amp;fit=max&amp;dpr=2&amp;s=fd0ce746e36694739ec0966ba82f6b79', 'https://www.gamegrin.com/assets/Uploads/2019/12/17/_resampled/resizedimage640359-EMBumtOUEAAJxVQ.jpg', 'https://store-images.s-microsoft.com/image/apps....4205-8ed4-4282-beaa-593d7ad39b94?q=90&amp;w=480&amp;h=270'], 'themes': 'problem solving, physics, riddles, hidden objects'}, {'companies': ['CD Projekt', 'Bethesda Game Studios', 'Sqaure Enix'], 'description': 'A role-playing game is a game in which players a... decision-making regarding character development.', 'games': ['Cyperpunk 2077', 'The Witcher 3: Wild Hunt', 'The Elder Scrolls V: Skyrim', 'Final Fantasy XV', 'Fallout: New Vegas'], 'icon': 'http://www.hectick.net/uploads/1/3/0/5/13050649/2096188_orig.png', 'id': 3, 'name': 'Role Playing', 'num': 47013, 'pictures': ['https://www.cyberpunk.net/build/images/media/scr.../Cyberpunk2077_Love_this_town_RGB-en-bc9e7b03.jpg', 'https://preview.redd.it/p72tsf53pvk51.png?width=...o=webp&amp;s=f025836bfb787ffdb5356c0cd978eacf9fee731e', 'https://cdn.jwplayer.com/v2/media/pJuRvmCU/poster.jpg?width=720'], 'themes': 'fiction, narration, decision-making, character development'}, {'companies': ['Respawn Entertainment', 'Ubisoft', 'Blizzard Entertainment', 'Activision'], 'description': "Shooter video games or shooters are a subgenre o...des which augment the player character's weapons.", 'games': ['Counter-Strike: Global Offensive', 'Apex Legends', "Tom Clancy's Rainbow Six Siege", 'Overwatch 2', 'Call of Duty', 'Back 4 Blood'], 'icon': 'http://www.hectick.net/uploads/1/3/0/5/13050649/5191714_orig.png', 'id': 4, 'name': 'Shooter', 'num': '53203', 'pictures': ['https://www.nme.com/wp-content/uploads/2020/12/120420-CS-GO-Operation-Broken-Fang-696x442.jpg', 'https://www.denofgeek.com/wp-content/uploads/2022/04/Overwatch-2-2.jpg?resize=768%2C432', 'https://store-images.s-microsoft.com/image/apps....f5d8-f2b7-41db-9b1b-0c1ddb375729?q=90&amp;w=480&amp;h=270'], 'themes': 'guns, grenades, spatial awareness, reflexes, teamwork'}]</td></tr></table>
+<td width="100%"><strong>DBNAME</strong> = 'gamehubdb'<br>
+<strong>PASSWORD</strong> = 'abc'<br>
+<strong>PUBLIC_IP_ADDRESS</strong> = 'localhost:5432'<br>
+<strong>USER</strong> = 'postgres'<br>
+<strong>api</strong> = &lt;Flask 'models'&gt;<br>
+<strong>db</strong> = &lt;SQLAlchemy engine=postgresql://postgres:***@localhost:5432/gamehubdb&gt;</td></tr></table>
 </body></html>

@@ -2,6 +2,7 @@ image: node:latest
 
 stages:
   - build
+  - test
 
 build_front_end:
   stage: build
@@ -9,3 +10,10 @@ build_front_end:
     - npm install
     - CI=false npm run-script build
 
+postman:
+  stage: test
+  image:
+    name: postman/newman
+    entrypoint: [""]
+  script:
+    newman run GameHub_postman_test_run.json

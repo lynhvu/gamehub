@@ -1,8 +1,262 @@
+commit ab9af1e4c62e93be7e7a4de5a091efcbffd14ffe
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 21:33:51 2022 -0500
+
+    unit tests
+
+commit a235e08e7176a5b733b6ddd16e4b9d8230c74515
+Merge: 7c45f07 845cfc3
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 21:30:54 2022 -0500
+
+    Merge branch 'proj3' of https://gitlab.com/lynhvu138/cs373-idb into proj3
+
+commit 7c45f07ad1849a1314da5fde0f78db616c804e49
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 21:30:42 2022 -0500
+
+    update log and models.html
+
+commit 845cfc319f8deac10c53d8535911d4c2b6b36259
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Thu Jul 7 22:27:42 2022 -0400
+
+    updated stats in about page
+
+commit 876958489df595d3d05af0ccb4356683c51c1ac3
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Thu Jul 7 22:20:15 2022 -0400
+
+    working unit test button
+
+commit e073b1a5a4b700f542cf117dba3cd48ed5e1544b
+Merge: ae6f8d1 df75ba6
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Thu Jul 7 20:49:28 2022 -0500
+
+    Fixed unit tests
+
+commit ae6f8d11c49ffd68bc25599a020f4a3ab43b40d9
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Thu Jul 7 20:48:36 2022 -0500
+
+    Fixed unit tests
+
+commit df75ba6b9ed8da80bd23b7648bd757646a29598e
+Author: Lukeluds <luyuan925@163.com>
+Date:   Thu Jul 7 20:45:50 2022 -0500
+
+    removing unnecessary comments and codes
+
+commit 284f585da021d0ee602217e00ed6ab206b004f30
+Author: Lukeluds <luyuan925@163.com>
+Date:   Thu Jul 7 20:43:30 2022 -0500
+
+    fixing tests bugs hopefully
+
+commit a778cf8f370f0b9b488d2305a259c4e95a44613c
+Merge: 75dd157 1f564b3
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 20:13:49 2022 -0500
+
+    merging
+
+commit 1f564b31892e627d0537c0d8b15b74b2de46116c
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 20:04:40 2022 -0500
+
+    more polishing
+
+commit 75dd15783466619381d98553a778992069be9913
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 19:59:46 2022 -0500
+
+    add tests for singular data api calls
+
+commit 3d1d553a58f6df4578dfacb1aabd4a318b9c56eb
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 19:57:54 2022 -0500
+
+    polishing up format, fixing links
+
+commit 69bbbab4b05ebe25eaa2e5ab7c17b25559b34c37
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 19:50:07 2022 -0500
+
+    edit makefile, add main.html, add IDB2.log
+
+commit 51ad942ab0cb1af26929db8903eb76993d858f27
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 19:43:07 2022 -0500
+
+    updated models.html
+
+commit 1c420075a925d59a75a9b49c06b5867f3d3f3932
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 18:01:42 2022 -0500
+
+    small edits
+
+commit 97f88ef2cf43cd4c6f8bc7a35773c28b6fd9be53
+Merge: db8d5ee e0d8e2a
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 17:30:38 2022 -0500
+
+    Merge branch 'paginate' of https://gitlab.com/lynhvu138/cs373-idb into paginate
+
+commit db8d5ee9546c89c9fea3d1ff2d60ad796f7423b6
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 17:30:25 2022 -0500
+
+    added company pages and links
+
+commit e0d8e2af0fd4dbbeaa6854466e5d3239465fae75
+Author: Lauren Blummer <lblummer@utexas.edu>
+Date:   Thu Jul 7 21:59:41 2022 +0000
+
+    Splash Page image for technical report
+
+commit 5fda32412ac3d7b0fc8d67ae4fbecd0da09fce27
+Merge: c36d7be 7f338d9
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Thu Jul 7 16:03:01 2022 -0500
+
+    Added tests to tests.py
+
+commit c36d7be35c25dcc701c30513360fdf287b0e7320
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Thu Jul 7 16:01:27 2022 -0500
+
+    Added 3 tests to tests.py
+
+commit 7f338d982ea73a78c49210661dc333f272f26f50
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Thu Jul 7 16:56:36 2022 -0400
+
+    about page - created an empty button for unit tests
+
+commit a5bb05ce3a9cbef44f82d07fa978c5f978758480
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Thu Jul 7 16:18:05 2022 -0400
+
+    unit tests - apis
+
+commit e6d635fdce65c72c6ffac6740100893b805a0ba0
+Author: Lauren Blummer <lblummer@utexas.edu>
+Date:   Thu Jul 7 19:25:04 2022 +0000
+
+    UML.png for technical report purposes
+
+commit b26aeefbf376b3b5bca9dcbdb659eaf7b1b0d308
+Merge: 0f21726 592b6e6
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 14:12:17 2022 -0500
+
+    Merge branch 'paginate' of https://gitlab.com/lynhvu138/cs373-idb into paginate
+
+commit 0f21726c4712a18cffd60e313a480767164ba75d
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 14:11:47 2022 -0500
+
+    polishing conversion of ids to names
+
+commit 592b6e6610d4076a03e2fc0e380e1e8d2b6eb23c
+Author: Linh Vu <linhvu.138@utexas.edu>
+Date:   Thu Jul 7 14:49:32 2022 -0400
+
+    add YUML pdf
+
+commit 6089eea81634314563689c8cff10b369f2edfdc7
+Author: Michael Chan <michan@utexas.edu>
+Date:   Thu Jul 7 13:24:02 2022 -0500
+
+    converting ids to names in the game and genre lists
+
+commit 9315bd4a3ec42731c099b1e1d99587fd0f2fb673
+Author: Lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 11:32:39 2022 -0500
+
+    baseline for fetching from deployed back end for lists ok. no connection to individual pages
+
+commit e38d6ed3a4bbe748b7da61c19246fc0a3cfb201d
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 23:46:39 2022 -0500
+
+    added postman tests file and updated pipeline file
+
 commit 0203d65ef8696082533309cf0329fb4798f6b11b
 Author: janssenbozon <janssenbozon@gmail.com>
 Date:   Wed Jul 6 22:05:07 2022 -0500
 
     Changed ganres page to have gallery
+
+commit 50f239088e7e893904474e4b5b6091fa6dac5032
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 21:24:21 2022 -0500
+
+    another edit to models.py bcs deployment issue
+
+commit 5a9b4e86b06566db224e426251a10a49263a1cc0
+Merge: 33a7397 cab6d57
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 21:02:39 2022 -0500
+
+    Merge branch 'proj3' of https://gitlab.com/lynhvu138/cs373-idb into proj3
+
+commit 33a739753d0390a5518f9d64473c175a551ba8f1
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 21:02:24 2022 -0500
+
+    edits for getting proper data response(s)
+
+commit cab6d578c6f9c01515c13e5d53d693b4e4dabedf
+Author: lauren <lblummer@utexas.edu>
+Date:   Thu Jul 7 00:24:54 2022 +0000
+
+    update requirements again and update models
+
+commit 6ece802df2aec0957442fe54b5f6f8a1f16c734c
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 18:52:23 2022 -0500
+
+    add gunicorn to requirements.txt
+
+commit 151e1077ba8b9b1f348164c92564ddcd45fef32f
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 18:44:28 2022 -0500
+
+    mod app.yaml and update requirements.txt
+
+commit a3bb9edaa7502c7bc458ed1d6deb65b26d20c8b1
+Merge: 5901601 4120cd4
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 18:07:15 2022 -0500
+
+    Merge branch 'proj3' of https://gitlab.com/lynhvu138/cs373-idb into proj3
+
+commit 59016018edb6dadf8a7a16220a9650a8babd1489
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 18:06:55 2022 -0500
+
+    updated app.yaml in backend
+
+commit 4120cd4b2f310bfc1d3afafd36e966ad374eb706
+Author: Lukeluds <luyuan925@163.com>
+Date:   Wed Jul 6 16:38:04 2022 -0500
+
+    commenting tests
+
+commit 649e85c8eb860865c919054a990f1977596a21e9
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 12:53:58 2022 -0500
+
+    minor fix to filling in companies array for genres in create_db.py
+
+commit a8f75e07683e3c9a75b5d5649e8025cf7b307b6e
+Author: Lauren <lblummer@utexas.edu>
+Date:   Wed Jul 6 11:54:31 2022 -0500
+
+    updated main.py routes to pull appropriate information from backend and align with api calls. Also added serialization to each model
 
 commit 7cab60aec2033723ea9579927cbb4cb6addfe94f
 Merge: 39002c4 9890c38
@@ -30,6 +284,31 @@ Date:   Tue Jul 5 21:03:03 2022 -0500
 
     minor cleaning
 
+commit c0ab70375d3b6770554d1348f7643e5eca3f6af4
+Merge: 05d61be 99e78cc
+Author: Michael Chan <michan@utexas.edu>
+Date:   Tue Jul 5 19:10:53 2022 -0500
+
+    fixing merge stuff
+
+commit 05d61be6afdec970ddab23b2bc4d974a7495dd20
+Author: Michael Chan <michan@utexas.edu>
+Date:   Tue Jul 5 19:07:21 2022 -0500
+
+    finished API scraping code
+
+commit 99e78cc14dd5e699748b33ad419cd57716b0f357
+Author: Lukeluds <luyuan925@163.com>
+Date:   Tue Jul 5 16:39:15 2022 -0500
+
+    adding some unit tests
+
+commit d1d960e4753146ff90a25d5148c81494d5561e3e
+Author: Lukeluds <luyuan925@163.com>
+Date:   Tue Jul 5 16:11:20 2022 -0500
+
+    push before making changes that might break
+
 commit 03e8e00afe6b82165dd95d02296e846e7921a018
 Author: Lauren <lblummer@utexas.edu>
 Date:   Tue Jul 5 13:52:57 2022 -0500
@@ -47,6 +326,12 @@ Author: Lauren <lblummer@utexas.edu>
 Date:   Tue Jul 5 13:45:01 2022 -0500
 
     sorting fixed for games page
+
+commit 025a429d3397828bf3725f7cbb8a22eb6fce7281
+Author: Michael Chan <michan@utexas.edu>
+Date:   Tue Jul 5 13:41:23 2022 -0500
+
+    finished create_db api requests
 
 commit 3b1c63ddeb6e1ecbd13b531de3fb51d97f87a8de
 Author: Lauren <lblummer@utexas.edu>
@@ -71,6 +356,68 @@ Author: Lauren <lblummer@utexas.edu>
 Date:   Tue Jul 5 10:35:01 2022 -0500
 
     some trial pagination code written
+
+commit cc0beb3d30f5e99e8498d0ebec7da178b28ce60a
+Author: Michael Chan <michan@utexas.edu>
+Date:   Tue Jul 5 02:23:17 2022 -0500
+
+    added to api scraping for companies
+
+commit 19ed32597c2c490b04b5f78235d9da649acd27ec
+Author: Michael Chan <michan@utexas.edu>
+Date:   Mon Jul 4 22:27:23 2022 -0500
+
+    updating create_db with some more API scraping code
+
+commit ae7c3cbf7dee0d9d8509d696196e964d13ab5f74
+Author: Lauren <lblummer@utexas.edu>
+Date:   Mon Jul 4 10:57:24 2022 -0500
+
+    more work on create_genres in create_db.py
+
+commit b4653a43fc2f455132103dcc85b361b1af120b47
+Author: Lauren <lblummer@utexas.edu>
+Date:   Mon Jul 4 09:46:16 2022 -0500
+
+    started genre API input code
+
+commit 86aba9cd96823c93b2ae76361bd193796ddc8aad
+Merge: 7ac5431 8704d29
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jul 3 16:13:36 2022 -0500
+
+    Merge branch 'proj3' of https://gitlab.com/lynhvu138/cs373-idb into proj3
+
+commit 7ac5431150e21bb9d52ff96aec060fb38a42d730
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sun Jul 3 16:13:09 2022 -0500
+
+    added api input for games
+
+commit 8704d297bb79ccbbd5131d58fa6ac3c43c9a1f22
+Merge: cb7c335 aea4b5d
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Sun Jul 3 01:05:05 2022 -0500
+
+    Merge branch 'proj3' of https://gitlab.com/lynhvu138/cs373-idb into proj3
+
+commit cb7c33519a74edcc864fb15845bd6aecc8098cf6
+Author: janssenbozon <janssenbozon@gmail.com>
+Date:   Sun Jul 3 01:03:50 2022 -0500
+
+    Unified design and added 'make run' back into makefile
+
+commit aea4b5dece7258be16b8a53204889755be0a4eed
+Author: Michael Chan <michan@utexas.edu>
+Date:   Sat Jul 2 17:38:05 2022 -0500
+
+    added to models, main, create_db
+
+commit 6db77c41e7862f6cc8969e828bc55e5092ea0026
+Author: Lauren <lblummer@utexas.edu>
+Date:   Fri Jul 1 19:20:09 2022 -0500
+
+    base models coded still needs work
 
 commit c927865c90e52e8986d93b58726e3cd48a61f4a0
 Author: Lauren <lblummer@utexas.edu>

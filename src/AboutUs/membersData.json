@@ -19,9 +19,9 @@
         "resp": "Full Stack Development, iOS Development",
         "about": "",
         "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/janssen.JPG",
-        "commits": "7",
+        "commits": "12",
         "issues": "0",
-        "tests": "0"
+        "tests": "3"
     },
     {
         "id": "3",
@@ -31,9 +31,9 @@
         "resp": "Full Stack Development",
         "about": "",
         "picture": "https://www.cs.utexas.edu/users/lblummer/lauren.JPG",
-        "commits": "27",
-        "issues": "5",
-        "tests": "0"
+        "commits": "58",
+        "issues": "9",
+        "tests": "3"
     },
     {
         "id": "4",
@@ -43,9 +43,9 @@
         "resp": "Project Management, Front End Development",
         "about": "",
         "picture": "https://github.com/lynhvu/personal-website.github.io/blob/main/img/profile.JPG?raw=true",
-        "commits": "23",
-        "issues": "5",
-        "tests": "0"
+        "commits": "28",
+        "issues": "7",
+        "tests": "3"
     },
     {
         "id": "5",
@@ -57,7 +57,7 @@
         "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/luke.jpg",
         "commits": "15",
         "issues": "0",
-        "tests": "0"
+        "tests": "3"
     },
     {
         "id": "6",
@@ -67,8 +67,8 @@
         "resp": "Full Stack Development",
         "about": "",
         "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/michael.jpg",
-        "commits": "17",
-        "issues": "5",
-        "tests": "0"
+        "commits": "30",
+        "issues": "7",
+        "tests": "1"
     }
 ]
