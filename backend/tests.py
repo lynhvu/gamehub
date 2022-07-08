@@ -17,7 +17,7 @@ class TestModels(TestCase):
         temp = db.session.query(Company).filter_by(id=2).one()
         self.assertEqual(temp.id, 2)
         self.assertEqual(str(temp.name), "Valve Software")
-        self.assertEqual(str(temp.location), "United States")
+        self.assertEqual(str(temp.location), "Not Available")
         self.assertEqual(temp.num_games, 42)
         self.assertEqual(
             str(temp.img),
@@ -63,7 +63,7 @@ class TestModels(TestCase):
         temp = db.session.query(Genre).filter_by(id=0).one()
         self.assertEqual(temp.id, 0)
         self.assertEqual(str(temp.name), "Action")
-        self.assertEqual(temp.num_games, 154515)
+        self.assertEqual(temp.num_games, 154512)
         self.assertEqual(
             str(temp.themes),
             "Physical combat, Quick reflexes, Abilities, Obstables and Enemies",
