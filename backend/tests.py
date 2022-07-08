@@ -37,20 +37,20 @@ class TestModels (TestCase):
         )
     
     def test_company2(self):
-        temp = db.session.query(Company).filter_by(id=0).one()
-        self.assertEqual(temp.id, 0)
-        self.assertEqual(str(temp.name), "Naughty Dog")
+        temp = db.session.query(Company).filter_by(id=31).one()
+        self.assertEqual(temp.id, 31)
+        self.assertEqual(str(temp.name), "Team17 Digital")
         self.assertEqual(
             str(temp.description),
-            "Established in 1984, Naughty Dog is one of the most successful and prolific game development studios in the world and a flagship first-party studio within PlayStation Studios. From creating the iconic Crash Bandicoot and Jak and Daxter series to modern franchises like Uncharted and The Last of Us, Naughty Dog is responsible for some of the most critically acclaimed and commercially successful games on Sony’s PlayStation platforms. Through its use of cutting-edge technology and evocative, character-driven storytelling, Naughty Dog has received hundreds of industry and media awards, while developing a passionate fan base of millions of players around the globe.",
+            "<p>Team17 Software Ltd. is a British video game developer based in Wakefield, England. The studio developed more than 50 games and is best-known for its Worms franchise and, currently, The Escapist series. It was founded as a result of the merge of 17-bit Software publisher and Team7 development studio. Since its founding and until 1996 the studio was mostly a developer for Amiga systems. In 1991 the company developed the first installment in Alien Breed series of science fiction isometric shooters which were one of the Team17\u2019s main franchises in the 90s. In 1995 the studio\u2019s Worms came out. It was a 2D artillery tactical video game. Being a financial success, it spawned a franchise that keeps getting new entries up to this day with more than 20 games in the main series alone. As for 2017, 70 million copies of the games in the franchise were sold or downloaded worldwide.</p>",
         )
-        self.assertEqual(str(temp.location), "United States")
-        self.assertEqual(str(temp.year), "1984")
+        self.assertEqual(str(temp.location), "Not Available")
+        self.assertEqual(str(temp.year), "Not Available")
         # self.assertEqual(temp.num_games, 0)      # Could not find this info from models.py
         # TODO: not sure how to check for relationship
         self.assertEqual(
             str(temp.img),
-            "https://images.igdb.com/igdb/image/upload/t_logo_med/bcpeptiqicy9g0gn4nur.png",
+            "https://media.rawg.io/media/games/213/2138ba3c97d02b581ca0b50805fcd49c.jpg",
         )
 
     def test_game1(self):
@@ -68,15 +68,15 @@ class TestModels (TestCase):
         # TODO: not sure how to check for genre_id, comp_id, pictures and platforms
 
     def test_game2(self):
-        temp = db.session.query(Game).filter_by(id=0).one()
-        self.assertEqual(temp.id, 0)
-        self.assertEqual(str(temp.name), "Portal")
+        temp = db.session.query(Game).filter_by(id=6).one()
+        self.assertEqual(temp.id, 6)
+        self.assertEqual(str(temp.name), "Left 4 Dead 2")
         self.assertEqual(
             str(temp.description),
-            "Silent template for your adventures, Chell, wakes up in a testing facility. She's a subject of experiments on instant travel device, supervised by snarky and hostile GLaDOS. Players will have to complete the tests, room by room, expecting either reward, freedom or more tests. By using the gun, that shoots portals (Portal-Gun™), players will move blocks, travel great distance quickly and learn about your current situation, which is unraveled through environmental storytelling.",
+            "<p>Cooperative survival continues with a different set of characters. New survivors are making their way through 5 campaigns with an added ability to play through the story of the first game as well, using not only expanded arsenal of 20 ranged and 10 melee weapons but improved AI Director. Your surroundings and weather will change; enemy and item placement will differ from map to map, from difficulty to difficulty. New unique special zombies, placed in the unlucky for the player spot, can end your run.<br />\nHigh compatibility with community mods will allow you not only to add user-created maps but player models, enemy models, and even in-game music, which will help any player to create the unique experience on top of solid game mechanics.<br />\nCompetitive multiplayer mods from arena survival to a head-on competition with another team of survivors are addictive and, in addition to the campaign, will provide you with hundreds of hours of game content.</p>",
         )
-        self.assertEqual(temp.score, 90)
-        self.assertEqual(str(temp.released), "Oct 9, 2007")
+        self.assertEqual(temp.score, 89)
+        self.assertEqual(str(temp.released), "2009-11-17")
 
     def test_genre1(self):
         temp = db.session.query(Genre).filter_by(id=0).one()
@@ -94,17 +94,17 @@ class TestModels (TestCase):
         # TODO: not sure how to check for relationship
 
     def test_genre2(self):
-        temp = db.session.query(Genre).filter_by(id=1).one()
-        self.assertEqual(temp.id, 1)
-        self.assertEqual(str(temp.name), "Adventire")
+        temp = db.session.query(Genre).filter_by(id=5).one()
+        self.assertEqual(temp.id, 5)
+        self.assertEqual(str(temp.name), "Shooter")
         self.assertEqual(
             str(temp.description),
-            "An adventure game is a video game in which the player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving. The genre's focus on story allows it to draw heavily from other narrative-based media, literature and film, encompassing a wide variety of literary genres.",
+            "<p>A shooter is a sub-genre of action video games the gameplay of which is thoroughly centered around shooting targets. Such games can be presented from first and the third perspectives with the latter being mostly twin-stick platforming shooters. Mouse and keyboard are widely regarded as the best controllers for shooters, as the firing demands high precision achieved only with manual aiming. The primary goal of shooters is to defeat enemies by discharging loads of bullets into them. Shooters are the most discussable video game genre when it comes to judging violence in games, as the gunfire process involves realistic scenes of killing quite often. Sub-genre of shooters is also divided by sub-subgenres such as shoot&#39;em ups, tactical shooters, and hero shooters.  The former involves changing a direction of movement and shooting forward while the latter focuses on wiping out tons of enemies by one protagonist. Notable games of the genre are Resogun, Bulletstorm and Call of Duty.</p>",
         )
-        self.assertEqual(temp.num_games, 116447)
+        self.assertEqual(temp.num_games, 53552)
         self.assertEqual(
             str(temp.themes),
-            "exploration, gathering and looting, stories and settings",
+            "Guns, Grenades, Spatial Awareness, Reflexes, Teamwork",
         )
 
 

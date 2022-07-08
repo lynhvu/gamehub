@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Tue Jul  5 20:16:52 2022
+
+# Make data base, printed on Thu Jul  7 20:37:00 2022
 
 # Variables
 
@@ -44,7 +47,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/3_/4kdsjgm11t73fmcj3cw3_ll40000gn/T/vscode-ipc-ea434b4b-0848-4cf7-8003-b6f1c1382b65.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/3_/4kdsjgm11t73fmcj3cw3_ll40000gn/T/vscode-ipc-f3f8e2b3-61b9-4d8e-94e3-ed809a358205.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -58,7 +61,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.WUDqbqeVwD/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ZF1EgqFirr/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -160,7 +163,7 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/janssenbozon/opt/anaconda3
 # environment
-VSCODE_PID = 49893
+VSCODE_PID = 14334
 # environment
 _CE_CONDA = 
 # environment
@@ -174,9 +177,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777222, inode 86114645): 18 files, no impossibilities.
+# . (device 16777222, inode 86114645): 24 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -207,7 +210,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-05 19:57:26
+#  Last modified 2022-07-07 20:35:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -228,16 +231,48 @@ IDB1.log:
 #  Modification time never checked.
 #  File has not been updated.
 
-models.html:
+IDB2.log:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 33):
+	git log > IDB2.log
+	
+
+run:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 42):
+	npm start & source launch
+	
+
+postman-tests:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 45):
+	newman run GameHub_postman_test_run.json
+	
+
+models.html:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 36):
 	cd backend && $(PYDOC) -w models
 	
 
+main.html:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 39):
+	cd backend && $(PYDOC) -w main
+	
+
 # files hash-table stats:
-# Load=7/1024=1%, Rehash=0, Collisions=0/20=0%
+# Load=11/1024=1%, Rehash=0, Collisions=0/24=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -249,8 +284,6 @@ models.html:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jul  5 20:16:52 2022
+# Finished Make data base on Thu Jul  7 20:37:00 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-
