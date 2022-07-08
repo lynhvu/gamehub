@@ -13,12 +13,6 @@ class TestModels(TestCase):
     # read
     # ----
 
-    # def test_index(self):
-    #     self.assertEqual()
-
-    # def test_profiles(elf):
-    #     self.assertEqual()
-
     def test_company1(self):
         temp = db.session.query(Company).filter_by(id=2).one()
         self.assertEqual(temp.id, 2)
