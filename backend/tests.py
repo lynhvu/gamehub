@@ -125,6 +125,18 @@ class TestModels (TestCase):
         endpoint = "http://gamehubapi.me/games/"
         r = requests.get(endpoint)
         self.assertEqual(200, r.status_code)
+    def test_comp_api_1(self):
+        endpoint = "http://gamehubapi.me/companies/id:1"
+        r = requests.get(endpoint)
+        self.assertEqual(200, r.status_code)
+    def test_genres_api_1(self):
+        endpoint = "http://gamehubapi.me/genres/id:1"
+        r = requests.get(endpoint)
+        self.assertEqual(200, r.status_code)
+    def test_games_api_1(self):
+        endpoint = "http://gamehubapi.me/games/id:1"
+        r = requests.get(endpoint)
+        self.assertEqual(200, r.status_code)
 
 if __name__ == "__main__":
     main()
