@@ -64,6 +64,7 @@ const CompanyList = (props) => {
     setOrder(event.target.value);
   };
 
+  
   function genreName(id){
     for(var i = 0; i < genreData.length; i++){
         if (genreData[i].id == id){
@@ -74,9 +75,16 @@ const CompanyList = (props) => {
 
   sortByProperty();
 
- 
 
-  const displayComps = data
+// search by name, new
+function searchFor(term){
+  setComps(data.filter(function(item){
+     return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
+  }))
+}
+
+//note: changed data to comps, this breaks the sorting but should be easily fixable
+  const displayComps = comps
     .slice(pagesVisited, pagesVisited + compsPerPage)
     .map((item) => {
       return (
@@ -128,7 +136,9 @@ const CompanyList = (props) => {
         Companies
       </div>
       <br></br>
-      <CompSearch></CompSearch>
+      {/* <CompSearch></CompSearch> */}
+      <input type="text" name="search" id="search" placeholder="Game name..."></input>
+      <button name="search_btn" className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
       <div id="search-sort">Sort By:</div>
       <select value={selected} onChange={handleSelectChg}>
         {options.map((option) => (
