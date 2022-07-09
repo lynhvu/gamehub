@@ -5,6 +5,8 @@ import ReactPaginate from "react-paginate";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
+import CompSearch from "./searchCompany";
+
 
 const CompanyList = (props) => {
     var [data, setData] = useState([])
@@ -72,6 +74,8 @@ const CompanyList = (props) => {
 
   sortByProperty();
 
+ 
+
   const displayComps = data
     .slice(pagesVisited, pagesVisited + compsPerPage)
     .map((item) => {
@@ -123,7 +127,9 @@ const CompanyList = (props) => {
       <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
         Companies
       </div>
-      <div id="sort">Sort By:</div>
+      <br></br>
+      <CompSearch></CompSearch>
+      <div id="search-sort">Sort By:</div>
       <select value={selected} onChange={handleSelectChg}>
         {options.map((option) => (
           <option key={option.value} value={option.value}>

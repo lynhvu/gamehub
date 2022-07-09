@@ -153,7 +153,7 @@ const Genres = (props) => {
             <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 Genres
             </div>
-            <div id="sort">
+            <div id="search-sort">
                 Sort By:
             </div>
             <select value={selected} onChange={handleSelectChg}>

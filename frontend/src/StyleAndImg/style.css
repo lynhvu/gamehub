@@ -543,6 +543,8 @@ body {
   color:white;
   display: inline-block;
   margin:5px;
+  font-family: 'Space Mono', monospace;
+  font-size: 25px;
 }
 
 /* Styles for game pages */
@@ -661,10 +663,11 @@ body {
   text-align: left;
 }
 
-#sort {
+#search-sort {
   color:white;
   font-family: 'Space Mono', monospace;
   margin:2.5px;
+  font-size: 25px;
 }
 
 .stat-green {
@@ -786,4 +789,27 @@ body {
 
 .paginationActive a {
   background-color: #21043a;
+}
+
+input[type=text] {
+  width: 25%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=text]:focus {
+  background-color: rgb(184, 166, 226);
+}
+
+.searchbttn {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  color: white;
+  background-color: transparent;
+}
+.searchbttn:hover {
+  background-color: #21043a;
+  color: white;
 }
