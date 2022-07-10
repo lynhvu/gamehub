@@ -10,7 +10,7 @@ import CompSearch from "./searchCompany";
 
 const CompanyList = (props) => {
     var [data, setData] = useState([])
-    const [comps, setComps] = useState([]);
+    var [comps, setComps] = useState([]);
     const [genreData, setGens] = useState([]);
 
     useEffect(() => {
@@ -83,7 +83,11 @@ function searchFor(term){
   }))
 }
 
-//note: changed data to comps, this breaks the sorting but should be easily fixable
+function reset(){
+  setComps(data);
+}
+
+
   const displayComps = comps
     .slice(pagesVisited, pagesVisited + compsPerPage)
     .map((item) => {
@@ -136,9 +140,9 @@ function searchFor(term){
         Companies
       </div>
       <br></br>
-      {/* <CompSearch></CompSearch> */}
       <input type="text" name="search" id="search" placeholder="Game name..."></input>
-      <button name="search_btn" className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
+      <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
+      <button className="searchbttn" onClick={reset}>Reset</button>
       <div id="search-sort">Sort By:</div>
       <select value={selected} onChange={handleSelectChg}>
         {options.map((option) => (
@@ -175,7 +179,7 @@ function searchFor(term){
   );
 
   function sortByProperty() {
-    var objArr = data;
+    var objArr = comps;
     var prop = "attributes." + selected;
     var dir = order;
 
@@ -195,7 +199,7 @@ function searchFor(term){
       return a < b ? -1 * dir : a > b ? 1 * dir : 0;
     });
     // update the data
-    data = clone;
+    comps = clone;
   }
 };
 
