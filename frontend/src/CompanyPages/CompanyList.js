@@ -51,6 +51,8 @@ const CompanyList = (props) => {
     { value: "num_games", text: "Number of Games" },
   ];
   const [selected, setSelected] = useState(options[0].value);
+
+
   const orders = [
     { value: 1, text: "Ascending (A-Z or numerical)" },
     { value: "-1", text: "Descending (Z-A or numerical)" },
@@ -65,8 +67,31 @@ const CompanyList = (props) => {
     setOrder(event.target.value);
   };
 
+  const genreOptions = [
+    { value:"none", text:"Select a genre"},
+    { value:0, text: "Action" },
+    { value:1, text: "Indie" },
+    { value:2, text: "Adventure" },
+    { value:3, text: "RPG" },
+    { value:4, text: "Strategy" },
+    { value:5, text: "Shooter" },
+    { value:6, text: "Casual" },
+    { value:7, text: "Simulation" },
+    { value:8, text: "Puzzle" },
+    { value:9, text: "Arcade" },
+    { value:10, text: "Platformer" },
+    { value:11, text: "Racing" },
+    { value:12, text: "Massively Multiplayer" },
+    { value:13, text: "Sports" },
+    { value:14, text: "Fighting" },
+    { value:15, text: "Family" },
+    { value:16, text: "Board Games" },
+    { value:17, text: "Educational" },
+    { value:18, text: "Card" }
+  ];
 
-  
+
+
   function genreName(id){
     for(var i = 0; i < genreData.length; i++){
         if (genreData[i].id == id){
@@ -89,17 +114,23 @@ function reset(){
   setComps(data);
 }
 
-function applyFilters(startChar, endChar, startYear, endYear, location){
+function applyFilters(startChar, endChar, startYear, endYear, location, genreID, minGames, maxGames){
   setComps(data.filter(function(item){
     var qualifies = true;
     if(startChar && endChar){
-      qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase <= endChar.toLowerCase();
+      qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase() <= endChar.toLowerCase();
     }
     if(startYear && endYear){
       qualifies &= item.year >= startYear && item.year <= endYear;
     }
     if(location){
       qualifies &= item.location.toLowerCase() == location.toLowerCase();
+    }
+    if(genreID != "none"){
+      qualifies &= item.genre_id == genreID;
+    }
+    if(minGames || maxGames){
+      qualifies &= item.num_games >= minGames && item.num_games <= maxGames;
     }
     return qualifies;
   }));
@@ -178,7 +209,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location){
               </button>
             </div>
             <div class="modal-body">
-              Names (Starting character to ending character, filter by alphabetical order):<br></br>
+              Names (Starting letter to ending letter, filter by alphabetical order):<br></br>
               <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
               &nbsp;-&nbsp;
               <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
@@ -191,6 +222,22 @@ function applyFilters(startChar, endChar, startYear, endYear, location){
               <br></br><br></br>
               Location:&nbsp;
               <input type="text" name="location" id="location" placeholder="Example: USA" maxlength="20"></input>
+              <br></br><br></br>
+              Genre:
+              <select id="selectGenre">
+                {genreOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.text}
+                  </option>
+                ))}
+              </select>
+              <br></br><br></br>
+              Number of Games:
+              <br></br>
+              <input type="number" name="minGames" id="minGames" placeholder="Min. # Games" maxlength="4"></input>
+              &nbsp;-&nbsp;
+              <input type="number" name="maxGames" id="maxGames" placeholder="Max. # Games" maxlength="4"></input>
+
 
 
             </div>
@@ -201,7 +248,10 @@ function applyFilters(startChar, endChar, startYear, endYear, location){
                 document.getElementById("endChar").value,
                 document.getElementById("startYear").value, 
                 document.getElementById("endYear").value,
-                document.getElementById("location").value)}>Save changes</button>
+                document.getElementById("location").value,
+                document.getElementById("selectGenre").value,
+                document.getElementById("minGames").value,
+                document.getElementById("maxGames").value)}>Save changes</button>
             </div>
           </div>
         </div>
