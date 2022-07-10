@@ -42,12 +42,13 @@ const CompanyList = (props) => {
   const compsPerPage = 9;
   const pagesVisited = pageNumber * compsPerPage;
 
+  // sorting options
   const options = [
     { value: "name", text: "Name" },
     { value: "year", text: "Year" },
     { value: "location", text: "Location" },
-    { value: "rating", text: "Overall Rating" },
-    { value: "games", text: "Top 3 Games" },
+    { value: "genre_id", text: "Main Genre" },  // currently doesn't work, sorts by id instead of name
+    { value: "num_games", text: "Number of Games" },
   ];
   const [selected, setSelected] = useState(options[0].value);
   const orders = [
@@ -63,6 +64,7 @@ const CompanyList = (props) => {
   const handleOrderChg = (event) => {
     setOrder(event.target.value);
   };
+
 
   
   function genreName(id){
@@ -80,11 +82,27 @@ const CompanyList = (props) => {
 function searchFor(term){
   setComps(data.filter(function(item){
      return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
-  }))
+  }));
 }
 
 function reset(){
   setComps(data);
+}
+
+function applyFilters(startChar, endChar, startYear, endYear, location){
+  setComps(data.filter(function(item){
+    var qualifies = true;
+    if(startChar && endChar){
+      qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase <= endChar.toLowerCase();
+    }
+    if(startYear && endYear){
+      qualifies &= item.year >= startYear && item.year <= endYear;
+    }
+    if(location){
+      qualifies &= item.location.toLowerCase() == location.toLowerCase();
+    }
+    return qualifies;
+  }));
 }
 
 
@@ -140,9 +158,56 @@ function reset(){
         Companies
       </div>
       <br></br>
+
+      {/* Search Options */}
       <input type="text" name="search" id="search" placeholder="Company name . . ."></input>
       <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
       <button className="searchbttn" onClick={reset}>Reset</button>
+
+      {/* Filter options */}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Adjust Filters
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adjust Filters</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Names (Starting character to ending character, filter by alphabetical order):<br></br>
+              <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
+              &nbsp;-&nbsp;
+              <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
+              <br></br><br></br>
+              Year Established:
+              <br></br>
+              <input type="number" name="startYear" id="startYear" placeholder="Start" maxlength="4"></input>
+              &nbsp;-&nbsp;
+              <input type="number" name="endYear" id="endYear" placeholder="End" maxlength="4"></input>
+              <br></br><br></br>
+              Location:&nbsp;
+              <input type="text" name="location" id="location" placeholder="Example: USA" maxlength="20"></input>
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onClick={() => applyFilters(
+                document.getElementById("startChar").value, 
+                document.getElementById("endChar").value,
+                document.getElementById("startYear").value, 
+                document.getElementById("endYear").value,
+                document.getElementById("location").value)}>Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sorting options */}
       <div id="search-sort">Sort By:</div>
       <select value={selected} onChange={handleSelectChg}>
         {options.map((option) => (
@@ -158,6 +223,8 @@ function reset(){
           </option>
         ))}
       </select>
+
+
       <div class="container">
         <Row id="hoverable">
           {displayComps}
