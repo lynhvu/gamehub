@@ -39,7 +39,7 @@ main.html:
 	cd backend && $(PYDOC) -w main
 
 run:
-	npm start & source launch
+	source launch_front & source launch_back
 
 postman-tests:
 	newman run GameHub_postman_test_run.json
