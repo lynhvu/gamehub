@@ -14,37 +14,37 @@ const GameList = (props) => {
   const [gens, setGens] = useState([])
 
   useEffect(() => {
-      fetch("https://gamehubapi.me/games/").then(
-          res => res.json()
-      ).then(
-          data => {
-              setData(data)
-              setGames(data)
-              console.log(data)
-              console.log(data.length)
-          }
-      ).catch(err => console.log(err))
-      
-      // get the companies (to reference for company_id)
-      fetch("https://gamehubapi.me/companies/").then(
-          res => res.json()
-      ).then(
-          data => {
-              setComps(data)
-              console.log(data)
-              console.log(data.length)
-          }
-      ).catch(err => console.log(err))
+    fetch("https://gamehubapi.me/games/").then(
+      res => res.json()
+    ).then(
+      data => {
+        setData(data)
+        setGames(data)
+        console.log(data)
+        console.log(data.length)
+      }
+    ).catch(err => console.log(err))
 
-      fetch("https://gamehubapi.me/genres/").then(
-          res => res.json()
-      ).then(
-          data => {
-              setGens(data)
-              console.log(data)
-              console.log(data.length)
-          }
-      ).catch(err => console.log(err))
+    // get the companies (to reference for company_id)
+    fetch("https://gamehubapi.me/companies/").then(
+      res => res.json()
+    ).then(
+      data => {
+        setComps(data)
+        console.log(data)
+        console.log(data.length)
+      }
+    ).catch(err => console.log(err))
+
+    fetch("https://gamehubapi.me/genres/").then(
+      res => res.json()
+    ).then(
+      data => {
+        setGens(data)
+        console.log(data)
+        console.log(data.length)
+      }
+    ).catch(err => console.log(err))
   }, [])
 
   /*var gameData = require("./gamedata.json");*/
@@ -105,15 +105,15 @@ const GameList = (props) => {
   sortByProperty();
 
   // search by name, new
-function searchFor(term){
-  setGames(gameData.filter(function(item){
-     return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
-  }))
-}
+  function searchFor(term) {
+    setGames(gameData.filter(function (item) {
+      return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
+    }))
+  }
 
-function reset(){
-  setGames(gameData);
-}
+  function reset() {
+    setGames(gameData);
+  }
 
   const displayGames = games
     .slice(pagesVisited, pagesVisited + gamesPerPage)
@@ -141,18 +141,18 @@ function reset(){
       );
     });
 
-  function compIDtoCompName(givenId){
-      for(var i = 0; i < comps.length; i++) {
-          if(comps[i].id == givenId){
-            return comps[i].name;
-          }
+  function compIDtoCompName(givenId) {
+    for (var i = 0; i < comps.length; i++) {
+      if (comps[i].id == givenId) {
+        return comps[i].name;
       }
+    }
   }
 
   // get genre name from id
-  function genName(id){
-    for(var i = 0; i < gens.length; i++){
-      if(gens[i].id == id){
+  function genName(id) {
+    for (var i = 0; i < gens.length; i++) {
+      if (gens[i].id == id) {
         return gens[i].name;
       }
     }
@@ -163,6 +163,24 @@ function reset(){
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
+
+
+  function applyFilters(startChar, endChar, startYear, endYear, location, genreID, minGames, maxGames){
+    setGames(gameData.filter(function(item){
+      var qualifies = true;
+      if(startChar && endChar){
+        qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase() <= endChar.toLowerCase();
+      }
+      if(startYear && endYear){
+        qualifies &= item.year >= startYear && item.year <= endYear;
+      }
+      if(location){
+        qualifies &= item.location.toLowerCase() == location.toLowerCase();
+      }
+      
+      return qualifies;
+    }));
+  }
 
   return (
     <div className="page">
@@ -183,6 +201,48 @@ function reset(){
       <input type="text" name="search" id="search" placeholder="Game name . . ."></input>
       <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
       <button className="searchbttn" onClick={reset}>Reset</button>
+
+      {/* Filter options */}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Adjust Filters
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adjust Filters</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Names (Starting character to ending character, filter by alphabetical order):<br></br>
+              <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
+              &nbsp;-&nbsp;
+              <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
+              <br></br><br></br>
+              Year Established:
+              <br></br>
+              <input type="number" name="startYear" id="startYear" placeholder="Start" maxlength="4"></input>
+              &nbsp;-&nbsp;
+              <input type="number" name="endYear" id="endYear" placeholder="End" maxlength="4"></input>
+              <br></br><br></br>
+              Location:&nbsp;
+              <input type="text" name="location" id="location" placeholder="Example: USA" maxlength="20"></input>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onClick={() => applyFilters(
+                document.getElementById("startChar").value,
+                document.getElementById("endChar").value,
+                document.getElementById("startYear").value,
+                document.getElementById("endYear").value,
+                document.getElementById("location").value)}>Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div>
         <div className="gamelist-select-table">Sort By:</div>
         <select value={selected} onChange={handleSelectChange}>
