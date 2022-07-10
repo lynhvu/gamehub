@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import BackBtn from "../BackBtn";
 
 const GameList = (props) => {
-  var [gameData, setData] = useState([])
-  const [games, setGames] = useState([])
+  var [gameData, setData] = useState([]) // full dataset of games
+  var [games, setGames] = useState([])  // filtered games to display
 
   const [comps, setComps] = useState([])
 
@@ -83,7 +83,7 @@ const GameList = (props) => {
 
   // Sort the table by attributes in the selection menu
   function sortByProperty() {
-    var objArray = gameData;
+    var objArray = games;
     var prop = "attributes." + selected;
     var direct = order;
     if (!Array.isArray(objArray))
@@ -99,12 +99,23 @@ const GameList = (props) => {
       }
       return a < b ? -1 * direct : a > b ? 1 * direct : 0;
     });
-    gameData = clone;
+    games = clone;
   }
 
   sortByProperty();
 
-  const displayGames = gameData
+  // search by name, new
+function searchFor(term){
+  setGames(gameData.filter(function(item){
+     return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
+  }))
+}
+
+function reset(){
+  setGames(gameData);
+}
+
+  const displayGames = games
     .slice(pagesVisited, pagesVisited + gamesPerPage)
     .map((item) => {
       return (
@@ -168,7 +179,10 @@ const GameList = (props) => {
       <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
         Games
       </div>
-
+      <br></br>
+      <input type="text" name="search" id="search" placeholder="Game name . . ."></input>
+      <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
+      <button className="searchbttn" onClick={reset}>Reset</button>
       <div>
         <div className="gamelist-select-table">Sort By:</div>
         <select value={selected} onChange={handleSelectChange}>

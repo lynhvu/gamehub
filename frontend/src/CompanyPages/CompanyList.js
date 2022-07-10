@@ -9,8 +9,8 @@ import CompSearch from "./searchCompany";
 
 
 const CompanyList = (props) => {
-    var [data, setData] = useState([])
-    var [comps, setComps] = useState([]);
+    var [data, setData] = useState([]) // all companies in dataset
+    var [comps, setComps] = useState([]); // cpmpanies to display (filtered)
     const [genreData, setGens] = useState([]);
 
     useEffect(() => {
@@ -140,7 +140,7 @@ function reset(){
         Companies
       </div>
       <br></br>
-      <input type="text" name="search" id="search" placeholder="Game name..."></input>
+      <input type="text" name="search" id="search" placeholder="Company name . . ."></input>
       <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
       <button className="searchbttn" onClick={reset}>Reset</button>
       <div id="search-sort">Sort By:</div>

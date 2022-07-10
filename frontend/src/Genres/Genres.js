@@ -14,8 +14,8 @@ import BackBtn from '../BackBtn';
 
 const Genres = (props) => {
     /*var data = require('./genresdata.json');*/
-    const [genres, setGenres] = useState([]);
-    var [data, setData] = useState([])
+    var [genres, setGenres] = useState([]);  // filtered genres to display
+    var [data, setData] = useState([])  // full dataset of genres
 
     const [comps, setComps] = useState([])
     const [games, setGames] = useState([])
@@ -82,7 +82,18 @@ const Genres = (props) => {
 
     sortByProperty();
 
-    const displayGenres = data
+     // search by name, new
+  function searchFor(term){
+    setGenres(data.filter(function(item){
+       return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
+    }))
+  }
+  
+  function reset(){
+    setGenres(data);
+  }
+
+    const displayGenres = genres
       .slice(pagesVisited, pagesVisited + genresPerPage)
       .map((item) => {
         return (
@@ -153,6 +164,10 @@ const Genres = (props) => {
             <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 Genres
             </div>
+            <br></br>
+            <input type="text" name="search" id="search" placeholder="Genre name . . ."></input>
+            <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
+            <button className="searchbttn" onClick={reset}>Reset</button>
             <div id="search-sort">
                 Sort By:
             </div>
@@ -191,7 +206,7 @@ const Genres = (props) => {
         </div >
     )
     function sortByProperty() {
-        var objArr = data;
+        var objArr = genres;
         var prop = "attributes." + selected;
         var dir = order;
 
@@ -211,7 +226,7 @@ const Genres = (props) => {
             return ((a < b) ? -1 * dir : ((a > b) ? 1 * dir : 0));
         });
         // update the data
-        data = clone;
+        genres = clone;
     }
 }
 
