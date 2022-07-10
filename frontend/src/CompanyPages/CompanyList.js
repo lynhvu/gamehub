@@ -46,8 +46,8 @@ const CompanyList = (props) => {
     { value: "name", text: "Name" },
     { value: "year", text: "Year" },
     { value: "location", text: "Location" },
-    { value: "rating", text: "Overall Rating" },
-    { value: "games", text: "Top 3 Games" },
+    { value: "genre_id", text: "Main Genre" },
+    { value: "num_games", text: "Number of Games" },
   ];
   const [selected, setSelected] = useState(options[0].value);
   const orders = [
