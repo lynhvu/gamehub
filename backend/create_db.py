@@ -32,7 +32,7 @@ def create_companies():
     # loop through RAWG
     # make array of 200 companies (each call gets 40)
     company = []
-    for i in range(1,6):
+    for i in range(1,3):
         company.extend(requests.get("https://api.rawg.io/api/developers?key=1266974d1b554edc9e9236367db40ea8&page=" + str(i) + "&page_size=50").json()['results'])
     idCount = 0
     for oneCompany in company:
@@ -54,20 +54,22 @@ def create_companies():
         idCount += 1
 
     # loop through igdb, looking for matches and filling in the extra info
-    cc = coco.CountryConverter()
-    company = requests.post("https://api.igdb.com/v4/companies?fields=*&limit=500", headers={"Client-ID":"3pcjj9vwob1xykuyvdt2q10vezorwh", "Authorization": "Bearer wdekgrbhajef4dvskjfjiyjwa4l0sp"}).json()
-    for oneCompany in company:
-        matchingCompany = Company.query.filter_by(name=oneCompany['name']).first()
-        if matchingCompany is not None:
-            try:
-                matchingCompany.location = cc.convert(names=oneCompany['country'], to = 'name_short')
-            except KeyError:
-                pass
-            try:
-                matchingCompany.year = datetime.utcfromtimestamp(oneCompany['start_date']).strftime('%Y-%m-%d %H:%M:%S')[:4]
-            except KeyError:
-                pass
-            db.session.commit()
+    # cc = coco.CountryConverter()
+    # company = requests.post("https://api.igdb.com/v4/companies?fields=*&limit=500", headers={"Client-ID":"3pcjj9vwob1xykuyvdt2q10vezorwh", "Authorization": "Bearer wdekgrbhajef4dvskjfjiyjwa4l0sp"}).json() #original limit=500
+    # for oneCompany in company:
+    #     #matchingCompany = Company.query.filter_by(name = oneCompany['name']).first()
+    #     matchingCompany = db.session.query(Company.name).filter(str(Company.name).lower().split()[0] == str(oneCompany['name']).lower().split()[0]).first()
+    #     print(str(oneCompany['name']).lower().split()[0])
+    #     if matchingCompany is not None:
+    #         try:
+    #             matchingCompany.location = cc.convert(names=oneCompany['country'], to = 'name_short')
+    #         except KeyError:
+    #             pass
+    #         try:
+    #             matchingCompany.year = datetime.utcfromtimestamp(oneCompany['start_date']).strftime('%Y-%m-%d %H:%M:%S')[:4]
+    #         except KeyError:
+    #             pass
+    #         db.session.commit()
         
 
         
@@ -123,9 +125,9 @@ def create_games():
     """
     populate games table
     """
-    # get 400 games from page 1
+    # get 320 games from page 1, only adding if the full info is available
     game = []
-    for i in range(1,11):
+    for i in range(1,9):
         game.extend(requests.get("https://api.rawg.io/api/games?key=1266974d1b554edc9e9236367db40ea8&page=" + str(i) + "&page_size=50").json()['results'])
     idCount = 0
     for oneGame in game:
@@ -139,9 +141,9 @@ def create_games():
         genre_id = -1
         company_id = -1
         try:
-            gtemp = Genre.query.filter_by(name=oneGame['genres'][0]['name']).first()
+            gtemp = Genre.query.filter_by(name=oneGame['genres'][-1]['name']).first()
             if gtemp is not None:
-                genre_id = gtemp.id    # single genre, one to many
+                genre_id = gtemp.id    # single genre, one to many (get last one so not all action)
         except IndexError:
             pass
         released = oneGame['released']
@@ -169,23 +171,23 @@ def create_games():
         # trailer is hard to get, maybe just use more pictures?
         if genre_id != -1 and company_id != -1:
             newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
-        elif genre_id == -1 and company_id != -1:
-            newGame = Game(id = id, name = name, description = description, score = score, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
-        elif genre_id != -1 and company_id == -1:
-            newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, pictures = pictures, platforms = platforms)
-        else:
-            newGame = Game(id = id, name = name, description = description, score = score, released = released, pictures = pictures, platforms = platforms)
+            db.session.add(newGame)
+            db.session.commit()
+            idCount += 1
+        # elif genre_id == -1 and company_id != -1:
+        #     newGame = Game(id = id, name = name, description = description, score = score, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
+        # elif genre_id != -1 and company_id == -1:
+        #     newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, pictures = pictures, platforms = platforms)
+        # else:
+        #     newGame = Game(id = id, name = name, description = description, score = score, released = released, pictures = pictures, platforms = platforms)
 
-        db.session.add(newGame)
-        db.session.commit()
-        idCount += 1
+        
 
 #db.drop_all()
 #db.create_all()
 
-try:
-    create_companies()
-    create_genres()
-    create_games()
-except:
-    pass
+
+create_companies()
+create_genres()
+create_games()
+
