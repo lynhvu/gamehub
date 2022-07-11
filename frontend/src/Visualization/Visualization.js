@@ -5,31 +5,31 @@ import { useState, useEffect } from "react";
 
 const Visualization = (props) => {
 
-  const [songs, setSongs] = useState([])
-  const [albums, setAlbums] = useState([])
-  const [artists, setArtists] = useState([])
+  const [jobs, setJobs] = useState([])
+  const [locs, setLocs] = useState([])
+  const [comps, setComps] = useState([])
 
   useEffect(() => {
-    fetch("https://cs373-idb-backend.uc.r.appspot.com/songs/")
+    fetch("https://idb-3-354621.uc.r.appspot.com/jobs")
       .then((res) => res.json())
       .then((data) => {
-        setSongs(data);
+        setJobs(data);
         console.log(data);
         console.log(data.length);
       })
       .catch((err) => console.log(err));
-    fetch("https://cs373-idb-backend.uc.r.appspot.com/albums/")
+    fetch("https://idb-3-354621.uc.r.appspot.com/locations")
       .then((res) => res.json())
       .then((data) => {
-        setAlbums(data);
+        setLocs(data);
         console.log(data);
         console.log(data.length);
       })
       .catch((err) => console.log(err));
-    fetch("https://cs373-idb-backend.uc.r.appspot.com/artists/")
+    fetch("https://idb-3-354621.uc.r.appspot.com/companies")
       .then((res) => res.json())
       .then((data) => {
-        setArtists(data);
+        setComps(data);
         console.log(data);
         console.log(data.length);
       })
