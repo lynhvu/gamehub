@@ -16,7 +16,7 @@ def load_json(filename):
     return a python dict jsn
     filename a json file
     """
-    with open(filename, encoding="mbcs") as file:
+    with open(filename, encoding="utf-8") as file:
         jsn = json.load(file)
         file.close()
 
