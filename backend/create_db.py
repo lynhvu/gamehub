@@ -88,6 +88,9 @@ def create_genres():
         extraData = json.load(f)
         f.close()
 
+    # load companies json
+    comps = load_json('companyTable.json')
+
     # loop through RAWG (19 genres)
     genre = requests.get("https://api.rawg.io/api/genres?key=1266974d1b554edc9e9236367db40ea8&page=1&page_size=19").json()
     idCount = 0
@@ -108,13 +111,14 @@ def create_genres():
         # add the companies
         for g in extraData:
             if g['name'] == name:
-                companiesWithThisGenre = g['companies']
-                for c in companiesWithThisGenre:
-                    matchingCompany = Company.query.filter_by(name=c).first()
-                    if matchingCompany is not None:
-                        newGenre.companies.append(matchingCompany)
+                for c in comps:
+                    if c['genre_id'] == g['id']:
+                        #print("YES")
+                        queryComp = Company.query.filter_by(name=c["name"]).first()
+                        if queryComp is not None:
+                            newGenre.companies.append(queryComp)
                 newGenre.themes = g['themes']
-                break
+                #break
         db.session.add(newGenre)
         db.session.commit()
         idCount += 1
@@ -188,16 +192,8 @@ def create_games():
 #db.drop_all()
 #db.create_all()
 
-
+"""
 create_companies()
 create_genres()
 create_games()
-
-"""
-try:
-    create_companies()
-    create_genres()
-    create_games()
-except:
-    pass
 """
