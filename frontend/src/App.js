@@ -17,6 +17,7 @@ import {
   Routes,
   Link
 } from "react-router-dom";
+import GeneralSearch from "./General/GeneralSearch";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -40,6 +41,7 @@ export default function AppPages() {
           <Route path='/companies/comp' element={<IndividualCompany />} />
           <Route path='/genres' element={<Genres />} />
           <Route path='/genrespage' element={<GenresPage />} />
+          <Route path='/search' element={<GeneralSearch />} />
           <Route path='/visualization' element={<Visualization />} />
         </Routes>
       </div>

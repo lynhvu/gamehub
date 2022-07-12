@@ -193,11 +193,11 @@ create_companies()
 create_genres()
 create_games()
 
-"""
-try:
-    create_companies()
-    create_genres()
-    create_games()
-except:
-    pass
-"""
+
+# try:
+#     create_companies()
+#     create_genres()
+#     create_games()
+# except:
+#     pass
+
