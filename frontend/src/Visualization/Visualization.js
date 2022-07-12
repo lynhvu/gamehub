@@ -7,8 +7,11 @@ import { useState, useEffect } from "react";
 const Visualization = (props) => {
 
   const [jobs, setJobs] = useState([])
+  const jMap = new Map()
   const [locs, setLocs] = useState([])
+  const lMap = new Map()
   const [comps, setComps] = useState([])
+  const cMap = new Map()
 
   useEffect(() => {
 //    fetch("https://idb-3-354621.uc.r.appspot.com/jobs")
@@ -38,7 +41,44 @@ const Visualization = (props) => {
         console.log(data["Companies"].length);
       })
       .catch((err) => console.log(err));
-}, [])
+}, []);
+
+// function for counting number of jobs per category
+function jobData() {
+  jobs.map((item) => {
+    if (jMap.get(item["category"]) !== undefined) {
+      jMap.set(item["category"], (jMap.get(item["category"])) + 1)
+    } else {
+      jMap.set(item["category"], 1)
+    }
+  });
+};
+
+// function for counting number of jobs per city
+function locsData() {
+  locs.map((item) => {
+    if (lMap.get(item["city"]) !== undefined) {
+      lMap.set(item["city"], (lMap.get(item["city"])) + item["jobs"].length)
+    } else {
+      lMap.set(item["city"], item["jobs"].length)
+    }
+  });
+};
+
+// function for counting number of companies per industry
+function compsData() {
+  comps.map((item) => {
+    if (cMap.get(item["industry"]) !== undefined) {
+      cMap.set(item["industry"], (cMap.get(item["industry"])) + 1)
+    } else {
+      cMap.set(item["industry"], 1)
+    }
+  });
+};
+
+jobData()
+locsData()
+compsData()
   
   return (
         <div className="page">
