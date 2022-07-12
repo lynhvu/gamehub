@@ -19,6 +19,10 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+input {
+  border-radius: 5px;
+}
+
 .page {
   min-height: 100%;
   width: 100%;
@@ -421,24 +425,25 @@ body {
 }
 
 .card {
-  opacity: 0.5;
-  background-color: white;
-  padding:10px;
+  /* opacity: 1; */
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
   border-radius: 10px;
   font-family: 'Space Mono', monospace;
   font-size: 25px;
-  margin:8px;
-  transition: fade 1s;
+  margin:10px;
+  transition: transform .2s;
 }
 
 .card:hover {
-  opacity: 0.7;
+  transform: scale(.95);
 }
  
 
 .card-solid {
   opacity: 0.8;
-  background-color: gray;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding:10px;
   padding:10px;
   border-radius: 10px;
   font-family: 'Space Mono', monospace;
@@ -830,4 +835,10 @@ mark {
   background: black;
   color: red;
   opacity: 0.9;
+}
+
+.form-container {
+  width: auto;
+  height: 50px;
+  padding: 5px;
 }

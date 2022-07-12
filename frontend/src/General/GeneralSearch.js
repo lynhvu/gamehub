@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
 
 const GeneralSearch = (props) => {
@@ -20,7 +21,7 @@ const GeneralSearch = (props) => {
     ).then(
       data => {
         setGameData(data)
-        setGames(data)
+        //setGames(data)
         console.log(data)
         console.log(data.length)
       }
@@ -32,7 +33,7 @@ const GeneralSearch = (props) => {
     ).then(
       data => {
         setCompData(data)
-        setComps(data)
+        //setComps(data)
         console.log(data)
         console.log(data.length)
       }
@@ -43,7 +44,7 @@ const GeneralSearch = (props) => {
     ).then(
       data => {
         setGenData(data)
-        setGens(data)
+        //setGens(data)
         console.log(data)
         console.log(data.length)
       }
@@ -121,9 +122,9 @@ const GeneralSearch = (props) => {
   }
 
   function reset() {
-    setGames(gameData);
-    setComps(compData)
-    setGens(genData)
+    setGames([]);
+    setComps([])
+    setGens([])
   }
 
   const displayGames = games
@@ -200,16 +201,16 @@ const GeneralSearch = (props) => {
     });
 
     function genreName(id){
-        for(var i = 0; i < genreData.length; i++){
-            if (genreData[i].id == id){
-                return genreData[i].name;
+        for(var i = 0; i < genData.length; i++){
+            if (genData[i].id == id){
+                return genData[i].name;
             }
         }
     }
 
 
-    const displayGenres = genres
-        .slice(pagesVisited, pagesVisited + genresPerPage)
+    const displayGenres = gens
+        // .slice(pagesVisited, pagesVisited + genresPerPage)
         .map((item) => {
             return (
                 <Col sm={4} style={{ marginBottom: '10px' }}>
@@ -298,7 +299,7 @@ const GeneralSearch = (props) => {
       </div> */}
 
       <div class="container">
-        <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
+        <div className="listTitleText" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
             Games
         </div>
         <div
@@ -312,20 +313,23 @@ const GeneralSearch = (props) => {
           <div class="col-lg col-12">Platforms</div>
         </div>
         {displayGames}
+        <hr style={{backgroundColor:"white", borderStyle:"solid", borderWidth:3, borderColor:"white"}}></hr>
 
-        <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
+        <div className="listTitleText" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
             Companies
         </div>
         <Row id="hoverable">
           {displayComps}
         </Row>
+        <hr style={{backgroundColor:"white", borderStyle:"solid", borderWidth:3, borderColor:"white"}}></hr>
 
-        <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
+        <div className="listTitleText" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
             Genres
         </div>
         <div className="row">
             {displayGenres}
         </div>
+        <hr style={{backgroundColor:"white", borderStyle:"solid", borderWidth:3, borderColor:"white"}}></hr>
         {/* <ReactPaginate
           previousLabel={"Prev"}
           nextLabel={"Next"}

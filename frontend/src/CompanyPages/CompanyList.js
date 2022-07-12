@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
 import CompSearch from "./searchCompany";
-import Mark from "mark.js";
+// import Mark from "mark.js";
 
 
 const CompanyList = (props) => {
@@ -124,20 +124,19 @@ function searchFor(term){
   
 }
 
-function highlight(term) {
-  // let textToSearch = document.getElementById("searched-text").value;
-  // let paragraph = document.querySelector(".containter")
-  // textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+// function highlight(term) {
+//   // let textToSearch = document.getElementById("searched-text").value;
+//   // let paragraph = document.querySelector(".containter")
+//   // textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 
-  // let pattern = new RegExp(`${textToSearch}`,"gi");
+//   // let pattern = new RegExp(`${textToSearch}`,"gi");
 
-  //paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
+//   //paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
 
  
   var context = document.querySelector(".container"); // requires an element with class "context" to exist
   var instance = new Mark(context);
-  var options = {
-    
+  var option = {   
     "separateWordSearch": true,
     "accuracy": "partially",
     "caseSensitive": false,
@@ -146,17 +145,17 @@ function highlight(term) {
     "log": window.console
   }
   
-  instance.mark(term, options); // will mark the keyword 
+  instance.mark(term, option); // will mark the keyword 
 
 
-  // displayComps.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
-}
+//   // displayComps.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
+// }
 
-function unhighlight() {
-  var context = document.querySelector(".container"); // requires an element with class "context" to exist
-  var instance = new Mark(context);
-  instance.unmark(); // will mark the keyword 
-}
+// function unhighlight() {
+//   var context = document.querySelector(".container"); // requires an element with class "context" to exist
+//   var instance = new Mark(context);
+//   instance.unmark(); // will mark the keyword 
+// }
 
 function reset(){
   document.querySelector('#searched-text').value = '';
@@ -307,21 +306,29 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       </div>
 
       {/* Sorting options */}
-      <div id="search-sort">Sort By:</div>
-      <select value={selected} onChange={handleSelectChg}>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.text}
-          </option>
-        ))}
-      </select>
-      <select value={order} onChange={handleOrderChg}>
-        {orders.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.text}
-          </option>
-        ))}
-      </select>
+      <div className="row">
+        <div className="col justify-items-center">
+          <div id="search-sort">Sort by:</div>
+          <div className="form-container">
+            <select className="form-select" value={selected} onChange={handleSelectChg}>
+                {options.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.text}
+                  </option>
+                ))}
+              </select>
+          </div>
+          <div className="form-container">
+              <select className="form-select" value={order} onChange={handleOrderChg}>
+              {orders.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.text}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
 
 
       <div class="container">
