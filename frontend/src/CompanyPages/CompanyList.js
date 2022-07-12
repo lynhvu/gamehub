@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
 import CompSearch from "./searchCompany";
+import Mark from "mark.js";
 
 
 const CompanyList = (props) => {
@@ -14,7 +15,7 @@ const CompanyList = (props) => {
     const [genreData, setGens] = useState([]);
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/companies/").then(
+        fetch("http://127.0.0.1:5000/companies/").then(
             res => res.json()
         ).then(
             data => {
@@ -106,11 +107,44 @@ const CompanyList = (props) => {
 // search by name, new
 function searchFor(term){
   setComps(data.filter(function(item){
-     return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
+    
+    return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
+   
   }));
+  
+}
+
+function highlight(term) {
+  // let textToSearch = document.getElementById("searched-text").value;
+  // let paragraph = document.querySelector(".containter")
+  // textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+
+  // let pattern = new RegExp(`${textToSearch}`,"gi");
+
+  //paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
+
+  
+  var context = document.querySelector(".container"); // requires an element with class "context" to exist
+  var instance = new Mark(context);
+  var options = {
+    "separateWordSearch": true,
+    "accuracy": "partially",
+    "caseSensitive": false,
+  }
+  instance.mark(term, options); // will mark the keyword 
+
+
+  // displayComps.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
+}
+
+function unhighlight() {
+  var context = document.querySelector(".container"); // requires an element with class "context" to exist
+  var instance = new Mark(context);
+  instance.unmark(); // will mark the keyword 
 }
 
 function reset(){
+  document.querySelector('#searched-text').value = '';
   setComps(data);
 }
 
@@ -191,9 +225,9 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       <br></br>
 
       {/* Search Options */}
-      <input type="text" name="search" id="search" placeholder="Company name . . ."></input>
-      <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
-      <button className="searchbttn" onClick={reset}>Reset</button>
+      <input type="text" name="search" id="searched-text" placeholder="Company name . . ."></input>
+      <button className="searchbttn" onClick={() => {searchFor(document.getElementById("searched-text").value); highlight(document.getElementById("searched-text").value)}}>Search</button>
+      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
 
       {/* Filter options */}
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -275,7 +309,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       </select>
 
 
-      <div class="container">
+      <div class="container" id="">
         <Row id="hoverable">
           {displayComps}
         </Row>
