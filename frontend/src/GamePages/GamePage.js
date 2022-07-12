@@ -105,11 +105,11 @@ const GamePage = (props) => {
                         </Carousel>
                         <p className="game-metascore" style={{marginTop:'15px'}}>Metascore: {gameData==null?null:gameData.score}</p>
                         <p className="game-descr">{gameData==null?null:gameData.description}</p>
-                        <p className="game-descr">Developed by <div style={{color: "white"}}>{companyName(gameData==null?null:gameData.company_id)}</div></p>
+                        <p className="game-descr"><div style={{color: "white"}}>Developed by {companyName(gameData==null?null:gameData.company_id)}</div></p>
                         <p className="game-descr"><b>Released:</b> {gameData==null?null:gameData.released}</p>
                         <p className="game-descr" style={{height:50}}><p style={{float:"left"}}><b>Genre:&nbsp;</b></p>
                              <div style={{float:"left"}}> {genreName(gameData==null?null:gameData.genre_id)}&nbsp;</div></p>
-                        <p className="game-descr"><b>Platforms:</b> {gameData==null?null:gameData.platforms.toString()}</p>
+                        <p className="game-descr"><b>Platforms:</b> {gameData==null?null:gameData.platforms.join(', ')}</p>
                     </div>
                 </div>
             </div>
