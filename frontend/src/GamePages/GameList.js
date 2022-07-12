@@ -10,7 +10,6 @@ const GameList = (props) => {
   var [games, setGames] = useState([])  // filtered games to display
 
   const [comps, setComps] = useState([])
-
   const [gens, setGens] = useState([])
 
   useEffect(() => {
@@ -165,17 +164,11 @@ const GameList = (props) => {
   };
 
 
-  function applyFilters(startChar, endChar, startYear, endYear, location, genreID, minGames, maxGames){
+  function applyFilters(startChar, endChar){
     setGames(gameData.filter(function(item){
       var qualifies = true;
       if(startChar && endChar){
         qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase() <= endChar.toLowerCase();
-      }
-      if(startYear && endYear){
-        qualifies &= item.year >= startYear && item.year <= endYear;
-      }
-      if(location){
-        qualifies &= item.location.toLowerCase() == location.toLowerCase();
       }
       
       return qualifies;
@@ -220,24 +213,12 @@ const GameList = (props) => {
               <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
               &nbsp;-&nbsp;
               <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
-              <br></br><br></br>
-              Year Established:
-              <br></br>
-              <input type="number" name="startYear" id="startYear" placeholder="Start" maxlength="4"></input>
-              &nbsp;-&nbsp;
-              <input type="number" name="endYear" id="endYear" placeholder="End" maxlength="4"></input>
-              <br></br><br></br>
-              Location:&nbsp;
-              <input type="text" name="location" id="location" placeholder="Example: USA" maxlength="20"></input>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary" onClick={() => applyFilters(
                 document.getElementById("startChar").value,
-                document.getElementById("endChar").value,
-                document.getElementById("startYear").value,
-                document.getElementById("endYear").value,
-                document.getElementById("location").value)}>Save changes</button>
+                document.getElementById("endChar").value)}>Save changes</button>
             </div>
           </div>
         </div>
