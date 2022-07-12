@@ -16,7 +16,7 @@ def load_json(filename):
     return a python dict jsn
     filename a json file
     """
-    with open(filename) as file:
+    with open(filename, encoding="mbcs") as file:
         jsn = json.load(file)
         file.close()
 
@@ -31,21 +31,23 @@ def create_companies():
     """
     # loop through RAWG
     # make array of 200 companies (each call gets 40)
-    company = []
-    for i in range(1,3):
-        company.extend(requests.get("https://api.rawg.io/api/developers?key=1266974d1b554edc9e9236367db40ea8&page=" + str(i) + "&page_size=50").json()['results'])
+    #company = []
+    # load extra data
+    company = load_json('companyTable.json')
+    #for i in range(1,3):
+        #company.extend(requests.get("https://api.rawg.io/api/developers?key=1266974d1b554edc9e9236367db40ea8&page=" + str(i) + "&page_size=50").json()['results'])
     idCount = 0
     for oneCompany in company:
-        oneCompany = requests.get("https://api.rawg.io/api/developers/" + str(oneCompany['id']) + "?key=1266974d1b554edc9e9236367db40ea8").json()
+        #oneCompany = requests.get("https://api.rawg.io/api/developers/" + str(oneCompany['id']) + "?key=1266974d1b554edc9e9236367db40ea8").json()
         id = idCount
         name = oneCompany['name']
         description = oneCompany['description'][0:1500]
         if len(oneCompany['description']) > 1500:
             description = description + " . . ."
-        location = "Not Available" # igdb
-        year = "Not Available" # igdb
-        num_games = oneCompany['games_count']  # replacement for rating
-        img = oneCompany['image_background']  # note that this gets a sample image rather than the logo (the logo is harder to obtain)
+        location = oneCompany['location'] # igdb
+        year = oneCompany['year'] # igdb
+        num_games = oneCompany['num_games']  # replacement for rating
+        img = oneCompany['img']  # note that this gets a sample image rather than the logo (the logo is harder to obtain)
         # games are already added in create_games()
         # main genre is added in create_genre
         newCompany = Company(id = id, name = name, description = description, location = location, year = year, num_games = num_games, img = img)
@@ -191,3 +193,11 @@ create_companies()
 create_genres()
 create_games()
 
+"""
+try:
+    create_companies()
+    create_genres()
+    create_games()
+except:
+    pass
+"""
