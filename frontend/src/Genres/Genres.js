@@ -211,7 +211,7 @@ const Genres = (props) => {
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary align-self-center" data-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary" onClick={() => applyFilters(
                                 document.getElementById("startChar").value,
                                 document.getElementById("endChar").value,

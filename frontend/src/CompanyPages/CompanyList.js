@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
 import CompSearch from "./searchCompany";
-import Mark from "mark.js";
+// import Mark from "mark.js";
 
 
 const CompanyList = (props) => {
@@ -114,34 +114,34 @@ function searchFor(term){
   
 }
 
-function highlight(term) {
-  // let textToSearch = document.getElementById("searched-text").value;
-  // let paragraph = document.querySelector(".containter")
-  // textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+// function highlight(term) {
+//   // let textToSearch = document.getElementById("searched-text").value;
+//   // let paragraph = document.querySelector(".containter")
+//   // textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 
-  // let pattern = new RegExp(`${textToSearch}`,"gi");
+//   // let pattern = new RegExp(`${textToSearch}`,"gi");
 
-  //paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
+//   //paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
 
   
-  var context = document.querySelector(".container"); // requires an element with class "context" to exist
-  var instance = new Mark(context);
-  var options = {
-    "separateWordSearch": true,
-    "accuracy": "partially",
-    "caseSensitive": false,
-  }
-  instance.mark(term, options); // will mark the keyword 
+//   var context = document.querySelector(".container"); // requires an element with class "context" to exist
+//   var instance = new Mark(context);
+//   var options = {
+//     "separateWordSearch": true,
+//     "accuracy": "partially",
+//     "caseSensitive": false,
+//   }
+//   instance.mark(term, options); // will mark the keyword 
 
 
-  // displayComps.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
-}
+//   // displayComps.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
+// }
 
-function unhighlight() {
-  var context = document.querySelector(".container"); // requires an element with class "context" to exist
-  var instance = new Mark(context);
-  instance.unmark(); // will mark the keyword 
-}
+// function unhighlight() {
+//   var context = document.querySelector(".container"); // requires an element with class "context" to exist
+//   var instance = new Mark(context);
+//   instance.unmark(); // will mark the keyword 
+// }
 
 function reset(){
   document.querySelector('#searched-text').value = '';
@@ -226,11 +226,11 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
 
       {/* Search Options */}
       <input type="text" name="search" id="searched-text" placeholder="Company name . . ."></input>
-      <button className="searchbttn" onClick={() => {searchFor(document.getElementById("searched-text").value); highlight(document.getElementById("searched-text").value)}}>Search</button>
-      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
+      {/* <button className="searchbttn" onClick={() => {searchFor(document.getElementById("searched-text").value); highlight(document.getElementById("searched-text").value)}}>Search</button>
+      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button> */}
 
       {/* Filter options */}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-primary ms-2 mb-1" data-toggle="modal" data-target="#exampleModal">
         Adjust Filters
       </button>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -292,21 +292,29 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       </div>
 
       {/* Sorting options */}
-      <div id="search-sort">Sort By:</div>
-      <select value={selected} onChange={handleSelectChg}>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.text}
-          </option>
-        ))}
-      </select>
-      <select value={order} onChange={handleOrderChg}>
-        {orders.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.text}
-          </option>
-        ))}
-      </select>
+      <div className="row">
+        <div className="col justify-items-center">
+          <div id="search-sort">Sort by:</div>
+          <div className="form-container">
+            <select className="form-select" value={selected} onChange={handleSelectChg}>
+                {options.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.text}
+                  </option>
+                ))}
+              </select>
+          </div>
+          <div className="form-container">
+              <select className="form-select" value={order} onChange={handleOrderChg}>
+              {orders.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.text}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
 
 
       <div class="container" id="">

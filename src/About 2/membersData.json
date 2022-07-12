@@ -1,0 +1,68 @@
+[
+{
+    "id": "1",
+    "name": "Daniel Gonzalez",
+    "year": "Senior",
+    "major": "BS in Computer Science",
+    "skills": "iOS Development, Full Stack Development",
+    "picture": "https://media-exp1.licdn.com/dms/image/C5603AQFYvgLLYtObEQ/profile-displayphoto-shrink_400_400/0/1656205313134?e=1661990400&v=beta&t=7NsmWwFqW2s91VJuubBkzC3Q3e5IcrAxw5L6e7IQPt8",
+    "commits": "#",
+    "issues": "#",
+    "tests": "#"
+    
+},
+{   "id": "2",
+    "name": "Janssen Bozon",
+    "year": "2",
+    "major": "2",
+    "skills": "2",
+    "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/logo2.png",
+    "commits": "#",
+    "issues": "#",
+    "tests": "#"
+},
+{
+    "id": "3",
+    "name": "Lauren Blummer",
+    "year": "Senior",
+    "major": "BS in Computer Science",
+    "skills": "Full Stack Development",
+    "picture": "https://www.cs.utexas.edu/users/lblummer/lauren.JPG",
+    "commits": "#",
+    "issues": "#",
+    "tests": "#"
+},
+{ 
+    "id": "4",
+    "name": "Linh Vu",
+    "year": "Junior",
+    "major": "BSA Computer Science & Math",
+    "skills": "Project Management, Full Stack Development",
+    "picture": "https://github.com/lynhvu/personal-website.github.io/blob/main/img/profile.JPG?raw=true",
+    "commits": "#",
+    "issues": "#",
+    "tests": "#"
+},
+{
+    "id": "5",
+    "name": "Luke Lu",
+    "year": "Sophomore",
+    "major": "BS in Computer Science & Mathematics",
+    "skills": "Full Stack Development",
+    "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/logo2.png",
+    "commits": "#",
+    "issues": "#",
+    "tests": "#"
+},
+{
+    "id": "6",
+    "name": "Michael Chan",
+    "year": "Junior",
+    "major": "Computer Science",
+    "skills": "Java, C, C++",
+    "picture": "https://gitlab.com/lynhvu138/cs373-idb/-/raw/dev/src/StyleAndImg/profile-pics/michael.jpg",
+    "commits": "#",
+    "issues": "#",
+    "tests": "#"
+}
+]
