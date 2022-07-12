@@ -144,6 +144,7 @@ function unhighlight() {
 }
 
 function reset(){
+  document.querySelector('#searched-text').value = '';
   setComps(data);
 }
 
