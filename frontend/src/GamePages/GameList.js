@@ -132,7 +132,7 @@ const GameList = (props) => {
               {genName(item.genre_id)}
             </div>
             <div class="col-lg col-12">{item.score}</div>
-            <div class="col-lg col-12" style={{ fontSize: 20 }}>
+            <div class="col-lg col-12">
               {item.platforms.join(', ')}
             </div>
           </div>

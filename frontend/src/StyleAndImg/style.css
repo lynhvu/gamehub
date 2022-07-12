@@ -703,6 +703,15 @@ body {
   text-align: center;
 }
 
+.row.row2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: larger;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 150px;
+  white-space: wrap;
+}
+
 .left {
   text-align: left;
 }
