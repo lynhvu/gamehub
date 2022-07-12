@@ -133,7 +133,7 @@ const GameList = (props) => {
             </div>
             <div class="col-lg col-12">{item.score}</div>
             <div class="col-lg col-12" style={{ fontSize: 20 }}>
-              {item.platforms.toString()}
+              {item.platforms.join(', ')}
             </div>
           </div>
         </Link>
