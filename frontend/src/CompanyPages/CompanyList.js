@@ -6,13 +6,21 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
 import CompSearch from "./searchCompany";
-// import Mark from "mark.js";
+import Mark from "mark.js";
 
 
 const CompanyList = (props) => {
     var [data, setData] = useState([]) // all companies in dataset
     var [comps, setComps] = useState([]); // cpmpanies to display (filtered)
     const [genreData, setGens] = useState([]);
+
+    const [term, setTerm] = useState("");
+
+    useEffect(() => {
+      if(term != ""){
+        highlight(term)
+      }
+    }, [comps])
 
     useEffect(() => {
         fetch("https://gamehubapi.me/companies/").then(
@@ -114,34 +122,34 @@ function searchFor(term){
   
 }
 
-// function highlight(term) {
-//   // let textToSearch = document.getElementById("searched-text").value;
-//   // let paragraph = document.querySelector(".containter")
-//   // textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+function highlight(term) {
+  // let textToSearch = document.getElementById("searched-text").value;
+  // let paragraph = document.querySelector(".containter")
+  // textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 
-//   // let pattern = new RegExp(`${textToSearch}`,"gi");
+  // let pattern = new RegExp(`${textToSearch}`,"gi");
 
-//   //paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
+  //paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
 
-  
-//   var context = document.querySelector(".container"); // requires an element with class "context" to exist
-//   var instance = new Mark(context);
-//   var options = {
-//     "separateWordSearch": true,
-//     "accuracy": "partially",
-//     "caseSensitive": false,
-//   }
-//   instance.mark(term, options); // will mark the keyword 
+  unhighlight();
+  var context = document.querySelector(".container"); // requires an element with class "context" to exist
+  var instance = new Mark(context);
+  var options = {
+    "separateWordSearch": true,
+    "accuracy": "partially",
+    "caseSensitive": false,
+  }
+  instance.mark(term, options); // will mark the keyword 
 
 
-//   // displayComps.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
-// }
+  // displayComps.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
+}
 
-// function unhighlight() {
-//   var context = document.querySelector(".container"); // requires an element with class "context" to exist
-//   var instance = new Mark(context);
-//   instance.unmark(); // will mark the keyword 
-// }
+function unhighlight() {
+  var context = document.querySelector(".container"); // requires an element with class "context" to exist
+  var instance = new Mark(context);
+  instance.unmark(); // will mark the keyword 
+}
 
 function reset(){
   document.querySelector('#searched-text').value = '';
@@ -225,9 +233,10 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       <br></br>
 
       {/* Search Options */}
-      <input type="text" name="search" id="searched-text" placeholder="Company name . . ."></input>
-      {/* <button className="searchbttn" onClick={() => {searchFor(document.getElementById("searched-text").value); highlight(document.getElementById("searched-text").value)}}>Search</button>
-      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button> */}
+      <input type="text" name="search" id="searched-text" placeholder="Company name . . ."
+        value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
+      <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
+      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
 
       {/* Filter options */}
       <button type="button" class="btn btn-primary ms-2 mb-1" data-toggle="modal" data-target="#exampleModal">
