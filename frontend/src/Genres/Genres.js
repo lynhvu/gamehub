@@ -94,13 +94,13 @@ const Genres = (props) => {
     }
 
     function applyFilters(startChar, endChar, minGames, maxGames) {
-        setComps(data.filter(function (item) {
+        setGenres(data.filter(function (item) {
             var qualifies = true;
             if (startChar && endChar) {
-                qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase <= endChar.toLowerCase();
+                qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase() <= endChar.toLowerCase();
             }
             if (minGames || maxGames) {
-                qualifies &= item.num >= minGames && item.num <= maxGames;
+                qualifies &= item.num_games >= minGames && item.num_games <= maxGames;
             }
             return qualifies;
         }));
@@ -201,8 +201,8 @@ const Genres = (props) => {
                             <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
                             &nbsp;-&nbsp;
                             <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
-
                             <br></br><br></br>
+
                             Number of Games:
                             <br></br>
                             <input type="number" name="minGames" id="minGames" placeholder="Min. # Games" maxlength="4"></input>
@@ -211,7 +211,7 @@ const Genres = (props) => {
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary align-self-center" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary" onClick={() => applyFilters(
                                 document.getElementById("startChar").value,
                                 document.getElementById("endChar").value,

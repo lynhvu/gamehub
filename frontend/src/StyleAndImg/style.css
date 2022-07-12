@@ -823,13 +823,17 @@ input[type=text]:focus {
   color: white;
   background-color: transparent;
 }
-.searchbttn:hover {
+.searchbttn:hover, #filter.searchbttn:hover{
   background-color: #21043a;
   color: white;
 }
+#filter.searchbttn {
+  background-color: rgba(255, 255, 255, 0.164);
+}
 
-mark{
-  background-color: red;
+mark {
+  background: black;
+  color: red;
   opacity: 0.9;
 }
 

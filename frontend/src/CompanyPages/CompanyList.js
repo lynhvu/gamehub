@@ -13,6 +13,7 @@ const CompanyList = (props) => {
     var [data, setData] = useState([]) // all companies in dataset
     var [comps, setComps] = useState([]); // cpmpanies to display (filtered)
     const [genreData, setGens] = useState([]);
+    
 
     const [term, setTerm] = useState("");
 
@@ -23,7 +24,7 @@ const CompanyList = (props) => {
     }, [comps])
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/companies/").then(
+        fetch("http://127.0.0.1:5000/companies/").then(
             res => res.json()
         ).then(
             data => {
@@ -99,11 +100,17 @@ const CompanyList = (props) => {
     { value:18, text: "Card" }
   ];
 
-
+  // var input = document.getElementById("searched-text")
+  //     input.addEventListener("keypress", function(event){
+  //       if(event.key === "Enter") {
+  //         event.preventDefault();
+  //         document.getElementById("inputbttn").click();
+  //       }
+  //   })
 
   function genreName(id){
     for(var i = 0; i < genreData.length; i++){
-        if (genreData[i].id == id){
+        if (genreData[i].id === id){
             return genreData[i].name;
         }
     }
@@ -114,11 +121,13 @@ const CompanyList = (props) => {
 
 // search by name, new
 function searchFor(term){
+  console.log(term)
   setComps(data.filter(function(item){
     
     return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
    
   }));
+
   
 }
 
@@ -166,10 +175,10 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       qualifies &= item.year >= startYear && item.year <= endYear;
     }
     if(location){
-      qualifies &= item.location.toLowerCase() == location.toLowerCase();
+      qualifies &= item.location.toLowerCase() === location.toLowerCase();
     }
-    if(genreID != "none"){
-      qualifies &= item.genre_id == genreID;
+    if(genreID !== "none"){
+      qualifies &= item.genre_id === genreID;
     }
     if(minGames || maxGames){
       qualifies &= item.num_games >= minGames && item.num_games <= maxGames;
@@ -188,7 +197,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
                 <Card style={{height: '100%', width: '100%'}}>
                     <Card.Img variant="top" src={item.img} style={{objectFit: 'cover'}}/>
                     <Card.Body>
-                        <Card.Title><h1>{item.name}</h1></Card.Title>
+                        <Card.Title><h1 id="namecomp">{item.name}</h1></Card.Title>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
                         <ListGroupItem>
@@ -239,7 +248,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
 
       {/* Filter options */}
-      <button type="button" class="btn btn-primary ms-2 mb-1" data-toggle="modal" data-target="#exampleModal">
+      <button class="searchbttn" id="filter" data-toggle="modal" data-target="#exampleModal">
         Adjust Filters
       </button>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -326,7 +335,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       </div>
 
 
-      <div class="container" id="">
+      <div class="container">
         <Row id="hoverable">
           {displayComps}
         </Row>
