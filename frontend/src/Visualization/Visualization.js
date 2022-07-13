@@ -8,7 +8,6 @@ import { LineChart, Line, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRad
 
 const Visualization = (props) => {
 
-  //const COLORS = ["darkturquoise","antiquewhite","aqua","aquamarine","gold","hotpink","bisque","indigo","blueviolet","brown","burlywood","cadetblue","chartreuse","coral","mediumorchid","navy","darkcyan"];
   const colors = ['#9e5827', '#98da1d', '#fc3ebf', '#28dce1', '#135eb0', '#fcc1fb', '#0f6e00','#91207b', '#c9d9c1', '#7c8869', '#3c4c1e', '#4959ea', '#e1d923', '#38e515', '#69affc', '#d16dbe', '#eea979', '#60af66', '#9a31e2', '#5a3e4f', '#ca2c17',]
   const [jobs, setJobs] = useState([])
   const jMap = new Map()
@@ -94,13 +93,6 @@ jobData()
 locsData()
 compsData()
 toArrays()
-
-const s = {
-  top: '50%',
-  right: 0,
-  transform: 'translate(0, -50%)',
-  lineHeight: '24px'
-};
   
   return (
         <div className="page">
@@ -144,14 +136,14 @@ const s = {
             <br/>
             <div className="d-flex justify-content-center">
               <PieChart
-                width={1000}
-                height={1000}>
+                width={850}
+                height={850}>
                   <Legend/>
                   <Pie
                     data={lArr}
                     dataKey="Jobs"
                     nameKey="City"
-                    outerRadius={400}
+                    outerRadius={350}
                     cx='50%'
                     cy='50%'
                     fill='white'
