@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/janssenbozon/Documents/swe/gamehub-git/cs373-idb'
+make: Entering directory `/Users/danielgonzalez/Desktop/cs373-idb'
 git log > IDB1.log
-make: Leaving directory `/Users/janssenbozon/Documents/swe/gamehub-git/cs373-idb'
+make: Leaving directory `/Users/danielgonzalez/Desktop/cs373-idb'
  

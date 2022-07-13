@@ -213,6 +213,25 @@ const GameList = (props) => {
               <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
               &nbsp;-&nbsp;
               <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
+              <br/>
+
+              <label for="company-selection">Companies:</label>
+              <select class="form-select" name="company-selection" multiple>
+                {comps.map((comp, i) => (
+                  <option value="i">{compIDtoCompName(i)}</option>
+                ))}
+              </select>
+
+              <label for="genre-select">Genres:</label>
+              <select class="form-select" name="genre-select" multiple>
+                {gens.map((genre, i) => (
+                  <option value="i">{genName(i)}</option>
+                ))}
+              </select>
+
+              <label for="customRange3" class="form-label">Minimum Metascore:</label>
+              <input type="range" class="form-range" min="0" max="100" step="1" id="customRange3"></input>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

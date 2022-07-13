@@ -35,10 +35,10 @@ def create_companies():
     # load extra data
     company = load_json('companyTable.json')
     #for i in range(1,3):
-        #company.extend(requests.get("https://api.rawg.io/api/developers?key=1266974d1b554edc9e9236367db40ea8&page=" + str(i) + "&page_size=50").json()['results'])
+        #company.extend(requests.get("https://api.rawg.io/api/developers?key=82b550bd02674835a75889624089664b&page=" + str(i) + "&page_size=50").json()['results'])
     idCount = 0
     for oneCompany in company:
-        #oneCompany = requests.get("https://api.rawg.io/api/developers/" + str(oneCompany['id']) + "?key=1266974d1b554edc9e9236367db40ea8").json()
+        #oneCompany = requests.get("https://api.rawg.io/api/developers/" + str(oneCompany['id']) + "?key=82b550bd02674835a75889624089664b").json()
         id = idCount
         name = oneCompany['name']
         description = oneCompany['description'][0:1500]
@@ -92,10 +92,10 @@ def create_genres():
     comps = load_json('companyTable.json')
 
     # loop through RAWG (19 genres)
-    genre = requests.get("https://api.rawg.io/api/genres?key=1266974d1b554edc9e9236367db40ea8&page=1&page_size=19").json()
+    genre = requests.get("https://api.rawg.io/api/genres?key=82b550bd02674835a75889624089664b&page=1&page_size=19").json()
     idCount = 0
     for oneGenre in genre['results']:
-        oneGenre = requests.get("https://api.rawg.io/api/genres/" + str(oneGenre['id']) + "?key=1266974d1b554edc9e9236367db40ea8").json()
+        oneGenre = requests.get("https://api.rawg.io/api/genres/" + str(oneGenre['id']) + "?key=82b550bd02674835a75889624089664b").json()
         id = idCount
         name = oneGenre['name']
         description = oneGenre['description'][0:1500]
@@ -134,10 +134,10 @@ def create_games():
     # get 320 games from page 1, only adding if the full info is available
     game = []
     for i in range(1,9):
-        game.extend(requests.get("https://api.rawg.io/api/games?key=1266974d1b554edc9e9236367db40ea8&page=" + str(i) + "&page_size=50").json()['results'])
+        game.extend(requests.get("https://api.rawg.io/api/games?key=82b550bd02674835a75889624089664b&page=" + str(i) + "&page_size=50").json()['results'])
     idCount = 0
     for oneGame in game:
-        oneGame = requests.get("https://api.rawg.io/api/games/" + str(oneGame['id']) + "?key=1266974d1b554edc9e9236367db40ea8").json()
+        oneGame = requests.get("https://api.rawg.io/api/games/" + str(oneGame['id']) + "?key=82b550bd02674835a75889624089664b").json()
         id = idCount
         name = oneGame['name']
         description = oneGame['description'][0:1500]
@@ -163,7 +163,7 @@ def create_games():
         # get list of picture URLs
         pictures = []
         try:
-            imageList = requests.get("https://api.rawg.io/api/games/" + str(id) + "/screenshots?key=1266974d1b554edc9e9236367db40ea8").json()['results']
+            imageList = requests.get("https://api.rawg.io/api/games/" + str(id) + "/screenshots?key=82b550bd02674835a75889624089664b").json()['results']
             for i in imageList:
                 pictures.append(i['image'])
         except KeyError:
@@ -192,8 +192,8 @@ def create_games():
 #db.drop_all()
 #db.create_all()
 
-"""
+
 create_companies()
 create_genres()
 create_games()
-"""
+
