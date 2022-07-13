@@ -20,8 +20,8 @@ const Visualization = (props) => {
   var cArr
 
   useEffect(() => {
-//    fetch("https://idb-3-354621.uc.r.appspot.com/jobs")
-    fetch("http://localhost:5000/jobs/")
+    fetch("http://idb-3-354621.uc.r.appspot.com/jobs/")
+//    fetch("http://localhost:5000/jobs/")
       .then((res) => res.json())
       .then((data) => {
         setJobs(data["Jobs"]);
@@ -29,8 +29,8 @@ const Visualization = (props) => {
         console.log(data["Jobs"].length);
       })
       .catch((err) => console.log(err));
-//    fetch("https://idb-3-354621.uc.r.appspot.com/locations")
-    fetch("http://localhost:5000/locs/")
+    fetch("http://idb-3-354621.uc.r.appspot.com/locations/")
+//    fetch("http://localhost:5000/locs/")
       .then((res) => res.json())
       .then((data) => {
         setLocs(data["Locations"]);
@@ -38,8 +38,8 @@ const Visualization = (props) => {
         console.log(data["Locations"].length);
       })
       .catch((err) => console.log(err));
-//    fetch("https://idb-3-354621.uc.r.appspot.com/companies")
-    fetch("http://localhost:5000/comps/")
+    fetch("http://idb-3-354621.uc.r.appspot.com/companies/")
+//    fetch("http://localhost:5000/comps/")
       .then((res) => res.json())
       .then((data) => {
         setComps(data["Companies"]);
@@ -110,7 +110,7 @@ toArrays()
           </div>
           <br></br>
           <div className="container">
-            <h2 className="chart-title" style={{color: 'white'}}>Jobs Per Category</h2>
+            <h2 className="chart-title" style={{color: 'white'}}>Number of Jobs Per Category</h2>
             <br/>
             <div className="d-flex justify-content-center" style={{background: "black"}}>
               <BarChart
@@ -175,7 +175,7 @@ toArrays()
                   <YAxis/>
                   <Legend/>
                   <Tooltip/>
-                  <Line type="monotone" dataKey="Companies" stroke="#FFFFFF" activeDot={{ r: 8 }}/>
+                  <Line type="monotone" dataKey="Companies" stroke="#FFFFFF" strokeWidth={3} activeDot={{ r: 8 }}/>
                 </LineChart>
             </div>
           </div>
