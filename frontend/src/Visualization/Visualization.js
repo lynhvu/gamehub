@@ -1,17 +1,24 @@
 import NavBar from '../components/NavBar';
+import "../StyleAndImg/style.css";
 import { useState, useEffect } from "react";
+import { LineChart, Line, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, PieChart, Pie, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 //https://observablehq.com/@d3/gallery - gallery of possible d3 visualizations
 //https://recharts.org/en-US/examples
 
 const Visualization = (props) => {
 
+  //const COLORS = ["darkturquoise","antiquewhite","aqua","aquamarine","gold","hotpink","bisque","indigo","blueviolet","brown","burlywood","cadetblue","chartreuse","coral","mediumorchid","navy","darkcyan"];
+  const colors = ['#9e5827', '#98da1d', '#fc3ebf', '#28dce1', '#135eb0', '#fcc1fb', '#0f6e00','#91207b', '#c9d9c1', '#7c8869', '#3c4c1e', '#4959ea', '#e1d923', '#38e515', '#69affc', '#d16dbe', '#eea979', '#60af66', '#9a31e2', '#5a3e4f', '#ca2c17',]
   const [jobs, setJobs] = useState([])
   const jMap = new Map()
   const [locs, setLocs] = useState([])
   const lMap = new Map()
   const [comps, setComps] = useState([])
   const cMap = new Map()
+  var jArr
+  var lArr
+  var cArr
 
   useEffect(() => {
 //    fetch("https://idb-3-354621.uc.r.appspot.com/jobs")
@@ -76,9 +83,24 @@ function compsData() {
   });
 };
 
+// function for changing from maps into arrays of arrays
+function toArrays() {
+  jArr = Array.from(jMap, ([category, value]) => ({'Category': category, 'Jobs': value}))
+  lArr = Array.from(lMap, ([city, value]) => ({'City': city, 'Jobs': value}))
+  cArr = Array.from(cMap, ([industry, value]) => ({'Industry': industry, 'Companies': value}))
+}
+
 jobData()
 locsData()
 compsData()
+toArrays()
+
+const s = {
+  top: '50%',
+  right: 0,
+  transform: 'translate(0, -50%)',
+  lineHeight: '24px'
+};
   
   return (
         <div className="page">
@@ -96,12 +118,76 @@ compsData()
           </div>
           <br></br>
           <div className="container">
-            <p style={{color: "white"}}>Visualizations go here!</p>
-            
+            <h2 className="chart-title" style={{color: 'white'}}>Jobs Per Category</h2>
+            <br/>
+            <div className="d-flex justify-content-center" style={{background: "black"}}>
+              <BarChart
+                width={1200}
+                height={500}
+                data={jArr}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}>
+                  <CartesianGrid strokeDasharray="3 3"/>
+                  <XAxis dataKey="Category"/>
+                  <YAxis/>
+                  <Legend/>
+                  <Tooltip/>
+                  <Bar type="monotone" dataKey="Jobs" fill="#FFFFFF"/>
+                </BarChart>
+            </div>
+            <br/>
+            <h2 className="chart-title" style={{color: 'white'}}>Number of Jobs Per City</h2>
+            <br/>
+            <div className="d-flex justify-content-center">
+              <PieChart
+                width={1000}
+                height={1000}>
+                  <Legend/>
+                  <Pie
+                    data={lArr}
+                    dataKey="Jobs"
+                    nameKey="City"
+                    outerRadius={400}
+                    cx='50%'
+                    cy='50%'
+                    fill='white'
+                    label>
+                      {lArr.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                      ))}
+                  </Pie>
+                  <Tooltip/>
+              </PieChart>
+            </div>
+            <br/>
+            <br/>
+            <h2 className="chart-title" style={{color: 'white'}}>Number of Companies Per Industry</h2>
+            <br/>
+            <div className="d-flex justify-content-center" style={{background: "black"}}>
+            <LineChart
+                width={1200}
+                height={500}
+                data={cArr}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}>
+                  <CartesianGrid strokeDasharray="3 3"/>
+                  <XAxis dataKey="Industry"/>
+                  <YAxis/>
+                  <Legend/>
+                  <Tooltip/>
+                  <Line type="monotone" dataKey="Companies" stroke="#FFFFFF" activeDot={{ r: 8 }}/>
+                </LineChart>
+            </div>
           </div>
         </div>)
 };
-
-// we willl need titles for each one and maybe a small description of what the chart/diagram is displaying
 
 export default Visualization;

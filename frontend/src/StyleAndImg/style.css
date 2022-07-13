@@ -838,3 +838,10 @@ mark{
   height: 50px;
   padding: 5px;
 }
+
+/*Visualization CSS*/
+.chart-title {
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 40px;
+}
