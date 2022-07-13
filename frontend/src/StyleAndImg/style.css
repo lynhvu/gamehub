@@ -23,6 +23,10 @@ input {
   border-radius: 5px;
 }
 
+.filter-title {
+  float: left;
+}
+
 .page {
   min-height: 100%;
   width: 100%;

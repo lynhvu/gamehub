@@ -61,6 +61,9 @@ const GameList = (props) => {
     { value: "platforms", text: "Platforms" },
   ];
 
+  const platform_consoles = ["Nintendo Switch", "Playstation 3", "Playstation 4", "Playstation 5", 
+                            "Xbox 360", "Xbox One", "Xbox Series S/X", "macOS", "Linux", "PC", "Mobile"]
+
   const [selected, setSelected] = useState(options[0].value);
 
   const orders = [
@@ -164,13 +167,13 @@ const GameList = (props) => {
   };
 
 
-  function applyFilters(startChar, endChar){
-    setGames(gameData.filter(function(item){
+  function applyFilters(startChar, endChar) {
+    setGames(gameData.filter(function (item) {
       var qualifies = true;
-      if(startChar && endChar){
+      if (startChar && endChar) {
         qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase() <= endChar.toLowerCase();
       }
-      
+
       return qualifies;
     }));
   }
@@ -213,24 +216,41 @@ const GameList = (props) => {
               <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
               &nbsp;-&nbsp;
               <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
-              <br/>
+              <br/><br/>
 
-              <label for="company-selection">Companies:</label>
+              <label for="company-selection" class="filter-title">Companies:</label>
+              <br/>
               <select class="form-select" name="company-selection" multiple>
                 {comps.map((comp, i) => (
                   <option value="i">{compIDtoCompName(i)}</option>
                 ))}
               </select>
+              <br/><br/>
 
-              <label for="genre-select">Genres:</label>
+              <label for="genre-select" class="filter-title">Genres:</label>
+              <br/>
               <select class="form-select" name="genre-select" multiple>
                 {gens.map((genre, i) => (
                   <option value="i">{genName(i)}</option>
                 ))}
               </select>
+              <br/><br/>
 
-              <label for="customRange3" class="form-label">Minimum Metascore:</label>
+              <label for="customRange3" class="form-label filter-title">Minimum Metascore:</label>
               <input type="range" class="form-range" min="0" max="100" step="1" id="customRange3"></input>
+              <br/><br/>
+              <label for="platform-list" class="filter-title">Platform:</label>
+              <br/><br/>
+              <li class="platform-list" id="platform-list" style={{ listStyleType: "none"}}>
+                {platform_consoles.map((plat) => (
+                  <div style={{ padding: "3px"}}>
+                    <label for="{plat}-plat">
+                    <input type="checkbox" name="{plat}-plat" value="{plat}" style={{ paddingLeft: "3px"}}>
+                    </input>
+                    {plat}</label>
+                  </div>
+                ))}
+              </li>
 
             </div>
             <div class="modal-footer">
