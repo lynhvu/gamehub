@@ -36,10 +36,10 @@ def create_companies():
     company = load_json('companyTable.json')
     #for i in range(1,3):
         #company.extend(requests.get("https://api.rawg.io/api/developers?key=82b550bd02674835a75889624089664b&page=" + str(i) + "&page_size=50").json()['results'])
-    idCount = 0
+    #idCount = 0
     for oneCompany in company:
         #oneCompany = requests.get("https://api.rawg.io/api/developers/" + str(oneCompany['id']) + "?key=82b550bd02674835a75889624089664b").json()
-        id = idCount
+        id = oneCompany['id']
         name = oneCompany['name']
         description = oneCompany['description'][0:1500]
         if len(oneCompany['description']) > 1500:
@@ -53,7 +53,7 @@ def create_companies():
         newCompany = Company(id = id, name = name, description = description, location = location, year = year, num_games = num_games, img = img)
         db.session.add(newCompany)
         db.session.commit()
-        idCount += 1
+        #idCount += 1
 
     # loop through igdb, looking for matches and filling in the extra info
     # cc = coco.CountryConverter()
@@ -84,9 +84,9 @@ def create_genres():
     populate genre table
     """
     genre = load_json('genreTable.json')
-    idCount = 0
+    #idCount = 0
     for oneGenre in genre:
-        id = idCount
+        id = oneGenre['id']
         name = oneGenre['name']
         description = oneGenre['description'][0:1500]
         if len(oneGenre['description']) > 1500:
@@ -97,7 +97,7 @@ def create_genres():
         newGenre = Genre(id = id, name = name, description = description, num_games = num_games, picture = picture, themes = themes)
         db.session.add(newGenre)
         db.session.commit()
-        idCount += 1
+        #idCount += 1
 
     # OLD CODE FOR SCRAPING APIS BELOW
 
@@ -150,9 +150,9 @@ def create_games():
     populate games table
     """
     game = load_json('gameTable.json')
-    idCount = 0
+    #idCount = 0
     for oneGame in game:
-        id = idCount
+        id = oneGame['id']
         name = oneGame['name']
         description = oneGame['description'][0:1500]
         if len(oneGame['description']) > 1500:
@@ -166,7 +166,7 @@ def create_games():
         newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
         db.session.add(newGame)
         db.session.commit()
-        idCount += 1
+        #idCount += 1
 
     # OLD API SCRAPING CODE BELOW
 
