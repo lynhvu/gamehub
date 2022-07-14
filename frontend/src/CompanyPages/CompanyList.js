@@ -11,8 +11,8 @@ import Mark from "mark.js";
 
 const CompanyList = (props) => {
     var [data, setData] = useState([]) // all companies in dataset
-    var [comps, setComps] = useState([]); // cpmpanies to display (filtered)
-    const [genreData, setGens] = useState([]);
+    var [comps, setComps] = useState([]) // cpmpanies to display (filtered)
+    const [genreData, setGens] = useState([])
     
 
     const [term, setTerm] = useState("");
@@ -171,7 +171,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       qualifies &= item.location.toLowerCase() === location.toLowerCase();
     }
     if(genreID !== "none"){
-      qualifies &= item.genre_id === genreID;
+      qualifies &= item.genre_id == genreID;
     }
     if(minGames || maxGames){
       qualifies &= item.num_games >= minGames && item.num_games <= maxGames;

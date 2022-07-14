@@ -131,7 +131,7 @@ const Genres = (props) => {
       function reset(){
         document.querySelector('#searched-text').value = '';
         setTerm("")
-        setGenres(genres)
+        setGenres(data)
       }
 
     function applyFilters(startChar, endChar, minGames, maxGames) {
@@ -183,20 +183,20 @@ const Genres = (props) => {
         let result = "";
         for (var i = 0; i < games.length && result.length < 70; i++) {
             if (games[i].genre_id == givenId) {
-                result += games[i].name + " ";
+                result += games[i].name + ", ";
             }
         }
-        return result;
+        return result.substring(0, result.length-2);
     }
 
     function listAllCompanies(givenId) {
         let result = "";
         for (var i = 0; i < comps.length && result.length < 70; i++) {
             if (comps[i].genre_id == givenId) {
-                result += comps[i].name + " ";
+                result += comps[i].name + ", ";
             }
         }
-        return result;
+        return result.substring(0, result.length-2);
     }
 
     const pageCount = Math.ceil(genres.length / genresPerPage);
