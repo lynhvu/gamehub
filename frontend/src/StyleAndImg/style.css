@@ -28,10 +28,11 @@ body {
 .gamepage-bg {
   height: 100%;
   width: 100%;
+  background-size: cover;
   position: absolute;
   left: 0;
   right: 0;
-  filter: blur(10px);
+  filter: brightness(40%) blur(10px);
   z-index: 0;
 }
 
