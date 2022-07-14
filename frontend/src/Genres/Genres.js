@@ -26,6 +26,8 @@ const Genres = (props) => {
     useEffect(() => {
       if(term != ""){
         highlight(term)
+      } else {
+        unhighlight()
       }
     }, [genres])
 
@@ -127,6 +129,7 @@ const Genres = (props) => {
       
       function reset(){
         document.querySelector('#searched-text').value = '';
+        setTerm("")
         setGenres(genres)
       }
 
@@ -222,7 +225,7 @@ const Genres = (props) => {
                 value={term} onChange={(event) => {setTerm(event.target.value)}}>
             </input>
             <button className="searchbttn" id="inputbttn" onClick={() => {searchFor(term)}}>Search</button>
-            <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
+            <button className="searchbttn" onClick={() => {reset()}}>Reset</button>
 
             {/* Filter options */}
             <button type="searchbtton" class="searchbttn" id="filter" data-toggle="modal" data-target="#exampleModal">
