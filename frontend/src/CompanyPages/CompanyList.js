@@ -24,7 +24,7 @@ const CompanyList = (props) => {
     }, [comps])
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/companies/").then(
+        fetch("http://gamehubapi.me/companies/").then(
             res => res.json()
         ).then(
             data => {
