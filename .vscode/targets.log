@@ -10,17 +10,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue Jul 12 16:17:40 2022
+# Make data base, printed on Wed Jul 13 20:53:58 2022
 
 # Variables
 
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-FIG_WORKFLOWS_KEYBIND = ^f
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # makefile (from `Makefile', line 9)
@@ -30,7 +27,7 @@ AUTOPEP8 := autopep8
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/danielgonzalez/Desktop/cs373-idb
+CURDIR := /Users/janssenbozon/Documents/swe/gamehub-git/cs373-idb
 # makefile (from `Makefile', line 8)
 PYDOC := pydoc3
 # makefile
@@ -46,11 +43,9 @@ PIP := pip3
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-INFOPATH = /opt/homebrew/share/info:
-# environment
 VSCODE_CWD = /
 # environment
-PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Apple/usr/bin:/Users/danielgonzalez/.fig/bin:/Users/danielgonzalez/.local/bin
+PATH = /Users/janssenbozon/opt/anaconda3/bin:/Users/janssenbozon/opt/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # makefile (from `Makefile', line 6)
 PYLINT := pylint
 # environment
@@ -58,19 +53,13 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.vkcy4uOqsv/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.MqsCsBQ05m/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.MtWOF0hBGm/org.xquartz:0
+CONDA_EXE = /Users/janssenbozon/opt/anaconda3/bin/conda
 # environment
-TTY = not a tty
-# environment
-FIG_PID = 82254
-# environment
-PWD = /Users/danielgonzalez/Desktop/cs373-idb
-# environment
-HOMEBREW_CELLAR = /opt/homebrew/Cellar
+PWD = /Users/janssenbozon/Documents/swe/gamehub-git/cs373-idb
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # makefile (from `Makefile', line 7)
@@ -78,23 +67,25 @@ COVERAGE := coverage
 # makefile (from `Makefile', line 4)
 PYTHON := python3
 # environment
-MANPATH = /opt/homebrew/share/man::
-# environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /Users/danielgonzalez
+HOME = /Users/janssenbozon
 # default
-MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/danielgonzalez/Library/Application Support/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
+VSCODE_CODE_CACHE_PATH = /Users/janssenbozon/Library/Application Support/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
 # environment
-LOGNAME = danielgonzalez
+LOGNAME = janssenbozon
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+CONDA_PROMPT_MODIFIER = (base) 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
+# environment
+CONDA_DEFAULT_ENV = base
 # environment
 XPC_FLAGS = 0x0
 # default
@@ -106,24 +97,25 @@ SHLVL = 1
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = danielgonzalez
+USER = janssenbozon
 # makefile
 .DEFAULT_GOAL := IDB1.log
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
+# environment
+CONDA_SHLVL = 1
 # default
- 
-MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # makefile (from `Makefile', line 10)
 DOC := docker run -it -v $$(PWD):/usr/cs373 -w /usr/cs373 fareszf/python
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/w5/bl1t0k_n4dj8fv106l93nv2r0000gn/T/
+TMPDIR = /var/folders/3_/4kdsjgm11t73fmcj3cw3_ll40000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/danielgonzalez/Library/Application Support/Code/1.69.0-main.sock
+VSCODE_IPC_HOOK = /Users/janssenbozon/Library/Application Support/Code/1.69.0-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -133,15 +125,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.48429088.48429094
-# environment
-HOMEBREW_PREFIX = /opt/homebrew
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.93833749.93833755
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-HOMEBREW_REPOSITORY = /opt/homebrew
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
@@ -152,20 +140,28 @@ MAKEFILES :=
 <F = $(notdir $<)
 # environment
 LC_ALL = C
+# environment
+CONDA_PYTHON_EXE = /Users/janssenbozon/opt/anaconda3/bin/python
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
+# environment
+_CE_M = 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
 # environment
-LANG = C
+CONDA_PREFIX = /Users/janssenbozon/opt/anaconda3
 # environment
-VSCODE_PID = 82245
+VSCODE_PID = 23533
+# environment
+_CE_CONDA = 
+# environment
+LANG = C
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=1/100=1%
+# Load=73/1024=7%, Rehash=0, Collisions=2/99=2%
 
 # Pattern-specific Variable Values
 
@@ -173,9 +169,9 @@ VSCODE_PID = 82245
 
 # Directories
 
-# . (device 16777231, inode 48435258): 23 files, no impossibilities.
+# . (device 16777222, inode 86114645): 28 files, no impossibilities.
 
-# 23 files, no impossibilities in 1 directories.
+# 28 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -206,11 +202,10 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-12 16:17:33
+#  Last modified 2022-07-11 14:17:14
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 IDB1.log:
@@ -281,6 +276,6 @@ main.html:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jul 12 16:17:40 2022
+# Finished Make data base on Wed Jul 13 20:53:58 2022
 
  

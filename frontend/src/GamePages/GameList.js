@@ -128,7 +128,7 @@ const GameList = (props) => {
           }}
           style={{ textDecoration: "none" }}
         >
-          <div class="row row2">
+          <div class="row row2 align-items-center">
             <div class="col-lg col-12">{item.name}</div>
             <div class="col-lg col-12">{compIDtoCompName(item.company_id)}</div>
             <div class="col-lg col-12">
@@ -199,7 +199,7 @@ const GameList = (props) => {
       <button className="searchbttn" onClick={reset}>Reset</button>
 
       {/* Filter options */}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="searchbttn" data-toggle="modal" data-target="#exampleModal">
         Adjust Filters
       </button>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -263,27 +263,34 @@ const GameList = (props) => {
         </div>
       </div>
 
-      <div>
-        <div className="gamelist-select-table">Sort By:</div>
-        <select value={selected} onChange={handleSelectChange}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.text}
-            </option>
-          ))}
-        </select>
-        <select value={order} onChange={handleOrderChange}>
-          {orders.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.text}
-            </option>
-          ))}
-        </select>
+      {/* Sorting options */}
+      <div className="row mb-2">
+        <div className="col justify-items-center">
+          <div className="gamelist-select-table">Sort By:</div>
+          <div className="form-container">
+            <select className="form-select" value={selected} onChange={handleSelectChange}>
+              {options.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.text}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="form-container">
+            <select className="form-select" value={order} onChange={handleOrderChange}>
+              {orders.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.text}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
       </div>
 
       <div class="container">
         <div
-          class="row bg-dark text-light"
+          class="row bg-dark text-light mb-2"
           style={{ opacity: 0.9, borderRadius: 1, textAlign: "center" }}
         >
           <div class="col-lg col-12">Game Title</div>

@@ -184,7 +184,7 @@ const Genres = (props) => {
             <button className="searchbttn" onClick={reset}>Reset</button>
 
             {/* Filter options */}
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <button type="searchbtton" class="searchbttn" data-toggle="modal" data-target="#exampleModal">
                 Adjust Filters
             </button>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -223,23 +223,29 @@ const Genres = (props) => {
             </div>
 
             {/* Sorting options */}
-            <div id="search-sort">
-                Sort By:
+            <div className="row mb-2">
+                <div className="col justify-items-center">
+                <div id="search-sort">Sort by:</div>
+                <div className="form-container">
+                    <select className="form-select" value={selected} onChange={handleSelectChg}>
+                        {options.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.text}
+                        </option>
+                        ))}
+                    </select>
+                </div>
+                <div className="form-container">
+                    <select className="form-select" value={order} onChange={handleOrderChg}>
+                    {orders.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.text}
+                        </option>
+                    ))}
+                    </select>
+                </div>
+                </div>
             </div>
-            <select value={selected} onChange={handleSelectChg}>
-                {options.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.text}
-                    </option>
-                ))}
-            </select>
-            <select value={order} onChange={handleOrderChg}>
-                {orders.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.text}
-                    </option>
-                ))}
-            </select>
             <div class="container">
                 <div className="row">
                     {displayGenres}

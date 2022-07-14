@@ -24,7 +24,7 @@ const CompanyList = (props) => {
     }, [comps])
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/companies/").then(
+        fetch("https://gamehubapi.me/companies/").then(
             res => res.json()
         ).then(
             data => {
@@ -192,7 +192,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
     .slice(pagesVisited, pagesVisited + compsPerPage)
     .map((item) => {
       return (
-        <Col sm={4} style={{marginBottom: '10px'}}>
+        <Col sm={4} className="mb-4 align-content-center">
             <Link to="/companies/comp" className="link-style" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(item))}} style={{ textDecoration: 'none' }}>
                 <Card style={{height: '100%', width: '100%'}}>
                     <Card.Img variant="top" src={item.img} style={{objectFit: 'cover'}}/>
@@ -310,7 +310,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       </div>
 
       {/* Sorting options */}
-      <div className="row">
+      <div className="row mb-2">
         <div className="col justify-items-center">
           <div id="search-sort">Sort by:</div>
           <div className="form-container">
@@ -335,11 +335,13 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       </div>
 
 
-      <div class="container">
+      <div class="container justify-items-center">
         <Row id="hoverable">
           {displayComps}
         </Row>
-        <ReactPaginate
+      </div>
+      <div className="container justify-items-center">
+      <ReactPaginate
           previousLabel={"Prev"}
           nextLabel={"Next"}
           pageCount={pageCount}
@@ -351,6 +353,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
           activeClassName={"paginationActive"}
         />
       </div>
+      
       <BackBtn></BackBtn>
     </div>
   );
