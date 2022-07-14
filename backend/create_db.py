@@ -48,7 +48,7 @@ def create_companies():
         num_games = oneCompany['num_games']  # replacement for rating
         img = oneCompany['img']  # note that this gets a sample image rather than the logo (the logo is harder to obtain)
         genre_id = oneCompany['genre_id']
-        newCompany = Company(id = id, name = name, description = description, location = location, year = year, num_games = num_games, img = img)
+        newCompany = Company(id = id, name = name, description = description, location = location, year = year, num_games = num_games, img = img, genre_id = genre_id)
         db.session.add(newCompany)
         db.session.commit()
 
