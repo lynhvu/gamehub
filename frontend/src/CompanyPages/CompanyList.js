@@ -124,7 +124,7 @@ const CompanyList = (props) => {
 
 // search by name, new
 function searchFor(term){
-  console.log(term)
+  setPageNumber(0);
   setComps(data.filter(function(item){
     
     return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
@@ -153,6 +153,7 @@ function unhighlight() {
 }
 
 function reset(){
+  setPageNumber(0);
   document.querySelector('#searched-text').value = '';
   setTerm("");
   setComps(data);
