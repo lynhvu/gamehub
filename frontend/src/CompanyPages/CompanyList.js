@@ -26,12 +26,6 @@ const CompanyList = (props) => {
     }, [comps])
 
     useEffect(() => {
-      if(term == ""){
-        unhighlight(term)
-      }
-    }, [comps])
-
-    useEffect(() => {
         fetch("https://gamehubapi.me/companies/").then(
             res => res.json()
         ).then(
@@ -108,13 +102,14 @@ const CompanyList = (props) => {
     { value:18, text: "Card" }
   ];
 
-  // var input = document.getElementById("searched-text")
-  //     input.addEventListener("keypress", function(event){
-  //       if(event.key === "Enter") {
-  //         event.preventDefault();
-  //         document.getElementById("inputbttn").click();
-  //       }
-  //   })
+  // Trigger button click on Enter
+  var input = document.getElementById("searched-text")
+      input.addEventListener("keypress", function(event){
+        if(event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("inputbttn").click();
+        }
+  })
 
   function genreName(id){
     for(var i = 0; i < genreData.length; i++){
@@ -242,7 +237,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       {/* Search Options */}
       <input type="text" name="search" id="searched-text" placeholder="Search Companies"
         value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
-      <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
+      <button className="searchbttn" id="inputbttn" onClick={() => {searchFor(term)}}>Search</button>
       <button className="searchbttn" onClick={() => {reset()}}>Reset</button>
 
       {/* Filter options */}

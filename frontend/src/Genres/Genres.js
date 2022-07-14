@@ -88,8 +88,17 @@ const Genres = (props) => {
     const handleOrderChg = event => {
         setOrder(event.target.value);
     };
+    // Trigger button click on Enter
+    var input = document.getElementById("searched-text")
+        input.addEventListener("keypress", function(event){
+            if(event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("inputbttn").click();
+            }
+    })
 
     sortByProperty();
+
 
     // search by name, new
     function searchFor(term) {
@@ -212,7 +221,7 @@ const Genres = (props) => {
             <input type="text" name="search" id="searched-text" placeholder="Search Genres" 
                 value={term} onChange={(event) => {setTerm(event.target.value)}}>
             </input>
-            <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
+            <button className="searchbttn" id="inputbttn" onClick={() => {searchFor(term)}}>Search</button>
             <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
 
             {/* Filter options */}
