@@ -218,7 +218,7 @@ const GameList = (props) => {
       }
 
 
-      if (metaScore != 50) {
+      if (metaScore != -1) {
         qualifies &= item.score >= metaScore;
       }
 
@@ -242,7 +242,7 @@ const GameList = (props) => {
   function clearValues() {
     document.getElementById("startChar").value = ''
     document.getElementById("endChar").value = ''
-    document.getElementById("metaScore").value = 50
+    document.getElementById("metaScore").value = -1
 
     var selectedComps = document.getElementById("comp-multi-selections")
     for (var elem of selectedComps) {
@@ -278,7 +278,7 @@ const GameList = (props) => {
       <br></br>
 
       {/* Search button*/}
-      <input type="text" name="search" id="searched-text" placeholder="Game name . . ."
+      <input type="text" name="search" id="searched-text" placeholder="Search Games"
         value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
       <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
       <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>

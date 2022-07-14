@@ -20,6 +20,8 @@ const CompanyList = (props) => {
     useEffect(() => {
       if(term != ""){
         highlight(term)
+      } else {
+        unhighlight()
       }
     }, [comps])
 
@@ -157,6 +159,7 @@ function unhighlight() {
 
 function reset(){
   document.querySelector('#searched-text').value = '';
+  setTerm("");
   setComps(data);
 }
 
@@ -237,10 +240,10 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       <br></br>
 
       {/* Search Options */}
-      <input type="text" name="search" id="searched-text" placeholder="Company name . . ."
+      <input type="text" name="search" id="searched-text" placeholder="Search Companies"
         value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
       <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
-      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
+      <button className="searchbttn" onClick={() => {reset()}}>Reset</button>
 
       {/* Filter options */}
       <button class="searchbttn" id="filter" data-toggle="modal" data-target="#exampleModal">

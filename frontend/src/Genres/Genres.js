@@ -209,7 +209,7 @@ const Genres = (props) => {
             <br></br>
 
             {/**Search option */}
-            <input type="text" name="search" id="searched-text" placeholder="Genre name . . ." 
+            <input type="text" name="search" id="searched-text" placeholder="Search Genres" 
                 value={term} onChange={(event) => {setTerm(event.target.value)}}>
             </input>
             <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
