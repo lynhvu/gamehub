@@ -134,7 +134,8 @@ const GenresPage = (props) => {
                                         <img className="d-block w-100" src={genresData.picture} alt="First slide" />
                                     
                         </Carousel>
-                        <p className="game-descr">Genre Description: {genresData.description}</p>
+                        <p className="game-descr">Genre Description: <p id ="comp-descr">
+                        {genresData.description}</p></p>
                         <div className='row'>
                             <div className='col'>
                                 <p className="game-descr">Games: 
@@ -149,7 +150,8 @@ const GenresPage = (props) => {
                                 </p>
                             </div>
                             <div className='col'> 
-                                <p className="game-descr">Topics: {genresData.themes}</p> 
+                                <p className="game-descr">Topics: 
+                                <p id ="comp-descr">{genresData.themes}</p> </p>
                             </div>
 
                         </div>

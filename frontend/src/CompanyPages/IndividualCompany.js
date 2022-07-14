@@ -40,31 +40,6 @@ const IndividualCompany = (props) => {
         )
     }, [])
 
-    /*gameData.map(item => {
-        for(var i = 0; i < compData.games.length; i++) {
-            if(item.name == compData.games[i]) {
-                localStorage.setItem("GAME", JSON.stringify(item))
-                return;
-            }
-        }
-    });*/
-
-    /*genreData.map(item => {
-        if (item.id == compData.genre_id) {
-            localStorage.setItem("GENRES", JSON.stringify(item))
-            setMatchGenre(item.name)
-            return;
-        }       
-    });*/
-
-    // for(var i = 0; i < gameData.length; i++){
-    //     if(gameData[i].company_id == compData.id){
-    //         localStorage.setItem("GAME", JSON.stringify(gameData[i]))
-    //         matchGames.append(gameData[i].name)
-    //     }
-
-    // }
-
     function genreName(id){
         for(var i = 0; i < genreData.length; i++){
             if (genreData[i].id == id){
@@ -103,25 +78,26 @@ const IndividualCompany = (props) => {
             <NavBar></NavBar>
             <div className="container">
                 <div className="row"> 
-                    <div className="col">
+                 
                         <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                             {compData.name}
                         </div>
-                        <p class="comp-descr"><u>Description:</u> <p id ="comp-descr">{compData.description}</p></p>
-                        <p class="comp-descr"><u>Founded in:</u> {compData.year}</p>
-                        <p class="comp-descr"><u>Based in:</u> {compData.location}</p>
-                        <p class="comp-descr"><u>Number of Games:</u> {compData.num_games}</p>
-                        <p class="comp-descr"><p style={{float:"left"}}><b>Main Genre:&nbsp;</b></p> 
-                            {<div style={{float:"left"}}> {genreName(compData.genre_id)}&nbsp;</div>}</p>
-                    </div>
+                        <img className="d-block w-100" style={{marginBottom: '15px'}} src={compData.img}/><br></br>
+                        <p class="game-descr">Description: <p id ="comp-descr">{compData.description}</p></p>
+                        <p class="game-descr">Founded in: {compData.year}</p>
+                        <p class="game-descr">Based in: {compData.location}</p>
+                        <p class="game-descr">Number of Games: {compData.num_games}</p>
+                        <p class="game-descr">Main Genre: &nbsp; 
+                            {<div> {genreName(compData.genre_id)}&nbsp;</div>}</p>
+                 
 
-                    <div className="col">
-                        <p id="comp-game">Popular Titles</p>
-                        <div class = "comp-descr">{getAllGames(compData.id).map(item => (
+               
+                        <p className='game-descr'>Popular Titles:
+                        <div>{getAllGames(compData.id).map(item => (
                              <div style={{float:"left"}}> {gameName(item)}&nbsp;</div>
-                        ))}</div>
+                        ))}</div></p>
                         {/* <PopularTitles titles = {getAllGames(compData.id)} gameData = {gameData}></PopularTitles> */}
-                    </div>
+                 
 
                 </div>
             </div>

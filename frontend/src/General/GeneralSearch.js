@@ -155,6 +155,7 @@ const GeneralSearch = (props) => {
       "separateWordSearch": false,
       "accuracy": "partially",
       "caseSensitive": false,
+      "exclude": [".listTitleText", "#game-att"]
     }
     instance.mark(term, options); // will mark the keyword 
   }
@@ -312,43 +313,44 @@ const GeneralSearch = (props) => {
       <input type="text" name="search" id="searched-text" placeholder="Search term . . ."  value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
       <button className="searchbttn" onClick={() => searchFor(term)}>Search</button>
       <button className="searchbttn" onClick={() =>{reset()}}>Reset</button>
+   
+        <div className="row">
 
-      {/* <div>
-        <div className="gamelist-select-table">Sort By:</div>
-        <select value={selected} onChange={handleSelectChange}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.text}
-            </option>
-          ))}
-        </select>
-        <select value={order} onChange={handleOrderChange}>
-          {orders.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.text}
-            </option>
-          ))}
-        </select>
-      </div> */}
+          <div className="col">
+            <a href="#games">
+            <button class="searchbttn" id="filter">Games</button></a>
+          </div>
 
+          <div className="col">
+            <a href="#companies">
+              <button class="searchbttn" id="filter">Companies</button></a>
+          </div>
+
+          <div className="col">
+            <a href="#genres">
+            <button class="searchbttn" id="filter">Genres</button></a>
+          </div>
+
+        </div>
+ 
       <div class="container">
-        <div className="listTitleText" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
+        <div className="listTitleText" id="games" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
             Games
         </div>
         <div
-          class="row bg-dark text-light"
+          className="row bg-dark text-light" 
           style={{ opacity: 0.9, borderRadius: 1, textAlign: "center" }}
         >
-          <div class="col-lg col-12">Game Title</div>
-          <div class="col-lg col-12">Company</div>
-          <div class="col-lg col-12">Genre</div>
-          <div class="col-lg col-12">Metascore</div>
-          <div class="col-lg col-12">Platforms</div>
+          <div class="col-lg col-12" id="game-att">Game Title</div>
+          <div class="col-lg col-12" id="game-att">Company</div>
+          <div class="col-lg col-12" id="game-att">Genre</div>
+          <div class="col-lg col-12" id="game-att">Metascore</div>
+          <div class="col-lg col-12" id="game-att">Platforms</div>
         </div>
         {displayGames}
         <hr style={{backgroundColor:"white", borderStyle:"solid", borderWidth:3, borderColor:"white"}}></hr>
 
-        <div className="listTitleText" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
+        <div className="listTitleText" id="companies" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
             Companies
         </div>
         <Row id="hoverable">
@@ -356,24 +358,14 @@ const GeneralSearch = (props) => {
         </Row>
         <hr style={{backgroundColor:"white", borderStyle:"solid", borderWidth:3, borderColor:"white"}}></hr>
 
-        <div className="listTitleText" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
+        <div className="listTitleText" id="genres" style={{ animation: "fadeIn 0.5s", fontSize:60 }}>
             Genres
         </div>
         <div className="row">
             {displayGenres}
         </div>
         <hr style={{backgroundColor:"white", borderStyle:"solid", borderWidth:3, borderColor:"white"}}></hr>
-        {/* <ReactPaginate
-          previousLabel={"Prev"}
-          nextLabel={"Next"}
-          pageCount={pageCount}
-          onPageChange={changePage}
-          containerClassName={"paginationBttns"}
-          previousLinkClassName={"previousBttn"}
-          nextLinkClassName={"nextBttn"}
-          disabledClassName={"paginationDisabled"}
-          activeClassName={"paginationActive"}
-        /> */}
+    
       </div>
       <BackBtn></BackBtn>
     </div>
