@@ -90,14 +90,15 @@ const Genres = (props) => {
     const handleOrderChg = event => {
         setOrder(event.target.value);
     };
-    // Trigger button click on Enter
-    var input = document.getElementById("searched-text")
-        input.addEventListener("keypress", function(event){
-            if(event.key === "Enter") {
-                event.preventDefault();
-                document.getElementById("inputbttn").click();
-            }
-    })
+
+    // // Trigger button click on Enter
+    // var input = document.getElementById("searched-text")
+    //     input.addEventListener("keypress", function(event){
+    //         if(event.key === "Enter") {
+    //             event.preventDefault();
+    //             document.getElementById("inputbttn").click();
+    //         }
+    // })
 
     sortByProperty();
 

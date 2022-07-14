@@ -22,18 +22,23 @@ const NavBar = () => {
                     <NavLink to="/" activeClassName="navbar__link--active" className="navbar__link nav-item nav-link">
                         Home
                     </NavLink>
+
                     <NavLink to="/search" activeClassName="navbar__link--active" className="navbar__link nav-item nav-link">
                         Search
                     </NavLink>
+
                     <NavLink to="/games" activeClassName="navbar__link--active" className="navbar__link nav-item nav-link">
                         Games
                     </NavLink>
+
                     <NavLink to="/companies" activeClassName="navbar__link--active" className="navbar__link nav-item nav-link">
                         Companies
                     </NavLink>
+
                     <NavLink to="/genres" activeClassName="navbar__link--active" className="navbar__link nav-item nav-link">
                         Genres
                     </NavLink>
+                    
                     <NavLink to="/about" activeClassName="navbar__link--active" className="navbar__link nav-item nav-link">
                         About Us
                     </NavLink>

@@ -102,14 +102,14 @@ const CompanyList = (props) => {
     { value:18, text: "Card" }
   ];
 
-  // Trigger button click on Enter
-  var input = document.getElementById("searched-text")
-      input.addEventListener("keypress", function(event){
-        if(event.key === "Enter") {
-          event.preventDefault();
-          document.getElementById("inputbttn").click();
-        }
-  })
+  // // Trigger button click on Enter
+  // var input = document.getElementById("searched-text")
+  //     input.addEventListener("keypress", function(event){
+  //       if(event.key === "Enter") {
+  //         event.preventDefault();
+  //         document.getElementById("inputbttn").click();
+  //       }
+  // })
 
   function genreName(id){
     for(var i = 0; i < genreData.length; i++){
