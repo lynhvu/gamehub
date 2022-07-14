@@ -50,6 +50,11 @@ const AboutUs = (props) => {
                 <img src={test}/>
                 <p className="text-light center">(Click on the button again to hide the picture)</p>
             </div>
+            <a href="https://speakerdeck.com/lynhvu/gamehub/" className="link-style-light">
+            <div className="textbox" style={{ animation: "fadeIn 2.5s" }}>
+                Speaker Deck
+                
+            </div></a>
             
             <br></br>
            <BackBtn></BackBtn>
