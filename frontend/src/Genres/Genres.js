@@ -216,7 +216,7 @@ const Genres = (props) => {
             <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
 
             {/* Filter options */}
-            <button type="searchbtton" class="searchbttn" data-toggle="modal" data-target="#exampleModal">
+            <button type="searchbtton" class="searchbttn" id="filter" data-toggle="modal" data-target="#exampleModal">
                 Adjust Filters
             </button>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
