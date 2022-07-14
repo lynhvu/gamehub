@@ -211,6 +211,11 @@ const GameList = (props) => {
     }));
   }
 
+  function clearValues() {
+    document.getElementById("startChar").value = '';
+    document.getElementById("endChar").value = '';
+  }
+
   return (
     <div className="page default-bg">
       <link rel="stylesheet" href="style.css" type="text/css" />
@@ -288,6 +293,7 @@ const GameList = (props) => {
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" onClick={ () => clearValues()}>Clear</button>
               <button type="button" class="btn btn-primary" onClick={() => applyFilters(
                 document.getElementById("startChar").value,
                 document.getElementById("endChar").value,
