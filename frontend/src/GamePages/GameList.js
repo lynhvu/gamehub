@@ -121,7 +121,7 @@ const GameList = (props) => {
   function searchFor(term) {
     setGames(gameData.filter(function (item) {
       return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
-    }))
+    }));
   }
 
   function highlight(term) {
