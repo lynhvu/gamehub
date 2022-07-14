@@ -218,6 +218,17 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
     setPageNumber(selected);
   };
 
+  function clearValues() {
+    document.getElementById("startChar").value = ''
+    document.getElementById("endChar").value = ''
+    document.getElementById("startYear").value = ''
+    document.getElementById("endYear").value = ''
+    document.getElementById("location").value = ''
+    document.getElementById("selectGenre").value = "none"
+    document.getElementById("minGames").value = ''
+    document.getElementById("maxGames").value = ''
+  }
+
   return (
     <div className="page default-bg">
       <link rel="stylesheet" href="style.css" type="text/css" />
@@ -288,6 +299,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" onClick={() => clearValues()}>Clear</button>
               <button type="button" class="btn btn-primary" onClick={() => applyFilters(
                 document.getElementById("startChar").value, 
                 document.getElementById("endChar").value,
