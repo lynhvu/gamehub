@@ -255,6 +255,7 @@ const GameList = (props) => {
     document.getElementById("startChar").value = ''
     document.getElementById("endChar").value = ''
     document.getElementById("metaScore").value = -1
+    document.getElementById("sliderVal").value = 0
 
     var selectedComps = document.getElementById("comp-multi-selections")
     for (var elem of selectedComps) {
@@ -334,7 +335,8 @@ const GameList = (props) => {
               <br /><br />
 
               <label for="customRange3" class="form-label filter-title">Minimum Metascore:</label>
-              <input type="range" class="form-range" min="0" max="100" step="1" id="metaScore"></input>
+              <input type="range" class="form-range" min="0" max="100" step="1" id="metaScore" onChange={ (e) => document.getElementById("sliderVal").value = e.target.value}></input>
+              <input type="number" id="sliderVal" onChange={ (e) => document.getElementById("metaScore").value = e.target.value}></input>
               <br /><br />
               <label for="platform-list" class="filter-title">Platform:</label>
               <br /><br />
@@ -352,7 +354,7 @@ const GameList = (props) => {
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-secondary" onClick={ () => clearValues()}>Clear</button>
+              <button type="button" class="btn btn-secondary" onClick={() => clearValues()}>Clear</button>
               <button type="button" class="btn btn-primary" onClick={() => applyFilters(
                 document.getElementById("startChar").value,
                 document.getElementById("endChar").value,
