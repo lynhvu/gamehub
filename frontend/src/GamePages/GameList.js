@@ -119,6 +119,7 @@ const GameList = (props) => {
 
   // search by name, new
   function searchFor(term) {
+    setPageNumber(0);
     setGames(gameData.filter(function (item) {
       return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
     }));
@@ -143,6 +144,7 @@ const GameList = (props) => {
   }
 
   function reset() {
+    setPageNumber(0);
     document.querySelector('#searched-text').value = '';
     setTerm("")
     setGames(gameData);
