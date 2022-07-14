@@ -17,6 +17,8 @@ const GameList = (props) => {
   useEffect(() => {
     if(term != ""){
       highlight(term)
+    } else {
+      unhighlight()
     }
   }, [games])
 
@@ -141,6 +143,7 @@ const GameList = (props) => {
 
   function reset() {
     document.querySelector('#searched-text').value = '';
+    setTerm("");
     setGames(gameData);
   }
 
@@ -281,7 +284,7 @@ const GameList = (props) => {
       <input type="text" name="search" id="searched-text" placeholder="Search Games"
         value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
       <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
-      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
+      <button className="searchbttn" onClick={() => {reset()}}>Reset</button>
 
       {/* Filter options */}
       <button type="button" class="searchbttn" id="filter" data-toggle="modal" data-target="#exampleModal">

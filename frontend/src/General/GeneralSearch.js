@@ -22,6 +22,8 @@ const GeneralSearch = (props) => {
   useEffect(() => {
     if(term != ""){
       highlight(term)
+    } else {
+      unhighlight()
     }
   }, [games, comps, gens])
 
@@ -133,6 +135,7 @@ const GeneralSearch = (props) => {
 
   function reset() {
     document.querySelector('#searched-text').value = '';
+    setTerm("");
     setGames([]);
     setComps([])
     setGens([])
@@ -308,7 +311,7 @@ const GeneralSearch = (props) => {
       <br></br>
       <input type="text" name="search" id="search" placeholder="Search term . . ."  value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
       <button className="searchbttn" onClick={() => searchFor(term)}>Search</button>
-      <button className="searchbttn" onClick={() =>{reset(); unhighlight()}}>Reset</button>
+      <button className="searchbttn" onClick={() =>{reset()}}>Reset</button>
 
       {/* <div>
         <div className="gamelist-select-table">Sort By:</div>
