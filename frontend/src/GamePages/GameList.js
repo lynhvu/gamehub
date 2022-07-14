@@ -212,8 +212,24 @@ const GameList = (props) => {
   }
 
   function clearValues() {
-    document.getElementById("startChar").value = '';
-    document.getElementById("endChar").value = '';
+    document.getElementById("startChar").value = ''
+    document.getElementById("endChar").value = ''
+    document.getElementById("metaScore").value = 50
+
+    var selectedComps = document.getElementById("comp-multi-selections")
+    for (var elem of selectedComps) {
+      elem.selected = false
+    }
+
+    var selectedGenres = document.getElementById("genre-multi-selections")
+    for (var elem of selectedGenres) {
+      elem.selected = false
+    }
+
+    var listOfPlatforms = document.getElementById("platform-list").getElementsByTagName("INPUT")
+    for (var elem of listOfPlatforms) {
+      elem.checked = false
+    }
   }
 
   return (
