@@ -152,7 +152,7 @@ const GeneralSearch = (props) => {
     var context = document.querySelector(".container");
     var instance = new Mark(context);
     var options = {
-      "separateWordSearch": true,
+      "separateWordSearch": false,
       "accuracy": "partially",
       "caseSensitive": false,
     }
@@ -309,7 +309,7 @@ const GeneralSearch = (props) => {
         General Search
       </div>
       <br></br>
-      <input type="text" name="search" id="search" placeholder="Search term . . ."  value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
+      <input type="text" name="search" id="searched-text" placeholder="Search term . . ."  value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
       <button className="searchbttn" onClick={() => searchFor(term)}>Search</button>
       <button className="searchbttn" onClick={() =>{reset()}}>Reset</button>
 

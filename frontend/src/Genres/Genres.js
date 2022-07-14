@@ -115,7 +115,7 @@ const Genres = (props) => {
         var context = document.querySelector(".container"); // requires an element with class "context" to exist
         var instance = new Mark(context);
         var options = {
-          "separateWordSearch": true,
+          "separateWordSearch": false,
           "accuracy": "partially",
           "caseSensitive": false,
         }
