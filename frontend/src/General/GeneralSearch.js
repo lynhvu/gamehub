@@ -5,6 +5,8 @@ import ReactPaginate from "react-paginate";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
+import Mark from "mark.js";
+
 
 const GeneralSearch = (props) => {
   var [gameData, setGameData] = useState([]) // full dataset of games
@@ -14,6 +16,14 @@ const GeneralSearch = (props) => {
   var [games, setGames] = useState([])  // filtered games to display
   var [comps, setComps] = useState([])
   var [gens, setGens] = useState([])
+
+  const [term, setTerm] = useState("");
+
+  useEffect(() => {
+    if(term != ""){
+      highlight(term)
+    }
+  }, [games, comps, gens])
 
   useEffect(() => {
     fetch("https://gamehubapi.me/games/").then(
@@ -122,10 +132,30 @@ const GeneralSearch = (props) => {
   }
 
   function reset() {
+    document.querySelector('#searched-text').value = '';
     setGames([]);
     setComps([])
     setGens([])
   }
+
+  function unhighlight() {
+    var context = document.querySelector(".container");
+    var instance = new Mark(context);
+    instance.unmark();
+  }
+
+  function highlight(term) {
+    unhighlight();
+    var context = document.querySelector(".container");
+    var instance = new Mark(context);
+    var options = {
+      "separateWordSearch": true,
+      "accuracy": "partially",
+      "caseSensitive": false,
+    }
+    instance.mark(term, options); // will mark the keyword 
+  }
+  
 
   const displayGames = games
     .map((item) => {
@@ -276,9 +306,9 @@ const GeneralSearch = (props) => {
         General Search
       </div>
       <br></br>
-      <input type="text" name="search" id="search" placeholder="Search term . . ."></input>
-      <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
-      <button className="searchbttn" onClick={reset}>Reset</button>
+      <input type="text" name="search" id="search" placeholder="Search term . . ."  value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
+      <button className="searchbttn" onClick={() => searchFor(term)}>Search</button>
+      <button className="searchbttn" onClick={() =>{reset(); unhighlight()}}>Reset</button>
 
       {/* <div>
         <div className="gamelist-select-table">Sort By:</div>
