@@ -79,7 +79,11 @@ const GamePage = (props) => {
     }
 
     return (
-        <div className='page'>
+        <div className='page default-bg'>
+            {/* <div class="gamepage-bg" style={{backgroundImage: 'url(' + gameData.pictures[0] + ')'}}>
+            </div> */}
+
+            <div style={{}}>
             <link rel="stylesheet" href="style.css" type="text/css" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -93,7 +97,7 @@ const GamePage = (props) => {
             <div className="container" style={{}}>
                 <div className="row justify-content-around">
                     <div className="col" style={{}}>
-                        <div className="pageTitleText" style={{ animation: "fadeIn 0.5s" }}>
+                        <div className="pageTitleText" style={{ animation: "fadeIn 0.5s"}}>
                             {gameData==null?null:gameData.name}
                         </div>
                         <Carousel>
@@ -115,6 +119,8 @@ const GamePage = (props) => {
             </div>
 
             <BackBtn></BackBtn>
+
+            </div>
         </div>
     )
 }

@@ -83,45 +83,63 @@ def create_genres():
     """
     populate genre table
     """
-    # load extra data
-    with open('extragenresdata.json') as f:
-        extraData = json.load(f)
-        f.close()
-
-    # load companies json
-    comps = load_json('companyTable.json')
-
-    # loop through RAWG (19 genres)
-    genre = requests.get("https://api.rawg.io/api/genres?key=82b550bd02674835a75889624089664b&page=1&page_size=19").json()
+    genre = load_json('genreTable.json')
     idCount = 0
-    for oneGenre in genre['results']:
-        oneGenre = requests.get("https://api.rawg.io/api/genres/" + str(oneGenre['id']) + "?key=82b550bd02674835a75889624089664b").json()
+    for oneGenre in genre:
         id = idCount
         name = oneGenre['name']
         description = oneGenre['description'][0:1500]
         if len(oneGenre['description']) > 1500:
             description = description + " . . ."
-        num_games = oneGenre['games_count']
-        picture = oneGenre['image_background']    # note: only one picture for now
-        themes = "Not Available"
-        
-        # create the new genre
+        num_games = oneGenre['num_games']
+        picture = oneGenre['picture']
+        themes = oneGenre['themes']
         newGenre = Genre(id = id, name = name, description = description, num_games = num_games, picture = picture, themes = themes)
-        
-        # add the companies
-        for g in extraData:
-            if g['name'] == name:
-                for c in comps:
-                    if c['genre_id'] == g['id']:
-                        #print("YES")
-                        queryComp = Company.query.filter_by(name=c["name"]).first()
-                        if queryComp is not None:
-                            newGenre.companies.append(queryComp)
-                newGenre.themes = g['themes']
-                #break
         db.session.add(newGenre)
         db.session.commit()
         idCount += 1
+
+    # OLD CODE FOR SCRAPING APIS BELOW
+
+    # # load extra data
+    # with open('extragenresdata.json') as f:
+    #     extraData = json.load(f)
+    #     f.close()
+
+    # # load companies json
+    # comps = load_json('companyTable.json')
+
+    # # loop through RAWG (19 genres)
+    # genre = requests.get("https://api.rawg.io/api/genres?key=82b550bd02674835a75889624089664b&page=1&page_size=19").json()
+    # idCount = 0
+    # for oneGenre in genre['results']:
+    #     oneGenre = requests.get("https://api.rawg.io/api/genres/" + str(oneGenre['id']) + "?key=82b550bd02674835a75889624089664b").json()
+    #     id = idCount
+    #     name = oneGenre['name']
+    #     description = oneGenre['description'][0:1500]
+    #     if len(oneGenre['description']) > 1500:
+    #         description = description + " . . ."
+    #     num_games = oneGenre['games_count']
+    #     picture = oneGenre['image_background']    # note: only one picture for now
+    #     themes = "Not Available"
+        
+    #     # create the new genre
+    #     newGenre = Genre(id = id, name = name, description = description, num_games = num_games, picture = picture, themes = themes)
+        
+    #     # add the companies
+    #     for g in extraData:
+    #         if g['name'] == name:
+    #             for c in comps:
+    #                 if c['genre_id'] == g['id']:
+    #                     #print("YES")
+    #                     queryComp = Company.query.filter_by(name=c["name"]).first()
+    #                     if queryComp is not None:
+    #                         newGenre.companies.append(queryComp)
+    #             newGenre.themes = g['themes']
+    #             #break
+    #     db.session.add(newGenre)
+    #     db.session.commit()
+    #     idCount += 1
 
 
 # ------------
@@ -131,61 +149,82 @@ def create_games():
     """
     populate games table
     """
-    # get 320 games from page 1, only adding if the full info is available
-    game = []
-    for i in range(1,9):
-        game.extend(requests.get("https://api.rawg.io/api/games?key=82b550bd02674835a75889624089664b&page=" + str(i) + "&page_size=50").json()['results'])
+    game = load_json('gameTable.json')
     idCount = 0
     for oneGame in game:
-        oneGame = requests.get("https://api.rawg.io/api/games/" + str(oneGame['id']) + "?key=82b550bd02674835a75889624089664b").json()
         id = idCount
         name = oneGame['name']
         description = oneGame['description'][0:1500]
         if len(oneGame['description']) > 1500:
             description = description + " . . ."
-        score = oneGame['metacritic']
-        genre_id = -1
-        company_id = -1
-        try:
-            gtemp = Genre.query.filter_by(name=oneGame['genres'][-1]['name']).first()
-            if gtemp is not None:
-                genre_id = gtemp.id    # single genre, one to many (get last one so not all action)
-        except IndexError:
-            pass
-        released = oneGame['released']
-        try:
-            ctemp = Company.query.filter_by(name=oneGame['developers'][0]['name']).first()
-            if ctemp is not None:
-                company_id = ctemp.id # single company that matches name, one to many
-        except IndexError:
-            pass
+        score = oneGame['score'] 
+        genre_id = oneGame['genre_id'] 
+        released = oneGame['released'] 
+        company_id = oneGame['company_id']
+        pictures = oneGame['pictures']
+        platforms = oneGame['platforms']
+        newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
+        db.session.add(newGame)
+        db.session.commit()
+        idCount += 1
 
-        # get list of picture URLs
-        pictures = []
-        try:
-            imageList = requests.get("https://api.rawg.io/api/games/" + str(id) + "/screenshots?key=82b550bd02674835a75889624089664b").json()['results']
-            for i in imageList:
-                pictures.append(i['image'])
-        except KeyError:
-            pass
+    # OLD API SCRAPING CODE BELOW
+
+    # get 320 games from page 1, only adding if the full info is available
+    # game = []
+    # for i in range(1,9):
+    #     game.extend(requests.get("https://api.rawg.io/api/games?key=82b550bd02674835a75889624089664b&page=" + str(i) + "&page_size=50").json()['results'])
+    # idCount = 0
+    # for oneGame in game:
+    #     oneGame = requests.get("https://api.rawg.io/api/games/" + str(oneGame['id']) + "?key=82b550bd02674835a75889624089664b").json()
+    #     id = idCount
+    #     name = oneGame['name']
+    #     description = oneGame['description'][0:1500]
+    #     if len(oneGame['description']) > 1500:
+    #         description = description + " . . ."
+    #     score = oneGame['metacritic']
+    #     genre_id = -1
+    #     company_id = -1
+    #     try:
+    #         gtemp = Genre.query.filter_by(name=oneGame['genres'][-1]['name']).first()
+    #         if gtemp is not None:
+    #             genre_id = gtemp.id    # single genre, one to many (get last one so not all action)
+    #     except IndexError:
+    #         pass
+    #     released = oneGame['released']
+    #     try:
+    #         ctemp = Company.query.filter_by(name=oneGame['developers'][0]['name']).first()
+    #         if ctemp is not None:
+    #             company_id = ctemp.id # single company that matches name, one to many
+    #     except IndexError:
+    #         pass
+
+    #     # get list of picture URLs
+    #     pictures = []
+    #     try:
+    #         imageList = requests.get("https://api.rawg.io/api/games/" + str(oneGame['id']) + "/screenshots?key=82b550bd02674835a75889624089664b").json()['results']
+    #         for i in imageList:
+    #             pictures.append(i['image'])
+    #     except KeyError:
+    #         pass
         
-        # get list of platform names
-        platforms = []
-        for p in oneGame['platforms']:
-            platforms.append(p['platform']['name'])
+    #     # get list of platform names
+    #     platforms = []
+    #     for p in oneGame['platforms']:
+    #         platforms.append(p['platform']['name'])
         
-        # trailer is hard to get, maybe just use more pictures?
-        if genre_id != -1 and company_id != -1:
-            newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
-            db.session.add(newGame)
-            db.session.commit()
-            idCount += 1
-        # elif genre_id == -1 and company_id != -1:
-        #     newGame = Game(id = id, name = name, description = description, score = score, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
-        # elif genre_id != -1 and company_id == -1:
-        #     newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, pictures = pictures, platforms = platforms)
-        # else:
-        #     newGame = Game(id = id, name = name, description = description, score = score, released = released, pictures = pictures, platforms = platforms)
+    #     # trailer is hard to get, maybe just use more pictures?
+    #     if genre_id != -1 and company_id != -1:
+    #         newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
+    #         db.session.add(newGame)
+    #         db.session.commit()
+    #         idCount += 1
+    #     # elif genre_id == -1 and company_id != -1:
+    #     #     newGame = Game(id = id, name = name, description = description, score = score, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
+    #     # elif genre_id != -1 and company_id == -1:
+    #     #     newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, pictures = pictures, platforms = platforms)
+    #     # else:
+    #     #     newGame = Game(id = id, name = name, description = description, score = score, released = released, pictures = pictures, platforms = platforms)
 
         
 
