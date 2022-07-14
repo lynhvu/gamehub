@@ -57,8 +57,8 @@ const GamePage = (props) => {
 
     return (
         <div className='page default-bg'>
-            {/* <div class="gamepage-bg" style={{backgroundImage: 'url(' + gameData.pictures[0] + ')'}}>
-            </div> */}
+            <div class="gamepage-bg" style={{backgroundImage: 'url(' + gameData.pictures[0] + ')'}}>
+            </div>
 
             <div style={{}}>
             <link rel="stylesheet" href="style.css" type="text/css" />
@@ -73,7 +73,7 @@ const GamePage = (props) => {
             <NavBar></NavBar>
             <div className="container" style={{}}>
                 <div className="row justify-content-around">
-                    <div className="col" style={{}}>
+                    <div className="col" style={{zIndex: '9999'}}>
                         <div className="pageTitleText" style={{ animation: "fadeIn 0.5s"}}>
                             {gameData==null?null:gameData.name}
                         </div>
@@ -84,7 +84,7 @@ const GamePage = (props) => {
                                     </Carousel.Item>
                                 ))}
                         </Carousel>
-                        <p className="game-metascore" style={{marginTop:'15px'}}>Metascore: {gameData==null?null:gameData.score}</p>
+                        <p className="game-metascore" style={{marginTop:'15px', marginLeft: '0px', borderRadius: 20, padding: '12px'}}>Metascore: {gameData==null?null:gameData.score}</p>
                         <p className="game-descr">{gameData==null?null:gameData.description}</p>
                         <p className="game-descr"><div style={{color: "white"}}>Developed by {companyName(gameData==null?null:gameData.company_id)}</div></p>
                         <p className="game-descr"><b>Released:</b> {gameData==null?null:gameData.released}</p>

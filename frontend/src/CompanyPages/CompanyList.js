@@ -140,7 +140,7 @@ function highlight(term) {
   var instance = new Mark(context);
   var options = {
     "separateWordSearch": false,
-    "accuracy": "exactly",
+    "accuracy": "partially",
     "caseSensitive": false,
   }
   instance.mark(term, options); // will mark the keyword 
