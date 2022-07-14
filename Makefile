@@ -45,4 +45,4 @@ run:
 	source launch_front & source launch_back
 
 postman-tests:
-	newman run GameHub_postman_test_run.json
+	newman run GameHub.postman_collection.json

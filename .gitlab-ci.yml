@@ -17,4 +17,4 @@ postman:
     name: postman/newman
     entrypoint: [""]
   script:
-    newman run GameHub_postman_test_run.json
+    newman run GameHub.postman_collection.json
