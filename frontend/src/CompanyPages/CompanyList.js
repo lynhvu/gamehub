@@ -231,7 +231,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       <br></br>
 
       {/* Search Options */}
-      <input type="text" name="search" id="searched-text" placeholder="Company name . . ."
+      <input type="text" name="search" id="searched-text" placeholder="Search Companies"
         value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
       <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
       <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
