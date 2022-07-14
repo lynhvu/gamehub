@@ -278,7 +278,7 @@ const GameList = (props) => {
       <br></br>
 
       {/* Search button*/}
-      <input type="text" name="search" id="searched-text" placeholder="Game name . . ."
+      <input type="text" name="search" id="searched-text" placeholder="Search Games"
         value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
       <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
       <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>

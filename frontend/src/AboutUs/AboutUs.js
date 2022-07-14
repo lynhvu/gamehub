@@ -21,7 +21,7 @@ const AboutUs = (props) => {
             />
             <NavBar></NavBar>
             <br />
-            <div className="pageTitleText" style={{ animation: "fadeIn 0.5s" }}>
+            <div className="listTitleText" style={{ animation: "fadeIn 0.5s" }}>
                 About Us
             </div>
             <div className="textbox" style={{ animation: "fadeIn 1.5s" }}>
