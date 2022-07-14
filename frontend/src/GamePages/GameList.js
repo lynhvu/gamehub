@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import BackBtn from "../BackBtn";
 import Mark from "mark.js";
+import { Label } from "recharts";
 
 const GameList = (props) => {
   var [gameData, setData] = useState([]) // full dataset of games
@@ -301,7 +302,7 @@ const GameList = (props) => {
               </button>
             </div>
             <div class="modal-body">
-              Names (Starting character to ending character, filter by alphabetical order):<br></br>
+              <p class="filter-title">Names (Starting character to ending character, filter by alphabetical order):</p>
               <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
               &nbsp;-&nbsp;
               <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
