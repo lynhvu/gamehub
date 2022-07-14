@@ -17,8 +17,6 @@ const GameList = (props) => {
   useEffect(() => {
     if(term != ""){
       highlight(term)
-    } else {
-      unhighlight()
     }
   }, [games])
 
@@ -93,15 +91,6 @@ const GameList = (props) => {
     setOrder(event.target.value);
   };
 
-  // Trigger button click on Enter
-  var input = document.getElementById("searched-text")
-      input.addEventListener("keypress", function(event){
-        if(event.key === "Enter") {
-          event.preventDefault();
-          document.getElementById("inputbttn").click();
-        }
-  })
-
   // Sort the table by attributes in the selection menu
   function sortByProperty() {
     var objArray = games;
@@ -152,7 +141,6 @@ const GameList = (props) => {
 
   function reset() {
     document.querySelector('#searched-text').value = '';
-    setTerm("");
     setGames(gameData);
   }
 
@@ -293,8 +281,8 @@ const GameList = (props) => {
       {/* Search button*/}
       <input type="text" name="search" id="searched-text" placeholder="Search Games"
         value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
-      <button className="searchbttn" id="inputbttn" onClick={() => {searchFor(term)}}>Search</button>
-      <button className="searchbttn" onClick={() => {reset()}}>Reset</button>
+      <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
+      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
 
       {/* Filter options */}
       <button type="button" class="searchbttn" id="filter" data-toggle="modal" data-target="#exampleModal">
