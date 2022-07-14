@@ -33,10 +33,9 @@ def create_companies():
     # make array of 200 companies (each call gets 40)
     #company = []
     # load extra data
-    company = load_json('companyTable.json')
+    company = load_json('completeCompanies.json')
     #for i in range(1,3):
         #company.extend(requests.get("https://api.rawg.io/api/developers?key=82b550bd02674835a75889624089664b&page=" + str(i) + "&page_size=50").json()['results'])
-    #idCount = 0
     for oneCompany in company:
         #oneCompany = requests.get("https://api.rawg.io/api/developers/" + str(oneCompany['id']) + "?key=82b550bd02674835a75889624089664b").json()
         id = oneCompany['id']
@@ -48,12 +47,10 @@ def create_companies():
         year = oneCompany['year'] # igdb
         num_games = oneCompany['num_games']  # replacement for rating
         img = oneCompany['img']  # note that this gets a sample image rather than the logo (the logo is harder to obtain)
-        # games are already added in create_games()
-        # main genre is added in create_genre
+        genre_id = oneCompany['genre_id']
         newCompany = Company(id = id, name = name, description = description, location = location, year = year, num_games = num_games, img = img)
         db.session.add(newCompany)
         db.session.commit()
-        #idCount += 1
 
     # loop through igdb, looking for matches and filling in the extra info
     # cc = coco.CountryConverter()
@@ -84,7 +81,6 @@ def create_genres():
     populate genre table
     """
     genre = load_json('genreTable.json')
-    #idCount = 0
     for oneGenre in genre:
         id = oneGenre['id']
         name = oneGenre['name']
@@ -97,7 +93,6 @@ def create_genres():
         newGenre = Genre(id = id, name = name, description = description, num_games = num_games, picture = picture, themes = themes)
         db.session.add(newGenre)
         db.session.commit()
-        #idCount += 1
 
     # OLD CODE FOR SCRAPING APIS BELOW
 
@@ -149,8 +144,7 @@ def create_games():
     """
     populate games table
     """
-    game = load_json('gameTable.json')
-    #idCount = 0
+    game = load_json('completeGames.json')
     for oneGame in game:
         id = oneGame['id']
         name = oneGame['name']
@@ -166,7 +160,6 @@ def create_games():
         newGame = Game(id = id, name = name, description = description, score = score, genre_id = genre_id, released = released, company_id = company_id, pictures = pictures, platforms = platforms)
         db.session.add(newGame)
         db.session.commit()
-        #idCount += 1
 
     # OLD API SCRAPING CODE BELOW
 
