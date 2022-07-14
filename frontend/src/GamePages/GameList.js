@@ -61,8 +61,8 @@ const GameList = (props) => {
     { value: "platforms", text: "Platforms" },
   ];
 
-  const platform_consoles = ["Nintendo Switch", "Playstation 3", "Playstation 4", "Playstation 5", 
-                            "Xbox 360", "Xbox One", "Xbox Series S/X", "macOS", "Linux", "PC", "Mobile"]
+  const platform_consoles = ["Nintendo Switch", "PlayStation 3", "PlayStation 4", "PlayStation 5",
+    "Xbox 360", "Xbox One", "Xbox Series S/X", "macOS", "Linux", "PC", "Mobile"]
 
   const [selected, setSelected] = useState(options[0].value);
 
@@ -172,8 +172,8 @@ const GameList = (props) => {
         qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase() <= endChar.toLowerCase();
         console.log("here4")
       }
-      
-      if (compList.length) {
+
+      {
         var selected = Array.from(compList.selectedOptions);
         if (selected.length != 0) {
           var selectedVals = selected.map(option => option.value);
@@ -181,7 +181,7 @@ const GameList = (props) => {
         }
       }
 
-      if (genreList.length) {
+      {
         var selected = Array.from(genreList.selectedOptions);
         if (selected.length != 0) {
           var selectedVals = selected.map(option => option.value);
@@ -189,20 +189,22 @@ const GameList = (props) => {
         }
       }
 
-      if(metaScore != 50) {
+
+      if (metaScore != 50) {
         qualifies &= item.score >= metaScore;
       }
 
-      if(consoles) {
+      {
         var selected = new Array();
         for (var i = 0; i < consoles.length; i++) {
           if (consoles[i].checked) {
-              selected.push(consoles[i].value);
+            selected.push(consoles[i].value);
           }
         }
-
-        var intersectionResult = selected.filter(x => item.platforms.indexOf(x) !== -1);
-        qualifies &= intersectionResult.length != 0 ? true : false;
+        if (selected.length != 0) {
+          var intersectionResult = selected.filter(x => item.platforms.indexOf(x) !== -1);
+          qualifies &= intersectionResult.length != 0 ? true : false;
+        }
       }
 
       return qualifies;
@@ -247,38 +249,38 @@ const GameList = (props) => {
               <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
               &nbsp;-&nbsp;
               <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
-              <br/><br/>
+              <br /><br />
 
               <label for="company-selection" class="filter-title">Companies:</label>
-              <br/>
+              <br />
               <select class="form-select" name="company-selection" id="comp-multi-selections" multiple>
                 {comps.map((comp, i) => (
                   <option value={i}>{compIDtoCompName(i)}</option>
                 ))}
               </select>
-              <br/><br/>
+              <br /><br />
 
               <label for="genre-select" class="filter-title">Genres:</label>
-              <br/>
+              <br />
               <select class="form-select" name="genre-select" id="genre-multi-selections" multiple>
                 {gens.map((genre, i) => (
                   <option value={i}>{genName(i)}</option>
                 ))}
               </select>
-              <br/><br/>
+              <br /><br />
 
               <label for="customRange3" class="form-label filter-title">Minimum Metascore:</label>
               <input type="range" class="form-range" min="0" max="100" step="1" id="metaScore"></input>
-              <br/><br/>
+              <br /><br />
               <label for="platform-list" class="filter-title">Platform:</label>
-              <br/><br/>
-              <li class="platform-list" id="platform-list" style={{ listStyleType: "none"}}>
+              <br /><br />
+              <li class="platform-list" id="platform-list" style={{ listStyleType: "none" }}>
                 {platform_consoles.map((plat) => (
-                  <div style={{ padding: "3px"}}>
+                  <div style={{ padding: "3px" }}>
                     <label for="{plat}-plat">
-                    <input type="checkbox" name="{plat}-plat" value={plat} style={{ paddingLeft: "3px"}}>
-                    </input>
-                    {plat}</label>
+                      <input type="checkbox" name="{plat}-plat" value={plat} style={{ paddingLeft: "3px" }}>
+                      </input>
+                      {plat}</label>
                   </div>
                 ))}
               </li>
