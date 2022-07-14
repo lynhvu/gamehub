@@ -6,17 +6,39 @@ html {
     
 
 body {
+  z-index: 9999;
   position: relative;
   padding-bottom: 3rem;
   margin: 0;
   padding: 0;
   text-align: center;
+  height: 100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.default-bg {
   background-image: url("back.png");
   background-repeat: none;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.gamepage-bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  filter: blur(10px);
+  z-index: 0;
+}
+
+.gamepage-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 
 input {
@@ -30,7 +52,7 @@ input {
 .page {
   min-height: 100%;
   width: 100%;
-  position: relative;
+  position: absolute;
   padding-bottom: 3rem;
   margin: 0;
   padding: 0;

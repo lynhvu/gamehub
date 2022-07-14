@@ -13,7 +13,7 @@ import {
 const Splash = (props) => {
 
     return (
-        <div className="page">
+        <div className="page default-bg">
             <link rel="stylesheet" href="style.css" type="text/css" />
 
             <NavBar></NavBar>

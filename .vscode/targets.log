@@ -10,11 +10,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue Jul 12 16:17:40 2022
+# Make data base, printed on Tue Jul 12 22:33:44 2022
 
 # Variables
 
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -90,7 +89,7 @@ VSCODE_CODE_CACHE_PATH = /Users/danielgonzalez/Library/Application Support/Code/
 # environment
 LOGNAME = danielgonzalez
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -112,7 +111,6 @@ USER = danielgonzalez
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
- 
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # makefile (from `Makefile', line 10)
 DOC := docker run -it -v $$(PWD):/usr/cs373 -w /usr/cs373 fareszf/python
@@ -173,9 +171,9 @@ VSCODE_PID = 82245
 
 # Directories
 
-# . (device 16777231, inode 48435258): 23 files, no impossibilities.
+# . (device 16777231, inode 48435258): 25 files, no impossibilities.
 
-# 23 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -206,11 +204,10 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-12 16:17:33
+#  Last modified 2022-07-12 16:20:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 IDB1.log:
@@ -281,6 +278,6 @@ main.html:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jul 12 16:17:40 2022
+# Finished Make data base on Tue Jul 12 22:33:44 2022
 
  
