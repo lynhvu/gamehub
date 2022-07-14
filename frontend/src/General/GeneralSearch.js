@@ -155,6 +155,7 @@ const GeneralSearch = (props) => {
       "separateWordSearch": false,
       "accuracy": "partially",
       "caseSensitive": false,
+      "exclude": [".listTitleText", "#game-att"]
     }
     instance.mark(term, options); // will mark the keyword 
   }
@@ -336,14 +337,14 @@ const GeneralSearch = (props) => {
             Games
         </div>
         <div
-          class="row bg-dark text-light"
+          className="row bg-dark text-light" 
           style={{ opacity: 0.9, borderRadius: 1, textAlign: "center" }}
         >
-          <div class="col-lg col-12">Game Title</div>
-          <div class="col-lg col-12">Company</div>
-          <div class="col-lg col-12">Genre</div>
-          <div class="col-lg col-12">Metascore</div>
-          <div class="col-lg col-12">Platforms</div>
+          <div class="col-lg col-12" id="game-att">Game Title</div>
+          <div class="col-lg col-12" id="game-att">Company</div>
+          <div class="col-lg col-12" id="game-att">Genre</div>
+          <div class="col-lg col-12" id="game-att">Metascore</div>
+          <div class="col-lg col-12" id="game-att">Platforms</div>
         </div>
         {displayGames}
         <hr style={{backgroundColor:"white", borderStyle:"solid", borderWidth:3, borderColor:"white"}}></hr>
