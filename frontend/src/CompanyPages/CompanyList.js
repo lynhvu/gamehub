@@ -24,6 +24,12 @@ const CompanyList = (props) => {
     }, [comps])
 
     useEffect(() => {
+      if(term == ""){
+        unhighlight(term)
+      }
+    }, [comps])
+
+    useEffect(() => {
         fetch("https://gamehubapi.me/companies/").then(
             res => res.json()
         ).then(
@@ -136,8 +142,8 @@ function highlight(term) {
   var context = document.querySelector(".container"); // requires an element with class "context" to exist
   var instance = new Mark(context);
   var options = {
-    "separateWordSearch": true,
-    "accuracy": "partially",
+    "separateWordSearch": false,
+    "accuracy": "exactly",
     "caseSensitive": false,
   }
   instance.mark(term, options); // will mark the keyword 
