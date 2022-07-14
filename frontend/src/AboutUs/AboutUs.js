@@ -45,11 +45,12 @@ const AboutUs = (props) => {
             </div>
             <Tools></Tools>
             <button className="textbox" style={{ animation: "fadeIn 2.5s" }} onClick={showImg}>
-            Unit Tests
-                <div id="show" style={{display: "none"}}>
-                    <img src={test}/>
-                </div>
-            </button>
+            Unit Tests</button>
+            <div id="show" >
+                <img src={test}/>
+                <p className="text-light center">(Click on the button again to hide the picture)</p>
+            </div>
+            
             <br></br>
            <BackBtn></BackBtn>
         </div>
@@ -58,7 +59,12 @@ const AboutUs = (props) => {
 }
 
 const showImg = () => {
-    document.getElementById("show").style.display ='block';
+    var x = document.getElementById("show");
+    if (x.style.display === "none") {
+    x.style.display = "block";
+    } else {
+    x.style.display = "none";
+    }
 }
 
 export default AboutUs

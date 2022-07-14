@@ -120,8 +120,8 @@ const Genres = (props) => {
       
       function reset(){
         document.querySelector('#searched-text').value = '';
-        setTerm("");
-        setComps(data);
+        setTerm("")
+        setGenres(genres)
       }
 
     function applyFilters(startChar, endChar, minGames, maxGames) {
