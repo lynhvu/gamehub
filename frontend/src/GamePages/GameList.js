@@ -165,39 +165,45 @@ const GameList = (props) => {
   };
 
 
-  function applyFilters(startChar, endChar, metaScore, compList, genreList) {
+  function applyFilters(startChar, endChar, metaScore, compList, genreList, consoles) {
     setGames(gameData.filter(function (item) {
       var qualifies = true;
       if (startChar && endChar) {
         qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase() <= endChar.toLowerCase();
+        console.log("here4")
       }
       
-      if (compList) {
+      if (compList.length) {
         var selected = Array.from(compList.selectedOptions);
-        var selectedVals = selected.map(option => option.value);
-        qualifies &= selectedVals.includes(item.company_id.toString());
+        if (selected.length != 0) {
+          var selectedVals = selected.map(option => option.value);
+          qualifies &= selectedVals.includes(item.company_id.toString());
+        }
       }
 
-      if(genreList) {
+      if (genreList.length) {
         var selected = Array.from(genreList.selectedOptions);
-        var selectedVals = selected.map(option => option.value);
-        qualifies &= selectedVals.includes(item.genre_id.toString());
+        if (selected.length != 0) {
+          var selectedVals = selected.map(option => option.value);
+          qualifies &= selectedVals.includes(item.genre_id.toString());
+        }
       }
 
-      if(metaScore) {
+      if(metaScore != 50) {
         qualifies &= item.score >= metaScore;
       }
 
-      // if(consoles) {
-      //   var selected = new Array();
-      //   for (var i = 0; i < consoles.length; i++) {
-      //     if (consoles[i].checked) {
-      //         selected.push(consoles[i].value.toLowerCase);
-      //     }
-      //   }
-      //   const intersectionResult = selected.filter(x => item.platforms.indexOf(x) !== -1);
-      //   qualifies &= intersectionResult.length != 0 ? true : false;
-      // }
+      if(consoles) {
+        var selected = new Array();
+        for (var i = 0; i < consoles.length; i++) {
+          if (consoles[i].checked) {
+              selected.push(consoles[i].value);
+          }
+        }
+
+        var intersectionResult = selected.filter(x => item.platforms.indexOf(x) !== -1);
+        qualifies &= intersectionResult.length != 0 ? true : false;
+      }
 
       return qualifies;
     }));
@@ -286,7 +292,7 @@ const GameList = (props) => {
                 document.getElementById("metaScore").value,
                 document.getElementById("comp-multi-selections"),
                 document.getElementById("genre-multi-selections"),
-                document.getElementById("platform-list"))}>Save changes</button>
+                document.getElementById("platform-list").getElementsByTagName("INPUT"))}>Save changes</button>
             </div>
           </div>
         </div>
