@@ -858,9 +858,7 @@ input[type=text]:focus {
 }
 
 mark {
-  background: black;
   color: red;
-  opacity: 0.9;
 }
 
 .form-container {

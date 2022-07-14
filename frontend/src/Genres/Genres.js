@@ -11,6 +11,7 @@ import {
     Link
 } from "react-router-dom";
 import BackBtn from '../BackBtn';
+import Mark from "mark.js";
 
 const Genres = (props) => {
     /*var data = require('./genresdata.json');*/
@@ -19,6 +20,14 @@ const Genres = (props) => {
 
     const [comps, setComps] = useState([])
     const [games, setGames] = useState([])
+
+    const [term, setTerm] = useState("");
+
+    useEffect(() => {
+      if(term != ""){
+        highlight(term)
+      }
+    }, [genres])
 
     useEffect(() => {
         fetch("https://gamehubapi.me/genres/").then(
@@ -89,9 +98,28 @@ const Genres = (props) => {
         }))
     }
 
-    function reset() {
-        setGenres(data);
-    }
+    function highlight(term) {
+        unhighlight();
+        var context = document.querySelector(".container"); // requires an element with class "context" to exist
+        var instance = new Mark(context);
+        var options = {
+          "separateWordSearch": true,
+          "accuracy": "partially",
+          "caseSensitive": false,
+        }
+        instance.mark(term, options); // will mark the keyword 
+      }
+      
+      function unhighlight() {
+        var context = document.querySelector(".container"); // requires an element with class "context" to exist
+        var instance = new Mark(context);
+        instance.unmark(); // will mark the keyword 
+      }
+      
+      function reset(){
+        document.querySelector('#searched-text').value = '';
+        setComps(data);
+      }
 
     function applyFilters(startChar, endChar, minGames, maxGames) {
         setGenres(data.filter(function (item) {
@@ -179,9 +207,13 @@ const Genres = (props) => {
                 Genres
             </div>
             <br></br>
-            <input type="text" name="search" id="search" placeholder="Genre name . . ."></input>
-            <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
-            <button className="searchbttn" onClick={reset}>Reset</button>
+
+            {/**Search option */}
+            <input type="text" name="search" id="searched-text" placeholder="Genre name . . ." 
+                value={term} onChange={(event) => {setTerm(event.target.value)}}>
+            </input>
+            <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
+            <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
 
             {/* Filter options */}
             <button type="searchbtton" class="searchbttn" data-toggle="modal" data-target="#exampleModal">

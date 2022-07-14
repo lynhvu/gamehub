@@ -13,16 +13,9 @@ import { Carousel } from "react-bootstrap";
 const GamePage = (props) => {
 
     var gameData = JSON.parse(localStorage.getItem("GAME"));
-    /*var companyData = require('../CompanyPages/companydata.json');
-    companyData.map(item => {
-        if (item.name == gameData.developer) {
-            localStorage.setItem("COMPANY", JSON.stringify(item))
-            return;   
-        }       
-    });*/
     var [genreData, setGenreData] = useState([])
-
     var [compData, setCompData] = useState([])
+
 
     useEffect(() => {
         fetch("https://gamehubapi.me/companies/").then(
@@ -45,22 +38,6 @@ const GamePage = (props) => {
             }
         )
     }, [])
-
-    // compData.map(item => {
-    //     if (item.name == gameData.developer) {
-    //         localStorage.setItem("COMPANY", JSON.stringify(item));
-    //         return;
-    //     }
-    // });
-
-    
-    // genreData.map(item => {
-    //     for(let i = 0; i < gameData.genre.length; i++) {
-    //         if(item.name == gameData.genre[i]) {
-    //             localStorage.setItem(JSON.stringify(gameData.genre[i]), JSON.stringify(item));
-    //         }
-    //     }
-    // });
 
     function genreName(genre_id) {
         for(var i = 0; i < genreData.length; i++){

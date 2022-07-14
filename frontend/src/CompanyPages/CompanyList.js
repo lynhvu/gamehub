@@ -5,7 +5,7 @@ import ReactPaginate from "react-paginate";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Card, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import BackBtn from "../BackBtn";
-import CompSearch from "./searchCompany";
+
 import Mark from "mark.js";
 
 
@@ -132,14 +132,6 @@ function searchFor(term){
 }
 
 function highlight(term) {
-  // let textToSearch = document.getElementById("searched-text").value;
-  // let paragraph = document.querySelector(".containter")
-  // textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-
-  // let pattern = new RegExp(`${textToSearch}`,"gi");
-
-  //paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
-
   unhighlight();
   var context = document.querySelector(".container"); // requires an element with class "context" to exist
   var instance = new Mark(context);
@@ -149,9 +141,6 @@ function highlight(term) {
     "caseSensitive": false,
   }
   instance.mark(term, options); // will mark the keyword 
-
-
-  // displayComps.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
 }
 
 function unhighlight() {

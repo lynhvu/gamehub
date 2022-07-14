@@ -4,13 +4,21 @@ import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import BackBtn from "../BackBtn";
+import Mark from "mark.js";
 
 const GameList = (props) => {
   var [gameData, setData] = useState([]) // full dataset of games
   var [games, setGames] = useState([])  // filtered games to display
-
   const [comps, setComps] = useState([])
   const [gens, setGens] = useState([])
+
+  const [term, setTerm] = useState("");
+
+  useEffect(() => {
+    if(term != ""){
+      highlight(term)
+    }
+  }, [games])
 
   useEffect(() => {
     fetch("https://gamehubapi.me/games/").then(
@@ -113,7 +121,26 @@ const GameList = (props) => {
     }))
   }
 
+  function highlight(term) {
+    unhighlight();
+    var context = document.querySelector(".context"); // requires an element with class "context" to exist
+    var instance = new Mark(context);
+    var options = {
+      "separateWordSearch": true,
+      "accuracy": "partially",
+      "caseSensitive": false,
+    }
+    instance.mark(term, options); // will mark the keyword 
+  }
+
+  function unhighlight() {
+    var context = document.querySelector(".context"); // requires an element with class "context" to exist
+    var instance = new Mark(context);
+    instance.unmark(); // will mark the keyword 
+  }
+
   function reset() {
+    document.querySelector('#searched-text').value = '';
     setGames(gameData);
   }
 
@@ -121,6 +148,7 @@ const GameList = (props) => {
     .slice(pagesVisited, pagesVisited + gamesPerPage)
     .map((item) => {
       return (
+        <div className="">
         <Link
           to={{ pathname: "/games/gamepage" }}
           onClick={() => {
@@ -137,7 +165,7 @@ const GameList = (props) => {
               {item.platforms.join(', ')}
             </div>
           </div>
-        </Link>
+        </Link></div>
       );
     });
 
@@ -248,9 +276,12 @@ const GameList = (props) => {
         Games
       </div>
       <br></br>
-      <input type="text" name="search" id="search" placeholder="Game name . . ."></input>
-      <button className="searchbttn" onClick={() => searchFor(document.getElementById("search").value)}>Search</button>
-      <button className="searchbttn" onClick={reset}>Reset</button>
+
+      {/* Search button*/}
+      <input type="text" name="search" id="searched-text" placeholder="Game name . . ."
+        value={term} onChange={(event) => {setTerm(event.target.value)}}></input>
+      <button className="searchbttn" onClick={() => {searchFor(term)}}>Search</button>
+      <button className="searchbttn" onClick={() => {reset(); unhighlight()}}>Reset</button>
 
       {/* Filter options */}
       <button type="button" class="searchbttn" data-toggle="modal" data-target="#exampleModal">
@@ -358,7 +389,8 @@ const GameList = (props) => {
           <div class="col-lg col-12">Metascore</div>
           <div class="col-lg col-12">Platforms</div>
         </div>
-        {displayGames}
+        <div className="context">
+        {displayGames}</div>
         <ReactPaginate
           previousLabel={"Prev"}
           nextLabel={"Next"}
