@@ -205,6 +205,13 @@ const Genres = (props) => {
         setPageNumber(selected);
     };
 
+    function clearValues() {
+        document.getElementById("startChar").value = ''
+        document.getElementById("endChar").value = ''
+        document.getElementById("minGames").value = ''
+        document.getElementById("maxGames").value = ''
+
+      }
 
     return (
         <div className='page default-bg'>
@@ -257,6 +264,7 @@ const Genres = (props) => {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" onClick={() => clearValues()}>Clear</button>
                             <button type="button" class="btn btn-primary" onClick={() => applyFilters(
                                 document.getElementById("startChar").value,
                                 document.getElementById("endChar").value,
