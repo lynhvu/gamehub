@@ -6,7 +6,7 @@ import GroupStats from "./ProjInfo";
 import Apis from "./Apis";
 import Tools from "./Tools";
 import {Link} from "react-router-dom";
-import test from "../StyleAndImg/unit-tests.png"
+import test from "../StyleAndImg/tests.png"
 
 const AboutUs = (props) => {
     
