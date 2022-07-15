@@ -136,7 +136,7 @@ const Genres = (props) => {
         setGenres(data)
       }
 
-    function applyFilters(startChar, endChar, minGames, maxGames) {
+    function applyFilters(startChar, endChar, minGames, maxGames, compList) {
         setGenres(data.filter(function (item) {
             var qualifies = true;
             if (startChar && endChar) {
@@ -145,6 +145,20 @@ const Genres = (props) => {
             if (minGames || maxGames) {
                 qualifies &= item.num_games >= minGames && item.num_games <= maxGames;
             }
+
+            {
+                var selected = Array.from(compList.selectedOptions);
+                if (selected.length != 0) {
+                  var selectedVals = selected.map(option => parseInt(option.value));
+                  console.log(selectedVals)
+                  var compsInGenre = comps.filter(comp => comp.genre_id == item.id).map(comp => comp.id)
+                  console.log(compsInGenre)
+                  var intersectionResult = selectedVals.filter(x => compsInGenre.indexOf(x) !== -1);
+                  console.log(intersectionResult)
+                  qualifies &= intersectionResult.length != 0 ? true : false;
+                }
+              }
+
             return qualifies;
         }));
     }
@@ -207,12 +221,26 @@ const Genres = (props) => {
         setPageNumber(selected);
     };
 
+
+    function compIDtoCompName(givenId) {
+        for (var i = 0; i < comps.length; i++) {
+        if (comps[i].id == givenId) {
+            return comps[i].name;
+        }
+        }
+    }
+
     function clearValues() {
         document.getElementById("startChar").value = ''
         document.getElementById("endChar").value = ''
         document.getElementById("minGames").value = ''
         document.getElementById("maxGames").value = ''
 
+        var selectedComps = document.getElementById("comp-multi-selections")
+        for (var elem of selectedComps) {
+          elem.selected = false
+        }
+        
       }
 
     return (
@@ -262,7 +290,15 @@ const Genres = (props) => {
                             <input type="number" name="minGames" id="minGames" placeholder="Min. # Games" maxlength="4"></input>
                             &nbsp;-&nbsp;
                             <input type="number" name="maxGames" id="maxGames" placeholder="Max. # Games" maxlength="4"></input>
-
+                            <br /><br />
+                            <label for="company-selection" class="filter-title">Companies:</label>
+                            <br />
+                            <select class="form-select" name="company-selection" id="comp-multi-selections" multiple>
+                                {comps.map((comp, i) => (
+                                <option value={i}>{compIDtoCompName(i)}</option>
+                                ))}
+                            </select>
+                            <br /><br />
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -271,7 +307,8 @@ const Genres = (props) => {
                                 document.getElementById("startChar").value,
                                 document.getElementById("endChar").value,
                                 document.getElementById("minGames").value,
-                                document.getElementById("maxGames").value)}>Save changes</button>
+                                document.getElementById("maxGames").value,
+                                document.getElementById("comp-multi-selections"))}>Save changes</button>
                         </div>
                     </div>
                 </div>
