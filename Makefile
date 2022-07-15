@@ -32,6 +32,9 @@ IDB1.log:
 IDB2.log:
 	git log > IDB2.log
 
+IDB3.log:
+	git log > IDB3.log
+
 models.html:
 	cd backend && $(PYDOC) -w models
 
@@ -39,7 +42,7 @@ main.html:
 	cd backend && $(PYDOC) -w main
 
 run:
-	npm start & source launch
+	source launch_front & source launch_back
 
 postman-tests:
-	newman run GameHub_postman_test_run.json
+	newman run GameHub.postman_collection.json

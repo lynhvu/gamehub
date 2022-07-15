@@ -17,7 +17,7 @@ DBNAME = "gamehubdb"
 
 
 
-# needs to be fixed
+# backend original
 api.config['SQLALCHEMY_DATABASE_URI'] = \
 os.environ.get("DB_STRING",f'postgresql://{USER}:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}')
 # this needs to be fixed still, just put in temp data vv

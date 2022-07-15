@@ -25,7 +25,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "Adventure",
         "num": "116447",
         "games": [
@@ -50,7 +50,7 @@
         ]
     },
     {
-        "id": 2,
+        "id": 8,
         "name": "Puzzle",
         "num": 86556,
         "games": [
@@ -100,7 +100,7 @@
         ]
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "Shooter",
         "num": "53203",
         "games": [
@@ -127,6 +127,7 @@
         ]
     },
     {
+        "id": 1,
         "name": "Indie",
         "companies": [
             "The Behemoth",
@@ -137,6 +138,7 @@
         "themes": "Multiplayer, Atmospheric, 2-Dimensional, and Story Rich"
     },
     {
+        "id": 4,
         "name": "Strategy",
         "companies": [
             "Feral Interactive",
@@ -147,6 +149,7 @@
         "themes": "Decision-making, High Situational Awareness, Autonomous"
     },
     {
+        "id": 6,
         "name": "Casual",
         "companies": [
             "Coffee Stain Studios",
@@ -156,6 +159,7 @@
         "themes": "Simplistic, Easy to follow, low-grade challenges"
     },
     {
+        "id": 7,
         "name": "Simulation",
         "companies": [
             "ConcernedApe",
@@ -165,6 +169,7 @@
         "themes": "No strict goals, occupational, freeing, imitation"
     },
     {
+        "id": 9,
         "name": "Arcade",
         "companies": [
             "Annapurna Interactive",
@@ -175,6 +180,7 @@
         "themes": "Traditional and old-school feel, structured gameplay, puzzle-less, skill-independent"
     },
     {
+        "id": 10,
         "name": "Platformer",
         "companies": [
             "BANDAI NAMCO Entertainment",
@@ -184,6 +190,7 @@
         "themes": "Jumping, climbing, protagonistic, enemy-destroying"
     },
     {
+        "id": 12,
         "name": "Massively Multiplayer",
         "companies": [
             "Respawn Entertainment",
@@ -193,6 +200,7 @@
         "themes": "Exploration, collection, community"
     },
     {
+        "id": 13,
         "name": "Sports",
         "companies": [
             "Electronic Arts"
@@ -200,6 +208,7 @@
         "themes": "Realistic, teamwork, competitive nature"
     },
     {
+        "id": 11,
         "name": "Racing",
         "companies": [
             "tinyBuild",
@@ -209,6 +218,7 @@
         "themes": "Competition, speed play, intense, mechanical"
     },
     {
+        "id": 14,
         "name": "Fighting",
         "companies": [
             "Armature Studio",
@@ -217,6 +227,7 @@
         "themes": "Death, bloody, combos, timed, technique"
     },
     {
+        "id": 15,
         "name": "Family",
         "companies": [
             "Amanita Design",
@@ -226,6 +237,7 @@
         "themes": "Casual, story inclined, gentle, fantasy"
     },
     {
+        "id": 16,
         "name": "Board Games",
         "companies": [
             "Asmodee Digital",
@@ -235,6 +247,7 @@
         "themes": "Strict rules, thoughtful, friendly competition"
     },
     {
+        "id": 17,
         "name": "Educational",
         "companies": [
             "Bossa Studios",
@@ -244,6 +257,7 @@
         "themes": "Learning, practicing, informative"
     },
     {
+        "id": 18,
         "name": "Card",
         "companies": [
             "Abrakam",
