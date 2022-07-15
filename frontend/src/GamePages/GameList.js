@@ -72,8 +72,11 @@ const GameList = (props) => {
     { value: "platforms", text: "Platforms" },
   ];
 
-  const platform_consoles = ["Nintendo Switch", "PlayStation 3", "PlayStation 4", "PlayStation 5",
-    "Xbox 360", "Xbox One", "Xbox Series S/X", "macOS", "Linux", "PC", "Mobile"]
+  const platform_consoles = ["Nintendo Switch", "Nintendo DS", "Wii", "Wii U", "Game Boy Advance", 
+                            "Nintendo 64", "PlayStation", "PlayStation 2", "PlayStation 3", 
+                            "PlayStation 4", "PlayStation 5", "PSP", "PS Vita", "Xbox", "Xbox 360",
+                            "Xbox One", "Xbox Series S/X", "macOS", "Linux", "PC", "Android", "iOS", 
+                            "Dreamcast", "GameCube"]
 
   const [selected, setSelected] = useState(options[0].value);
 
