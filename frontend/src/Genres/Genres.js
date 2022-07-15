@@ -240,7 +240,7 @@ const Genres = (props) => {
         for (var elem of selectedComps) {
           elem.selected = false
         }
-        
+
       }
 
     return (
@@ -279,13 +279,13 @@ const Genres = (props) => {
                             </button>
                         </div>
                         <div class="modal-body">
-                            Names (Starting letter to ending letter, filter by alphabetical order):<br></br>
+                            <p class="filter-title">Names (Starting character to ending character, filter by alphabetical order):</p>
                             <input type="text" name="startChar" id="startChar" placeholder="A" maxlength="1"></input>
                             &nbsp;-&nbsp;
                             <input type="text" name="endChar" id="endChar" placeholder="Z" maxlength="1"></input>
-                            <br></br><br></br>
+                            <br /><br />
 
-                            Number of Games:
+                            <p class="filter-title">Number of Games:</p>
                             <br></br>
                             <input type="number" name="minGames" id="minGames" placeholder="Min. # Games" maxlength="4"></input>
                             &nbsp;-&nbsp;
