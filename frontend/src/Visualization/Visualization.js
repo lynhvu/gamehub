@@ -114,7 +114,7 @@ toArrays()
             <br/>
             <div className="d-flex justify-content-center" style={{background: "black"}}>
               <BarChart
-                width={1200}
+                width={1100}
                 height={500}
                 data={jArr}
                 margin={{
@@ -161,7 +161,7 @@ toArrays()
             <br/>
             <div className="d-flex justify-content-center" style={{background: "black"}}>
             <LineChart
-                width={1200}
+                width={1100}
                 height={500}
                 data={cArr}
                 margin={{
