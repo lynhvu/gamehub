@@ -330,7 +330,7 @@ const GameList = (props) => {
 
               <label for="customRange3" class="form-label filter-title">Minimum Metascore:</label>
               <input type="range" class="form-range" min="0" max="100" step="1" id="metaScore" onChange={ (e) => document.getElementById("sliderVal").value = e.target.value}></input>
-              <input type="number" id="sliderVal" onChange={ (e) => document.getElementById("metaScore").value = e.target.value}></input>
+              <input type="number" id="sliderVal" placeholder="50" onChange={ (e) => document.getElementById("metaScore").value = e.target.value}></input>
               <br /><br />
               <label for="platform-list" class="filter-title">Platform:</label>
               <br /><br />
