@@ -14,7 +14,9 @@ import BackBtn from '../BackBtn';
 import Mark from "mark.js";
 
 const Genres = (props) => {
-    /*var data = require('./genresdata.json');*/
+    var genredata = require('./genresdata.json');
+    var companydata = require('../CompanyPages/companydata.json');
+    var gamedata = require('../GamePages/gamedata.json');
     var [genres, setGenres] = useState([]);  // filtered genres to display
     var [data, setData] = useState([])  // full dataset of genres
 
@@ -32,7 +34,7 @@ const Genres = (props) => {
     }, [genres])
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/genres/").then(
+        fetch("/genresdata/").then(
             res => res.json()
         ).then(
             data => {
@@ -164,7 +166,7 @@ const Genres = (props) => {
     }
 
 
-    const displayGenres = genres
+    const displayGenres = genredata
         .slice(pagesVisited, pagesVisited + genresPerPage)
         .map((item) => {
             return (
@@ -197,9 +199,9 @@ const Genres = (props) => {
 
     function listAllGames(givenId) {
         let result = "";
-        for (var i = 0; i < games.length && result.length < 70; i++) {
-            if (games[i].genre_id == givenId) {
-                result += games[i].name + ", ";
+        for (var i = 0; i < gamedata.length && result.length < 70; i++) {
+            if (gamedata[i].genre_id == givenId) {
+                result += gamedata[i].name + ", ";
             }
         }
         return result.substring(0, result.length-2);
@@ -207,15 +209,15 @@ const Genres = (props) => {
 
     function listAllCompanies(givenId) {
         let result = "";
-        for (var i = 0; i < comps.length && result.length < 70; i++) {
-            if (comps[i].genre_id == givenId) {
-                result += comps[i].name + ", ";
+        for (var i = 0; i < companydata.length && result.length < 70; i++) {
+            if (companydata[i].genre_id == givenId) {
+                result += companydata[i].name + ", ";
             }
         }
         return result.substring(0, result.length-2);
     }
 
-    const pageCount = Math.ceil(genres.length / genresPerPage);
+    const pageCount = Math.ceil(genredata.length / genresPerPage);
 
     const changePage = ({ selected }) => {
         setPageNumber(selected);

@@ -11,14 +11,16 @@ import BackBtn from "../BackBtn";
 import { Carousel } from 'react-bootstrap';
 
 const GenresPage = (props) => {
-
+    var genredata = require('./genresdata.json');
+    var companydata = require('../CompanyPages/companydata.json');
+    var gamedata = require('../GamePages/gamedata.json');
     var genresData = JSON.parse(localStorage.getItem("GENRES"));
     console.log(genresData)
 
     var [gameData, setGameData] = useState([])
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/games/").then(
+        fetch("/gamedata/").then(
             res => res.json()
         ).then(
             data => {
@@ -31,7 +33,7 @@ const GenresPage = (props) => {
     var [compData, setCompData] = useState([])
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/companies/").then(
+        fetch("/companydata/").then(
             res => res.json()
         ).then(
             data => {
@@ -89,9 +91,9 @@ const GenresPage = (props) => {
     // returns the matching games for this genre
     function getAllGames(id){
         const result = [];
-        for(var i = 0; i < gameData.length; i++){
-            if(gameData[i].genre_id == id){
-                result.push(gameData[i]);
+        for(var i = 0; i < gamedata.length; i++){
+            if(gamedata[i].genre_id == id){
+                result.push(gamedata[i]);
             }
         }
         return result;
@@ -104,9 +106,9 @@ const GenresPage = (props) => {
     // returns the matching games for this genre
     function getAllComps(id){
         const result = [];
-        for(var i = 0; i < compData.length; i++){
-            if(compData[i].genre_id == id){
-                result.push(compData[i]);
+        for(var i = 0; i < companydata.length; i++){
+            if(companydata[i].genre_id == id){
+                result.push(companydata[i]);
             }
         }
         return result;
