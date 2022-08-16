@@ -8,6 +8,9 @@ import Mark from "mark.js";
 import { Label } from "recharts";
 
 const GameList = (props) => {
+  var genredata = require('../Genres/genresdata.json');
+  var companydata = require('../CompanyPages/companydata.json');
+  var gamedata = require('./gamedata.json');
   var [gameData, setData] = useState([]) // full dataset of games
   var [games, setGames] = useState([])  // filtered games to display
   const [comps, setComps] = useState([])
@@ -24,7 +27,7 @@ const GameList = (props) => {
   }, [games])
 
   useEffect(() => {
-    fetch("https://gamehubapi.me/games/").then(
+    fetch("/gamedata/").then(
       res => res.json()
     ).then(
       data => {
@@ -36,7 +39,7 @@ const GameList = (props) => {
     ).catch(err => console.log(err))
 
     // get the companies (to reference for company_id)
-    fetch("https://gamehubapi.me/companies/").then(
+    fetch("/companydata/").then(
       res => res.json()
     ).then(
       data => {
@@ -46,7 +49,7 @@ const GameList = (props) => {
       }
     ).catch(err => console.log(err))
 
-    fetch("https://gamehubapi.me/genres/").then(
+    fetch("/genresdata/").then(
       res => res.json()
     ).then(
       data => {
@@ -153,7 +156,7 @@ const GameList = (props) => {
     setGames(gameData);
   }
 
-  const displayGames = games
+  const displayGames = gamedata
     .slice(pagesVisited, pagesVisited + gamesPerPage)
     .map((item) => {
       return (
@@ -179,23 +182,23 @@ const GameList = (props) => {
     });
 
   function compIDtoCompName(givenId) {
-    for (var i = 0; i < comps.length; i++) {
-      if (comps[i].id == givenId) {
-        return comps[i].name;
+    for (var i = 0; i < companydata.length; i++) {
+      if (companydata[i].id == givenId) {
+        return companydata[i].name;
       }
     }
   }
 
   // get genre name from id
   function genName(id) {
-    for (var i = 0; i < gens.length; i++) {
-      if (gens[i].id == id) {
-        return gens[i].name;
+    for (var i = 0; i < genredata.length; i++) {
+      if (genredata[i].id == id) {
+        return genredata[i].name;
       }
     }
   }
 
-  const pageCount = Math.ceil(games.length / gamesPerPage);
+  const pageCount = Math.ceil(gamedata.length / gamesPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);

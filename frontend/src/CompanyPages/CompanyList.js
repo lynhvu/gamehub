@@ -10,6 +10,7 @@ import Mark from "mark.js";
 
 
 const CompanyList = (props) => {
+  
     var genredata = require("../Genres/genresdata.json");
     var companydata = require("./companydata.json");
     var [data, setData] = useState([]) // all companies in dataset

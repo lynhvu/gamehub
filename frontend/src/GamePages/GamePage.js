@@ -11,14 +11,16 @@ import BackBtn from "../BackBtn";
 import { Carousel } from "react-bootstrap";
 
 const GamePage = (props) => {
-
+    var genredata = require('../Genres/genresdata.json');
+    var companydata = require('../CompanyPages/companydata.json');
+    var gamedata = require('./gamedata.json');
     var gameData = JSON.parse(localStorage.getItem("GAME"));
     var [genreData, setGenreData] = useState([])
     var [compData, setCompData] = useState([])
 
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/companies/").then(
+        fetch("/companydata/").then(
             res => res.json()
         ).then(
             data => {
@@ -29,7 +31,7 @@ const GamePage = (props) => {
     }, [])
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/genres/").then(
+        fetch("/genresdata/").then(
             res => res.json()
         ).then(
             data => {
@@ -40,17 +42,17 @@ const GamePage = (props) => {
     }, [])
 
     function genreName(genre_id) {
-        for(var i = 0; i < genreData.length; i++){
-            if(genreData[i].id == genre_id){
-                return (<Link to="/genrespage" onClick={() => {localStorage.setItem("GENRES", JSON.stringify(genreData[i]))}}>{genreData[i].name}</Link>);
+        for(var i = 0; i < genredata.length; i++){
+            if(genredata[i].id == genre_id){
+                return (<Link to="/genrespage" onClick={() => {localStorage.setItem("GENRES", JSON.stringify(genredata[i]))}}>{genredata[i].name}</Link>);
             }
         }  
     }
 
     function companyName(comp_id) {
-        for(var i = 0; i < compData.length; i++){
-            if(compData[i].id == comp_id){
-                return (<Link to="/companies/comp" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(compData[i]))}}>{compData[i].name}</Link>);
+        for(var i = 0; i < companydata.length; i++){
+            if(companydata[i].id == comp_id){
+                return (<Link to="/companies/comp" onClick={() => {localStorage.setItem("COMPANY", JSON.stringify(companydata[i]))}}>{companydata[i].name}</Link>);
             }
         }  
     }
