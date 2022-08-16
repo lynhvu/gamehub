@@ -10,12 +10,15 @@ import Mark from "mark.js";
 
 
 const CompanyList = (props) => {
+    var genredata = require("../Genres/genresdata.json");
+    var companydata = require("./companydata.json");
     var [data, setData] = useState([]) // all companies in dataset
     var [comps, setComps] = useState([]) // cpmpanies to display (filtered)
     const [genreData, setGens] = useState([])
     
 
     const [term, setTerm] = useState("");
+    
 
     useEffect(() => {
       if(term != ""){
@@ -36,7 +39,7 @@ const CompanyList = (props) => {
                 console.log(data.length)
             }
         ).catch(err => console.log(err))
-        fetch("https://gamehubapi.me/genres/").then(
+        fetch("/genresdata/").then(
             res => res.json()
         ).then(
             data => {
@@ -47,7 +50,7 @@ const CompanyList = (props) => {
         ).catch(err => console.log(err))
     }, [])
 
- /* var data = require("./companydata.json");*/
+
 
   const [pageNumber, setPageNumber] = useState(0);
 
@@ -102,19 +105,10 @@ const CompanyList = (props) => {
     { value:18, text: "Card" }
   ];
 
-  // // Trigger button click on Enter
-  // var input = document.getElementById("searched-text")
-  //     input.addEventListener("keypress", function(event){
-  //       if(event.key === "Enter") {
-  //         event.preventDefault();
-  //         document.getElementById("inputbttn").click();
-  //       }
-  // })
-
   function genreName(id){
-    for(var i = 0; i < genreData.length; i++){
-        if (genreData[i].id === id){
-            return genreData[i].name;
+    for(var i = 0; i < genredata.length; i++){
+        if (genredata[i].id === id){
+            return genredata[i].name;
         }
     }
 }
@@ -125,7 +119,7 @@ const CompanyList = (props) => {
 // search by name, new
 function searchFor(term){
   setPageNumber(0);
-  setComps(data.filter(function(item){
+  setComps(companydata.filter(function(item){
     
     return item.name.toLowerCase().includes(term.toLowerCase()) || item.description.toLowerCase().includes(term.toLowerCase())
    
@@ -160,7 +154,7 @@ function reset(){
 }
 
 function applyFilters(startChar, endChar, startYear, endYear, location, genreID, minGames, maxGames){
-  setComps(data.filter(function(item){
+  setComps(companydata.filter(function(item){
     var qualifies = true;
     if(startChar && endChar){
       qualifies &= item.name.charAt(0).toLowerCase() >= startChar.toLowerCase() && item.name.charAt(0).toLowerCase() <= endChar.toLowerCase();
@@ -182,7 +176,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
 }
 
 
-  const displayComps = comps
+  const displayComps = companydata
     .slice(pagesVisited, pagesVisited + compsPerPage)
     .map((item) => {
       return (
@@ -213,7 +207,7 @@ function applyFilters(startChar, endChar, startYear, endYear, location, genreID,
       );
     });
 
-  const pageCount = Math.ceil(comps.length / compsPerPage);
+  const pageCount = Math.ceil(companydata.length / compsPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);

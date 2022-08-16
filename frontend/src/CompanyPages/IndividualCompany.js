@@ -12,14 +12,15 @@ import {
 
 const IndividualCompany = (props) => {
     var compData = JSON.parse(localStorage.getItem("COMPANY"));
-    //var genreData = require('../Genres/genresdata.json');
+    var genredata = require('../Genres/genresdata.json');
+    var gamedata = require('../GamePages/gamedata.json');
     var [genreData, setGenreData] = useState([]);
 
     var [gameData, setGameData] = useState([]);
 
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/games/").then(
+        fetch("/gamedata/").then(
             res => res.json()
         ).then(
             data => {
@@ -30,7 +31,7 @@ const IndividualCompany = (props) => {
     }, [])
 
     useEffect(() => {
-        fetch("https://gamehubapi.me/genres/").then(
+        fetch("/genresdata/").then(
             res => res.json()
         ).then(
             data => {
@@ -41,9 +42,9 @@ const IndividualCompany = (props) => {
     }, [])
 
     function genreName(id){
-        for(var i = 0; i < genreData.length; i++){
-            if (genreData[i].id == id){
-                return (<Link to="/genrespage" onClick={() => {localStorage.setItem("GENRES", JSON.stringify(genreData[i]))}}>{genreData[i].name}</Link>);
+        for(var i = 0; i < genredata.length; i++){
+            if (genredata[i].id == id){
+                return (<Link to="/genrespage" onClick={() => {localStorage.setItem("GENRES", JSON.stringify(genredata[i]))}}>{genredata[i].name}</Link>);
             }
         }
     }
@@ -55,9 +56,9 @@ const IndividualCompany = (props) => {
     // returns the matching games for this company
     function getAllGames(id){
         const result = [];
-        for(var i = 0; i < gameData.length; i++){
-            if(gameData[i].company_id == id){
-                result.push(gameData[i]);
+        for(var i = 0; i < gamedata.length; i++){
+            if(gamedata[i].company_id == id){
+                result.push(gamedata[i]);
             }
         }
         return result;
