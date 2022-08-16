@@ -30,7 +30,7 @@ const CompanyList = (props) => {
     }, [comps])
 
     useEffect(() => {
-        fetch("/companydata/").then(
+        fetch("https://gamehubapi.me/companies/").then(
             res => res.json()
         ).then(
             data => {

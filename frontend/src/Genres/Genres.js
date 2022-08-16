@@ -46,7 +46,7 @@ const Genres = (props) => {
         ).catch(err => console.log(err))
 
         // get the companies (to reference for company_id)
-        fetch("https://gamehubapi.me/companies/").then(
+        fetch("/companydata/").then(
             res => res.json()
         ).then(
             data => {
@@ -57,7 +57,7 @@ const Genres = (props) => {
         ).catch(err => console.log(err))
 
         // get the games (to reference for game_id)
-        fetch("https://gamehubapi.me/games/").then(
+        fetch("/gamedata/").then(
             res => res.json()
         ).then(
             data => {
@@ -217,7 +217,7 @@ const Genres = (props) => {
         return result.substring(0, result.length-2);
     }
 
-    const pageCount = Math.ceil(genredata.length / genresPerPage);
+    const pageCount = Math.ceil(genres.length / genresPerPage);
 
     const changePage = ({ selected }) => {
         setPageNumber(selected);
